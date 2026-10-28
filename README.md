@@ -12,6 +12,8 @@ La plateforme est publiée sur **GitHub Pages** :
 
 - **Plateforme interactive :** <https://cybader.github.io/badr-ai-se1/>
 - **Plan du cours indexable (48 sections) :** <https://cybader.github.io/badr-ai-se1/cours/>
+- **120 QCM corrigés :** <https://cybader.github.io/badr-ai-se1/qcm.html>
+- **90 flashcards :** <https://cybader.github.io/badr-ai-se1/flashcards.html>
 - **Dépôt GitHub :** <https://github.com/Cybader/badr-ai-se1>
 
 Le site en ligne fonctionne aussi **hors-ligne** une fois la page ouverte : aucun compte, aucun serveur
@@ -85,6 +87,8 @@ Tape `help` pour la liste, `man <commande>` pour le mode d'emploi, et ouvre le p
 Plateforme Badr AI/
 ├── index.html              interface (SPA) + métadonnées SEO
 ├── cours/                  49 pages HTML statiques indexables (hub + 48 sections)
+├── qcm.html                120 QCM corrigés en HTML indexable
+├── flashcards.html         90 flashcards en HTML indexable
 ├── assets/og-image.png     carte de partage 1200×630 (Open Graph / Twitter)
 ├── css/
 │   ├── style.css           design glassmorphism + responsive (SPA)
@@ -100,7 +104,7 @@ Plateforme Badr AI/
 │   ├── pipeline.py         régénération des données depuis le PDF source
 │   ├── build-seo.js        génération de /cours/, sitemap.xml, robots.txt, 404.html
 │   └── og-card.html        source de la carte de partage (capture 1200×630)
-├── sitemap.xml             50 URL canoniques
+├── sitemap.xml             52 URL canoniques
 ├── robots.txt              règles d'exploration + sitemap
 ├── 404.html                page d'erreur aux couleurs de la plateforme
 ├── .nojekyll               publication GitHub Pages sans traitement Jekyll
@@ -117,9 +121,9 @@ un fonctionnement direct en `file://` sans serveur ni build.
 
 ## SEO et publication GitHub Pages
 
-La SPA reste la version interactive ; en parallèle, **48 pages HTML statiques** reprennent le texte du
-cours, le résumé arabe et les termes techniques pour être lus par les moteurs de recherche et les
-étudiants qui n'ont pas JavaScript.
+La SPA reste la version interactive ; en parallèle, **51 pages HTML statiques** reprennent le texte du
+cours, le résumé arabe, les termes techniques, les **120 QCM corrigés** et les **90 flashcards** pour
+être lus par les moteurs de recherche et les étudiants qui n'ont pas JavaScript.
 
 Chaque page contient :
 
@@ -128,8 +132,9 @@ Chaque page contient :
 - des données structurées **JSON-LD** (`Course`, `LearningResource`, `BreadcrumbList`, `ItemList`) ;
 - un fil d'Ariane, la pagination entre sections et des liens vers la plateforme interactive.
 
-Le fichier `sitemap.xml` liste les 50 URL du site et `robots.txt` le référence. Le plan du cours est
-aussi accessible depuis le pied de page de la SPA et via un fallback `<noscript>`.
+Le fichier `sitemap.xml` liste les **52 URL** du site et `robots.txt` le référence. Le plan du cours,
+les QCM et les flashcards sont aussi accessibles depuis le pied de page de la SPA, la navigation des
+pages statiques et un fallback `<noscript>`.
 
 ### Régénérer les pages SEO
 
@@ -205,4 +210,6 @@ Il échoue volontairement si une page manque ou si un nom interdit subsiste.
 
 **عبر الإنترنت:** <https://cybader.github.io/badr-ai-se1/>
 **خطة الدرس (48 قسمًا بصفحات HTML قابلة للفهرسة):** <https://cybader.github.io/badr-ai-se1/cours/>
+**120 سؤال QCM مع التصحيح:** <https://cybader.github.io/badr-ai-se1/qcm.html>
+**90 بطاقة مراجعة:** <https://cybader.github.io/badr-ai-se1/flashcards.html>
 **المستودع:** <https://github.com/Cybader/badr-ai-se1>

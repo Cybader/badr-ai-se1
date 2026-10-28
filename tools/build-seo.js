@@ -3,8 +3,10 @@
    Badr AI — SE1 · génération des pages HTML indexables
    - /cours/index.html  : plan du cours (48 sections)
    - /cours/sN.html     : une page par section (texte + arabe)
+   - /qcm.html          : les 120 QCM corrigés (indexables)
+   - /flashcards.html   : les 90 flashcards (indexables)
    - /sitemap.xml, /robots.txt, /404.html
-   Aucune dépendance : Node + js/data-cours.js.
+   Aucune dépendance : Node + js/data-*.js.
    ========================================================= */
 "use strict";
 
@@ -18,8 +20,14 @@ const LAST_MOD = "2026-10-28";
 
 global.window = {};
 eval(fs.readFileSync(path.join(ROOT, "js", "data-cours.js"), "utf8"));
+eval(fs.readFileSync(path.join(ROOT, "js", "data-quiz.js"), "utf8"));
+eval(fs.readFileSync(path.join(ROOT, "js", "data-flash.js"), "utf8"));
 const COURS = global.window.COURS;
+const QUIZ = global.window.QUIZ;
+const FLASH = global.window.FLASH;
 if (!COURS || !COURS.chapters) throw new Error("COURS introuvable dans js/data-cours.js");
+if (!QUIZ || !QUIZ.questions) throw new Error("QUIZ introuvable dans js/data-quiz.js");
+if (!FLASH || !FLASH.cards) throw new Error("FLASH introuvable dans js/data-flash.js");
 
 const SECMETA = new Map();
 const ALL = [];
@@ -131,8 +139,9 @@ function headNav(prefix, hubHref) {
   '</a>\n' +
   '<nav class="head-nav" aria-label="Navigation">\n' +
   '<a href="' + (hubHref || "index.html") + '">Plan du cours</a>\n' +
+  '<a href="' + prefix + 'qcm.html">QCM corrigés</a>\n' +
+  '<a href="' + prefix + 'flashcards.html">Flashcards</a>\n' +
   '<a href="' + prefix + 'index.html#terminal">Terminal</a>\n' +
-  '<a href="' + prefix + 'index.html#quiz">QCM</a>\n' +
   '<a href="' + prefix + 'index.html#exam">Examen</a>\n' +
   '</nav>\n' +
   '</div>\n' +
@@ -144,7 +153,7 @@ function foot(prefix, hubHref) {
   return '</div>\n' +
   '<footer class="site-foot">\n' +
   '<div><b>' + BRAND + '</b> · Système d\'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>\n' +
-  '<div><a href="' + prefix + 'index.html">Plateforme interactive</a> · <a href="' + (hubHref || "index.html") + '">Plan du cours</a> · <a href="' + prefix + 'index.html#quiz">QCM</a> · <a href="' + prefix + 'index.html#exam">Examen blanc</a></div>\n' +
+  '<div><a href="' + prefix + 'index.html">Plateforme interactive</a> · <a href="' + (hubHref || "index.html") + '">Plan du cours</a> · <a href="' + prefix + 'qcm.html">120 QCM corrigés</a> · <a href="' + prefix + 'flashcards.html">90 flashcards</a> · <a href="' + prefix + 'index.html#exam">Examen blanc</a></div>\n' +
   '<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>\n' +
   '</footer>\n' +
   '</body>\n</html>\n';
@@ -269,7 +278,7 @@ function sectionPage(item) {
     '<p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l\'examen blanc.</p></div>\n' +
     '<div class="cta-actions">' +
       '<a class="btn btn-primary" href="../index.html#cours/' + sec.id + '">Ouvrir la plateforme</a>' +
-      '<a class="btn btn-soft" href="../index.html#quiz">QCM</a>' +
+      '<a class="btn btn-soft" href="../qcm.html">120 QCM corrigés</a>' +
       '<a class="btn" href="../index.html#exam">Examen blanc</a>' +
     '</div>\n</aside>\n';
 
@@ -356,7 +365,7 @@ function hubPage() {
 
   html += '<div class="cta">\n' +
     '<div><h2>Prêt à réviser ?</h2><p>La plateforme interactive ajoute la progression, les XP, les flashcards et le terminal Unix virtuel. Elle fonctionne aussi hors-ligne.</p></div>\n' +
-    '<div class="cta-actions"><a class="btn btn-primary" href="../index.html">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">Commencer un QCM</a></div>\n' +
+    '<div class="cta-actions"><a class="btn btn-primary" href="../index.html">Ouvrir la plateforme</a><a class="btn btn-soft" href="../qcm.html">120 QCM corrigés</a><a class="btn" href="../flashcards.html">90 flashcards</a></div>\n' +
     '</div>\n';
 
   html += '<div class="sec-head"><div><h2>Programme complet</h2><p>Cliquez sur une section pour lire la page HTML indexable.</p></div><span class="chip">436 pages</span></div>\n';
@@ -385,7 +394,7 @@ function hubPage() {
     '<h2 id="method-title">Méthode de révision</h2>\n' +
     '<ul>' +
       '<li><a href="../index.html#cours/s1"><b>1.</b> Comprendre chaque section en arabe, puis relire le texte français.</a></li>' +
-      '<li><a href="../index.html#quiz"><b>2.</b> S\'entraîner avec les 120 QCM corrigés et les flashcards.</a></li>' +
+      '<li><b>2.</b> S\'entraîner avec les <a href="../qcm.html">120 QCM corrigés</a> et les <a href="../flashcards.html">90 flashcards</a>.</li>' +
       '<li><a href="../index.html#terminal"><b>3.</b> Pratiquer les commandes Unix dans le terminal virtuel (16 missions).</a></li>' +
       '<li><a href="../index.html#exam"><b>4.</b> Se tester avec l\'examen blanc chronométré de 20 questions.</a></li>' +
     '</ul>\n</section>\n';
@@ -419,16 +428,235 @@ function notFoundPage() {
     '<div class="meta-row" style="justify-content:center;margin-top:22px">' +
       '<a class="btn btn-primary" href="' + SITE + '/">Accueil</a>' +
       '<a class="btn" href="' + SITE + '/cours/">Plan du cours</a>' +
-      '<a class="btn btn-soft" href="' + SITE + '/#quiz">QCM</a>' +
+      '<a class="btn btn-soft" href="' + SITE + '/qcm.html">120 QCM corrigés</a>' +
     '</div></section></main>';
   html += foot("", "cours/");
+  return html;
+}
+
+function chapterLabel(cat) {
+  const ch = COURS.chapters.find(function (c) { return "ch" + c.num === cat; });
+  return ch ? "Chapitre " + ch.num + " — " + ch.title : "Révision SE1";
+}
+
+function qcmPage() {
+  const url = SITE + "/qcm.html";
+  const desc = cut("120 QCM corrigés de SE1 avec réponses et explications en arabe : introduction aux systèmes d'exploitation, commandes Unix et programmation Shell. Préparez votre examen.", 158);
+  const ld = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Quiz",
+        "@id": url + "#quiz",
+        "name": "120 QCM corrigés — Système d'Exploitation 1 (SE1)",
+        "description": desc,
+        "url": url,
+        "inLanguage": ["fr", "ar"],
+        "isAccessibleForFree": true,
+        "educationalLevel": "Enseignement supérieur — Licence",
+        "learningResourceType": "Quiz",
+        "provider": { "@type": "Organization", "name": BRAND, "url": SITE + "/" },
+        "about": ["Système d'exploitation", "Unix", "Programmation Shell", "SE1"],
+        "audience": { "@type": "EducationalAudience", "educationalRole": "student" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": SITE + "/" },
+          { "@type": "ListItem", "position": 2, "name": "QCM corrigés", "item": url }
+        ]
+      }
+    ]
+  };
+
+  let html = head({
+    title: "120 QCM corrigés — Système d'Exploitation 1 (SE1) | " + BRAND,
+    description: desc,
+    keywords: "QCM SE1, QCM Système d'Exploitation 1, QCM corrigés, QCM Unix, QCM Shell, examen SE1, révision SE1, أنظمة التشغيل 1, أسئلة QCM",
+    url: url,
+    ogType: "website",
+    ld: ld,
+    prefix: "",
+    hubHref: "cours/"
+  });
+
+  html += '<nav class="crumbs" aria-label="Fil d\'Ariane">' +
+    '<a href="index.html">Accueil</a><span>›</span>' +
+    '<a href="cours/">Cours SE1</a><span>›</span>' +
+    '<span aria-current="page">QCM corrigés</span></nav>\n';
+
+  html += '<main id="contenu">\n';
+  html += '<header class="hero">\n' +
+    '<span class="badge">120 questions · correction en arabe</span>\n' +
+    '<h1>120 QCM corrigés — Système d\'Exploitation 1</h1>\n' +
+    '<p class="ar-title" lang="ar" dir="rtl">أسئلة QCM مع التصحيح والتعليل — أنظمة التشغيل 1</p>\n' +
+    '<p style="margin:12px 0 0;color:var(--muted);max-width:760px">Tous les QCM du module SE1, classés par chapitre : introduction aux systèmes d\'exploitation, commandes Unix et programmation Shell. Chaque question affiche les quatre choix, la bonne réponse et une explication en arabe.</p>\n' +
+    '<div class="meta-row">' +
+      '<span class="chip">📚 3 chapitres</span>' +
+      '<span class="chip">✅ 120 corrections</span>' +
+      '<span class="chip">📘 شرح بالعربية</span>' +
+      '<span class="chip">🎯 Niveau licence</span>' +
+    '</div>\n</header>\n';
+
+  html += '<aside class="cta">' +
+    '<div><h2>Mode interactif : score, chronomètre et XP</h2>' +
+    '<p>Répondez question par question, obtenez votre score sur 10 et suivez votre progression. Les corrections restent disponibles dans la plateforme.</p></div>' +
+    '<div class="cta-actions"><a class="btn btn-primary" href="index.html#quiz">Lancer le quiz interactif</a><a class="btn" href="flashcards.html">90 flashcards</a></div>' +
+    '</aside>\n';
+
+  html += '<div class="sec-head"><div><h2>Questions par chapitre</h2><p>Cliquez sur un chapitre pour y accéder directement.</p></div><span class="chip">120 questions</span></div>\n';
+  html += '<div class="qjump">' + COURS.chapters.map(function (ch) {
+    const n = QUIZ.questions.filter(function (q) { return q.cat === "ch" + ch.num; }).length;
+    return '<a class="chip" href="#ch' + ch.num + '">Chapitre ' + ch.num + ' · ' + n + ' QCM</a>';
+  }).join("") + '</div>\n';
+
+  let n = 0;
+  for (const ch of COURS.chapters) {
+    const qs = QUIZ.questions.filter(function (q) { return q.cat === "ch" + ch.num; });
+    html += '<section class="qcat" id="ch' + ch.num + '">\n' +
+      '<div class="qcat-head">' +
+        '<span class="chapter-num">0' + ch.num + '</span>' +
+        '<div><h2>Chapitre ' + ch.num + ' — ' + esc(ch.title) + '</h2>' +
+        '<div class="note">' + qs.length + ' QCM corrigés · ' + esc(ch.ar) + '</div></div>' +
+      '</div>\n<div class="qlist">\n';
+    html += qs.map(function (q) {
+      n++;
+      const letters = ["A", "B", "C", "D"];
+      return '<article class="qcard" id="' + q.id + '">\n' +
+        '<div class="qhead"><span class="qnum">' + String(n).padStart(2, "0") + '</span>' +
+        '<span class="qtag">' + esc(chapterLabel(q.cat)) + '</span></div>\n' +
+        '<h3 class="qtext">' + esc(q.q) + '</h3>\n' +
+        '<ul class="qchoices">\n' + q.choices.map(function (c, j) {
+          const ok = j === q.a;
+          return '<li' + (ok ? ' class="ok"' : '') + '>' +
+            '<span class="qletter">' + letters[j] + '</span>' +
+            '<span class="qchoice">' + esc(c) + '</span>' +
+            (ok ? '<span class="qok">Bonne réponse</span>' : '') + '</li>';
+        }).join("\n") + '\n</ul>\n' +
+        '<p class="qar" lang="ar" dir="rtl"><b>التصحيح:</b> ' + esc(q.ar) + '</p>\n' +
+        '</article>';
+    }).join("\n");
+    html += '\n</div>\n</section>\n';
+  }
+
+  html += '<aside class="related" aria-label="Ressources complémentaires">\n' +
+    '<h2>Continuer la révision</h2>\n<ul>' +
+      '<li><a href="cours/">Relire les 48 sections du cours SE1</a></li>' +
+      '<li><a href="flashcards.html">Mémoriser avec les 90 flashcards</a></li>' +
+      '<li><a href="index.html#exam">Passer l\'examen blanc (20 questions · 30 min)</a></li>' +
+      '<li><a href="index.html#terminal">Pratiquer les commandes Unix dans le terminal</a></li>' +
+    '</ul>\n</aside>\n';
+  html += '</main>\n' + foot("", "cours/");
+  return html;
+}
+
+function flashPage() {
+  const url = SITE + "/flashcards.html";
+  const desc = cut("90 flashcards de révision SE1 : terminologie, commandes Unix et concepts, avec traductions en arabe. Révisez hors-ligne et préparez l'examen.", 158);
+  const cardItems = FLASH.cards.map(function (c, i) {
+    return {
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": c.front,
+      "description": c.back
+    };
+  });
+  const ld = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": url + "#page",
+        "name": "90 flashcards — Système d'Exploitation 1 (SE1)",
+        "description": desc,
+        "url": url,
+        "inLanguage": ["fr", "ar"],
+        "isPartOf": { "@type": "Course", "name": "Système d'Exploitation 1 (SE1)", "url": SITE + "/" },
+        "mainEntity": {
+          "@type": "ItemList",
+          "numberOfItems": FLASH.cards.length,
+          "itemListElement": cardItems
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": SITE + "/" },
+          { "@type": "ListItem", "position": 2, "name": "Flashcards", "item": url }
+        ]
+      }
+    ]
+  };
+
+  let html = head({
+    title: "90 flashcards SE1 — Réviser Unix & Shell | " + BRAND,
+    description: desc,
+    keywords: "flashcards SE1, cartes de révision, réviser SE1, terminologie Unix, commandes Unix, concepts systèmes d'exploitation, أنظمة التشغيل 1, بطاقات مراجعة",
+    url: url,
+    ogType: "website",
+    ld: ld,
+    prefix: "",
+    hubHref: "cours/"
+  });
+
+  html += '<nav class="crumbs" aria-label="Fil d\'Ariane">' +
+    '<a href="index.html">Accueil</a><span>›</span>' +
+    '<a href="cours/">Cours SE1</a><span>›</span>' +
+    '<span aria-current="page">Flashcards</span></nav>\n';
+
+  html += '<main id="contenu">\n';
+  html += '<header class="hero">\n' +
+    '<span class="badge">90 cartes · 3 paquets</span>\n' +
+    '<h1>90 flashcards — Réviser le Système d\'Exploitation 1</h1>\n' +
+    '<p class="ar-title" lang="ar" dir="rtl">بطاقات مراجعة للمصطلحات وأوامر Unix والمفاهيم — أنظمة التشغيل 1</p>\n' +
+    '<p style="margin:12px 0 0;color:var(--muted);max-width:760px">Terminologie français–arabe, commandes Unix et concepts clés du module SE1. Chaque carte donne la notion au recto et sa définition au verso, en arabe, pour réviser rapidement avant l\'examen.</p>\n' +
+    '<div class="meta-row">' +
+      '<span class="chip">🗂 90 cartes</span>' +
+      '<span class="chip">🔁 Termes · commandes · concepts</span>' +
+      '<span class="chip">📘 شرح بالعربية</span>' +
+    '</div>\n</header>\n';
+
+  html += '<aside class="cta">' +
+    '<div><h2>Mode interactif : retourner, naviguer, mémoriser</h2>' +
+    '<p>La plateforme affiche les cartes une par une, permet de les retourner et de marquer celles que vous maîtrisez.</p></div>' +
+    '<div class="cta-actions"><a class="btn btn-primary" href="index.html#flash">Réviser en interactif</a><a class="btn" href="qcm.html">120 QCM corrigés</a></div>' +
+    '</aside>\n';
+
+  for (const deck of FLASH.decks) {
+    const cards = FLASH.cards.filter(function (c) { return c.deck === deck.id; });
+    html += '<section class="qcat" id="' + deck.id + '">\n' +
+      '<div class="qcat-head">' +
+        '<span class="chapter-num">' + String(cards.length).padStart(2, "0") + '</span>' +
+        '<div><h2>' + esc(deck.name) + '</h2>' +
+        '<div class="note">' + cards.length + ' cartes · <span lang="ar" dir="rtl">' + esc(deck.ar) + '</span></div></div>' +
+      '</div>\n<div class="flash-grid">\n';
+    html += cards.map(function (c) {
+      return '<article class="flashcard">\n' +
+        '<span class="flash-deck">' + esc(deck.name) + '</span>\n' +
+        '<h3>' + esc(c.front) + '</h3>\n' +
+        '<p class="flash-back" lang="ar" dir="rtl">' + esc(c.back) + '</p>\n' +
+        (c.hint ? '<p class="flash-hint">Indice : ' + esc(c.hint) + '</p>' : '') +
+        '</article>';
+    }).join("\n");
+    html += '\n</div>\n</section>\n';
+  }
+
+  html += '<aside class="related" aria-label="Ressources complémentaires">\n' +
+    '<h2>Continuer la révision</h2>\n<ul>' +
+      '<li><a href="cours/">Relire les 48 sections du cours SE1</a></li>' +
+      '<li><a href="qcm.html">S\'entraîner avec les 120 QCM corrigés</a></li>' +
+      '<li><a href="index.html#exam">Passer l\'examen blanc (20 questions · 30 min)</a></li>' +
+    '</ul>\n</aside>\n';
+  html += '</main>\n' + foot("", "cours/");
   return html;
 }
 
 function sitemap() {
   const entries = [
     { loc: SITE + "/", priority: "1.0", freq: "weekly" },
-    { loc: SITE + "/cours/", priority: "0.9", freq: "weekly" }
+    { loc: SITE + "/cours/", priority: "0.9", freq: "weekly" },
+    { loc: SITE + "/qcm.html", priority: "0.9", freq: "monthly" },
+    { loc: SITE + "/flashcards.html", priority: "0.8", freq: "monthly" }
   ].concat(ALL.map(function (it) {
     return { loc: canonicalSection(it.sec), priority: "0.7", freq: "monthly" };
   }));
@@ -464,10 +692,12 @@ function write(rel, content) {
 
 write("cours/index.html", hubPage());
 for (const it of ALL) write("cours/" + it.sec.id + ".html", sectionPage(it));
+write("qcm.html", qcmPage());
+write("flashcards.html", flashPage());
 write("sitemap.xml", sitemap());
 write("robots.txt", robots());
 write("404.html", notFoundPage());
 
-console.log("SEO OK: 1 hub + " + ALL.length + " sections + sitemap + robots + 404");
+console.log("SEO OK: 1 hub + " + ALL.length + " sections + QCM + flashcards + sitemap + robots + 404");
 console.log("Base URL: " + SITE);
-console.log("Sitemap URLs: " + (ALL.length + 2));
+console.log("Sitemap URLs: " + (ALL.length + 4));
