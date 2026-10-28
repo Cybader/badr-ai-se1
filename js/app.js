@@ -152,7 +152,7 @@ window.APP = (function () {
   }
   function confetti(n) {
     if (!confCtx || reduceMotion) return;
-    const colors = ["#7c5cff", "#22d3ee", "#f472b6", "#34d399", "#fbbf24"];
+    const colors = ["#0f5c52", "#a9472f", "#c79a3b", "#2f7d5a", "#9a6a18"];
     for (let i = 0; i < (n || 60); i++) {
       confParts.push({
         x: window.innerWidth / 2 + (Math.random() - 0.5) * 220,
@@ -218,7 +218,7 @@ window.APP = (function () {
         if (d.y < 0 || d.y > h) d.vy *= -1;
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(180,200,255,.35)";
+        ctx.fillStyle = "rgba(15,92,82,.28)";
         ctx.fill();
       });
       if (!document.hidden) requestAnimationFrame(tick);
@@ -363,11 +363,111 @@ window.APP = (function () {
     const cx = size / 2;
     return '<svg viewBox="0 0 ' + size + " " + size + '" width="' + size + '" height="' + size + '">' +
       "<defs><linearGradient id=\"" + gid + "\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">" +
-      '<stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>' +
+      '<stop offset="0" stop-color="#0f5c52"/><stop offset="1" stop-color="#a9472f"/></linearGradient></defs>' +
       '<circle class="ring-track" cx="' + cx + '" cy="' + cx + '" r="' + r + '" fill="none" stroke-width="' + stroke + '"/>' +
       '<circle cx="' + cx + '" cy="' + cx + '" r="' + r + '" fill="none" stroke="url(#' + gid + ')" stroke-width="' + stroke +
       '" stroke-linecap="round" stroke-dasharray="' + c.toFixed(1) + '" stroke-dashoffset="' + off.toFixed(1) + '"/>' +
       "</svg>" + (label == null ? "" : label);
+  }
+
+
+  /* ============================ Illustrations & lightbox ============================ */
+  function lessonImages(secId) {
+    return (window.LESSON_IMAGES && window.LESSON_IMAGES.images && window.LESSON_IMAGES.images[secId]) || [];
+  }
+
+  function galleryHTML(secId) {
+    const imgs = lessonImages(secId);
+    if (!imgs.length) return "";
+    return '<section class="lesson-gallery" aria-labelledby="lg-title">' +
+      '<div class="lg-head">' +
+        '<h3 id="lg-title">🖼️ Illustrations de la leçon</h3>' +
+        '<span class="lg-count">' + imgs.length + (imgs.length > 1 ? " planches" : " planche") +
+        " · cliquez pour agrandir</span>" +
+      "</div>" +
+      '<div class="lg-grid">' + imgs.map(function (im, i) {
+        return '<figure class="lg-item">' +
+          '<button class="lg-thumb" type="button" data-imgi="' + i + '" aria-label="Agrandir : ' + esc(im.title) + '">' +
+            '<img src="' + esc(im.thumb) + '" alt="' + esc(im.title) + '" loading="lazy" decoding="async" width="360" height="' +
+              Math.round(360 * im.h / im.w) + '">' +
+            '<span class="lg-zoom" aria-hidden="true">⤢</span>' +
+          "</button>" +
+          "<figcaption>" + esc(im.title) + "</figcaption>" +
+          "</figure>";
+      }).join("") + "</div></section>";
+  }
+
+  let lb = null, lbState = null;
+
+  function buildLightbox() {
+    if (lb) return lb;
+    lb = document.createElement("div");
+    lb.className = "lightbox";
+    lb.id = "lightbox";
+    lb.setAttribute("role", "dialog");
+    lb.setAttribute("aria-modal", "true");
+    lb.setAttribute("aria-label", "Illustration agrandie");
+    lb.hidden = true;
+    lb.innerHTML =
+      '<button class="lb-close" type="button" aria-label="Fermer">✕</button>' +
+      '<button class="lb-nav lb-prev" type="button" aria-label="Illustration précédente">‹</button>' +
+      '<figure class="lb-figure">' +
+        '<img id="lb-img" alt="">' +
+        '<figcaption id="lb-cap"></figcaption>' +
+      "</figure>" +
+      '<button class="lb-nav lb-next" type="button" aria-label="Illustration suivante">›</button>';
+    document.body.appendChild(lb);
+    lb.addEventListener("click", function (e) {
+      if (e.target === lb || e.target.closest(".lb-close")) closeLightbox();
+      else if (e.target.closest(".lb-prev")) stepLightbox(-1);
+      else if (e.target.closest(".lb-next")) stepLightbox(1);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (!lbState) return;
+      if (e.key === "Escape") { e.preventDefault(); closeLightbox(); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); stepLightbox(-1); }
+      else if (e.key === "ArrowRight") { e.preventDefault(); stepLightbox(1); }
+    });
+    return lb;
+  }
+
+  function paintLightbox() {
+    if (!lbState) return;
+    const im = lbState.imgs[lbState.i];
+    const img = $("#lb-img");
+    const cap = $("#lb-cap");
+    if (img) { img.src = im.src; img.alt = im.title; }
+    if (cap) {
+      cap.textContent = im.title + " · " + (lbState.i + 1) + "/" + lbState.imgs.length;
+    }
+    const many = lbState.imgs.length > 1;
+    const prev = $(".lb-prev", lb), next = $(".lb-next", lb);
+    if (prev) prev.style.display = many ? "" : "none";
+    if (next) next.style.display = many ? "" : "none";
+  }
+
+  function openLightbox(secId, index) {
+    const imgs = lessonImages(secId);
+    if (!imgs.length) return;
+    buildLightbox();
+    lbState = { imgs: imgs, i: Math.max(0, Math.min(imgs.length - 1, index || 0)) };
+    paintLightbox();
+    lb.hidden = false;
+    document.body.classList.add("locked");
+    if (window.SFX) window.SFX.play("click");
+  }
+
+  function stepLightbox(dir) {
+    if (!lbState) return;
+    lbState.i = (lbState.i + dir + lbState.imgs.length) % lbState.imgs.length;
+    paintLightbox();
+  }
+
+  function closeLightbox() {
+    if (!lb) return;
+    lb.hidden = true;
+    lbState = null;
+    document.body.classList.remove("locked");
   }
 
   /* ============================ Home ============================ */
@@ -608,6 +708,7 @@ window.APP = (function () {
         pageBlocksHTML(pg) +
         "</article>";
     }).join("");
+    const gallery = galleryHTML(id);
 
     reader.innerHTML =
       '<div class="reader-head">' +
@@ -630,6 +731,7 @@ window.APP = (function () {
             return '<span class="term"><b>' + esc(t.fr) + "</b><span>" + esc(t.ar) + "</span></span>";
           }).join("") + "</div>" : "") +
         "</div>" +
+        gallery +
         pagesHtml +
       "</div>" +
       '<div class="pager">' +
@@ -663,6 +765,11 @@ window.APP = (function () {
         if (prog) prog.textContent = chapterRead(ch) + "/" + ch.sections.length;
       }
       if (view === "home") renderHome();
+    });
+    $$(".lg-thumb", reader).forEach(function (b) {
+      b.addEventListener("click", function () {
+        openLightbox(id, parseInt(b.getAttribute("data-imgi"), 10) || 0);
+      });
     });
     const prevBtn = $("#prev-sec");
     if (prevBtn) prevBtn.addEventListener("click", function () { openSection(prev.sec.id); window.scrollTo({ top: 0 }); });
@@ -1159,9 +1266,9 @@ window.APP = (function () {
         '<div class="review-list">' + s.items.map(function (q, i) {
           const pick = s.answers[i];
           const good = pick === q.a;
-          return '<div class="review-item" style="border-color:' + (good ? "rgba(52,211,153,.3)" : "rgba(251,113,133,.3)") + '">' +
+          return '<div class="review-item" style="border-color:' + (good ? "rgba(47,125,90,.35)" : "rgba(184,67,63,.35)") + '">' +
             '<div class="ri-q">' + (good ? "✓" : "✗") + " " + (i + 1) + ". " + esc(q.text) + "</div>" +
-            '<div class="ri-a" style="color:' + (good ? "#9ff0d4" : "#ffc3cc") + '">' +
+            '<div class="ri-a" style="color:' + (good ? "#1f6b4b" : "#a33f2b") + '">' +
               (pick == null ? "Sans réponse" : "Votre réponse : " + esc(q.choices[pick])) +
               (good ? "" : " · Bonne réponse : " + esc(q.choices[q.a])) + "</div>" +
             '<div class="ri-ar">' + esc(q.ar) + "</div></div>";
@@ -1212,7 +1319,7 @@ window.APP = (function () {
           '<div class="chmod-result">' +
             '<div class="octal-box"><span>Octal</span><input id="octal-input" inputmode="numeric" maxlength="3" value="755" aria-label="Valeur octale"></div>' +
             '<div class="symbolic-box" id="symbolic-out">rwxr-xr-x</div>' +
-            '<label style="display:inline-flex;align-items:center;gap:7px;font-size:.74rem;color:var(--muted);margin-left:auto"><input type="checkbox" id="chmod-dir" style="accent-color:#7c5cff"> Dossier</label>' +
+            '<label style="display:inline-flex;align-items:center;gap:7px;font-size:.74rem;color:var(--muted);margin-left:auto"><input type="checkbox" id="chmod-dir" style="accent-color:#0f5c52"> Dossier</label>' +
           "</div>" +
           '<div class="ls-preview" id="ls-preview"></div>' +
           '<div class="chmod-note">r = 4 · w = 2 · x = 1. Pour un dossier, x = droit de le traverser (entrer).<br><span class="ar" style="display:block;margin-top:6px">r قراءة، w كتابة، x تنفيذ — وللمجلد x يعني حق الدخول/العبور.</span></div>' +
@@ -1398,6 +1505,8 @@ window.APP = (function () {
     });
     show(TREE[0]);
   }
+
+  window.BADRAI_OPEN_IMAGES = function (secId, index) { openLightbox(secId, index); };
 
   /* ============================ Init ============================ */
   function init() {

@@ -1,0 +1,2102 @@
+[
+ {
+  "id": "s9-01",
+  "section": "s9",
+  "src": "assets/lecons/s9-01.webp",
+  "thumb": "assets/lecons/thumbs/s9-01.webp",
+  "title": "ما هو Shell؟",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/ما هو Shell؟.png"
+ },
+ {
+  "id": "s9-02",
+  "section": "s9",
+  "src": "assets/lecons/s9-02.webp",
+  "thumb": "assets/lecons/thumbs/s9-02.webp",
+  "title": "Terminal أم Prompt؟",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/Terminal أم Prompt؟.png"
+ },
+ {
+  "id": "s9-03",
+  "section": "s9",
+  "src": "assets/lecons/s9-03.webp",
+  "thumb": "assets/lecons/thumbs/s9-03.webp",
+  "title": "كيف تفتح Shell وتغلقه؟",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/كيف تفتح Shell وتغلقه؟.png"
+ },
+ {
+  "id": "s9-04",
+  "section": "s9",
+  "src": "assets/lecons/s9-04.webp",
+  "thumb": "assets/lecons/thumbs/s9-04.webp",
+  "title": "أنواع Shell",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/أنواع Shell.png"
+ },
+ {
+  "id": "s9-05",
+  "section": "s9",
+  "src": "assets/lecons/s9-05.webp",
+  "thumb": "assets/lecons/thumbs/s9-05.webp",
+  "title": "كيف تدخل إلى Linux؟",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/كيف تدخل إلى Linux؟.png"
+ },
+ {
+  "id": "s9-06",
+  "section": "s9",
+  "src": "assets/lecons/s9-06.webp",
+  "thumb": "assets/lecons/thumbs/s9-06.webp",
+  "title": "كيف يفهم Linux ما تكتبه له؟",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/كيف يفهم Linux ما تكتبه له؟.png"
+ },
+ {
+  "id": "s9-07",
+  "section": "s9",
+  "src": "assets/lecons/s9-07.webp",
+  "thumb": "assets/lecons/thumbs/s9-07.webp",
+  "title": "كيف نقسّم أي أمر؟",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/كيف نقسّم أي أمر؟.png"
+ },
+ {
+  "id": "s9-08",
+  "section": "s9",
+  "src": "assets/lecons/s9-08.webp",
+  "thumb": "assets/lecons/thumbs/s9-08.webp",
+  "title": "أين الخيار وأين المعامل؟",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/أين الخيار وأين المعامل؟.png"
+ },
+ {
+  "id": "s9-09",
+  "section": "s9",
+  "src": "assets/lecons/s9-09.webp",
+  "thumb": "assets/lecons/thumbs/s9-09.webp",
+  "title": "ثلاث قواعد عند كتابة الأمر",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/ثلاث قواعد عند كتابة الأمر.png"
+ },
+ {
+  "id": "s9-10",
+  "section": "s9",
+  "src": "assets/lecons/s9-10.webp",
+  "thumb": "assets/lecons/thumbs/s9-10.webp",
+  "title": "ما هو الأمر (Commande) في Linux؟",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/ما هو الأمر (Commande) في Linux؟.png"
+ },
+ {
+  "id": "s9-11",
+  "section": "s9",
+  "src": "assets/lecons/s9-11.webp",
+  "thumb": "assets/lecons/thumbs/s9-11.webp",
+  "title": "ثلاث طبقات في Linux",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/ثلاث طبقات في Linux.png"
+ },
+ {
+  "id": "s9-12",
+  "section": "s9",
+  "src": "assets/lecons/s9-12.webp",
+  "thumb": "assets/lecons/thumbs/s9-12.webp",
+  "title": "جلسات متعددة وهويتك",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/جلسات متعددة وهويتك.png"
+ },
+ {
+  "id": "s9-13",
+  "section": "s9",
+  "src": "assets/lecons/s9-13.webp",
+  "thumb": "assets/lecons/thumbs/s9-13.webp",
+  "title": "ثلاثة اختصارات لا غنى عنها",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/ثلاثة اختصارات لا غنى عنها.png"
+ },
+ {
+  "id": "s9-14",
+  "section": "s9",
+  "src": "assets/lecons/s9-14.webp",
+  "thumb": "assets/lecons/thumbs/s9-14.webp",
+  "title": "كيف تختصر كتابة أسماء الملفات؟",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/كيف تختصر كتابة أسماء الملفات؟.png"
+ },
+ {
+  "id": "s9-15",
+  "section": "s9",
+  "src": "assets/lecons/s9-15.webp",
+  "thumb": "assets/lecons/thumbs/s9-15.webp",
+  "title": "ماذا تعني الرموز $ و # في موجّه الأوامر؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/ماذا تعني الرموز $ و # في موجّه الأوامر؟.png"
+ },
+ {
+  "id": "s10-01",
+  "section": "s10",
+  "src": "assets/lecons/s10-01.webp",
+  "thumb": "assets/lecons/thumbs/s10-01.webp",
+  "title": "الشجرة (Arborescence)",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/الشجرة (Arborescence).png"
+ },
+ {
+  "id": "s10-02",
+  "section": "s10",
+  "src": "assets/lecons/s10-02.webp",
+  "thumb": "assets/lecons/thumbs/s10-02.webp",
+  "title": "الملف (Fichier) وجذر الشجرة",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/الملف (Fichier) وجذر الشجرة.png"
+ },
+ {
+  "id": "s10-03",
+  "section": "s10",
+  "src": "assets/lecons/s10-03.webp",
+  "thumb": "assets/lecons/thumbs/s10-03.webp",
+  "title": "المسار (Chemin) والمسار المطلق",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/المسار (Chemin) والمسار المطلق.png"
+ },
+ {
+  "id": "s10-04",
+  "section": "s10",
+  "src": "assets/lecons/s10-04.webp",
+  "thumb": "assets/lecons/thumbs/s10-04.webp",
+  "title": "المسار النسبي (Chemin relatif)",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/المسار النسبي (Chemin relatif).png"
+ },
+ {
+  "id": "s10-05",
+  "section": "s10",
+  "src": "assets/lecons/s10-05.webp",
+  "thumb": "assets/lecons/thumbs/s10-05.webp",
+  "title": "الصعود بـ .. في المسار النسبي",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/الصعود بـ .. في المسار النسبي.png"
+ },
+ {
+  "id": "s10-06",
+  "section": "s10",
+  "src": "assets/lecons/s10-06.webp",
+  "thumb": "assets/lecons/thumbs/s10-06.webp",
+  "title": "الرمز ~ بالتفصيل",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/الرمز ~ بالتفصيل.png"
+ },
+ {
+  "id": "s10-07",
+  "section": "s10",
+  "src": "assets/lecons/s10-07.webp",
+  "thumb": "assets/lecons/thumbs/s10-07.webp",
+  "title": "أين أنا؟ وإلى أين أذهب؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/أين أنا؟ وإلى أين أذهب؟.png"
+ },
+ {
+  "id": "s10-08",
+  "section": "s10",
+  "src": "assets/lecons/s10-08.webp",
+  "thumb": "assets/lecons/thumbs/s10-08.webp",
+  "title": "الرموز الأربعة الخاصة",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/الرموز الأربعة الخاصة.png"
+ },
+ {
+  "id": "s10-09",
+  "section": "s10",
+  "src": "assets/lecons/s10-09.webp",
+  "thumb": "assets/lecons/thumbs/s10-09.webp",
+  "title": "الخريطة التي يجب أن تبقى في ذهنك",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/الخريطة التي يجب أن تبقى في ذهنك.png"
+ },
+ {
+  "id": "s10-10",
+  "section": "s10",
+  "src": "assets/lecons/s10-10.webp",
+  "thumb": "assets/lecons/thumbs/s10-10.webp",
+  "title": "أهم المجلدات ما يجب حفظه",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/أهم المجلدات ما يجب حفظه.png"
+ },
+ {
+  "id": "s10-11",
+  "section": "s10",
+  "src": "assets/lecons/s10-11.webp",
+  "thumb": "assets/lecons/thumbs/s10-11.webp",
+  "title": "بقية المجلدات في الشجرة",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/بقية المجلدات في الشجرة.png"
+ },
+ {
+  "id": "s10-12",
+  "section": "s10",
+  "src": "assets/lecons/s10-12.webp",
+  "thumb": "assets/lecons/thumbs/s10-12.webp",
+  "title": "إنشاء المجلدات mkdir",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/إنشاء المجلدات mkdir.png"
+ },
+ {
+  "id": "s10-13",
+  "section": "s10",
+  "src": "assets/lecons/s10-13.webp",
+  "thumb": "assets/lecons/thumbs/s10-13.webp",
+  "title": "حذف المجلدات",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/حذف المجلدات.png"
+ },
+ {
+  "id": "s10-14",
+  "section": "s10",
+  "src": "assets/lecons/s10-14.webp",
+  "thumb": "assets/lecons/thumbs/s10-14.webp",
+  "title": "أمثلة تثبّت الفكرة",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/أمثلة تثبّت الفكرة.png"
+ },
+ {
+  "id": "s11-01",
+  "section": "s11",
+  "src": "assets/lecons/s11-01.webp",
+  "thumb": "assets/lecons/thumbs/s11-01.webp",
+  "title": "نظام الملفات (Système de fichiers)",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/نظام الملفات (Système de fichiers).png"
+ },
+ {
+  "id": "s11-02",
+  "section": "s11",
+  "src": "assets/lecons/s11-02.webp",
+  "thumb": "assets/lecons/thumbs/s11-02.webp",
+  "title": "كيف يعرف Linux مكان كل ملف بين آلاف الملفات؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/كيف يعرف Linux مكان كل ملف بين آلاف الملفات؟.png"
+ },
+ {
+  "id": "s11-03",
+  "section": "s11",
+  "src": "assets/lecons/s11-03.webp",
+  "thumb": "assets/lecons/thumbs/s11-03.webp",
+  "title": "أنواع الملفات في Linux",
+  "w": 900,
+  "h": 1167,
+  "source": "parti2/أنواع الملفات في Linux.png"
+ },
+ {
+  "id": "s11-04",
+  "section": "s11",
+  "src": "assets/lecons/s11-04.webp",
+  "thumb": "assets/lecons/thumbs/s11-04.webp",
+  "title": "ما هو الـ i-node؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/ما هو الـ i-node؟.png"
+ },
+ {
+  "id": "s11-05",
+  "section": "s11",
+  "src": "assets/lecons/s11-05.webp",
+  "thumb": "assets/lecons/thumbs/s11-05.webp",
+  "title": "كيف أرى رقم الـ i-node؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/كيف أرى رقم الـ i-node؟.png"
+ },
+ {
+  "id": "s11-06",
+  "section": "s11",
+  "src": "assets/lecons/s11-06.webp",
+  "thumb": "assets/lecons/thumbs/s11-06.webp",
+  "title": "كيف يعرف لينكس ملفك؟ بالاسم… أم برقم خفي؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/كيف يعرف لينكس ملفك؟ بالاسم… أم برقم خفي؟.png"
+ },
+ {
+  "id": "s11-07",
+  "section": "s11",
+  "src": "assets/lecons/s11-07.webp",
+  "thumb": "assets/lecons/thumbs/s11-07.webp",
+  "title": "النظام يعرف الملف برقمه لا باسمه",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/النظام يعرف الملف برقمه لا باسمه.png"
+ },
+ {
+  "id": "s11-08",
+  "section": "s11",
+  "src": "assets/lecons/s11-08.webp",
+  "thumb": "assets/lecons/thumbs/s11-08.webp",
+  "title": "ثلاثة أنواع رئيسية للملفات في Unix",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/ثلاثة أنواع رئيسية للملفات في Unix.png"
+ },
+ {
+  "id": "s11-09",
+  "section": "s11",
+  "src": "assets/lecons/s11-09.webp",
+  "thumb": "assets/lecons/thumbs/s11-09.webp",
+  "title": "رموز أنواع الملفات",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/رموز أنواع الملفات.png"
+ },
+ {
+  "id": "s12-01",
+  "section": "s12",
+  "src": "assets/lecons/s12-01.webp",
+  "thumb": "assets/lecons/thumbs/s12-01.webp",
+  "title": "خريطة الأوامر في نظرة واحدة",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/خريطة الأوامر في نظرة واحدة.png"
+ },
+ {
+  "id": "s12-02",
+  "section": "s12",
+  "src": "assets/lecons/s12-02.webp",
+  "thumb": "assets/lecons/thumbs/s12-02.webp",
+  "title": "الأمر ls ماذا يوجد هنا؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/الأمر ls ماذا يوجد هنا؟.png"
+ },
+ {
+  "id": "s12-03",
+  "section": "s12",
+  "src": "assets/lecons/s12-03.webp",
+  "thumb": "assets/lecons/thumbs/s12-03.webp",
+  "title": "الأمر cp نسخ دون المساس بالأصل",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/الأمر cp نسخ دون المساس بالأصل.png"
+ },
+ {
+  "id": "s12-04",
+  "section": "s12",
+  "src": "assets/lecons/s12-04.webp",
+  "thumb": "assets/lecons/thumbs/s12-04.webp",
+  "title": "نسخ شجرة كاملة cp -r",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/نسخ شجرة كاملة cp -r.png"
+ },
+ {
+  "id": "s12-05",
+  "section": "s12",
+  "src": "assets/lecons/s12-05.webp",
+  "thumb": "assets/lecons/thumbs/s12-05.webp",
+  "title": "الأمر mv نقل أو إعادة تسمية",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/الأمر mv نقل أو إعادة تسمية.png"
+ },
+ {
+  "id": "s12-06",
+  "section": "s12",
+  "src": "assets/lecons/s12-06.webp",
+  "thumb": "assets/lecons/thumbs/s12-06.webp",
+  "title": "الفرق بين cp و mv",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/الفرق بين cp و mv.png"
+ },
+ {
+  "id": "s12-07",
+  "section": "s12",
+  "src": "assets/lecons/s12-07.webp",
+  "thumb": "assets/lecons/thumbs/s12-07.webp",
+  "title": "تحذير قد تُكتب فوق ملف موجود",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/تحذير قد تُكتب فوق ملف موجود.png"
+ },
+ {
+  "id": "s12-08",
+  "section": "s12",
+  "src": "assets/lecons/s12-08.webp",
+  "thumb": "assets/lecons/thumbs/s12-08.webp",
+  "title": "لا تخلط touch أم mkdir",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/لا تخلط touch أم mkdir.png"
+ },
+ {
+  "id": "s12-09",
+  "section": "s12",
+  "src": "assets/lecons/s12-09.webp",
+  "thumb": "assets/lecons/thumbs/s12-09.webp",
+  "title": "أوامر التعامل مع الملفات",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/أوامر التعامل مع الملفات.png"
+ },
+ {
+  "id": "s12-10",
+  "section": "s12",
+  "src": "assets/lecons/s12-10.webp",
+  "thumb": "assets/lecons/thumbs/s12-10.webp",
+  "title": "الأمر du كم تحتل هذه الشجرة؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti3/الأمر du كم تحتل هذه الشجرة؟.png"
+ },
+ {
+  "id": "s13-01",
+  "section": "s13",
+  "src": "assets/lecons/s13-01.webp",
+  "thumb": "assets/lecons/thumbs/s13-01.webp",
+  "title": "الروابط (Les liens) نوعان",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/الروابط (Les liens) نوعان.png"
+ },
+ {
+  "id": "s13-02",
+  "section": "s13",
+  "src": "assets/lecons/s13-02.webp",
+  "thumb": "assets/lecons/thumbs/s13-02.webp",
+  "title": "الرابط الصلب اسمان ومعهما inode واحد",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/الرابط الصلب اسمان ومعهما inode واحد.png"
+ },
+ {
+  "id": "s13-03",
+  "section": "s13",
+  "src": "assets/lecons/s13-03.webp",
+  "thumb": "assets/lecons/thumbs/s13-03.webp",
+  "title": "الرابط الرمزي ملف مستقل يحمل مسارًا",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/الرابط الرمزي ملف مستقل يحمل مسارًا.png"
+ },
+ {
+  "id": "s13-04",
+  "section": "s13",
+  "src": "assets/lecons/s13-04.webp",
+  "thumb": "assets/lecons/thumbs/s13-04.webp",
+  "title": "مرونة الرابط الرمزي وطريقة إنشائه",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/مرونة الرابط الرمزي وطريقة إنشائه.png"
+ },
+ {
+  "id": "s13-05",
+  "section": "s13",
+  "src": "assets/lecons/s13-05.webp",
+  "thumb": "assets/lecons/thumbs/s13-05.webp",
+  "title": "حدود الرابط الصلب",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/حدود الرابط الصلب.png"
+ },
+ {
+  "id": "s13-06",
+  "section": "s13",
+  "src": "assets/lecons/s13-06.webp",
+  "thumb": "assets/lecons/thumbs/s13-06.webp",
+  "title": "المقارنة التي يجب أن تحفظها",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/المقارنة التي يجب أن تحفظها.png"
+ },
+ {
+  "id": "s13-07",
+  "section": "s13",
+  "src": "assets/lecons/s13-07.webp",
+  "thumb": "assets/lecons/thumbs/s13-07.webp",
+  "title": "ماذا يحدث عند حذف أحد الاسمين؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/ماذا يحدث عند حذف أحد الاسمين؟.jpg"
+ },
+ {
+  "id": "s13-08",
+  "section": "s13",
+  "src": "assets/lecons/s13-08.webp",
+  "thumb": "assets/lecons/thumbs/s13-08.webp",
+  "title": "هل يمكن أن يكون للملف الواحد أكثر من اسم؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/هل يمكن أن يكون للملف الواحد أكثر من اسم؟.png"
+ },
+ {
+  "id": "s14-01",
+  "section": "s14",
+  "src": "assets/lecons/s14-01.webp",
+  "thumb": "assets/lecons/thumbs/s14-01.webp",
+  "title": "الأمران cat و more عرض محتوى الملف",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الأمران cat و more عرض محتوى الملف.png"
+ },
+ {
+  "id": "s14-02",
+  "section": "s14",
+  "src": "assets/lecons/s14-02.webp",
+  "thumb": "assets/lecons/thumbs/s14-02.webp",
+  "title": "الأمر head بداية الملف",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الأمر head بداية الملف.png"
+ },
+ {
+  "id": "s14-03",
+  "section": "s14",
+  "src": "assets/lecons/s14-03.webp",
+  "thumb": "assets/lecons/thumbs/s14-03.webp",
+  "title": "الأمر tail نهاية الملف",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الأمر tail نهاية الملف.png"
+ },
+ {
+  "id": "s14-04",
+  "section": "s14",
+  "src": "assets/lecons/s14-04.webp",
+  "thumb": "assets/lecons/thumbs/s14-04.webp",
+  "title": "الأمر sort ترتيب الأسطر",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الأمر sort ترتيب الأسطر.png"
+ },
+ {
+  "id": "s14-05",
+  "section": "s14",
+  "src": "assets/lecons/s14-05.webp",
+  "thumb": "assets/lecons/thumbs/s14-05.webp",
+  "title": "الأمر wc العدّ والإحصاء",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الأمر wc العدّ والإحصاء.png"
+ },
+ {
+  "id": "s14-06",
+  "section": "s14",
+  "src": "assets/lecons/s14-06.webp",
+  "thumb": "assets/lecons/thumbs/s14-06.webp",
+  "title": "الأمر cut استخراج جزء من كل سطر",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الأمر cut استخراج جزء من كل سطر.png"
+ },
+ {
+  "id": "s14-07",
+  "section": "s14",
+  "src": "assets/lecons/s14-07.webp",
+  "thumb": "assets/lecons/thumbs/s14-07.webp",
+  "title": "تطبيقات على cut",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/تطبيقات على cut.png"
+ },
+ {
+  "id": "s14-08",
+  "section": "s14",
+  "src": "assets/lecons/s14-08.webp",
+  "thumb": "assets/lecons/thumbs/s14-08.webp",
+  "title": "الأمر paste دمج الأسطر",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الأمر paste دمج الأسطر.png"
+ },
+ {
+  "id": "s14-09",
+  "section": "s14",
+  "src": "assets/lecons/s14-09.webp",
+  "thumb": "assets/lecons/thumbs/s14-09.webp",
+  "title": "الأمر tr تحويل الأحرف",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الأمر tr تحويل الأحرف.png"
+ },
+ {
+  "id": "s14-10",
+  "section": "s14",
+  "src": "assets/lecons/s14-10.webp",
+  "thumb": "assets/lecons/thumbs/s14-10.webp",
+  "title": "الأمر diff مقارنة ملفين",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الأمر diff مقارنة ملفين.png"
+ },
+ {
+  "id": "s14-11",
+  "section": "s14",
+  "src": "assets/lecons/s14-11.webp",
+  "thumb": "assets/lecons/thumbs/s14-11.webp",
+  "title": "الأمر echo عرض نص على الشاشة",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الأمر echo عرض نص على الشاشة.png"
+ },
+ {
+  "id": "s14-12",
+  "section": "s14",
+  "src": "assets/lecons/s14-12.webp",
+  "thumb": "assets/lecons/thumbs/s14-12.webp",
+  "title": "أي أمر يعرض الملف؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/أي أمر يعرض الملف؟.png"
+ },
+ {
+  "id": "s14-13",
+  "section": "s14",
+  "src": "assets/lecons/s14-13.webp",
+  "thumb": "assets/lecons/thumbs/s14-13.webp",
+  "title": "لا تخلط بين هذه الأوامر",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/لا تخلط بين هذه الأوامر.png"
+ },
+ {
+  "id": "s14-14",
+  "section": "s14",
+  "src": "assets/lecons/s14-14.webp",
+  "thumb": "assets/lecons/thumbs/s14-14.webp",
+  "title": "الخلاصة للحفظ",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الخلاصة للحفظ.png"
+ },
+ {
+  "id": "s15-01",
+  "section": "s15",
+  "src": "assets/lecons/s15-01.webp",
+  "thumb": "assets/lecons/thumbs/s15-01.webp",
+  "title": "الأمر which أين يوجد الأمر؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الأمر which أين يوجد الأمر؟.png"
+ },
+ {
+  "id": "s15-02",
+  "section": "s15",
+  "src": "assets/lecons/s15-02.webp",
+  "thumb": "assets/lecons/thumbs/s15-02.webp",
+  "title": "الأمر uname معلومات النظام والجهاز",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/الأمر uname معلومات النظام والجهاز.png"
+ },
+ {
+  "id": "s15-03",
+  "section": "s15",
+  "src": "assets/lecons/s15-03.webp",
+  "thumb": "assets/lecons/thumbs/s15-03.webp",
+  "title": "su و sudo ما الفرق؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/su و sudo ما الفرق؟.png"
+ },
+ {
+  "id": "s15-04",
+  "section": "s15",
+  "src": "assets/lecons/s15-04.webp",
+  "thumb": "assets/lecons/thumbs/s15-04.webp",
+  "title": "reboot و shutdown إعادة التشغيل أم إيقاف التشغيل؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti5/reboot و shutdown إعادة التشغيل أم إيقاف التشغيل؟.png"
+ },
+ {
+  "id": "s16-01",
+  "section": "s16",
+  "src": "assets/lecons/s16-01.webp",
+  "thumb": "assets/lecons/thumbs/s16-01.webp",
+  "title": "كيف تعثر على سطر واحد وسط آلاف الأسطر",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/01 - كيف تعثر على سطر واحد وسط آلاف الأسطر.jpg"
+ },
+ {
+  "id": "s16-02",
+  "section": "s16",
+  "src": "assets/lecons/s16-02.webp",
+  "thumb": "assets/lecons/thumbs/s16-02.webp",
+  "title": "ما هو التعبير النمطي",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/02 - ما هو التعبير النمطي.jpg"
+ },
+ {
+  "id": "s16-03",
+  "section": "s16",
+  "src": "assets/lecons/s16-03.webp",
+  "thumb": "assets/lecons/thumbs/s16-03.webp",
+  "title": "رموز أساسية في الأنماط",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/03 - رموز أساسية في الأنماط.jpg"
+ },
+ {
+  "id": "s16-04",
+  "section": "s16",
+  "src": "assets/lecons/s16-04.webp",
+  "thumb": "assets/lecons/thumbs/s16-04.webp",
+  "title": "المجالات في أنماط أسماء الملفات",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/04 - المجالات في أنماط أسماء الملفات.jpg"
+ },
+ {
+  "id": "s16-05",
+  "section": "s16",
+  "src": "assets/lecons/s16-05.webp",
+  "thumb": "assets/lecons/thumbs/s16-05.webp",
+  "title": "بداية السطر ونهايته",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/05 - بداية السطر ونهايته.jpg"
+ },
+ {
+  "id": "s16-06",
+  "section": "s16",
+  "src": "assets/lecons/s16-06.webp",
+  "thumb": "assets/lecons/thumbs/s16-06.webp",
+  "title": "فخ مهم - موضع الرمز ^",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/06 - فخ مهم - موضع الرمز ^.jpg"
+ },
+ {
+  "id": "s16-07",
+  "section": "s16",
+  "src": "assets/lecons/s16-07.webp",
+  "thumb": "assets/lecons/thumbs/s16-07.webp",
+  "title": "التكرار (Répétitions)",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/07 - التكرار (Répétitions).jpg"
+ },
+ {
+  "id": "s16-08",
+  "section": "s16",
+  "src": "assets/lecons/s16-08.webp",
+  "thumb": "assets/lecons/thumbs/s16-08.webp",
+  "title": "مثال - رمز دائم (Code permanent)",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/08 - مثال - رمز دائم (Code permanent).jpg"
+ },
+ {
+  "id": "s16-09",
+  "section": "s16",
+  "src": "assets/lecons/s16-09.webp",
+  "thumb": "assets/lecons/thumbs/s16-09.webp",
+  "title": "الاختيار بين عدة أنماط",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/09 - الاختيار بين عدة أنماط.jpg"
+ },
+ {
+  "id": "s16-10",
+  "section": "s16",
+  "src": "assets/lecons/s16-10.webp",
+  "thumb": "assets/lecons/thumbs/s16-10.webp",
+  "title": "تفكيك تعبير عنوان IP",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/10 - تفكيك تعبير عنوان IP.jpg"
+ },
+ {
+  "id": "s17-01",
+  "section": "s17",
+  "src": "assets/lecons/s17-01.webp",
+  "thumb": "assets/lecons/thumbs/s17-01.webp",
+  "title": "خريطة خيارات find",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/خريطة خيارات find.png"
+ },
+ {
+  "id": "s17-02",
+  "section": "s17",
+  "src": "assets/lecons/s17-02.webp",
+  "thumb": "assets/lecons/thumbs/s17-02.webp",
+  "title": "الأمر find من أين نبدأ البحث؟",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/الأمر find من أين نبدأ البحث؟.png"
+ },
+ {
+  "id": "s17-03",
+  "section": "s17",
+  "src": "assets/lecons/s17-03.webp",
+  "thumb": "assets/lecons/thumbs/s17-03.webp",
+  "title": "البحث بالاسم -name و -iname",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/البحث بالاسم -name و -iname.png"
+ },
+ {
+  "id": "s17-04",
+  "section": "s17",
+  "src": "assets/lecons/s17-04.webp",
+  "thumb": "assets/lecons/thumbs/s17-04.webp",
+  "title": "البحث بالتاريخ -atime و -mtime",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/البحث بالتاريخ -atime و -mtime.png"
+ },
+ {
+  "id": "s17-05",
+  "section": "s17",
+  "src": "assets/lecons/s17-05.webp",
+  "thumb": "assets/lecons/thumbs/s17-05.webp",
+  "title": "البحث حسب المالك والمجموعة",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/البحث حسب المالك والمجموعة.png"
+ },
+ {
+  "id": "s17-06",
+  "section": "s17",
+  "src": "assets/lecons/s17-06.webp",
+  "thumb": "assets/lecons/thumbs/s17-06.webp",
+  "title": "الأمر locate البحث بالاسم",
+  "w": 900,
+  "h": 1167,
+  "source": "parti4/الأمر locate البحث بالاسم.png"
+ },
+ {
+  "id": "s17-07",
+  "section": "s17",
+  "src": "assets/lecons/s17-07.webp",
+  "thumb": "assets/lecons/thumbs/s17-07.webp",
+  "title": "الأمر grep",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/11 - الأمر grep.jpg"
+ },
+ {
+  "id": "s17-08",
+  "section": "s17",
+  "src": "assets/lecons/s17-08.webp",
+  "thumb": "assets/lecons/thumbs/s17-08.webp",
+  "title": "find أم grep",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/12 - find أم grep.jpg"
+ },
+ {
+  "id": "s17-09",
+  "section": "s17",
+  "src": "assets/lecons/s17-09.webp",
+  "thumb": "assets/lecons/thumbs/s17-09.webp",
+  "title": "المعاملات المنطقية في find",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/13 - المعاملات المنطقية في find.jpg"
+ },
+ {
+  "id": "s17-10",
+  "section": "s17",
+  "src": "assets/lecons/s17-10.webp",
+  "thumb": "assets/lecons/thumbs/s17-10.webp",
+  "title": "أمثلة على المعاملات المنطقية",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/14 - أمثلة على المعاملات المنطقية.jpg"
+ },
+ {
+  "id": "s17-11",
+  "section": "s17",
+  "src": "assets/lecons/s17-11.webp",
+  "thumb": "assets/lecons/thumbs/s17-11.webp",
+  "title": "لماذا نستعمل ( و )",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/15 - لماذا نستعمل ( و ).jpg"
+ },
+ {
+  "id": "s17-12",
+  "section": "s17",
+  "src": "assets/lecons/s17-12.webp",
+  "thumb": "assets/lecons/thumbs/s17-12.webp",
+  "title": "معايير find الأكثر استعمالاً",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/16 - معايير find الأكثر استعمالاً.jpg"
+ },
+ {
+  "id": "s17-13",
+  "section": "s17",
+  "src": "assets/lecons/s17-13.webp",
+  "thumb": "assets/lecons/thumbs/s17-13.webp",
+  "title": "الملف etc-passwd وأمر cut",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/17 - الملف etc-passwd وأمر cut.jpg"
+ },
+ {
+  "id": "s17-14",
+  "section": "s17",
+  "src": "assets/lecons/s17-14.webp",
+  "thumb": "assets/lecons/thumbs/s17-14.webp",
+  "title": "البحث داخل مجلد كامل - grep -r",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/18 - البحث داخل مجلد كامل - grep -r.jpg"
+ },
+ {
+  "id": "s17-15",
+  "section": "s17",
+  "src": "assets/lecons/s17-15.webp",
+  "thumb": "assets/lecons/thumbs/s17-15.webp",
+  "title": "أوامر مساعدة مهمة",
+  "w": 900,
+  "h": 1167,
+  "source": "parti6/19 - أوامر مساعدة مهمة.jpg"
+ },
+ {
+  "id": "s18-01",
+  "section": "s18",
+  "src": "assets/lecons/s18-01.webp",
+  "thumb": "assets/lecons/thumbs/s18-01.webp",
+  "title": "alias - التعريف والفائدة والصيغة",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/02 - alias - التعريف والفائدة والصيغة.jpg"
+ },
+ {
+  "id": "s18-02",
+  "section": "s18",
+  "src": "assets/lecons/s18-02.webp",
+  "thumb": "assets/lecons/thumbs/s18-02.webp",
+  "title": "alias - الاستعمال وعرض القائمة والملف .profile",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/03 - alias - الاستعمال وعرض القائمة والملف .profile.jpg"
+ },
+ {
+  "id": "s18-03",
+  "section": "s18",
+  "src": "assets/lecons/s18-03.webp",
+  "thumb": "assets/lecons/thumbs/s18-03.webp",
+  "title": "الفاصل && (AND)",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/04 - الفاصل && (AND).jpg"
+ },
+ {
+  "id": "s18-04",
+  "section": "s18",
+  "src": "assets/lecons/s18-04.webp",
+  "thumb": "assets/lecons/thumbs/s18-04.webp",
+  "title": "الفاصل OR مع ملخص الفرق بينهما",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/05 - الفاصل OR مع ملخص الفرق بينهما.jpg"
+ },
+ {
+  "id": "s18-05",
+  "section": "s18",
+  "src": "assets/lecons/s18-05.webp",
+  "thumb": "assets/lecons/thumbs/s18-05.webp",
+  "title": "القنوات القياسية stdin وstdout وstderr",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/06 - القنوات القياسية stdin وstdout وstderr.jpg"
+ },
+ {
+  "id": "s18-06",
+  "section": "s18",
+  "src": "assets/lecons/s18-06.webp",
+  "thumb": "assets/lecons/thumbs/s18-06.webp",
+  "title": "توجيه المدخلات",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/07 - توجيه المدخلات.jpg"
+ },
+ {
+  "id": "s18-07",
+  "section": "s18",
+  "src": "assets/lecons/s18-07.webp",
+  "thumb": "assets/lecons/thumbs/s18-07.webp",
+  "title": "توجيه المخرجات",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/08 - توجيه المخرجات.jpg"
+ },
+ {
+  "id": "s18-08",
+  "section": "s18",
+  "src": "assets/lecons/s18-08.webp",
+  "thumb": "assets/lecons/thumbs/s18-08.webp",
+  "title": "الفرق بين رمزي التوجيه",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/09 - الفرق بين رمزي التوجيه.jpg"
+ },
+ {
+  "id": "s18-09",
+  "section": "s18",
+  "src": "assets/lecons/s18-09.webp",
+  "thumb": "assets/lecons/thumbs/s18-09.webp",
+  "title": "المدخل والمخرج معا - sort",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/10 - المدخل والمخرج معا - sort.jpg"
+ },
+ {
+  "id": "s18-10",
+  "section": "s18",
+  "src": "assets/lecons/s18-10.webp",
+  "thumb": "assets/lecons/thumbs/s18-10.webp",
+  "title": "دمج ملفين - cat",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/11 - دمج ملفين - cat.jpg"
+ },
+ {
+  "id": "s18-11",
+  "section": "s18",
+  "src": "assets/lecons/s18-11.webp",
+  "thumb": "assets/lecons/thumbs/s18-11.webp",
+  "title": "توجيه الأخطاء 2",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/12 - توجيه الأخطاء 2.jpg"
+ },
+ {
+  "id": "s18-12",
+  "section": "s18",
+  "src": "assets/lecons/s18-12.webp",
+  "thumb": "assets/lecons/thumbs/s18-12.webp",
+  "title": "فصل النتائج عن الأخطاء",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/13 - فصل النتائج عن الأخطاء.jpg"
+ },
+ {
+  "id": "s18-13",
+  "section": "s18",
+  "src": "assets/lecons/s18-13.webp",
+  "thumb": "assets/lecons/thumbs/s18-13.webp",
+  "title": "ملف واحد أم ملفان - &",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/14 - ملف واحد أم ملفان - &.jpg"
+ },
+ {
+  "id": "s18-14",
+  "section": "s18",
+  "src": "assets/lecons/s18-14.webp",
+  "thumb": "assets/lecons/thumbs/s18-14.webp",
+  "title": "الأنبوب (Pipe)",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/15 - الأنبوب (Pipe).jpg"
+ },
+ {
+  "id": "s18-15",
+  "section": "s18",
+  "src": "assets/lecons/s18-15.webp",
+  "thumb": "assets/lecons/thumbs/s18-15.webp",
+  "title": "مثال ls -l wc",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/16 - مثال ls -l wc.jpg"
+ },
+ {
+  "id": "s18-16",
+  "section": "s18",
+  "src": "assets/lecons/s18-16.webp",
+  "thumb": "assets/lecons/thumbs/s18-16.webp",
+  "title": "الأنبوب مع التوجيه ومع أنابيب متعددة",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/17 - الأنبوب مع التوجيه ومع أنابيب متعددة.jpg"
+ },
+ {
+  "id": "s18-17",
+  "section": "s18",
+  "src": "assets/lecons/s18-17.webp",
+  "thumb": "assets/lecons/thumbs/s18-17.webp",
+  "title": "الفرق بين الفواصل والأنبوب",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/18 - الفرق بين الفواصل والأنبوب.jpg"
+ },
+ {
+  "id": "s18-18",
+  "section": "s18",
+  "src": "assets/lecons/s18-18.webp",
+  "thumb": "assets/lecons/thumbs/s18-18.webp",
+  "title": "الخلاصة",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI7/19 - الخلاصة.jpg"
+ },
+ {
+  "id": "s19-01",
+  "section": "s19",
+  "src": "assets/lecons/s19-01.webp",
+  "thumb": "assets/lecons/thumbs/s19-01.webp",
+  "title": "من يقدر على ملفاتك في Linux",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/01 - من يقدر على ملفاتك في Linux.jpg"
+ },
+ {
+  "id": "s19-02",
+  "section": "s19",
+  "src": "assets/lecons/s19-02.webp",
+  "thumb": "assets/lecons/thumbs/s19-02.webp",
+  "title": "Linux نظام متعدد المستخدمين",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/02 - Linux نظام متعدد المستخدمين.jpg"
+ },
+ {
+  "id": "s19-03",
+  "section": "s19",
+  "src": "assets/lecons/s19-03.webp",
+  "thumb": "assets/lecons/thumbs/s19-03.webp",
+  "title": "كيفاش Linux كيعرف كل مستخدم",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/03 - كيفاش Linux كيعرف كل مستخدم.jpg"
+ },
+ {
+  "id": "s19-04",
+  "section": "s19",
+  "src": "assets/lecons/s19-04.webp",
+  "thumb": "assets/lecons/thumbs/s19-04.webp",
+  "title": "ملفان مهمان - etc-passwd و etc-group",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/04 - ملفان مهمان - etc-passwd و etc-group.jpg"
+ },
+ {
+  "id": "s20-01",
+  "section": "s20",
+  "src": "assets/lecons/s20-01.webp",
+  "thumb": "assets/lecons/thumbs/s20-01.webp",
+  "title": "ثلاث فئات - u و g و o",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/05 - ثلاث فئات - u و g و o.jpg"
+ },
+ {
+  "id": "s20-02",
+  "section": "s20",
+  "src": "assets/lecons/s20-02.webp",
+  "thumb": "assets/lecons/thumbs/s20-02.webp",
+  "title": "ثلاثة حقوق أساسية - r و w و x",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/06 - ثلاثة حقوق أساسية - r و w و x.jpg"
+ },
+ {
+  "id": "s20-03",
+  "section": "s20",
+  "src": "assets/lecons/s20-03.webp",
+  "thumb": "assets/lecons/thumbs/s20-03.webp",
+  "title": "نفس الحق.. معنى مختلف بين الملف والمجلد",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/07 - نفس الحق.. معنى مختلف بين الملف والمجلد.jpg"
+ },
+ {
+  "id": "s20-04",
+  "section": "s20",
+  "src": "assets/lecons/s20-04.webp",
+  "thumb": "assets/lecons/thumbs/s20-04.webp",
+  "title": "كيفاش تقرا rwxr-xr-x",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/08 - كيفاش تقرا rwxr-xr-x.jpg"
+ },
+ {
+  "id": "s20-05",
+  "section": "s20",
+  "src": "assets/lecons/s20-05.webp",
+  "thumb": "assets/lecons/thumbs/s20-05.webp",
+  "title": "الأمر ls -l",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/09 - الأمر ls -l.jpg"
+ },
+ {
+  "id": "s20-06",
+  "section": "s20",
+  "src": "assets/lecons/s20-06.webp",
+  "thumb": "assets/lecons/thumbs/s20-06.webp",
+  "title": "الأمر chmod (الرمزي)",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/10 - الأمر chmod (الرمزي).jpg"
+ },
+ {
+  "id": "s20-07",
+  "section": "s20",
+  "src": "assets/lecons/s20-07.webp",
+  "thumb": "assets/lecons/thumbs/s20-07.webp",
+  "title": "أمثلة على chmod الرمزي",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/11 - أمثلة على chmod الرمزي.jpg"
+ },
+ {
+  "id": "s20-08",
+  "section": "s20",
+  "src": "assets/lecons/s20-08.webp",
+  "thumb": "assets/lecons/thumbs/s20-08.webp",
+  "title": "الفرق بين + و =",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/12 - الفرق بين + و =.jpg"
+ },
+ {
+  "id": "s20-09",
+  "section": "s20",
+  "src": "assets/lecons/s20-09.webp",
+  "thumb": "assets/lecons/thumbs/s20-09.webp",
+  "title": "عدة فئات في أمر واحد",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/13 - عدة فئات في أمر واحد.jpg"
+ },
+ {
+  "id": "s20-10",
+  "section": "s20",
+  "src": "assets/lecons/s20-10.webp",
+  "thumb": "assets/lecons/thumbs/s20-10.webp",
+  "title": "الحقوق بالأرقام (النظام الثماني)",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/14 - الحقوق بالأرقام (النظام الثماني).jpg"
+ },
+ {
+  "id": "s20-11",
+  "section": "s20",
+  "src": "assets/lecons/s20-11.webp",
+  "thumb": "assets/lecons/thumbs/s20-11.webp",
+  "title": "من الرمزي إلى الرقمي",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/15 - من الرمزي إلى الرقمي.jpg"
+ },
+ {
+  "id": "s20-12",
+  "section": "s20",
+  "src": "assets/lecons/s20-12.webp",
+  "thumb": "assets/lecons/thumbs/s20-12.webp",
+  "title": "كيفاش تقرا chmod 644 و 640",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/16 - كيفاش تقرا chmod 644 و 640.jpg"
+ },
+ {
+  "id": "s20-13",
+  "section": "s20",
+  "src": "assets/lecons/s20-13.webp",
+  "thumb": "assets/lecons/thumbs/s20-13.webp",
+  "title": "من الرقمي إلى الرمزي",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/17 - من الرقمي إلى الرمزي.jpg"
+ },
+ {
+  "id": "s20-14",
+  "section": "s20",
+  "src": "assets/lecons/s20-14.webp",
+  "thumb": "assets/lecons/thumbs/s20-14.webp",
+  "title": "نفس التغيير بطريقتين",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/18 - نفس التغيير بطريقتين.jpg"
+ },
+ {
+  "id": "s20-15",
+  "section": "s20",
+  "src": "assets/lecons/s20-15.webp",
+  "thumb": "assets/lecons/thumbs/s20-15.webp",
+  "title": "الخلاصة اللي خاصك تحفظها",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI8/19 - الخلاصة اللي خاصك تحفظها.jpg"
+ },
+ {
+  "id": "s21-01",
+  "section": "s21",
+  "src": "assets/lecons/s21-01.webp",
+  "thumb": "assets/lecons/thumbs/s21-01.webp",
+  "title": "من هو صاحب هذا الملف في Linux",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/01 - من هو صاحب هذا الملف في Linux.jpg"
+ },
+ {
+  "id": "s21-02",
+  "section": "s21",
+  "src": "assets/lecons/s21-02.webp",
+  "thumb": "assets/lecons/thumbs/s21-02.webp",
+  "title": "أربعة أوامر… وأربع وظائف مختلفة",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/02 - أربعة أوامر… وأربع وظائف مختلفة.jpg"
+ },
+ {
+  "id": "s21-03",
+  "section": "s21",
+  "src": "assets/lecons/s21-03.webp",
+  "thumb": "assets/lecons/thumbs/s21-03.webp",
+  "title": "كيف أعرف مالك الملف والمجموعة",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/03 - كيف أعرف مالك الملف والمجموعة.jpg"
+ },
+ {
+  "id": "s21-04",
+  "section": "s21",
+  "src": "assets/lecons/s21-04.webp",
+  "thumb": "assets/lecons/thumbs/s21-04.webp",
+  "title": "chown - يغيّر مالك الملف",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/04 - chown - يغيّر مالك الملف.jpg"
+ },
+ {
+  "id": "s21-05",
+  "section": "s21",
+  "src": "assets/lecons/s21-05.webp",
+  "thumb": "assets/lecons/thumbs/s21-05.webp",
+  "title": "عندما يرفض النظام… ما الحل",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/05 - عندما يرفض النظام… ما الحل.jpg"
+ },
+ {
+  "id": "s21-06",
+  "section": "s21",
+  "src": "assets/lecons/s21-06.webp",
+  "thumb": "assets/lecons/thumbs/s21-06.webp",
+  "title": "chgrp - يغيّر مجموعة الملف",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/06 - chgrp - يغيّر مجموعة الملف.jpg"
+ },
+ {
+  "id": "s21-07",
+  "section": "s21",
+  "src": "assets/lecons/s21-07.webp",
+  "thumb": "assets/lecons/thumbs/s21-07.webp",
+  "title": "umask - الصلاحيات الافتراضية",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/07 - umask - الصلاحيات الافتراضية.jpg"
+ },
+ {
+  "id": "s21-08",
+  "section": "s21",
+  "src": "assets/lecons/s21-08.webp",
+  "thumb": "assets/lecons/thumbs/s21-08.webp",
+  "title": "حساب umask مع الملفات",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/08 - حساب umask مع الملفات.jpg"
+ },
+ {
+  "id": "s21-09",
+  "section": "s21",
+  "src": "assets/lecons/s21-09.webp",
+  "thumb": "assets/lecons/thumbs/s21-09.webp",
+  "title": "حساب umask مع المجلدات",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/09 - حساب umask مع المجلدات.jpg"
+ },
+ {
+  "id": "s21-10",
+  "section": "s21",
+  "src": "assets/lecons/s21-10.webp",
+  "thumb": "assets/lecons/thumbs/s21-10.webp",
+  "title": "جدول الحفظ - umask",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/10 - جدول الحفظ - umask.jpg"
+ },
+ {
+  "id": "s22-01",
+  "section": "s22",
+  "src": "assets/lecons/s22-01.webp",
+  "thumb": "assets/lecons/thumbs/s22-01.webp",
+  "title": "كيف تغيّر كلمة المرور؟",
+  "w": 900,
+  "h": 1109,
+  "source": "parti1/كيف تغيّر كلمة المرور؟.png"
+ },
+ {
+  "id": "s22-02",
+  "section": "s22",
+  "src": "assets/lecons/s22-02.webp",
+  "thumb": "assets/lecons/thumbs/s22-02.webp",
+  "title": "root - المستخدم الأعلى صلاحية",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/11 - root - المستخدم الأعلى صلاحية.jpg"
+ },
+ {
+  "id": "s22-03",
+  "section": "s22",
+  "src": "assets/lecons/s22-03.webp",
+  "thumb": "assets/lecons/thumbs/s22-03.webp",
+  "title": "adduser - إنشاء مستخدم جديد",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/12 - adduser - إنشاء مستخدم جديد.jpg"
+ },
+ {
+  "id": "s22-04",
+  "section": "s22",
+  "src": "assets/lecons/s22-04.webp",
+  "thumb": "assets/lecons/thumbs/s22-04.webp",
+  "title": "passwd - تغيير mot de passe",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/13 - passwd - تغيير mot de passe.jpg"
+ },
+ {
+  "id": "s22-05",
+  "section": "s22",
+  "src": "assets/lecons/s22-05.webp",
+  "thumb": "assets/lecons/thumbs/s22-05.webp",
+  "title": "deluser - حذف المستخدم",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/14 - deluser - حذف المستخدم.jpg"
+ },
+ {
+  "id": "s22-06",
+  "section": "s22",
+  "src": "assets/lecons/s22-06.webp",
+  "thumb": "assets/lecons/thumbs/s22-06.webp",
+  "title": "المجموعات - addgroup و delgroup",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/15 - المجموعات - addgroup و delgroup.jpg"
+ },
+ {
+  "id": "s22-07",
+  "section": "s22",
+  "src": "assets/lecons/s22-07.webp",
+  "thumb": "assets/lecons/thumbs/s22-07.webp",
+  "title": "usermod - تعديل مستخدم موجود",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/16 - usermod - تعديل مستخدم موجود.jpg"
+ },
+ {
+  "id": "s22-08",
+  "section": "s22",
+  "src": "assets/lecons/s22-08.webp",
+  "thumb": "assets/lecons/thumbs/s22-08.webp",
+  "title": "الفخ المهم - -G مقابل -aG",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/17 - الفخ المهم - -G مقابل -aG.jpg"
+ },
+ {
+  "id": "s22-09",
+  "section": "s22",
+  "src": "assets/lecons/s22-09.webp",
+  "thumb": "assets/lecons/thumbs/s22-09.webp",
+  "title": "مثال كامل - حياة مستخدم في Linux",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/18 - مثال كامل - حياة مستخدم في Linux.jpg"
+ },
+ {
+  "id": "s22-10",
+  "section": "s22",
+  "src": "assets/lecons/s22-10.webp",
+  "thumb": "assets/lecons/thumbs/s22-10.webp",
+  "title": "مثال كامل - الملفات والنهاية",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI9/19 - مثال كامل - الملفات والنهاية.jpg"
+ },
+ {
+  "id": "s23-01",
+  "section": "s23",
+  "src": "assets/lecons/s23-01.webp",
+  "thumb": "assets/lecons/thumbs/s23-01.webp",
+  "title": "كيف نضع كل هذه الملفات في ملف واحد",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/01 - كيف نضع كل هذه الملفات في ملف واحد.jpg"
+ },
+ {
+  "id": "s23-02",
+  "section": "s23",
+  "src": "assets/lecons/s23-02.webp",
+  "thumb": "assets/lecons/thumbs/s23-02.webp",
+  "title": "ما هي أداة tar",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/02 - ما هي أداة tar.jpg"
+ },
+ {
+  "id": "s23-03",
+  "section": "s23",
+  "src": "assets/lecons/s23-03.webp",
+  "thumb": "assets/lecons/thumbs/s23-03.webp",
+  "title": "الخيارات الأساسية في tar",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/03 - الخيارات الأساسية في tar.jpg"
+ },
+ {
+  "id": "s23-04",
+  "section": "s23",
+  "src": "assets/lecons/s23-04.webp",
+  "thumb": "assets/lecons/thumbs/s23-04.webp",
+  "title": "كيف ننشئ أرشيفاً جديداً",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/04 - كيف ننشئ أرشيفاً جديداً.jpg"
+ },
+ {
+  "id": "s23-05",
+  "section": "s23",
+  "src": "assets/lecons/s23-05.webp",
+  "thumb": "assets/lecons/thumbs/s23-05.webp",
+  "title": "كيف نستخرج ملفات الأرشيف",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/05 - كيف نستخرج ملفات الأرشيف.jpg"
+ },
+ {
+  "id": "s23-06",
+  "section": "s23",
+  "src": "assets/lecons/s23-06.webp",
+  "thumb": "assets/lecons/thumbs/s23-06.webp",
+  "title": "كيف نرى المحتوى بلا استخراج",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/06 - كيف نرى المحتوى بلا استخراج.jpg"
+ },
+ {
+  "id": "s23-07",
+  "section": "s23",
+  "src": "assets/lecons/s23-07.webp",
+  "thumb": "assets/lecons/thumbs/s23-07.webp",
+  "title": "ثلاثة خيارات، ثلاث وظائف",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/07 - ثلاثة خيارات، ثلاث وظائف.jpg"
+ },
+ {
+  "id": "s23-08",
+  "section": "s23",
+  "src": "assets/lecons/s23-08.webp",
+  "thumb": "assets/lecons/thumbs/s23-08.webp",
+  "title": "كيف ننشئ أرشيفاً مضغوطاً",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/08 - كيف ننشئ أرشيفاً مضغوطاً.jpg"
+ },
+ {
+  "id": "s23-09",
+  "section": "s23",
+  "src": "assets/lecons/s23-09.webp",
+  "thumb": "assets/lecons/thumbs/s23-09.webp",
+  "title": "كيف نستخرج أرشيف .tar.gz",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/09 - كيف نستخرج أرشيف .tar.gz.jpg"
+ },
+ {
+  "id": "s23-10",
+  "section": "s23",
+  "src": "assets/lecons/s23-10.webp",
+  "thumb": "assets/lecons/thumbs/s23-10.webp",
+  "title": ".tar أو .tar.gz، ما الفرق",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/10 - .tar أو .tar.gz، ما الفرق.jpg"
+ },
+ {
+  "id": "s23-11",
+  "section": "s23",
+  "src": "assets/lecons/s23-11.webp",
+  "thumb": "assets/lecons/thumbs/s23-11.webp",
+  "title": "كيف نضيف ملفاً إلى أرشيف موجود",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/11 - كيف نضيف ملفاً إلى أرشيف موجود.jpg"
+ },
+ {
+  "id": "s23-12",
+  "section": "s23",
+  "src": "assets/lecons/s23-12.webp",
+  "thumb": "assets/lecons/thumbs/s23-12.webp",
+  "title": "كيف نحذف ملفاً من داخل الأرشيف",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/12 - كيف نحذف ملفاً من داخل الأرشيف.jpg"
+ },
+ {
+  "id": "s23-13",
+  "section": "s23",
+  "src": "assets/lecons/s23-13.webp",
+  "thumb": "assets/lecons/thumbs/s23-13.webp",
+  "title": "كيف نستثني ملفات معينة",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/13 - كيف نستثني ملفات معينة.jpg"
+ },
+ {
+  "id": "s23-14",
+  "section": "s23",
+  "src": "assets/lecons/s23-14.webp",
+  "thumb": "assets/lecons/thumbs/s23-14.webp",
+  "title": "كيف نستخرج إلى مجلد محدد",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/14 - كيف نستخرج إلى مجلد محدد.jpg"
+ },
+ {
+  "id": "s23-15",
+  "section": "s23",
+  "src": "assets/lecons/s23-15.webp",
+  "thumb": "assets/lecons/thumbs/s23-15.webp",
+  "title": "حذاري - -c و -C ليسا نفس الشيء",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/15 - حذاري - -c و -C ليسا نفس الشيء.jpg"
+ },
+ {
+  "id": "s23-16",
+  "section": "s23",
+  "src": "assets/lecons/s23-16.webp",
+  "thumb": "assets/lecons/thumbs/s23-16.webp",
+  "title": "خلاصة سريعة للحفظ",
+  "w": 900,
+  "h": 1167,
+  "source": "PARTI10/16 - خلاصة سريعة للحفظ.jpg"
+ },
+ {
+  "id": "s24-01",
+  "section": "s24",
+  "src": "assets/lecons/s24-01.webp",
+  "thumb": "assets/lecons/thumbs/s24-01.webp",
+  "title": "الرمز ; - الأوامر واحداً بعد واحد",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/02 - الرمز ; - الأوامر واحداً بعد واحد.jpg"
+ },
+ {
+  "id": "s24-02",
+  "section": "s24",
+  "src": "assets/lecons/s24-02.webp",
+  "thumb": "assets/lecons/thumbs/s24-02.webp",
+  "title": "( ) - التنفيذ في sous-shell",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/03 - ( ) - التنفيذ في sous-shell.jpg"
+ },
+ {
+  "id": "s24-03",
+  "section": "s24",
+  "src": "assets/lecons/s24-03.webp",
+  "thumb": "assets/lecons/thumbs/s24-03.webp",
+  "title": "{ } - التنفيذ في shell principal",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/04 - { } - التنفيذ في shell principal.jpg"
+ },
+ {
+  "id": "s25-01",
+  "section": "s25",
+  "src": "assets/lecons/s25-01.webp",
+  "thumb": "assets/lecons/thumbs/s25-01.webp",
+  "title": "هل تستطيع إيقاف برنامج في منتصف عمله… ثم إرجاعه",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/01 - هل تستطيع إيقاف برنامج في منتصف عمله… ثم إرجاعه.jpg"
+ },
+ {
+  "id": "s25-02",
+  "section": "s25",
+  "src": "assets/lecons/s25-02.webp",
+  "thumb": "assets/lecons/thumbs/s25-02.webp",
+  "title": "Foreground و Background",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/05 - Foreground و Background.jpg"
+ },
+ {
+  "id": "s25-03",
+  "section": "s25",
+  "src": "assets/lecons/s25-03.webp",
+  "thumb": "assets/lecons/thumbs/s25-03.webp",
+  "title": "Ctrl-Z و Ctrl-C - لا تخلط بينهما",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/06 - Ctrl-Z و Ctrl-C - لا تخلط بينهما.jpg"
+ },
+ {
+  "id": "s25-04",
+  "section": "s25",
+  "src": "assets/lecons/s25-04.webp",
+  "thumb": "assets/lecons/thumbs/s25-04.webp",
+  "title": "كيف نشغل أمراً طويلاً في background",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/07 - كيف نشغل أمراً طويلاً في background.jpg"
+ },
+ {
+  "id": "s25-05",
+  "section": "s25",
+  "src": "assets/lecons/s25-05.webp",
+  "thumb": "assets/lecons/thumbs/s25-05.webp",
+  "title": "رقمان مختلفان - Job و PID",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/08 - رقمان مختلفان - Job و PID.jpg"
+ },
+ {
+  "id": "s25-06",
+  "section": "s25",
+  "src": "assets/lecons/s25-06.webp",
+  "thumb": "assets/lecons/thumbs/s25-06.webp",
+  "title": "& مع redirection - الصيغة الصحيحة",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/09 - & مع redirection - الصيغة الصحيحة.jpg"
+ },
+ {
+  "id": "s25-07",
+  "section": "s25",
+  "src": "assets/lecons/s25-07.webp",
+  "thumb": "assets/lecons/thumbs/s25-07.webp",
+  "title": "jobs - ماذا يعمل في background",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/10 - jobs - ماذا يعمل في background.jpg"
+ },
+ {
+  "id": "s25-08",
+  "section": "s25",
+  "src": "assets/lecons/s25-08.webp",
+  "thumb": "assets/lecons/thumbs/s25-08.webp",
+  "title": "تنبيهات قبل استعمال Background",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/11 - تنبيهات قبل استعمال Background.jpg"
+ },
+ {
+  "id": "s25-09",
+  "section": "s25",
+  "src": "assets/lecons/s25-09.webp",
+  "thumb": "assets/lecons/thumbs/s25-09.webp",
+  "title": "bg - أكمل العمل في background",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/12 - bg - أكمل العمل في background.jpg"
+ },
+ {
+  "id": "s25-10",
+  "section": "s25",
+  "src": "assets/lecons/s25-10.webp",
+  "thumb": "assets/lecons/thumbs/s25-10.webp",
+  "title": "fg - أرجع processus أمامك",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/13 - fg - أرجع processus أمامك.jpg"
+ },
+ {
+  "id": "s25-11",
+  "section": "s25",
+  "src": "assets/lecons/s25-11.webp",
+  "thumb": "assets/lecons/thumbs/s25-11.webp",
+  "title": "wait - انتظر حتى ينتهي الجميع",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/14 - wait - انتظر حتى ينتهي الجميع.jpg"
+ },
+ {
+  "id": "s25-12",
+  "section": "s25",
+  "src": "assets/lecons/s25-12.webp",
+  "thumb": "assets/lecons/thumbs/s25-12.webp",
+  "title": "ps - من هي processus التي تعمل",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/15 - ps - من هي processus التي تعمل.jpg"
+ },
+ {
+  "id": "s25-13",
+  "section": "s25",
+  "src": "assets/lecons/s25-13.webp",
+  "thumb": "assets/lecons/thumbs/s25-13.webp",
+  "title": "ماذا يعني كل colonne في ps",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/16 - ماذا يعني كل colonne في ps.jpg"
+ },
+ {
+  "id": "s25-14",
+  "section": "s25",
+  "src": "assets/lecons/s25-14.webp",
+  "thumb": "assets/lecons/thumbs/s25-14.webp",
+  "title": "STAT - في أي حالة processus",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/17 - STAT - في أي حالة processus.jpg"
+ },
+ {
+  "id": "s25-15",
+  "section": "s25",
+  "src": "assets/lecons/s25-15.webp",
+  "thumb": "assets/lecons/thumbs/s25-15.webp",
+  "title": "kill - يرسل signal إلى processus",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/18 - kill - يرسل signal إلى processus.jpg"
+ },
+ {
+  "id": "s25-16",
+  "section": "s25",
+  "src": "assets/lecons/s25-16.webp",
+  "thumb": "assets/lecons/thumbs/s25-16.webp",
+  "title": "Signals التي يجب حفظها",
+  "w": 900,
+  "h": 1167,
+  "source": "parti11/19 - Signals التي يجب حفظها.jpg"
+ },
+ {
+  "id": "s26-01",
+  "section": "s26",
+  "src": "assets/lecons/s26-01.webp",
+  "thumb": "assets/lecons/thumbs/s26-01.webp",
+  "title": "محررات النصوص في Unix",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/02 - محررات النصوص في Unix.jpg"
+ },
+ {
+  "id": "s27-01",
+  "section": "s27",
+  "src": "assets/lecons/s27-01.webp",
+  "thumb": "assets/lecons/thumbs/s27-01.webp",
+  "title": "متغيرات البيئة (Variables d'environnement)",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/04 - متغيرات البيئة (Variables d'environnement).jpg"
+ },
+ {
+  "id": "s28-01",
+  "section": "s28",
+  "src": "assets/lecons/s28-01.webp",
+  "thumb": "assets/lecons/thumbs/s28-01.webp",
+  "title": "ماذا يحدث في Bash إذا أضفت فراغاً واحداً فقط",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/01 - ماذا يحدث في Bash إذا أضفت فراغاً واحداً فقط.jpg"
+ },
+ {
+  "id": "s28-02",
+  "section": "s28",
+  "src": "assets/lecons/s28-02.webp",
+  "thumb": "assets/lecons/thumbs/s28-02.webp",
+  "title": "أنواع الـ Shell والأوامر الداخلية والخارجية",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/03 - أنواع الـ Shell والأوامر الداخلية والخارجية.jpg"
+ },
+ {
+  "id": "s29-01",
+  "section": "s29",
+  "src": "assets/lecons/s29-01.webp",
+  "thumb": "assets/lecons/thumbs/s29-01.webp",
+  "title": "التعليقات والـ Script في Bash",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/05 - التعليقات والـ Script في Bash.jpg"
+ },
+ {
+  "id": "s30-01",
+  "section": "s30",
+  "src": "assets/lecons/s30-01.webp",
+  "thumb": "assets/lecons/thumbs/s30-01.webp",
+  "title": "متغيرات Bash",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/06 - متغيرات Bash.jpg"
+ },
+ {
+  "id": "s31-01",
+  "section": "s31",
+  "src": "assets/lecons/s31-01.webp",
+  "thumb": "assets/lecons/thumbs/s31-01.webp",
+  "title": "الأمر read - القراءة من لوحة المفاتيح",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/07 - الأمر read - القراءة من لوحة المفاتيح.jpg"
+ },
+ {
+  "id": "s32-01",
+  "section": "s32",
+  "src": "assets/lecons/s32-01.webp",
+  "thumb": "assets/lecons/thumbs/s32-01.webp",
+  "title": "علامات الاقتباس وتعويض الأمر",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/08 - علامات الاقتباس وتعويض الأمر.jpg"
+ },
+ {
+  "id": "s34-01",
+  "section": "s34",
+  "src": "assets/lecons/s34-01.webp",
+  "thumb": "assets/lecons/thumbs/s34-01.webp",
+  "title": "حالات المتغير والتعويض ${ }",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/09 - حالات المتغير والتعويض ${ }.jpg"
+ },
+ {
+  "id": "s34-02",
+  "section": "s34",
+  "src": "assets/lecons/s34-02.webp",
+  "thumb": "assets/lecons/thumbs/s34-02.webp",
+  "title": "المعاملات الموضعية (Paramètres de position)",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/10 - المعاملات الموضعية (Paramètres de position).jpg"
+ },
+ {
+  "id": "s35-01",
+  "section": "s35",
+  "src": "assets/lecons/s35-01.webp",
+  "thumb": "assets/lecons/thumbs/s35-01.webp",
+  "title": "المعاملات الخاصة و shift",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/11 - المعاملات الخاصة و shift.jpg"
+ },
+ {
+  "id": "s37-01",
+  "section": "s37",
+  "src": "assets/lecons/s37-01.webp",
+  "thumb": "assets/lecons/thumbs/s37-01.webp",
+  "title": "إعادة التوجيه المتقدمة",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/12 - إعادة التوجيه المتقدمة.jpg"
+ },
+ {
+  "id": "s38-01",
+  "section": "s38",
+  "src": "assets/lecons/s38-01.webp",
+  "thumb": "assets/lecons/thumbs/s38-01.webp",
+  "title": "الأمر test - الشروط",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/13 - الأمر test - الشروط.jpg"
+ },
+ {
+  "id": "s39-01",
+  "section": "s39",
+  "src": "assets/lecons/s39-01.webp",
+  "thumb": "assets/lecons/thumbs/s39-01.webp",
+  "title": "العمليات الحسابية في Bash",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/14 - العمليات الحسابية في Bash.jpg"
+ },
+ {
+  "id": "s40-01",
+  "section": "s40",
+  "src": "assets/lecons/s40-01.webp",
+  "thumb": "assets/lecons/thumbs/s40-01.webp",
+  "title": "الشروط - if و case",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/15 - الشروط - if و case.jpg"
+ },
+ {
+  "id": "s42-01",
+  "section": "s42",
+  "src": "assets/lecons/s42-01.webp",
+  "thumb": "assets/lecons/thumbs/s42-01.webp",
+  "title": "الحلقات - for و while و until",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/16 - الحلقات - for و while و until.jpg"
+ },
+ {
+  "id": "s44-01",
+  "section": "s44",
+  "src": "assets/lecons/s44-01.webp",
+  "thumb": "assets/lecons/thumbs/s44-01.webp",
+  "title": "التحكم في الحلقات وقائمة select",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/17 - التحكم في الحلقات وقائمة select.jpg"
+ },
+ {
+  "id": "s46-01",
+  "section": "s46",
+  "src": "assets/lecons/s46-01.webp",
+  "thumb": "assets/lecons/thumbs/s46-01.webp",
+  "title": "الدوال (Fonctions) في Bash",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/18 - الدوال (Fonctions) في Bash.jpg"
+ },
+ {
+  "id": "s48-01",
+  "section": "s48",
+  "src": "assets/lecons/s48-01.webp",
+  "thumb": "assets/lecons/thumbs/s48-01.webp",
+  "title": "الجداول (Tableaux) في Bash",
+  "w": 900,
+  "h": 1167,
+  "source": "parti12/19 - الجداول (Tableaux) في Bash.jpg"
+ }
+]

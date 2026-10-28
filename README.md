@@ -53,6 +53,7 @@ Chaque section propose :
 
 - le **texte du cours en français** (fidèle au support, page par page) ;
 - un **résumé explicatif en arabe** (RTL), avec les termes techniques traduits ;
+- une **galerie d'illustrations** (210 planches WebP) avec agrandissement plein écran ;
 - un bouton **« Marquer comme lu »** qui alimente la progression et les XP.
 
 ---
@@ -90,18 +91,21 @@ Plateforme Badr AI/
 ├── qcm.html                120 QCM corrigés en HTML indexable
 ├── flashcards.html         90 flashcards en HTML indexable
 ├── assets/og-image.png     carte de partage 1200×630 (Open Graph / Twitter)
+├── assets/lecons/          210 illustrations de cours en WebP (900 px) + vignettes 360 px
 ├── css/
-│   ├── style.css           design glassmorphism + responsive (SPA)
+│   ├── style.css           design crème & sarcelle + responsive (SPA)
 │   └── seo.css             design des pages statiques + styles d'impression
 ├── js/
 │   ├── data-cours.js       cours complet (window.COURS)
 │   ├── data-quiz.js        120 QCM (window.QUIZ)
 │   ├── data-flash.js       90 flashcards (window.FLASH)
+│   ├── data-images.js      illustrations par section (window.LESSON_IMAGES)
 │   ├── audio.js            moteur sonore Web Audio
-│   ├── terminal.js         terminal virtuel + missions
-│   └── app.js              navigation, vues, quiz, examen, progression
+│   ├── terminal.js         terminal virtuel + 16 missions illustrées
+│   └── app.js              navigation, vues, galerie/lightbox, quiz, examen, progression
 ├── tools/
 │   ├── pipeline.py         régénération des données depuis le PDF source
+│   ├── prepare-images.py   détourage, redimensionnement WebP et manifeste des illustrations
 │   ├── build-seo.js        génération de /cours/, sitemap.xml, robots.txt, 404.html
 │   └── og-card.html        source de la carte de partage (capture 1200×630)
 ├── sitemap.xml             52 URL canoniques

@@ -1824,31 +1824,31 @@ window.TERM = (function () {
 
   const MISSIONS = [
     {
-      id: "m1", xp: 15, title: "Afficher le répertoire courant",
+      id: "m1", xp: 15, img: "s10-07", title: "Afficher le répertoire courant",
       desc: "Utilisez la commande qui affiche le chemin du dossier où vous êtes.",
       hint: "استعمل الأمر pwd لعرض مسار المجلد الحالي.",
       test: function () { return recentMatch(/^pwd\s*$/); }
     },
     {
-      id: "m2", xp: 15, title: "Lister votre dossier personnel",
+      id: "m2", xp: 15, img: "s12-02", title: "Lister votre dossier personnel",
       desc: "Affichez le contenu de /home/etudiant (vous y êtes déjà).",
       hint: "اكتب ls وأنت داخل المجلد الشخصي لعرض محتواه.",
       test: function () { return state.cwd === HOME && /^ls(\s|$)/.test(lastCmd()); }
     },
     {
-      id: "m3", xp: 15, title: "Créer le dossier « projets »",
+      id: "m3", xp: 15, img: "s10-12", title: "Créer le dossier « projets »",
       desc: "Créez un répertoire nommé projets dans votre dossier personnel.",
       hint: "استعمل mkdir projets لإنشاء المجلد.",
       test: function () { var n = getNode(HOME + "/projets"); return !!(n && n.t === "d"); }
     },
     {
-      id: "m4", xp: 15, title: "Créer notes.txt avec « Bonjour »",
+      id: "m4", xp: 15, img: "s18-08", title: "Créer notes.txt avec « Bonjour »",
       desc: "Écrivez le mot Bonjour dans un fichier notes.txt (redirection).",
       hint: "echo Bonjour > notes.txt — إعادة التوجيه تكتب النتيجة في الملف.",
       test: function () { var n = getNode(HOME + "/notes.txt"); return !!(n && n.t === "f" && /bonjour/i.test(n.content)); }
     },
     {
-      id: "m5", xp: 15, title: "Copier notes.txt vers notes.bak",
+      id: "m5", xp: 15, img: "s12-03", title: "Copier notes.txt vers notes.bak",
       desc: "Faites une copie de sauvegarde du fichier.",
       hint: "cp notes.txt notes.bak",
       test: function () {
@@ -1857,31 +1857,31 @@ window.TERM = (function () {
       }
     },
     {
-      id: "m6", xp: 15, title: "Renommer notes.bak en notes.old",
+      id: "m6", xp: 15, img: "s12-05", title: "Renommer notes.bak en notes.old",
       desc: "Utilisez la commande de déplacement pour renommer.",
       hint: "mv notes.bak notes.old — mv تنقل أو تعيد التسمية.",
       test: function () { return !!getNode(HOME + "/notes.old") && !getNode(HOME + "/notes.bak"); }
     },
     {
-      id: "m7", xp: 15, title: "Afficher 3 lignes de /etc/passwd",
+      id: "m7", xp: 15, img: "s14-02", title: "Afficher 3 lignes de /etc/passwd",
       desc: "Affichez uniquement les trois premières lignes du fichier.",
       hint: "head -n 3 /etc/passwd",
       test: function () { return recentMatch(/^head\s+(-n\s*3|-3)\s+\/etc\/passwd/); }
     },
     {
-      id: "m8", xp: 15, title: "Chercher « root » dans /etc/passwd",
+      id: "m8", xp: 15, img: "s17-07", title: "Chercher « root » dans /etc/passwd",
       desc: "Filtrez le contenu du fichier pour n'afficher que les lignes contenant root.",
       hint: "grep root /etc/passwd",
       test: function () { return recentMatch(/^grep\s+.*root.*\/etc\/passwd/); }
     },
     {
-      id: "m9", xp: 15, title: "Compter les lignes de /etc/passwd",
+      id: "m9", xp: 15, img: "s14-05", title: "Compter les lignes de /etc/passwd",
       desc: "Utilisez l'option de comptage des lignes.",
       hint: "wc -l /etc/passwd",
       test: function () { return recentMatch(/^wc\s+-l\s+\/etc\/passwd/); }
     },
     {
-      id: "m10", xp: 15, title: "Rendre script.sh exécutable",
+      id: "m10", xp: 15, img: "s20-06", title: "Rendre script.sh exécutable",
       desc: "Ajoutez le droit d'exécution au propriétaire de script.sh.",
       hint: "chmod u+x script.sh — u للمالك و+ لإضافة الحق.",
       test: function () {
@@ -1892,7 +1892,7 @@ window.TERM = (function () {
       }
     },
     {
-      id: "m11", xp: 15, title: "Créer un lien symbolique notes.lien",
+      id: "m11", xp: 15, img: "s13-04", title: "Créer un lien symbolique notes.lien",
       desc: "Créez un raccourci nommé notes.lien qui pointe vers notes.txt.",
       hint: "ln -s notes.txt notes.lien — -s تعني رابط رمزي.",
       test: function () {
@@ -1901,7 +1901,7 @@ window.TERM = (function () {
       }
     },
     {
-      id: "m12", xp: 15, title: "Archiver le dossier projets",
+      id: "m12", xp: 15, img: "s23-04", title: "Archiver le dossier projets",
       desc: "Créez une archive nommée projets.tar contenant le dossier projets.",
       hint: "tar -cf projets.tar projets",
       test: function () {
@@ -1910,13 +1910,13 @@ window.TERM = (function () {
       }
     },
     {
-      id: "m13", xp: 15, title: "Lister les processus",
+      id: "m13", xp: 15, img: "s25-12", title: "Lister les processus",
       desc: "Affichez les processus en cours d'exécution.",
       hint: "ps — ويمكن ps -f لتفاصيل أكثر.",
       test: function () { return /^ps(\s|$)/.test(lastCmd()); }
     },
     {
-      id: "m14", xp: 15, title: "Écrire dans fichier.txt par redirection",
+      id: "m14", xp: 15, img: "s18-09", title: "Écrire dans fichier.txt par redirection",
       desc: "Écrivez exactement : Bonjour Badr AI dans fichier.txt.",
       hint: "echo \"Bonjour Badr AI\" > fichier.txt",
       test: function () {
@@ -1925,13 +1925,13 @@ window.TERM = (function () {
       }
     },
     {
-      id: "m15", xp: 15, title: "Compter les entrées de /etc avec un pipe",
+      id: "m15", xp: 15, img: "s18-15", title: "Compter les entrées de /etc avec un pipe",
       desc: "Combinez ls et wc -l avec le symbole |.",
       hint: "ls /etc | wc -l — الأنبوب يمرر الخرج للأمر التالي.",
       test: function () { return recentMatch(/\|/) && recentMatch(/\bwc\s+-l\b/) && recentMatch(/\bls\b/); }
     },
     {
-      id: "m16", xp: 15, title: "Exécuter bonjour.sh",
+      id: "m16", xp: 15, img: "s29-01", title: "Exécuter bonjour.sh",
       desc: "Le script est déjà prêt et exécutable. Lancez-le avec ./",
       hint: "./bonjour.sh — يجب أن يكون الملف قابلًا للتنفيذ.",
       test: function () {
@@ -2021,6 +2021,22 @@ window.TERM = (function () {
     if (els) els.body.scrollTop = els.body.scrollHeight;
   }
 
+  function escHTML(s) {
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function missionImage(m) {
+    const store = window.LESSON_IMAGES, map = window.LESSON_IMAGES_BY_ID;
+    if (!m.img || !store || !map || !map[m.img]) return "";
+    const im = map[m.img];
+    return '<button class="m-img" type="button" data-img-sec="' + escHTML(im.section) +
+      '" data-img-id="' + escHTML(m.img) + '" aria-label="Voir l\'illustration : ' + escHTML(im.title) + '">' +
+      '<img src="' + escHTML(im.thumb) + '" alt="' + escHTML(im.title) + '" loading="lazy" decoding="async" width="360" height="' +
+        Math.round(360 * im.h / im.w) + '">' +
+      '<span>🔍 Illustration</span></button>';
+  }
+
   function missionCard(m, idx) {
     const done = state.completed.indexOf(m.id) > -1;
     return '<article class="mission' + (done ? " done" : "") + '" data-mid="' + m.id + '">' +
@@ -2030,6 +2046,7 @@ window.TERM = (function () {
       '<span class="m-state">' + (done ? "Terminée ✓" : "À faire") + "</span>" +
       "</div>" +
       "<p>" + m.desc + "</p>" +
+      missionImage(m) +
       '<button class="m-hint-btn" type="button">💡 Indice (AR)</button>' +
       '<div class="m-hint">' + m.hint + "</div>" +
       "</article>";
@@ -2046,6 +2063,15 @@ window.TERM = (function () {
 
   function bindMissions() {
     els.missions.addEventListener("click", function (e) {
+      const imgBtn = e.target.closest(".m-img");
+      if (imgBtn && window.BADRAI_OPEN_IMAGES && window.LESSON_IMAGES) {
+        const sec = imgBtn.getAttribute("data-img-sec");
+        const id = imgBtn.getAttribute("data-img-id");
+        const list = (window.LESSON_IMAGES.images || {})[sec] || [];
+        const idx = list.findIndex(function (im) { return im.id === id; });
+        window.BADRAI_OPEN_IMAGES(sec, idx < 0 ? 0 : idx);
+        return;
+      }
       const btn = e.target.closest(".m-hint-btn");
       if (!btn) return;
       const card = btn.closest(".mission");

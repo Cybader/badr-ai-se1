@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/</loc>
     <lastmod>2026-10-28</lastmod>
@@ -77,144 +77,940 @@
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-01.webp</image:loc>
+      <image:title>ما هو Shell؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-02.webp</image:loc>
+      <image:title>Terminal أم Prompt؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-03.webp</image:loc>
+      <image:title>كيف تفتح Shell وتغلقه؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-04.webp</image:loc>
+      <image:title>أنواع Shell</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-05.webp</image:loc>
+      <image:title>كيف تدخل إلى Linux؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-06.webp</image:loc>
+      <image:title>كيف يفهم Linux ما تكتبه له؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-07.webp</image:loc>
+      <image:title>كيف نقسّم أي أمر؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-08.webp</image:loc>
+      <image:title>أين الخيار وأين المعامل؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-09.webp</image:loc>
+      <image:title>ثلاث قواعد عند كتابة الأمر</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-10.webp</image:loc>
+      <image:title>ما هو الأمر (Commande) في Linux؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-11.webp</image:loc>
+      <image:title>ثلاث طبقات في Linux</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-12.webp</image:loc>
+      <image:title>جلسات متعددة وهويتك</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-13.webp</image:loc>
+      <image:title>ثلاثة اختصارات لا غنى عنها</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-14.webp</image:loc>
+      <image:title>كيف تختصر كتابة أسماء الملفات؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s9-15.webp</image:loc>
+      <image:title>ماذا تعني الرموز $ و # في موجّه الأوامر؟</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s10.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-01.webp</image:loc>
+      <image:title>الشجرة (Arborescence)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-02.webp</image:loc>
+      <image:title>الملف (Fichier) وجذر الشجرة</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-03.webp</image:loc>
+      <image:title>المسار (Chemin) والمسار المطلق</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-04.webp</image:loc>
+      <image:title>المسار النسبي (Chemin relatif)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-05.webp</image:loc>
+      <image:title>الصعود بـ .. في المسار النسبي</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-06.webp</image:loc>
+      <image:title>الرمز ~ بالتفصيل</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-07.webp</image:loc>
+      <image:title>أين أنا؟ وإلى أين أذهب؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-08.webp</image:loc>
+      <image:title>الرموز الأربعة الخاصة</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-09.webp</image:loc>
+      <image:title>الخريطة التي يجب أن تبقى في ذهنك</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-10.webp</image:loc>
+      <image:title>أهم المجلدات ما يجب حفظه</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-11.webp</image:loc>
+      <image:title>بقية المجلدات في الشجرة</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-12.webp</image:loc>
+      <image:title>إنشاء المجلدات mkdir</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-13.webp</image:loc>
+      <image:title>حذف المجلدات</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s10-14.webp</image:loc>
+      <image:title>أمثلة تثبّت الفكرة</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s11.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s11-01.webp</image:loc>
+      <image:title>نظام الملفات (Système de fichiers)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s11-02.webp</image:loc>
+      <image:title>كيف يعرف Linux مكان كل ملف بين آلاف الملفات؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s11-03.webp</image:loc>
+      <image:title>أنواع الملفات في Linux</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s11-04.webp</image:loc>
+      <image:title>ما هو الـ i-node؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s11-05.webp</image:loc>
+      <image:title>كيف أرى رقم الـ i-node؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s11-06.webp</image:loc>
+      <image:title>كيف يعرف لينكس ملفك؟ بالاسم… أم برقم خفي؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s11-07.webp</image:loc>
+      <image:title>النظام يعرف الملف برقمه لا باسمه</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s11-08.webp</image:loc>
+      <image:title>ثلاثة أنواع رئيسية للملفات في Unix</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s11-09.webp</image:loc>
+      <image:title>رموز أنواع الملفات</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s12.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s12-01.webp</image:loc>
+      <image:title>خريطة الأوامر في نظرة واحدة</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s12-02.webp</image:loc>
+      <image:title>الأمر ls ماذا يوجد هنا؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s12-03.webp</image:loc>
+      <image:title>الأمر cp نسخ دون المساس بالأصل</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s12-04.webp</image:loc>
+      <image:title>نسخ شجرة كاملة cp -r</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s12-05.webp</image:loc>
+      <image:title>الأمر mv نقل أو إعادة تسمية</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s12-06.webp</image:loc>
+      <image:title>الفرق بين cp و mv</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s12-07.webp</image:loc>
+      <image:title>تحذير قد تُكتب فوق ملف موجود</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s12-08.webp</image:loc>
+      <image:title>لا تخلط touch أم mkdir</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s12-09.webp</image:loc>
+      <image:title>أوامر التعامل مع الملفات</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s12-10.webp</image:loc>
+      <image:title>الأمر du كم تحتل هذه الشجرة؟</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s13.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s13-01.webp</image:loc>
+      <image:title>الروابط (Les liens) نوعان</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s13-02.webp</image:loc>
+      <image:title>الرابط الصلب اسمان ومعهما inode واحد</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s13-03.webp</image:loc>
+      <image:title>الرابط الرمزي ملف مستقل يحمل مسارًا</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s13-04.webp</image:loc>
+      <image:title>مرونة الرابط الرمزي وطريقة إنشائه</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s13-05.webp</image:loc>
+      <image:title>حدود الرابط الصلب</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s13-06.webp</image:loc>
+      <image:title>المقارنة التي يجب أن تحفظها</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s13-07.webp</image:loc>
+      <image:title>ماذا يحدث عند حذف أحد الاسمين؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s13-08.webp</image:loc>
+      <image:title>هل يمكن أن يكون للملف الواحد أكثر من اسم؟</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s14.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-01.webp</image:loc>
+      <image:title>الأمران cat و more عرض محتوى الملف</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-02.webp</image:loc>
+      <image:title>الأمر head بداية الملف</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-03.webp</image:loc>
+      <image:title>الأمر tail نهاية الملف</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-04.webp</image:loc>
+      <image:title>الأمر sort ترتيب الأسطر</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-05.webp</image:loc>
+      <image:title>الأمر wc العدّ والإحصاء</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-06.webp</image:loc>
+      <image:title>الأمر cut استخراج جزء من كل سطر</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-07.webp</image:loc>
+      <image:title>تطبيقات على cut</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-08.webp</image:loc>
+      <image:title>الأمر paste دمج الأسطر</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-09.webp</image:loc>
+      <image:title>الأمر tr تحويل الأحرف</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-10.webp</image:loc>
+      <image:title>الأمر diff مقارنة ملفين</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-11.webp</image:loc>
+      <image:title>الأمر echo عرض نص على الشاشة</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-12.webp</image:loc>
+      <image:title>أي أمر يعرض الملف؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-13.webp</image:loc>
+      <image:title>لا تخلط بين هذه الأوامر</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s14-14.webp</image:loc>
+      <image:title>الخلاصة للحفظ</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s15.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s15-01.webp</image:loc>
+      <image:title>الأمر which أين يوجد الأمر؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s15-02.webp</image:loc>
+      <image:title>الأمر uname معلومات النظام والجهاز</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s15-03.webp</image:loc>
+      <image:title>su و sudo ما الفرق؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s15-04.webp</image:loc>
+      <image:title>reboot و shutdown إعادة التشغيل أم إيقاف التشغيل؟</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s16.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s16-01.webp</image:loc>
+      <image:title>كيف تعثر على سطر واحد وسط آلاف الأسطر</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s16-02.webp</image:loc>
+      <image:title>ما هو التعبير النمطي</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s16-03.webp</image:loc>
+      <image:title>رموز أساسية في الأنماط</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s16-04.webp</image:loc>
+      <image:title>المجالات في أنماط أسماء الملفات</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s16-05.webp</image:loc>
+      <image:title>بداية السطر ونهايته</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s16-06.webp</image:loc>
+      <image:title>فخ مهم - موضع الرمز ^</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s16-07.webp</image:loc>
+      <image:title>التكرار (Répétitions)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s16-08.webp</image:loc>
+      <image:title>مثال - رمز دائم (Code permanent)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s16-09.webp</image:loc>
+      <image:title>الاختيار بين عدة أنماط</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s16-10.webp</image:loc>
+      <image:title>تفكيك تعبير عنوان IP</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s17.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-01.webp</image:loc>
+      <image:title>خريطة خيارات find</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-02.webp</image:loc>
+      <image:title>الأمر find من أين نبدأ البحث؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-03.webp</image:loc>
+      <image:title>البحث بالاسم -name و -iname</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-04.webp</image:loc>
+      <image:title>البحث بالتاريخ -atime و -mtime</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-05.webp</image:loc>
+      <image:title>البحث حسب المالك والمجموعة</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-06.webp</image:loc>
+      <image:title>الأمر locate البحث بالاسم</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-07.webp</image:loc>
+      <image:title>الأمر grep</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-08.webp</image:loc>
+      <image:title>find أم grep</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-09.webp</image:loc>
+      <image:title>المعاملات المنطقية في find</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-10.webp</image:loc>
+      <image:title>أمثلة على المعاملات المنطقية</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-11.webp</image:loc>
+      <image:title>لماذا نستعمل ( و )</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-12.webp</image:loc>
+      <image:title>معايير find الأكثر استعمالاً</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-13.webp</image:loc>
+      <image:title>الملف etc-passwd وأمر cut</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-14.webp</image:loc>
+      <image:title>البحث داخل مجلد كامل - grep -r</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s17-15.webp</image:loc>
+      <image:title>أوامر مساعدة مهمة</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s18.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-01.webp</image:loc>
+      <image:title>alias - التعريف والفائدة والصيغة</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-02.webp</image:loc>
+      <image:title>alias - الاستعمال وعرض القائمة والملف .profile</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-03.webp</image:loc>
+      <image:title>الفاصل &amp;&amp; (AND)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-04.webp</image:loc>
+      <image:title>الفاصل OR مع ملخص الفرق بينهما</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-05.webp</image:loc>
+      <image:title>القنوات القياسية stdin وstdout وstderr</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-06.webp</image:loc>
+      <image:title>توجيه المدخلات</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-07.webp</image:loc>
+      <image:title>توجيه المخرجات</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-08.webp</image:loc>
+      <image:title>الفرق بين رمزي التوجيه</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-09.webp</image:loc>
+      <image:title>المدخل والمخرج معا - sort</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-10.webp</image:loc>
+      <image:title>دمج ملفين - cat</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-11.webp</image:loc>
+      <image:title>توجيه الأخطاء 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-12.webp</image:loc>
+      <image:title>فصل النتائج عن الأخطاء</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-13.webp</image:loc>
+      <image:title>ملف واحد أم ملفان - &amp;</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-14.webp</image:loc>
+      <image:title>الأنبوب (Pipe)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-15.webp</image:loc>
+      <image:title>مثال ls -l wc</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-16.webp</image:loc>
+      <image:title>الأنبوب مع التوجيه ومع أنابيب متعددة</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-17.webp</image:loc>
+      <image:title>الفرق بين الفواصل والأنبوب</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s18-18.webp</image:loc>
+      <image:title>الخلاصة</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s19.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s19-01.webp</image:loc>
+      <image:title>من يقدر على ملفاتك في Linux</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s19-02.webp</image:loc>
+      <image:title>Linux نظام متعدد المستخدمين</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s19-03.webp</image:loc>
+      <image:title>كيفاش Linux كيعرف كل مستخدم</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s19-04.webp</image:loc>
+      <image:title>ملفان مهمان - etc-passwd و etc-group</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s20.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-01.webp</image:loc>
+      <image:title>ثلاث فئات - u و g و o</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-02.webp</image:loc>
+      <image:title>ثلاثة حقوق أساسية - r و w و x</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-03.webp</image:loc>
+      <image:title>نفس الحق.. معنى مختلف بين الملف والمجلد</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-04.webp</image:loc>
+      <image:title>كيفاش تقرا rwxr-xr-x</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-05.webp</image:loc>
+      <image:title>الأمر ls -l</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-06.webp</image:loc>
+      <image:title>الأمر chmod (الرمزي)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-07.webp</image:loc>
+      <image:title>أمثلة على chmod الرمزي</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-08.webp</image:loc>
+      <image:title>الفرق بين + و =</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-09.webp</image:loc>
+      <image:title>عدة فئات في أمر واحد</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-10.webp</image:loc>
+      <image:title>الحقوق بالأرقام (النظام الثماني)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-11.webp</image:loc>
+      <image:title>من الرمزي إلى الرقمي</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-12.webp</image:loc>
+      <image:title>كيفاش تقرا chmod 644 و 640</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-13.webp</image:loc>
+      <image:title>من الرقمي إلى الرمزي</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-14.webp</image:loc>
+      <image:title>نفس التغيير بطريقتين</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s20-15.webp</image:loc>
+      <image:title>الخلاصة اللي خاصك تحفظها</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s21.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s21-01.webp</image:loc>
+      <image:title>من هو صاحب هذا الملف في Linux</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s21-02.webp</image:loc>
+      <image:title>أربعة أوامر… وأربع وظائف مختلفة</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s21-03.webp</image:loc>
+      <image:title>كيف أعرف مالك الملف والمجموعة</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s21-04.webp</image:loc>
+      <image:title>chown - يغيّر مالك الملف</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s21-05.webp</image:loc>
+      <image:title>عندما يرفض النظام… ما الحل</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s21-06.webp</image:loc>
+      <image:title>chgrp - يغيّر مجموعة الملف</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s21-07.webp</image:loc>
+      <image:title>umask - الصلاحيات الافتراضية</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s21-08.webp</image:loc>
+      <image:title>حساب umask مع الملفات</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s21-09.webp</image:loc>
+      <image:title>حساب umask مع المجلدات</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s21-10.webp</image:loc>
+      <image:title>جدول الحفظ - umask</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s22.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s22-01.webp</image:loc>
+      <image:title>كيف تغيّر كلمة المرور؟</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s22-02.webp</image:loc>
+      <image:title>root - المستخدم الأعلى صلاحية</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s22-03.webp</image:loc>
+      <image:title>adduser - إنشاء مستخدم جديد</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s22-04.webp</image:loc>
+      <image:title>passwd - تغيير mot de passe</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s22-05.webp</image:loc>
+      <image:title>deluser - حذف المستخدم</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s22-06.webp</image:loc>
+      <image:title>المجموعات - addgroup و delgroup</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s22-07.webp</image:loc>
+      <image:title>usermod - تعديل مستخدم موجود</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s22-08.webp</image:loc>
+      <image:title>الفخ المهم - -G مقابل -aG</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s22-09.webp</image:loc>
+      <image:title>مثال كامل - حياة مستخدم في Linux</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s22-10.webp</image:loc>
+      <image:title>مثال كامل - الملفات والنهاية</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s23.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-01.webp</image:loc>
+      <image:title>كيف نضع كل هذه الملفات في ملف واحد</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-02.webp</image:loc>
+      <image:title>ما هي أداة tar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-03.webp</image:loc>
+      <image:title>الخيارات الأساسية في tar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-04.webp</image:loc>
+      <image:title>كيف ننشئ أرشيفاً جديداً</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-05.webp</image:loc>
+      <image:title>كيف نستخرج ملفات الأرشيف</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-06.webp</image:loc>
+      <image:title>كيف نرى المحتوى بلا استخراج</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-07.webp</image:loc>
+      <image:title>ثلاثة خيارات، ثلاث وظائف</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-08.webp</image:loc>
+      <image:title>كيف ننشئ أرشيفاً مضغوطاً</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-09.webp</image:loc>
+      <image:title>كيف نستخرج أرشيف .tar.gz</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-10.webp</image:loc>
+      <image:title>.tar أو .tar.gz، ما الفرق</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-11.webp</image:loc>
+      <image:title>كيف نضيف ملفاً إلى أرشيف موجود</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-12.webp</image:loc>
+      <image:title>كيف نحذف ملفاً من داخل الأرشيف</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-13.webp</image:loc>
+      <image:title>كيف نستثني ملفات معينة</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-14.webp</image:loc>
+      <image:title>كيف نستخرج إلى مجلد محدد</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-15.webp</image:loc>
+      <image:title>حذاري - -c و -C ليسا نفس الشيء</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s23-16.webp</image:loc>
+      <image:title>خلاصة سريعة للحفظ</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s24.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s24-01.webp</image:loc>
+      <image:title>الرمز ; - الأوامر واحداً بعد واحد</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s24-02.webp</image:loc>
+      <image:title>( ) - التنفيذ في sous-shell</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s24-03.webp</image:loc>
+      <image:title>{ } - التنفيذ في shell principal</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s25.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-01.webp</image:loc>
+      <image:title>هل تستطيع إيقاف برنامج في منتصف عمله… ثم إرجاعه</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-02.webp</image:loc>
+      <image:title>Foreground و Background</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-03.webp</image:loc>
+      <image:title>Ctrl-Z و Ctrl-C - لا تخلط بينهما</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-04.webp</image:loc>
+      <image:title>كيف نشغل أمراً طويلاً في background</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-05.webp</image:loc>
+      <image:title>رقمان مختلفان - Job و PID</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-06.webp</image:loc>
+      <image:title>&amp; مع redirection - الصيغة الصحيحة</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-07.webp</image:loc>
+      <image:title>jobs - ماذا يعمل في background</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-08.webp</image:loc>
+      <image:title>تنبيهات قبل استعمال Background</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-09.webp</image:loc>
+      <image:title>bg - أكمل العمل في background</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-10.webp</image:loc>
+      <image:title>fg - أرجع processus أمامك</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-11.webp</image:loc>
+      <image:title>wait - انتظر حتى ينتهي الجميع</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-12.webp</image:loc>
+      <image:title>ps - من هي processus التي تعمل</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-13.webp</image:loc>
+      <image:title>ماذا يعني كل colonne في ps</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-14.webp</image:loc>
+      <image:title>STAT - في أي حالة processus</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-15.webp</image:loc>
+      <image:title>kill - يرسل signal إلى processus</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s25-16.webp</image:loc>
+      <image:title>Signals التي يجب حفظها</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s26.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s26-01.webp</image:loc>
+      <image:title>محررات النصوص في Unix</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s27.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s27-01.webp</image:loc>
+      <image:title>متغيرات البيئة (Variables d&#39;environnement)</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s28.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s28-01.webp</image:loc>
+      <image:title>ماذا يحدث في Bash إذا أضفت فراغاً واحداً فقط</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s28-02.webp</image:loc>
+      <image:title>أنواع الـ Shell والأوامر الداخلية والخارجية</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s29.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s29-01.webp</image:loc>
+      <image:title>التعليقات والـ Script في Bash</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s30.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s30-01.webp</image:loc>
+      <image:title>متغيرات Bash</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s31.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s31-01.webp</image:loc>
+      <image:title>الأمر read - القراءة من لوحة المفاتيح</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s32.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s32-01.webp</image:loc>
+      <image:title>علامات الاقتباس وتعويض الأمر</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s33.html</loc>
@@ -227,12 +1023,24 @@
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s34-01.webp</image:loc>
+      <image:title>حالات المتغير والتعويض ${ }</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s34-02.webp</image:loc>
+      <image:title>المعاملات الموضعية (Paramètres de position)</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s35.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s35-01.webp</image:loc>
+      <image:title>المعاملات الخاصة و shift</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s36.html</loc>
@@ -245,24 +1053,40 @@
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s37-01.webp</image:loc>
+      <image:title>إعادة التوجيه المتقدمة</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s38.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s38-01.webp</image:loc>
+      <image:title>الأمر test - الشروط</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s39.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s39-01.webp</image:loc>
+      <image:title>العمليات الحسابية في Bash</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s40.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s40-01.webp</image:loc>
+      <image:title>الشروط - if و case</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s41.html</loc>
@@ -275,6 +1099,10 @@
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s42-01.webp</image:loc>
+      <image:title>الحلقات - for و while و until</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s43.html</loc>
@@ -287,6 +1115,10 @@
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s44-01.webp</image:loc>
+      <image:title>التحكم في الحلقات وقائمة select</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s45.html</loc>
@@ -299,6 +1131,10 @@
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s46-01.webp</image:loc>
+      <image:title>الدوال (Fonctions) في Bash</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://cybader.github.io/badr-ai-se1/cours/s47.html</loc>
@@ -311,5 +1147,9 @@
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://cybader.github.io/badr-ai-se1/assets/lecons/s48-01.webp</image:loc>
+      <image:title>الجداول (Tableaux) في Bash</image:title>
+    </image:image>
   </url>
 </urlset>

@@ -22,9 +22,11 @@ global.window = {};
 eval(fs.readFileSync(path.join(ROOT, "js", "data-cours.js"), "utf8"));
 eval(fs.readFileSync(path.join(ROOT, "js", "data-quiz.js"), "utf8"));
 eval(fs.readFileSync(path.join(ROOT, "js", "data-flash.js"), "utf8"));
+eval(fs.readFileSync(path.join(ROOT, "js", "data-images.js"), "utf8"));
 const COURS = global.window.COURS;
 const QUIZ = global.window.QUIZ;
 const FLASH = global.window.FLASH;
+const LESSON = global.window.LESSON_IMAGES || { images: {} };
 if (!COURS || !COURS.chapters) throw new Error("COURS introuvable dans js/data-cours.js");
 if (!QUIZ || !QUIZ.questions) throw new Error("QUIZ introuvable dans js/data-quiz.js");
 if (!FLASH || !FLASH.cards) throw new Error("FLASH introuvable dans js/data-flash.js");
@@ -102,8 +104,8 @@ function head(opts) {
 '<meta name="keywords" content="' + esc(opts.keywords || "Système d'Exploitation 1, SE1, cours Unix, QCM, شرح عربي") + '">\n' +
 '<meta name="author" content="' + BRAND + '">\n' +
 '<meta name="robots" content="' + (opts.noindex ? "noindex,follow" : "index,follow,max-image-preview:large,max-snippet:-1") + '">\n' +
-'<meta name="theme-color" content="#070b18">\n' +
-'<meta name="color-scheme" content="dark">\n' +
+'<meta name="theme-color" content="#f6edda">\n' +
+'<meta name="color-scheme" content="light">\n' +
 '<link rel="canonical" href="' + esc(url) + '">\n' +
 '<meta property="og:type" content="' + (opts.ogType || "article") + '">\n' +
 '<meta property="og:site_name" content="' + BRAND + '">\n' +
@@ -120,8 +122,8 @@ function head(opts) {
 '<meta name="twitter:title" content="' + esc(opts.ogTitle || title) + '">\n' +
 '<meta name="twitter:description" content="' + esc(opts.ogDescription || desc) + '">\n' +
 '<meta name="twitter:image" content="' + image + '">\n' +
-'<link rel="icon" href="data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect rx=\'24\' width=\'100\' height=\'100\' fill=\'%237c5cff\'/><text x=\'50\' y=\'68\' font-size=\'58\' font-family=\'Segoe UI\' font-weight=\'700\' text-anchor=\'middle\' fill=\'white\'>B</text></svg>">\n' +
-'<link rel="stylesheet" href="' + prefix + 'css/seo.css">\n' +
+'<link rel="icon" href="data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect rx=\'24\' width=\'100\' height=\'100\' fill=\'%230f5c52\'/><text x=\'50\' y=\'68\' font-size=\'58\' font-family=\'Segoe UI\' font-weight=\'700\' text-anchor=\'middle\' fill=\'white\'>B</text></svg>">\n' +
+'<link rel="stylesheet" href="' + prefix + 'css/seo.css?v=20261030">\n' +
 ld + '\n' +
 '</head>\n' +
 '<body>\n' +
@@ -183,6 +185,27 @@ function termsHTML(sec) {
   }).join("\n") + '\n</div>';
 }
 
+function sectionImages(secId) {
+  return (LESSON.images && LESSON.images[secId]) || [];
+}
+
+function galleryHTML(secId) {
+  const imgs = sectionImages(secId);
+  if (!imgs.length) return "";
+  return '<section class="lesson-gallery" aria-labelledby="lg-title">\n' +
+    '<div class="lg-head"><h2 id="lg-title">Illustrations de la leçon</h2>' +
+    '<span class="lg-count">' + imgs.length + ' planche' + (imgs.length > 1 ? 's' : '') +
+    ' · cliquez pour agrandir</span></div>\n' +
+    '<div class="lg-grid">\n' + imgs.map(function (im) {
+      return '<figure class="lg-item">' +
+        '<a class="lg-thumb" href="../' + im.src + '" target="_blank" rel="noopener" aria-label="Agrandir : ' + esc(im.title) + '">' +
+        '<img src="../' + im.thumb + '" alt="' + esc(im.title) + '" loading="lazy" decoding="async" width="360" height="' +
+          Math.round(360 * im.h / im.w) + '">' +
+        '<span class="lg-zoom" aria-hidden="true">⤢</span></a>' +
+        '<figcaption lang="ar" dir="rtl">' + esc(im.title) + '</figcaption></figure>';
+    }).join("\n") + '\n</div>\n</section>\n';
+}
+
 function sectionPage(item) {
   const ch = item.ch, sec = item.sec;
   const url = canonicalSection(sec);
@@ -227,6 +250,12 @@ function sectionPage(item) {
     ]
   };
 
+  const secImgs = sectionImages(sec.id);
+  if (secImgs.length) {
+    ld["@graph"][0].image = secImgs.map(function (im) { return SITE + "/" + im.src; });
+    ld["@graph"][0].thumbnailUrl = SITE + "/" + secImgs[0].thumb;
+  }
+
   let html = head({
     title: pageTitle(sec),
     description: desc,
@@ -250,6 +279,7 @@ function sectionPage(item) {
     '<div class="meta-row">' +
       '<span class="chip">📄 Pages ' + first + '–' + last + '</span>' +
       '<span class="chip">' + sec.pages.length + ' pages</span>' +
+      (sectionImages(sec.id).length ? '<span class="chip">🖼️ ' + sectionImages(sec.id).length + ' illustrations</span>' : '') +
       '<span class="chip">🇫🇷 Cours en français</span>' +
       '<span class="chip">📘 شرح بالعربية</span>' +
     '</div>\n</header>\n';
@@ -258,6 +288,8 @@ function sectionPage(item) {
     '<h2 id="ar-title"> الشرح بالعربية</h2>\n' +
     '<p class="ar-text" lang="ar" dir="rtl">' + esc(sec.arText) + '</p>\n' +
     termsHTML(sec) + '\n</section>\n';
+
+  html += galleryHTML(sec.id);
 
   html += '<div class="sec-head"><div><h2>Contenu du cours</h2>' +
     '<p>Pages ' + first + '–' + last + ' · texte intégral du support</p></div>' +
@@ -658,16 +690,26 @@ function sitemap() {
     { loc: SITE + "/qcm.html", priority: "0.9", freq: "monthly" },
     { loc: SITE + "/flashcards.html", priority: "0.8", freq: "monthly" }
   ].concat(ALL.map(function (it) {
-    return { loc: canonicalSection(it.sec), priority: "0.7", freq: "monthly" };
+    return {
+      loc: canonicalSection(it.sec), priority: "0.7", freq: "monthly",
+      images: sectionImages(it.sec.id)
+    };
   }));
   return '<?xml version="1.0" encoding="UTF-8"?>\n' +
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' +
     entries.map(function (e) {
+      const imgs = (e.images || []).map(function (im) {
+        return "    <image:image>\n" +
+          "      <image:loc>" + esc(SITE + "/" + im.src) + "</image:loc>\n" +
+          "      <image:title>" + esc(im.title) + "</image:title>\n" +
+          "    </image:image>\n";
+      }).join("");
       return "  <url>\n" +
         "    <loc>" + esc(e.loc) + "</loc>\n" +
         "    <lastmod>" + LAST_MOD + "</lastmod>\n" +
         "    <changefreq>" + e.freq + "</changefreq>\n" +
         "    <priority>" + e.priority + "</priority>\n" +
+        imgs +
         "  </url>";
     }).join("\n") + "\n</urlset>\n";
 }
