@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /README.md
+Disallow: /PLAN.md
+Disallow: /PROGRESS.md
+Disallow: /Lancer%20Badr%20AI.vbs
+
+Sitemap: https://cybader.github.io/badr-ai-se1/sitemap.xml

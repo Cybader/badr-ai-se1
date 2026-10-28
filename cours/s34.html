@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Substitutions &amp; paramètres positionnels — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Substitutions &amp; paramètres positionnels (pages 321–329). الاستبدالات والمعاملات الموضعية — explications en arabe, révision en français, QCM et…">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Substitutions &amp; paramètres positionnels, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Paramètre positionnel, $#, shift, $@ / $*">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s34.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Substitutions &amp; paramètres positionnels — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Substitutions &amp; paramètres positionnels (pages 321–329). الاستبدالات والمعاملات الموضعية — explications en arabe, révision en français, QCM et…">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s34.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Substitutions &amp; paramètres positionnels — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Substitutions &amp; paramètres positionnels (pages 321–329). الاستبدالات والمعاملات الموضعية — explications en arabe, révision en français, QCM et…">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s34.html#resource","name":"Substitutions & paramètres positionnels — SE1 | Badr AI","description":"Cours SE1 : Substitutions & paramètres positionnels (pages 321–329). الاستبدالات والمعاملات الموضعية — explications en arabe, révision en français, QCM et…","url":"https://cybader.github.io/badr-ai-se1/cours/s34.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Programmation Shell"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Substitutions & paramètres positionnels, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Paramètre positionnel, $#, shift, $@ / $*"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 3 — Programmation Shell","item":"https://cybader.github.io/badr-ai-se1/cours/#ch3"},{"@type":"ListItem","position":4,"name":"Substitutions & paramètres positionnels","item":"https://cybader.github.io/badr-ai-se1/cours/s34.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch3">Chapitre 3</a><span>›</span><span aria-current="page">Substitutions &amp; paramètres positionnels</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 3 · Section 34/48</span>
+<h1>Substitutions &amp; paramètres positionnels</h1>
+<p class="ar-title" lang="ar" dir="rtl">الاستبدالات والمعاملات الموضعية</p>
+<div class="meta-row"><span class="chip">📄 Pages 321–329</span><span class="chip">9 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">المعاملات الموضعية: $0 اسم السكربت، $1..$9 الوسائط، و${10} بعد العاشر. $# عددها. $@ و$* كلها، والفرق عند التنصيص: &quot;$@&quot; تحافظ على حدود كل وسيط بينما &quot;$*&quot; تدمجهم بفاصل IFS. ${n} تمنع الغموض. set تثبت معاملات جديدة، وshift n يحذف الأوائل للمرور على الكل.</p>
+<div class="terms">
+<div class="term"><b>Paramètre positionnel</b><span lang="ar" dir="rtl">معامل موضعي</span></div>
+<div class="term"><b>$#</b><span lang="ar" dir="rtl">عدد الوسائط</span></div>
+<div class="term"><b>shift</b><span lang="ar" dir="rtl">إزاحة الوسائط</span></div>
+<div class="term"><b>$@ / $*</b><span lang="ar" dir="rtl">قائمة الوسائط</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 321–329 · texte intégral du support</p></div><span class="chip">Chapitre 3 — Programmation Shell</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 321">
+<span class="page-tag">Page 321</span>
+<h3>Effectuer un certain nombre de substitutions lors de l’affichage:</h3>
+<p class="bullet">$paramètre</p>
+<p>=&gt; affiche la valeur courante de paramètre</p>
+<p class="bullet">${paramètre}</p>
+<p>=&gt; affiche la valeur courante de paramètre et autorise la concaténation.</p>
+<p class="bullet">${paramètre:-valeur}</p>
+<p>=&gt; affiche la valeur courante de paramètre si elle est non nulle, sinon affiche Valeur</p>
+<p class="bullet">${paramètre:=valeur}</p>
+<p>=&gt; affiche la valeur courante de paramètre si elle est non nulle, sinon affiche valeur et affecte à paramètre valeur,</p>
+<p class="bullet">${paramètre:?valeur}</p>
+<p>=&gt; affiche la valeur courante de paramètre si elle est non nulle, sinon on écrit valeur sur la sortie standard et on sort.</p>
+<h3>SUBSTITUTIONS DES VARIABLES</h3>
+</section>
+<section class="page" aria-label="Page 322">
+<span class="page-tag">Page 322</span>
+<p class="bullet">Un paramètre de position est référencé par un ou plusieurs chiffres : 8 , 0 , 23</p>
+<p class="bullet">L’assignation de valeurs à des paramètres de position s’effectue :</p>
+<p class="bullet">soit à laide de la commande interne set</p>
+<p class="bullet">soit lors de l’appel d’un fichier shell ou d’une function shell.</p>
+<p class="bullet">On ne peut utiliser ni le symbole =, ni la commande interne read pour affecter directement une valeur à un paramètre de position.</p>
+<h3>Ex :</h3>
+<pre><code>$ 23=bonjour</code></pre>
+<p>23=bonjour : commande introuvable</p>
+<p>$</p>
+<pre><code>$ read 4</code></pre>
+<p>Aa bash: read: « 4 » : identifiant non valable</p>
+<p>$</p>
+<h3>PARAMÈTRES DE POSITION</h3>
+</section>
+<section class="page" aria-label="Page 323">
+<span class="page-tag">Page 323</span>
+<p>La commande interne set affecte une valeur à un ou plusieurs paramètres de position en numérotant ses arguments suivant leur position. La numérotation commence à 1.</p>
+<p>Syntaxe : set arg1 ...</p>
+<h3>Ex :</h3>
+<pre><code>$ set alpha beta gamma</code></pre>
+<p class="bullet">alpha est la valeur du paramètre de position 1</p>
+<p class="bullet">beta est la valeur du 2ème paramètre de position</p>
+<p class="bullet">gamma est la valeur du paramètre de position 3</p>
+<h3>COMMANDE INTERNE SET</h3>
+</section>
+<section class="page" aria-label="Page 324">
+<span class="page-tag">Page 324</span>
+<p>Pour obtenir la valeur d’un paramètre de position, il suffit de placer le caractère $ devant son numéro. Ainsi, $1 permet d’obtenir la valeur du premier paramètre de position, $2 la valeur du deuxième et ainsi de suite.</p>
+<h3>Ex :</h3>
+<pre><code>$ set ab be ga</code></pre>
+<p>=&gt; numérotation des mots ab, be et ga</p>
+<pre><code>$ echo $3 $2</code></pre>
+<p>ga be</p>
+<pre><code>$ echo $4</code></pre>
+<p>$</p>
+<h3>COMMANDE INTERNE SET</h3>
+</section>
+<section class="page" aria-label="Page 325">
+<span class="page-tag">Page 325</span>
+<p class="bullet">Tous les paramètres de position sont réinitialisés dès que la commande interne set est utilisée avec au moins un argument.</p>
+<p>Ex: $ set coucou</p>
+<pre><code>$ echo $1 coucou</code></pre>
+<pre><code>$ echo $2</code></pre>
+<p>=&gt; les valeurs be et ga précédentes ont disparues</p>
+<p>$</p>
+<p class="bullet">La commande interne set -- rend indéfinie la valeur des paramètres de position préalablement initialisés.</p>
+<p>Ex : $ set alpha beta</p>
+<pre><code>$ echo $1 alpha</code></pre>
+<pre><code>$ set --</code></pre>
+<pre><code>$ echo $1</code></pre>
+<p>=&gt; les valeurs alpha et beta sont perdues</p>
+<p>$</p>
+<h3>COMMANDE INTERNE SET</h3>
+</section>
+<section class="page" aria-label="Page 326">
+<span class="page-tag">Page 326</span>
+<h3>Variable prédéfinie IFS et commande interne set :</h3>
+<p class="bullet">La variable prédéfinie IFS du shell contient les caractères séparateur de mots. ( Par défaut, ce sont les caractères espace, tabulation et interligne). L’initialisation de IFS est effectuée par bash.</p>
+<p>( Ex : $ set Jean:12:Rodez (3 arguments si IFS=: et un seul sinon)).</p>
+<p class="bullet">Utilisée sans argument, set a un comportement différent : elle affiche, entre autres, la liste des noms et valeurs des variables définies. (Ex : $ set | more)</p>
+<p class="bullet">Si la valeur du premier argument de set commence par un caractère - ou +, une erreur se produit.</p>
+<p>En effet, les options de cette commande interne commencent par un de ces deux caractères.</p>
+<p class="bullet">Pour éviter que ce type d’erreur ne se produise, on utilise la syntaxe : set --arg…</p>
+<h3>COMMANDE INTERNE SET</h3>
+</section>
+<section class="page" aria-label="Page 327">
+<span class="page-tag">Page 327</span>
+<p class="bullet">Un paramètre spécial est référencé par un caractère spécial.</p>
+<p>L’affectation d’une valeur à un paramètre spécial est effectuée par le shell (implicitement).</p>
+<p class="bullet">Pour obtenir la valeur d’un paramètre spécial, il suffit de placer le caractère $ devant le caractère spécial qui le représente.</p>
+<h3>PARAMÈTRES SPÉCIAUX</h3>
+</section>
+<section class="page" aria-label="Page 328">
+<span class="page-tag">Page 328</span>
+<p class="bullet">$# : donne le nombre d’arguments passés au script</p>
+<p class="bullet">${#var} : longueur de la variable &quot;var&quot;</p>
+<p class="bullet">$* : liste complète des valeurs des paramètres</p>
+<p class="bullet">représente un seul mot constitué de la valeur de tous les paramètres positionnels séparées par le premier caractère de la variable spéciale IFS.</p>
+<p class="bullet">Ceci signifie que $* est équivalent à &quot;$1c$2c...&#39;&#39;, dans laquelle c est le premier caractère de la valeur de la variable IFS.</p>
+<p class="bullet">Si IFS est nulle ou inexistante, les paramètres sont séparés par des espaces.</p>
+<p class="bullet">$0 : le nom du script</p>
+<h3>PARAMÈTRES SPÉCIAUX</h3>
+</section>
+<section class="page" aria-label="Page 329">
+<span class="page-tag">Page 329</span>
+<p class="bullet">$n, ${n} valeur du nième argument du script,</p>
+<p class="bullet">$@ équivalent à $*, mais $@ signifie: &quot;$1&quot; &quot;$2&quot; ... &quot;${n}&quot;</p>
+<p class="bullet">chaque paramètre se transforme en un mot distinct</p>
+<p class="bullet">$$ le numéro de processus du script,</p>
+<h3>PARAMÈTRES SPÉCIAUX</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s33.html">← Variables d&#39;environnement</a><a class="btn" href="s35.html">Paramètres spéciaux, shift &amp;… →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s34">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 3 — Programmation Shell</h2>
+<ul>
+<li><a href="s28.html">Le shell interpréteur &amp; les types de commandes <span lang="ar" dir="rtl">— الشيل كمفسّر وأنواع الأوامر</span></a></li>
+<li><a href="s29.html">Les scripts shell <span lang="ar" dir="rtl">— سكربتات الشيل</span></a></li>
+<li><a href="s30.html">Paramètres &amp; variables <span lang="ar" dir="rtl">— المعاملات والمتغيرات</span></a></li>
+<li><a href="s31.html">read &amp; saisie au clavier <span lang="ar" dir="rtl">— read والإدخال من لوحة المفاتيح</span></a></li>
+<li><a href="s32.html">Quotes, export &amp; portée des variables <span lang="ar" dir="rtl">— الاقتباس والتصدير ونطاق المتغيرات</span></a></li>
+<li><a href="s33.html">Variables d&#39;environnement <span lang="ar" dir="rtl">— متغيرات البيئة</span></a></li>
+<li><a href="s35.html">Paramètres spéciaux, shift &amp; substitution de commande <span lang="ar" dir="rtl">— المعاملات الخاصة وshift واستبدال الأوامر</span></a></li>
+<li><a href="s36.html">Paramètres non définis &amp; unset <span lang="ar" dir="rtl">— المعاملات غير المعرّفة وحذف المتغيرات</span></a></li>
+<li><a href="s37.html">Redirections &amp; scripts <span lang="ar" dir="rtl">— إعادة التوجيه داخل السكربتات</span></a></li>
+<li><a href="s38.html">Tests de conditions <span lang="ar" dir="rtl">— اختبار الشروط</span></a></li>
+<li><a href="s39.html">Expressions arithmétiques <span lang="ar" dir="rtl">— التعابير الحسابية</span></a></li>
+<li><a href="s40.html">Structure conditionnelle if <span lang="ar" dir="rtl">— بنية الشرط if</span></a></li>
+<li><a href="s41.html">Choix multiples avec case <span lang="ar" dir="rtl">— الاختيار المتعدد case</span></a></li>
+<li><a href="s42.html">Boucles for <span lang="ar" dir="rtl">— حلقة for</span></a></li>
+<li><a href="s43.html">Boucles while, until &amp; break/continue <span lang="ar" dir="rtl">— حلقتا while وuntil وbreak/continue</span></a></li>
+<li><a href="s44.html">select, options du shell &amp; exec <span lang="ar" dir="rtl">— select وخيارات الشيل وexec</span></a></li>
+<li><a href="s45.html">La commande expr <span lang="ar" dir="rtl">— الأمر expr</span></a></li>
+<li><a href="s46.html">Fonctions <span lang="ar" dir="rtl">— الدوال</span></a></li>
+<li><a href="s47.html">Récursion &amp; source <span lang="ar" dir="rtl">— الاستدعاء الذاتي وsource</span></a></li>
+<li><a href="s48.html">Les tableaux (arrays) <span lang="ar" dir="rtl">— الجداول (المصفوفات)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

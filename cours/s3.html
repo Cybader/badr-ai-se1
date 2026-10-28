@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le système d&#39;exploitation : rôle et services — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Le système d&#39;exploitation : rôle et services (pages 19–28). نظام التشغيل: الدور والخدمات — explications en arabe, révision en français, QCM et…">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Le système d&#39;exploitation : rôle et services, Introduction aux systèmes d&#39;exploitation, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, SE / OS, Machine virtuelle, Gestionnaire de ressources, Appel système, Ordonnancement">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s3.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Le système d&#39;exploitation : rôle et services — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Le système d&#39;exploitation : rôle et services (pages 19–28). نظام التشغيل: الدور والخدمات — explications en arabe, révision en français, QCM et…">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s3.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Le système d&#39;exploitation : rôle et services — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Le système d&#39;exploitation : rôle et services (pages 19–28). نظام التشغيل: الدور والخدمات — explications en arabe, révision en français, QCM et…">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s3.html#resource","name":"Le système d'exploitation : rôle et services — SE1 | Badr AI","description":"Cours SE1 : Le système d'exploitation : rôle et services (pages 19–28). نظام التشغيل: الدور والخدمات — explications en arabe, révision en français, QCM et…","url":"https://cybader.github.io/badr-ai-se1/cours/s3.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Introduction aux systèmes d'exploitation"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Le système d'exploitation : rôle et services, Introduction aux systèmes d'exploitation, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, SE / OS, Machine virtuelle, Gestionnaire de ressources, Appel système, Ordonnancement"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 1 — Introduction aux systèmes d'exploitation","item":"https://cybader.github.io/badr-ai-se1/cours/#ch1"},{"@type":"ListItem","position":4,"name":"Le système d'exploitation : rôle et services","item":"https://cybader.github.io/badr-ai-se1/cours/s3.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch1">Chapitre 1</a><span>›</span><span aria-current="page">Le système d&#39;exploitation : rôle et services</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 1 · Section 3/48</span>
+<h1>Le système d&#39;exploitation : rôle et services</h1>
+<p class="ar-title" lang="ar" dir="rtl">نظام التشغيل: الدور والخدمات</p>
+<div class="meta-row"><span class="chip">📄 Pages 19–28</span><span class="chip">10 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">نظام التشغيل برنامج وسيط بين المستخدم/التطبيقات والعتاد. له وجهان: (1) آلة موسّعة أو افتراضية تخفي تعقيد العتاد وتقدم واجهة بسيطة عبر نداءات النظام system calls وأوامر shell؛ (2) مدير موارد يجدول ويوزع المعالج والذاكرة وأجهزة الإدخال/الإخراج. أهدافه: تنفيذ برامج المستخدم، تسهيل الاستخدام، والاستغلال الفعّال للعتاد. خدماته: تحرير/ترجمة/تنقيح البرامج، التحميل في الذاكرة، إدارة E/S والملفات، الحماية وحل تعارضات الموارد.</p>
+<div class="terms">
+<div class="term"><b>SE / OS</b><span lang="ar" dir="rtl">نظام التشغيل</span></div>
+<div class="term"><b>Machine virtuelle</b><span lang="ar" dir="rtl">الآلة الافتراضية</span></div>
+<div class="term"><b>Gestionnaire de ressources</b><span lang="ar" dir="rtl">مدير الموارد</span></div>
+<div class="term"><b>Appel système</b><span lang="ar" dir="rtl">نداء النظام</span></div>
+<div class="term"><b>Ordonnancement</b><span lang="ar" dir="rtl">الجدولة</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 19–28 · texte intégral du support</p></div><span class="chip">Chapitre 1 — Introduction aux systèmes d&#39;exploitation</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 19">
+<span class="page-tag">Page 19</span>
+<p>Est un programme qui sert comme intermédiaire / interface entre un utilisateur d’un ordinateur et le matériel informatique.</p>
+<p class="bullet">L’objectif du système d&#39;exploitation:</p>
+<p class="bullet">Contrôler / Exécuter des programmes / Application utilisateur.</p>
+<p class="bullet">Rendre le système informatique facile à utiliser.</p>
+<p class="bullet">Utiliser le matériel informatique de manière efficace.</p>
+<h3>UN SYSTÈME D’ÉXPLOITATION</h3>
+</section>
+<section class="page" aria-label="Page 20">
+<span class="page-tag">Page 20</span>
+<h3>OÙ SE SITUE LE SYSTÈME</h3>
+<h3>D’EXPLOITATION</h3>
+<p>??</p>
+</section>
+<section class="page" aria-label="Page 21">
+<span class="page-tag">Page 21</span>
+<h3>UN SYSTÈME D’ÉXPLOITATION</h3>
+</section>
+<section class="page" aria-label="Page 22">
+<span class="page-tag">Page 22</span>
+<h3>c’est le plus important des programmes systèmes :</h3>
+<p class="bullet">Il contrôle les ressources de l’ordinateur.</p>
+<p class="bullet">Il libère le programmeur de la complexité du matériel.</p>
+<p class="bullet">Un système d’exploitation permet de répondre à deux</p>
+<h3>besoins qui ne sont pas forcément liés :</h3>
+<p class="bullet">le système d’exploitation en tant que machine étendue (ou</p>
+<p>« machine virtuelle »),</p>
+<p class="bullet">le système d’exploitation en tant que gestionnaire de ressources.</p>
+<h3>LE SYSTÈME D’EXPLOITATION (OPERATING</h3>
+<h3>SYSTEM OU OS OU SE)</h3>
+</section>
+<section class="page" aria-label="Page 23">
+<span class="page-tag">Page 23</span>
+<h3>En tant que machine étendue:</h3>
+<p class="bullet">Le système d’exploitation correspond à « l’interface » entre les applications et le matériel.</p>
+<p class="bullet">De ce point de vue le système d’exploitation peut être assimilé à une machine étendue ou virtuelle plus facile à programmer ou à utiliser</p>
+<h3>que le matériel :</h3>
+<p class="bullet">Un programmeur va utiliser le système d’exploitation par l’intermédiaire “ d’appels système ”.</p>
+<p class="bullet">Un utilisateur peut lui aussi – dans une certaine mesure – manipuler un système d’exploitation, sans pour autant avoir à créer un programme (commandes shell).</p>
+<h3>LE SYSTÈME D’EXPLOITATION (OPERATING</h3>
+<h3>SYSTEM OU OS OU SE)</h3>
+</section>
+<section class="page" aria-label="Page 24">
+<span class="page-tag">Page 24</span>
+<h3>En tant que gestionnaire de ressources :</h3>
+<p class="bullet">Les différents composants d’un ordinateur doivent coopérer et partager des ressources.</p>
+<p class="bullet">Dans cette optique, le travail du système d’exploitation consiste à :</p>
+<p class="bullet">ordonnancer,</p>
+<p class="bullet">contrôler l’allocation des ressources :</p>
+<p class="bullet">processeurs,</p>
+<p class="bullet">mémoires,</p>
+<p class="bullet">périphériques d’E/S,</p>
+<p class="bullet">...</p>
+<p>entre les différents programmes qui y font appel.</p>
+<h3>LE SYSTÈME D’EXPLOITATION (OPERATING</h3>
+<h3>SYSTEM OU OS OU SE)</h3>
+</section>
+<section class="page" aria-label="Page 25">
+<span class="page-tag">Page 25</span>
+<p class="bullet">Le SE abstrait la machine</p>
+<p class="bullet">Cache certains détails que l’utilisateur n’a pas à connaître pour exploiter la machine</p>
+<p class="bullet">Présente à l’utilisateur une machine virtuelle facile à utiliser et à programmer.</p>
+<p class="bullet">Offre des services abstraits</p>
+<p class="bullet">Connait les détails internes et garantie l’utilisation des services concrets de la machine.</p>
+<h3>LE SYSTÈME D’EXPLOITATION (OPERATING</h3>
+<h3>SYSTEM OU OS OU SE)</h3>
+</section>
+<section class="page" aria-label="Page 26">
+<span class="page-tag">Page 26</span>
+<h3>QUELS SONT LES SERVICES</h3>
+<h3>OFFERTS PAR UN OS</h3>
+<p>??</p>
+</section>
+<section class="page" aria-label="Page 27">
+<span class="page-tag">Page 27</span>
+<h3>LES SERVICES OFFERTS PAR UN OS</h3>
+<p class="bullet">Facilité de la création de programme.</p>
+<p class="bullet">Editeurs, compilateurs, débogueurs, etc.</p>
+<p class="bullet">Exécution du programme</p>
+<p class="bullet">Chargement en mémoire</p>
+<p class="bullet">Gestion des E / S et initialisation de fichier.</p>
+<p class="bullet">Accès aux E / S et aux fichiers</p>
+<p class="bullet">Traitement des spécificités des E/S et des formats de fichiers.</p>
+<p class="bullet">Accès au système</p>
+<p class="bullet">Résolution des conflits de ressources.</p>
+<p class="bullet">Protection de l&#39;accès aux ressources et aux données.</p>
+</section>
+<section class="page" aria-label="Page 28">
+<span class="page-tag">Page 28</span>
+<h3>Il y a quatre vues (dans la littérature) des SE:</h3>
+<p class="bullet">Gestionnaire de ressources : gère et alloue des ressources</p>
+<p class="bullet">Programme de contrôle : contrôle l&#39;execution des programmes utilisateur et des opérations des périphériques d&#39;E/S.</p>
+<p class="bullet">Exécuteur de commande : Fournit un environnement pour l&#39;execution des commandes utilisateur.</p>
+<p class="bullet">Une Nouvelle vision plus moderne : le système d&#39;exploitation en tant que machine virtuelle.</p>
+<h3>LES SERVICES OFFERTS PAR UN OS</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s2.html">← Le système informatique &amp; l&#39;architecture…</a><a class="btn" href="s4.html">Composants &amp; structure externe du SE →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s3">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 1 — Introduction aux systèmes d&#39;exploitation</h2>
+<ul>
+<li><a href="s1.html">Présentation du module &amp; objectifs <span lang="ar" dir="rtl">— تقديم المادة والأهداف</span></a></li>
+<li><a href="s2.html">Le système informatique &amp; l&#39;architecture matérielle <span lang="ar" dir="rtl">— النظام المعلوماتي والمعمارية المادية</span></a></li>
+<li><a href="s4.html">Composants &amp; structure externe du SE <span lang="ar" dir="rtl">— مكونات نظام التشغيل وبنيته الخارجية</span></a></li>
+<li><a href="s5.html">Les principaux systèmes d&#39;exploitation <span lang="ar" dir="rtl">— أهم أنظمة التشغيل</span></a></li>
+<li><a href="s6.html">Unix, logiciels libres &amp; licence GPL <span lang="ar" dir="rtl">— يونكس، البرمجيات الحرة ورخصة GPL</span></a></li>
+<li><a href="s7.html">Dual boot, GRUB &amp; séquence de démarrage <span lang="ar" dir="rtl">— الإقلاع المزدوج وGRUB وتسلسل الإقلاع</span></a></li>
+<li><a href="s8.html">GNU/Linux, distributions &amp; Ubuntu <span lang="ar" dir="rtl">— GNU/Linux والتوزيعات وأوبونتو</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

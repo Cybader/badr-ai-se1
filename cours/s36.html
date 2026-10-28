@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paramètres non définis &amp; unset — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Paramètres non définis &amp; unset (pages 346–355). المعاملات غير المعرّفة وحذف المتغيرات — explications en arabe, révision en français, QCM et…">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Paramètres non définis &amp; unset, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Paramètre non défini, unset, nounset">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s36.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Paramètres non définis &amp; unset — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Paramètres non définis &amp; unset (pages 346–355). المعاملات غير المعرّفة وحذف المتغيرات — explications en arabe, révision en français, QCM et…">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s36.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paramètres non définis &amp; unset — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Paramètres non définis &amp; unset (pages 346–355). المعاملات غير المعرّفة وحذف المتغيرات — explications en arabe, révision en français, QCM et…">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s36.html#resource","name":"Paramètres non définis & unset — SE1 | Badr AI","description":"Cours SE1 : Paramètres non définis & unset (pages 346–355). المعاملات غير المعرّفة وحذف المتغيرات — explications en arabe, révision en français, QCM et…","url":"https://cybader.github.io/badr-ai-se1/cours/s36.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Programmation Shell"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Paramètres non définis & unset, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Paramètre non défini, unset, nounset"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 3 — Programmation Shell","item":"https://cybader.github.io/badr-ai-se1/cours/#ch3"},{"@type":"ListItem","position":4,"name":"Paramètres non définis & unset","item":"https://cybader.github.io/badr-ai-se1/cours/s36.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch3">Chapitre 3</a><span>›</span><span aria-current="page">Paramètres non définis &amp; unset</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 3 · Section 36/48</span>
+<h1>Paramètres non définis &amp; unset</h1>
+<p class="ar-title" lang="ar" dir="rtl">المعاملات غير المعرّفة وحذف المتغيرات</p>
+<div class="meta-row"><span class="chip">📄 Pages 346–355</span><span class="chip">10 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">${var:-v} قيمة مؤقتة إذا كان غير معرّف أو فارغًا؛ ${var:=v} يعيّن فعليًا؛ ${var:?msg} يوقف بخطأ إن غاب؛ ${var:+v} بديل عند وجوده. set -o nounset يمنع غير المعرّف، وset +o nounset يرجع. unset يحذف المتغيرات (لا يعمل مع readonly).</p>
+<div class="terms">
+<div class="term"><b>Paramètre non défini</b><span lang="ar" dir="rtl">معامل غير معرف</span></div>
+<div class="term"><b>unset</b><span lang="ar" dir="rtl">حذف متغير</span></div>
+<div class="term"><b>nounset</b><span lang="ar" dir="rtl">منع غير المعرّف</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 346–355 · texte intégral du support</p></div><span class="chip">Chapitre 3 — Programmation Shell</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 346">
+<span class="page-tag">Page 346</span>
+<p>Pour éviter les ambiguïtés dans l’interprétation des références de paramètres, on utilise la syntaxe ${paramètre}.</p>
+<h3>Ex :</h3>
+<pre><code>$ x=bon</code></pre>
+<pre><code>$ x1=jour</code></pre>
+<pre><code>$ echo $x1</code></pre>
+<p>=&gt; valeur de la variable x1</p>
+<p>Jour</p>
+<pre><code>$ echo ${x}1</code></pre>
+<p>=&gt; pour concaténer la valeur de la variable x à la chaîne ‘’1’’ bon1</p>
+<p>$</p>
+<h3>Ex :</h3>
+<pre><code>$ set un deux trois quatre cinq six sept huit neuf dix onze douze</code></pre>
+<pre><code>$ echo $11</code></pre>
+<p>Un1</p>
+<p>$</p>
+<pre><code>$ echo ${11}</code></pre>
+<p>=&gt; pour obtenir la valeur du onzième paramètre de position onze</p>
+<h3>SUPPRESSION DES AMBIGUÏTÉS</h3>
+</section>
+<section class="page" aria-label="Page 347">
+<span class="page-tag">Page 347</span>
+<h3>PARAMÉTRES NON DÉFINIS</h3>
+<p>Trois cas peuvent se présenter lorsque le shell doit évaluer un paramètre :</p>
+<p class="bullet">Le paramètre n’est pas défini,</p>
+<p class="bullet">Le paramètre est défini mais ne possède aucune valeur (valeur vide),</p>
+<p class="bullet">Le paramètre possède une valeur non vide.</p>
+<p>Lorsque l’option nounset de la commande interne set est positionnée à l’état on (commande set -o nounset), bash affiche un message d’erreur quand il doit évaluer un paramètre non défini.</p>
+</section>
+<section class="page" aria-label="Page 348">
+<span class="page-tag">Page 348</span>
+<h3>PARAMÉTRES NON DÉFINIS</h3>
+<h3>Ex :</h3>
+<pre><code>$ set -o nounset</code></pre>
+<p>=&gt; option nounset à l’état on</p>
+<pre><code>$ echo $e</code></pre>
+<p>=&gt; variable utilisateur e non définie bash: e : variable sans liaison</p>
+<p>=&gt; message d’erreur !</p>
+<pre><code>$ set --</code></pre>
+<p>=&gt; paramètres de position sont réinitialisés</p>
+<pre><code>$ echo $1</code></pre>
+<p>bash: $1 : variable sans liaison</p>
+<pre><code>$ d=</code></pre>
+<p>=&gt; d : variable définie mais vide</p>
+<pre><code>$ echo $d</code></pre>
+<p>=&gt; &gt; valeur null, pas d d’erreur</p>
+<p>$</p>
+</section>
+<section class="page" aria-label="Page 349">
+<span class="page-tag">Page 349</span>
+<h3>PARAMÉTRES NON DÉFINIS</h3>
+<p>Pour associer au paramètre une valeur ponctuelle lorsqu’il est non défini ou bien défini vide.</p>
+<h3>La syntaxe à utiliser est la suivante :</h3>
+<pre><code>${paramètre:‐chaîne}</code></pre>
+</section>
+<section class="page" aria-label="Page 350">
+<span class="page-tag">Page 350</span>
+<h3>PARAMÉTRES NON DÉFINIS</h3>
+<h3>Ex :</h3>
+<pre><code>$ set -o nounset</code></pre>
+<pre><code>$ ut1=root</code></pre>
+<p>=&gt; ut1 définie et non vide</p>
+<pre><code>$ ut2=</code></pre>
+<p>=&gt; ut2 définie et vide</p>
+<pre><code>$ echo $ut1</code></pre>
+<p>root</p>
+<pre><code>$ echo $ut2</code></pre>
+<pre><code>$ echo $1</code></pre>
+<p>bash: $1 : variable sans liaison</p>
+<p>=&gt; paramètre de position 1 non défini</p>
+<p>$</p>
+</section>
+<section class="page" aria-label="Page 351">
+<span class="page-tag">Page 351</span>
+<h3>PARAMÉTRES NON DÉFINIS</h3>
+<h3>Ex :</h3>
+<pre><code>$ echo ${ut1:-Remplace}</code></pre>
+<p>root</p>
+<p>=&gt; ut1 étant définie non vide, sa valeur est utilisée</p>
+<pre><code>$ echo ${ut2:-Remplace}</code></pre>
+<p>=&gt; ut2 est définie et vide, la valeur de remplacement est utilisé</p>
+<p>Remplace</p>
+<p>$</p>
+<pre><code>$ echo ${1:-Remplace}</code></pre>
+<p>Remplace</p>
+<p>=&gt; le premier paramètre de position est non défini, la valeur de remplacement est utilisée</p>
+<p>$</p>
+</section>
+<section class="page" aria-label="Page 352">
+<span class="page-tag">Page 352</span>
+<h3>PARAMÉTRES NON DÉFINIS</h3>
+<p>Cette association ne dure que le temps d’exécution de la commande.</p>
+<h3>Ex :</h3>
+<pre><code>$ echo $1</code></pre>
+<p>bash: $1 : variable sans liaison</p>
+<p>=&gt; le paramètre est redevenu indéfini</p>
+<p>$</p>
+</section>
+<section class="page" aria-label="Page 353">
+<span class="page-tag">Page 353</span>
+<h3>PARAMÉTRES NON DÉFINIS</h3>
+<p>La commande « set +o nounset » positionne l’option nounset à l’état off :</p>
+<p>le shell traite les paramètres non définis comme des paramètres vides.</p>
+<h3>Ex :</h3>
+<pre><code>$ set +o nounset =&gt; option nounset à l’état off</code></pre>
+<p>$</p>
+<pre><code>$ echo $e</code></pre>
+<p>=&gt; variable e non définie, $</p>
+<p>=&gt; aucune erreur signalée</p>
+<pre><code>$ echo $2</code></pre>
+<p>$</p>
+<p>=&gt; aucune erreur signalée</p>
+<pre><code>$ f=</code></pre>
+<p>=&gt; f : variable définie vide</p>
+<pre><code>$ echo $f</code></pre>
+<p>$</p>
+</section>
+<section class="page" aria-label="Page 354">
+<span class="page-tag">Page 354</span>
+<h3>SUPPRESSION DE VARIABLES</h3>
+<p>Pour rendre indéfinies une ou plusieurs variables, on utilise la commande interne unset.</p>
+<h3>Syntaxe :</h3>
+<p>unset var [ var1 . . . ]</p>
+<h3>Ex :</h3>
+<pre><code>$ a=coucou</code></pre>
+<p>=&gt; la variable a est définie</p>
+<pre><code>$ echo $a</code></pre>
+<p>coucou</p>
+<pre><code>$ unset a</code></pre>
+<p>=&gt; la variable a est supprimée</p>
+<pre><code>$ set -o nounset</code></pre>
+<p>=&gt; pour afficher le message d’erreur</p>
+<pre><code>$ echo $a</code></pre>
+<p>bash: a : variable sans liaison</p>
+<p>$</p>
+</section>
+<section class="page" aria-label="Page 355">
+<span class="page-tag">Page 355</span>
+<h3>SUPPRESSION DE VARIABLES</h3>
+<p>Une variable en « lecture seule » ne peut être supprimée par unset.</p>
+<p>Ex : $ declare -r a=coucou</p>
+<p>=&gt; définition de la constante a</p>
+<pre><code>$ echo $a</code></pre>
+<p>coucou</p>
+<pre><code>$ unset a</code></pre>
+<p>bash: unset: a : « unset » impossible : variable est en lecture seule</p>
+<p>$</p>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s35.html">← Paramètres spéciaux, shift &amp;…</a><a class="btn" href="s37.html">Redirections &amp; scripts →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s36">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 3 — Programmation Shell</h2>
+<ul>
+<li><a href="s28.html">Le shell interpréteur &amp; les types de commandes <span lang="ar" dir="rtl">— الشيل كمفسّر وأنواع الأوامر</span></a></li>
+<li><a href="s29.html">Les scripts shell <span lang="ar" dir="rtl">— سكربتات الشيل</span></a></li>
+<li><a href="s30.html">Paramètres &amp; variables <span lang="ar" dir="rtl">— المعاملات والمتغيرات</span></a></li>
+<li><a href="s31.html">read &amp; saisie au clavier <span lang="ar" dir="rtl">— read والإدخال من لوحة المفاتيح</span></a></li>
+<li><a href="s32.html">Quotes, export &amp; portée des variables <span lang="ar" dir="rtl">— الاقتباس والتصدير ونطاق المتغيرات</span></a></li>
+<li><a href="s33.html">Variables d&#39;environnement <span lang="ar" dir="rtl">— متغيرات البيئة</span></a></li>
+<li><a href="s34.html">Substitutions &amp; paramètres positionnels <span lang="ar" dir="rtl">— الاستبدالات والمعاملات الموضعية</span></a></li>
+<li><a href="s35.html">Paramètres spéciaux, shift &amp; substitution de commande <span lang="ar" dir="rtl">— المعاملات الخاصة وshift واستبدال الأوامر</span></a></li>
+<li><a href="s37.html">Redirections &amp; scripts <span lang="ar" dir="rtl">— إعادة التوجيه داخل السكربتات</span></a></li>
+<li><a href="s38.html">Tests de conditions <span lang="ar" dir="rtl">— اختبار الشروط</span></a></li>
+<li><a href="s39.html">Expressions arithmétiques <span lang="ar" dir="rtl">— التعابير الحسابية</span></a></li>
+<li><a href="s40.html">Structure conditionnelle if <span lang="ar" dir="rtl">— بنية الشرط if</span></a></li>
+<li><a href="s41.html">Choix multiples avec case <span lang="ar" dir="rtl">— الاختيار المتعدد case</span></a></li>
+<li><a href="s42.html">Boucles for <span lang="ar" dir="rtl">— حلقة for</span></a></li>
+<li><a href="s43.html">Boucles while, until &amp; break/continue <span lang="ar" dir="rtl">— حلقتا while وuntil وbreak/continue</span></a></li>
+<li><a href="s44.html">select, options du shell &amp; exec <span lang="ar" dir="rtl">— select وخيارات الشيل وexec</span></a></li>
+<li><a href="s45.html">La commande expr <span lang="ar" dir="rtl">— الأمر expr</span></a></li>
+<li><a href="s46.html">Fonctions <span lang="ar" dir="rtl">— الدوال</span></a></li>
+<li><a href="s47.html">Récursion &amp; source <span lang="ar" dir="rtl">— الاستدعاء الذاتي وsource</span></a></li>
+<li><a href="s48.html">Les tableaux (arrays) <span lang="ar" dir="rtl">— الجداول (المصفوفات)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

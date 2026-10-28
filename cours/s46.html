@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fonctions — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Fonctions (pages 411–429). الدوال — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Fonctions, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Fonction, Argument, Valeur de retour, local">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s46.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Fonctions — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Fonctions (pages 411–429). الدوال — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s46.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fonctions — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Fonctions (pages 411–429). الدوال — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s46.html#resource","name":"Fonctions — SE1 | Badr AI","description":"Cours SE1 : Fonctions (pages 411–429). الدوال — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s46.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Programmation Shell"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Fonctions, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Fonction, Argument, Valeur de retour, local"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 3 — Programmation Shell","item":"https://cybader.github.io/badr-ai-se1/cours/#ch3"},{"@type":"ListItem","position":4,"name":"Fonctions","item":"https://cybader.github.io/badr-ai-se1/cours/s46.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch3">Chapitre 3</a><span>›</span><span aria-current="page">Fonctions</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 3 · Section 46/48</span>
+<h1>Fonctions</h1>
+<p class="ar-title" lang="ar" dir="rtl">الدوال</p>
+<div class="meta-row"><span class="chip">📄 Pages 411–429</span><span class="chip">19 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">التعريف: function nom { ... } أو nom() { ... }. تُستدعى كأمر بدون (). تعمل في نفس الشيل فتتشارك المتغيرات. الوسائط $1.. و$#. return يرجع كودًا من 0 إلى 255 فقط؛ لإرجاع قيمة استخدم echo ثم $(). local لمتغير محلي. declare -F يعرض الدوال، unset -f يحذفها، export -f يورّثها، وsource يحمّلها من ملف.</p>
+<div class="terms">
+<div class="term"><b>Fonction</b><span lang="ar" dir="rtl">دالة</span></div>
+<div class="term"><b>Argument</b><span lang="ar" dir="rtl">وسيط</span></div>
+<div class="term"><b>Valeur de retour</b><span lang="ar" dir="rtl">قيمة الإرجاع</span></div>
+<div class="term"><b>local</b><span lang="ar" dir="rtl">متغير محلي</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 411–429 · texte intégral du support</p></div><span class="chip">Chapitre 3 — Programmation Shell</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 411">
+<span class="page-tag">Page 411</span>
+<h3>Le shell bash propose plusieurs syntaxes pour définir une fonction:</h3>
+<p>function nom_fct</p>
+<p>{ suite_de_commandes</p>
+<p>} nom_fct () { commande...</p>
+<p>} function nom_fct</p>
+<p>{ suite_de_commandes ;}</p>
+<p>Pour appeler une fonction, il suffit de mentionner son nom.</p>
+<h3>LES FONCTIONS</h3>
+</section>
+<section class="page" aria-label="Page 412">
+<span class="page-tag">Page 412</span>
+<p>Comme pour les autres commandes composées de bash, une fonction peut être définie directement à partir d’un shell interactif.</p>
+<pre><code>$ function f0</code></pre>
+<p>{</p>
+<p>&gt; echo Bonjour tout le monde !</p>
+<p>&gt; }</p>
+<pre><code>$ f0 =&gt; appel de la fonction f0</code></pre>
+<p>Bonjour tout le monde !</p>
+<p>$</p>
+<h3>DÉFINITION DE FONCTION EN MODE LIGNE</h3>
+</section>
+<section class="page" aria-label="Page 413">
+<span class="page-tag">Page 413</span>
+<p>L&#39;exécution d&#39;une fonction s&#39;effectue dans l&#39;environnement courant, autorisant ainsi le partage de variables.</p>
+<h3>En mode commande :</h3>
+<pre><code>$ c=Coucou</code></pre>
+<p>$</p>
+<pre><code>$ function f1</code></pre>
+<p>{</p>
+<pre><code>echo $c</code></pre>
+<p>=&gt; utilisation dans la fonction d’une variable externe c</p>
+<p>}</p>
+<p>$</p>
+<pre><code>$ f1</code></pre>
+<p>Coucou</p>
+<p>$</p>
+<h3>L’EXÉCUTION D’UNE FONCTION</h3>
+</section>
+<section class="page" aria-label="Page 414">
+<span class="page-tag">Page 414</span>
+<p>Il n’est pas obligatoire de définir toutes les fonctions en début de programme. Il est uniquement nécessaire que la définition d’une fonction soit faite avant son</p>
+<h3>appel effectif, c&#39;est-à-dire avant son exécution :</h3>
+<p>function f1</p>
+<p>{ ... ;} suite_commandes1 function f2</p>
+<p>{ ... ;} suite_commandes2</p>
+<p>Dans le code ci-dessus, suite_commandes1 ne peut exécuter la fonction f2</p>
+<p>(contrairement à suite_commandes2).</p>
+<p>Pour utiliser les fonctions dans tout le script il suffit de les déclarer au début.</p>
+<h3>OÙ DÉFINIR UNE FONCTION</h3>
+</section>
+<section class="page" aria-label="Page 415">
+<span class="page-tag">Page 415</span>
+<p>Les noms de toutes les fonctions définies peuvent être listés à l&#39;aide</p>
+<h3>de la commande :</h3>
+<pre><code>declare –F</code></pre>
+<p>#exemple de réponse</p>
+<pre><code>declare -f f0</code></pre>
+<pre><code>declare -f f1</code></pre>
+<p>Les noms et corps de toutes les fonctions définies sont affichés</p>
+<h3>à l’aide de la commande :</h3>
+<pre><code>declare –f</code></pre>
+<h3>Pour afficher le nom et corps d’une ou plusieurs fonctions :</h3>
+<p>declare -f nomfct ...</p>
+<pre><code>declare -f f0</code></pre>
+<h3>DECLARE -F</h3>
+</section>
+<section class="page" aria-label="Page 416">
+<span class="page-tag">Page 416</span>
+<h3>Une fonction est rendue indéfinie par la commande interne :</h3>
+<p>unset -f nomfct ...</p>
+<pre><code>$ declare -F declare -f f0 declare -f f1</code></pre>
+<pre><code>$ unset -f f1</code></pre>
+<pre><code>$ declare –F</code></pre>
+<pre><code>declare -f f0</code></pre>
+<p>=&gt; la fonction f1 n’existe plus !</p>
+<h3>SUPPRESSION D’UNE FONCTION</h3>
+</section>
+<section class="page" aria-label="Page 417">
+<span class="page-tag">Page 417</span>
+<p class="bullet">Les arguments d’une fonction sont référencés dans son corps de la</p>
+<h3>même manière que les arguments d’un programme shell le sont :</h3>
+<pre><code>$1 référence le premier argument, $2 le deuxième, etc., $# le</code></pre>
+<p>nombre d’arguments passés lors de l’appel de la fonction.</p>
+<p class="bullet">Le paramètre spécial $0 n’est pas modifié : il contient le nom du programme shell.</p>
+<p class="bullet">Ecrire un script qui affiche $0, $1 et $# avant la définition de la fonction, dans la fonction et après.</p>
+<h3>LES ARGUMENTS PASSÉS AU SCRIPT</h3>
+</section>
+<section class="page" aria-label="Page 418">
+<span class="page-tag">Page 418</span>
+<h3>script.sh :</h3>
+<pre><code>#!/bin/bash</code></pre>
+<p>echo &quot;Avant f : \$0 : $0&quot;</p>
+<p>echo &quot; Avant f : \$# : $#&quot;</p>
+<p>echo &quot; Avant f : \$1 : $1&quot;</p>
+<p>function farg</p>
+<p>{</p>
+<pre><code>echo &quot; --- dans f : \$0 : $0&quot;</code></pre>
+<pre><code>echo &quot; --- dans f : \$# : $#&quot;</code></pre>
+<pre><code>echo &quot; --- dans f : \$1 : $1&quot; ; }</code></pre>
+<p># Appel de la fonction farg echo &quot; Aprés f : \$0 : $0&quot;</p>
+<p>echo &quot; Aprés f : \$# : $#&quot;</p>
+<p>echo &quot; Aprés f : \$1 : $1&quot;</p>
+<h3>LES ARGUMENTS PASSÉS AU SCRIPT</h3>
+</section>
+<section class="page" aria-label="Page 419">
+<span class="page-tag">Page 419</span>
+<p>Par défaut, une variable définie à l’intérieur d’une fonction est globale ; cela signifie qu’elle est directement modifiable par les autres fonctions du programme shell.</p>
+<p>Exemple : glob.sh</p>
+<pre><code>#!/bin/bash</code></pre>
+<p>function fun</p>
+<p>{ var=&quot;Un&quot;</p>
+<p># creation de la variable var</p>
+<p>} function fdeux</p>
+<p>{ var=${var}Deux</p>
+<p># premiere modification de var</p>
+<p>} fun fdeux var=${var}Princ</p>
+<p># deuxieme modification de va</p>
+<pre><code>echo $var</code></pre>
+<p>UnDeuxPrinc</p>
+<p>#résultat</p>
+<h3>LES VARIABLES GLOBALES</h3>
+</section>
+<section class="page" aria-label="Page 420">
+<span class="page-tag">Page 420</span>
+<p>Pour définir une variable locale à une fonction, on utilise la</p>
+<h3>commande interne local. Sa syntaxe est :</h3>
+<p>local [option] [nom[=valeur] ...] local prenom=&quot;zouhair&quot;</p>
+<p>Les options utilisables avec local sont celles de la commande interne declare. Par conséquent, on définira une ou plusieurs variables de type entier avec la syntaxe local –i (local –a pour un tableau local).</p>
+<p>La portée d&#39;une variable locale inclut la fonction qui l&#39;a définie ainsi que les fonctions qu&#39;elle appelle (directement ou indirectement).</p>
+<h3>LES VARIABLES LOCALES</h3>
+</section>
+<section class="page" aria-label="Page 421">
+<span class="page-tag">Page 421</span>
+<h3>Exemple :</h3>
+<pre><code>#!/bin/bash</code></pre>
+<p>function f1 { local -i a=12</p>
+<p># &#39;a&#39; est une variable locale à f1</p>
+<p>(( a+=1 ))</p>
+<pre><code>echo &quot;Dans f1 : a =&gt; $a&quot;</code></pre>
+<p>} f1</p>
+<pre><code>echo &quot;Dans main : a =&gt; $a&quot; # Génère une erreur car &#39;a&#39; est locale à f1</code></pre>
+<h3>LES VARIABLES LOCALES</h3>
+</section>
+<section class="page" aria-label="Page 422">
+<span class="page-tag">Page 422</span>
+<p>On peut définir une fonction qui retourne une valeur comme le montre l’exemple</p>
+<h3>(min entre args):</h3>
+<p>function min()</p>
+<p>{ if [ -n $1 ] &amp;&amp; [ -n $2 ]; then if [ $1 -lt $2 ]; then return $1 else return $2 fi fi</p>
+<p>} min 112 13 echo &quot;$? est la plus petite valeur&quot;</p>
+<h3>LE RETURN</h3>
+</section>
+<section class="page" aria-label="Page 423">
+<span class="page-tag">Page 423</span>
+<p class="bullet">Il n’est pas possible de mettre une valeur supérieure à 256 comme argument et une fonction ne peut renvoyer une valeur supérieure à 256.</p>
+<p class="bullet">Cette contrainte provient des codes de sortie.</p>
+<p class="bullet">Pour palier au problème, il suffit d&#39;utiliser une variable globale.</p>
+<h3>VAL=</h3>
+<p>function min() { if [ -n &quot;$1&quot; ] &amp;&amp; [ -n &quot;$2&quot; ]; then if [ &quot;$1&quot; -lt &quot;$2&quot; ]; then</p>
+<h3>VAL=$1</h3>
+<p>else</p>
+<h3>VAL=$2</h3>
+<p>fi fi</p>
+<p>} min 1132 1300 echo &quot;$VAL est la plus petite valeur&quot;</p>
+<h3>RESTRICTION DU RETURN</h3>
+</section>
+<section class="page" aria-label="Page 424">
+<span class="page-tag">Page 424</span>
+<p class="bullet">Pour qu’une fonction puisse être exécutée par un programme shell différent de celui où elle a été définie, il est nécessaire d’exporter cette fonction.</p>
+<p class="bullet">On utilise la commande interne export: export -f nomfct</p>
+<p class="bullet">Pour que l’export fonctionne, le sous-shell qui exécute la fonction doit avoir une relation de descendance avec le programme shell qui exporte la fonction.</p>
+<h3>EXPORTER UNE FONCTION</h3>
+</section>
+<section class="page" aria-label="Page 425">
+<span class="page-tag">Page 425</span>
+<h3>Exemple :</h3>
+<p>Progdef.sh</p>
+<pre><code>#!/bin/bash</code></pre>
+<p>function bonj</p>
+<p>{ echo &quot;bonj : Bonjour $1 &quot;</p>
+<p>} bonj Madame</p>
+<p>#appel normal à la fonction</p>
+<p>ProgShell.sh</p>
+<pre><code>#!/bin/bash</code></pre>
+<p>echo &quot;appel a la fonction externe : bonj &quot;</p>
+<p>bonj Monsieur</p>
+<p>#appel erroné à la fonction</p>
+<h3>EXPORTER UNE FONCTION</h3>
+</section>
+<section class="page" aria-label="Page 426">
+<span class="page-tag">Page 426</span>
+<h3>Le programme devient:</h3>
+<pre><code>#!/bin/bash</code></pre>
+<p>function bonj</p>
+<p>{ echo bonj : Bonjour $1</p>
+<p>}</p>
+<pre><code>export -f bonj</code></pre>
+<h3>VISIBILITÉ D’UNE FONCTION</h3>
+</section>
+<section class="page" aria-label="Page 427">
+<span class="page-tag">Page 427</span>
+<p class="bullet">Après son export, la fonction bonj sera connue dans les sousshells créés lors de l’exécution de ProgShell.</p>
+<p class="bullet">La visibilité d’une fonction exportée est similaire à celle d’une variable locale, c&#39;est-à-dire une visibilité arborescente dont la racine est le point d’export de la fonction.</p>
+<h3>VISIBILITÉ D’UNE FONCTION</h3>
+</section>
+<section class="page" aria-label="Page 428">
+<span class="page-tag">Page 428</span>
+<p class="bullet">La commande interne return ne peut retourner qu’un code de retour.</p>
+<p class="bullet">Pour récupérer la valeur modifiée par une fonction, on peut :</p>
+<p class="bullet">Enregistrer la nouvelle valeur dans une variable globale,</p>
+<p class="bullet">Faire écrire la valeur modifiée sur la sortie standard, ce qui permet à la fonction ou programme appelant de capter cette</p>
+<h3>valeur grâce à une substitution de fonction :</h3>
+<pre><code>$( fct [ arg … ] )</code></pre>
+<h3>SUBSTITUTION D’UNE FONCTION</h3>
+</section>
+<section class="page" aria-label="Page 429">
+<span class="page-tag">Page 429</span>
+<h3>Exemple:</h3>
+<pre><code>#!/bin/bash</code></pre>
+<p>function ajout</p>
+<p>{ echo &quot; $1 coucou &quot;</p>
+<p>} echo &quot;la chaine est : $(ajout bonjour)&quot;</p>
+<h3>SUBSTITUTION D’UNE FONCTION</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s45.html">← La commande expr</a><a class="btn" href="s47.html">Récursion &amp; source →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s46">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 3 — Programmation Shell</h2>
+<ul>
+<li><a href="s28.html">Le shell interpréteur &amp; les types de commandes <span lang="ar" dir="rtl">— الشيل كمفسّر وأنواع الأوامر</span></a></li>
+<li><a href="s29.html">Les scripts shell <span lang="ar" dir="rtl">— سكربتات الشيل</span></a></li>
+<li><a href="s30.html">Paramètres &amp; variables <span lang="ar" dir="rtl">— المعاملات والمتغيرات</span></a></li>
+<li><a href="s31.html">read &amp; saisie au clavier <span lang="ar" dir="rtl">— read والإدخال من لوحة المفاتيح</span></a></li>
+<li><a href="s32.html">Quotes, export &amp; portée des variables <span lang="ar" dir="rtl">— الاقتباس والتصدير ونطاق المتغيرات</span></a></li>
+<li><a href="s33.html">Variables d&#39;environnement <span lang="ar" dir="rtl">— متغيرات البيئة</span></a></li>
+<li><a href="s34.html">Substitutions &amp; paramètres positionnels <span lang="ar" dir="rtl">— الاستبدالات والمعاملات الموضعية</span></a></li>
+<li><a href="s35.html">Paramètres spéciaux, shift &amp; substitution de commande <span lang="ar" dir="rtl">— المعاملات الخاصة وshift واستبدال الأوامر</span></a></li>
+<li><a href="s36.html">Paramètres non définis &amp; unset <span lang="ar" dir="rtl">— المعاملات غير المعرّفة وحذف المتغيرات</span></a></li>
+<li><a href="s37.html">Redirections &amp; scripts <span lang="ar" dir="rtl">— إعادة التوجيه داخل السكربتات</span></a></li>
+<li><a href="s38.html">Tests de conditions <span lang="ar" dir="rtl">— اختبار الشروط</span></a></li>
+<li><a href="s39.html">Expressions arithmétiques <span lang="ar" dir="rtl">— التعابير الحسابية</span></a></li>
+<li><a href="s40.html">Structure conditionnelle if <span lang="ar" dir="rtl">— بنية الشرط if</span></a></li>
+<li><a href="s41.html">Choix multiples avec case <span lang="ar" dir="rtl">— الاختيار المتعدد case</span></a></li>
+<li><a href="s42.html">Boucles for <span lang="ar" dir="rtl">— حلقة for</span></a></li>
+<li><a href="s43.html">Boucles while, until &amp; break/continue <span lang="ar" dir="rtl">— حلقتا while وuntil وbreak/continue</span></a></li>
+<li><a href="s44.html">select, options du shell &amp; exec <span lang="ar" dir="rtl">— select وخيارات الشيل وexec</span></a></li>
+<li><a href="s45.html">La commande expr <span lang="ar" dir="rtl">— الأمر expr</span></a></li>
+<li><a href="s47.html">Récursion &amp; source <span lang="ar" dir="rtl">— الاستدعاء الذاتي وsource</span></a></li>
+<li><a href="s48.html">Les tableaux (arrays) <span lang="ar" dir="rtl">— الجداول (المصفوفات)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

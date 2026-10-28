@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tests de conditions — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Tests de conditions (pages 366–373). اختبار الشروط — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Tests de conditions, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Test, Code retour, Opérateur">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s38.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Tests de conditions — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Tests de conditions (pages 366–373). اختبار الشروط — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s38.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tests de conditions — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Tests de conditions (pages 366–373). اختبار الشروط — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s38.html#resource","name":"Tests de conditions — SE1 | Badr AI","description":"Cours SE1 : Tests de conditions (pages 366–373). اختبار الشروط — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s38.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Programmation Shell"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Tests de conditions, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Test, Code retour, Opérateur"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 3 — Programmation Shell","item":"https://cybader.github.io/badr-ai-se1/cours/#ch3"},{"@type":"ListItem","position":4,"name":"Tests de conditions","item":"https://cybader.github.io/badr-ai-se1/cours/s38.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch3">Chapitre 3</a><span>›</span><span aria-current="page">Tests de conditions</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 3 · Section 38/48</span>
+<h1>Tests de conditions</h1>
+<p class="ar-title" lang="ar" dir="rtl">اختبار الشروط</p>
+<div class="meta-row"><span class="chip">📄 Pages 366–373</span><span class="chip">8 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">test أو [ expr ] (المسافات إلزامية). $? = 0 يعني صحيحًا. مقارنة أرقام: -eq -ne -lt -le -gt -ge. نصوص: = != -z (فارغ) -n (غير فارغ). ملفات: -e وجود، -f عادي، -d مجلد، -r/-w/-x أذونات، -s غير فارغ، -L رابط. المنطق: ! و-a (و) و-o (أو)، أو &amp;&amp; و|| داخل [[ ]].</p>
+<div class="terms">
+<div class="term"><b>Test</b><span lang="ar" dir="rtl">اختبار</span></div>
+<div class="term"><b>Code retour</b><span lang="ar" dir="rtl">كود الخروج</span></div>
+<div class="term"><b>Opérateur</b><span lang="ar" dir="rtl">عامل</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 366–373 · texte intégral du support</p></div><span class="chip">Chapitre 3 — Programmation Shell</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 366">
+<span class="page-tag">Page 366</span>
+<h3>La commande Test :</h3>
+<p>test condition &amp; &amp; alors_instruction1|| sinon_instruction2 ou</p>
+<p>[ condition ] &amp; &amp; alors_instruction1 | | sinon_instruction2 est utilisée dans de nombreux cas par les structures de contrôle du shell. Cette commande renvoie 0 si la condition est vérifiée et une Valeur différente de 0 sinon.</p>
+<p>Dans la deuxième syntaxe, il faut faire attention à mettre des espaces entre les crochets et la condition.</p>
+<p class="bullet"> commande1 &amp;&amp; commande2 : exécute commande1, si le code de retour est</p>
+<p>OK alors on exécute commande2,</p>
+<p class="bullet"> commande1 | | commande2 : exécute commande1, si le code de retour est mauvais alors on exécute commande2.</p>
+<h3>INTERPRÉTATION DE COMMANDE TEST</h3>
+</section>
+<section class="page" aria-label="Page 367">
+<span class="page-tag">Page 367</span>
+<p>La commande test permet d&#39;effectuer des tests de conditions. Le résultat est récupérable par la variable :</p>
+<pre><code>$? (code retour)</code></pre>
+<p>Si ce résultat est 0 alors la condition est réalisée.</p>
+<h3>Tests sur chaîne :</h3>
+<p class="bullet">test -z &quot;variable&quot; : zero, retour OK si la variable est vide (ex test -z &quot;$a&quot;)</p>
+<p class="bullet">test -n &quot;variable&quot; : non zero, retour OK si la variable n&#39;est pas vide (texte quelconque)</p>
+<p class="bullet">test &quot;variable&quot; = chaîne : OK si les deux chaînes sont identiques</p>
+<p class="bullet">test &quot;variable&quot; != chaîne : OK si les deux chaînes sont différentes</p>
+<h3>Exemple :</h3>
+<pre><code>$ a=</code></pre>
+<pre><code>$ test ‐z &quot;$a&quot; ; echo $?</code></pre>
+<pre><code>$test ‐n &quot;$a&quot; ; echo $?</code></pre>
+<pre><code>$ a=omar</code></pre>
+<pre><code>$ test &quot;$a&quot; = omar ; echo $?</code></pre>
+<h3>TEST DE CONDITIONS</h3>
+</section>
+<section class="page" aria-label="Page 368">
+<span class="page-tag">Page 368</span>
+<p>Tests sur valeurs numériques</p>
+<p>Les chaînes à comparer sont converties en valeurs numériques. La syntaxe est : test valeur1 option valeur2</p>
+<h3>et les options sont les suivantes :</h3>
+<p>Option</p>
+<p>Role</p>
+<p>-eq</p>
+<p>Equal : égal</p>
+<p>-ne</p>
+<p>Not Equal : différent</p>
+<p>-lt</p>
+<p>Less than : inférieur</p>
+<p>-gt</p>
+<p>Greater than : supérieur</p>
+<p>-lt</p>
+<p>Less or equal : inférieur ou égal</p>
+<p>-ge</p>
+<p>Greater or equal : supérieur ou égal</p>
+<h3>Exemple :</h3>
+<pre><code>$ a=10</code></pre>
+<pre><code>$ b=20</code></pre>
+<pre><code>$ test &quot;$a&quot; ‐ne &quot;$b&quot; ; echo $?</code></pre>
+<pre><code>$ test &quot;$a&quot; ‐ge &quot;$b&quot; ; echo $?</code></pre>
+<pre><code>$ test &quot;$a&quot; ‐lt &quot;$b&quot; &amp;&amp; echo &quot;$a est inferieur a $b »</code></pre>
+<p>10 est inferieur a 20</p>
+<h3>TEST DE CONDITIONS</h3>
+</section>
+<section class="page" aria-label="Page 369">
+<span class="page-tag">Page 369</span>
+<p>Tests sur les fichiers</p>
+<p>La syntaxe est : test option nom_fichier et les options sont les suivantes :</p>
+<h3>TEST DE CONDITIONS</h3>
+<p>Option</p>
+<p>-f</p>
+<p>-d</p>
+<p>-c</p>
+<p>-b</p>
+<p>-r</p>
+<p>-w</p>
+<p>-x</p>
+<p>-s</p>
+<p>-e</p>
+<p>-L</p>
+<p>Rôle</p>
+<p>Fichier normal</p>
+<p>Un répertoire</p>
+<p>Fichier en mode caractère</p>
+<p>Fichier en mode bloc</p>
+<p>Autorisation en lecture (pour le propriétaire)</p>
+<p>Autorisation en écriture (pour le propriétaire)</p>
+<p>Autorisation en exécution (pour le propriétaire)</p>
+<p>Fichier non vide (au moins un caractère)</p>
+<p>Le fichier existe</p>
+<p>Le fichier est un lien symbolique</p>
+</section>
+<section class="page" aria-label="Page 370">
+<span class="page-tag">Page 370</span>
+<h3>TEST DE CONDITIONS</h3>
+<pre><code>$ ls -l</code></pre>
+<p>-rw-r--r-- 1 oracle system 1392 Aug 14 15:55 dump.log lrwxrwxrwx 1 oracle system 4 Aug 14 15:21 lien_fic1 &gt; fic1 lrwxrwxrwx 1 oracle system 4 Aug 14 15:21 lien_fic2 -&gt; fic2</p>
+<p>-rw-r--r-- 1 oracle system 234 Aug 16 12:20 liste1</p>
+<p>-rw-r--r-- 1 oracle system 234 Aug 13 10:06 liste2</p>
+<p>-rwxr--r-- 1 oracle system 288 Aug 19 09:05 param.sh</p>
+<p>-rwxr--r-- 1 oracle system 430 Aug 19 09:09 param2.sh</p>
+<p>-rwxr--r-- 1 oracle system 292 Aug 19 10:57 param3.sh drwxr-xr-x 2 oracle system 8192 Aug 19 12:09 rep1</p>
+<pre><code>$ test -f lien_fic1 ; echo $?</code></pre>
+<pre><code>$ test -x dump.log ; echo $?</code></pre>
+<pre><code>$ test -d rep1 ; echo $?</code></pre>
+<h3>Tests sur les fichiers :</h3>
+<h3>Exemple :</h3>
+</section>
+<section class="page" aria-label="Page 371">
+<span class="page-tag">Page 371</span>
+<h3>TEST DE CONDITIONS</h3>
+<p>-o</p>
+<p>!</p>
+<p>Tests combinés par critères ET OU NON</p>
+<p>On peut effectuer plusieurs tests avec une seule instruction.</p>
+<p>Les options de combinaisons sont les mêmes que pour la commande find.</p>
+<p>Critère</p>
+<p>Action</p>
+<p>----------------------------------------------------</p>
+<p>-a</p>
+<p>AND, ET logique</p>
+<p>OR, OU logique</p>
+<p>NOT, NON logique</p>
+<h3>Exemple :</h3>
+<pre><code>$ test ‐d &quot;rep1&quot; ‐a ‐w &quot;rep1&quot; &amp;&amp; echo &quot;rep1: repertoire, droit en ecriture&quot;</code></pre>
+<p>rep1: repertoire, droit en ecriture</p>
+<pre><code>$ test ! ‐d &quot;rep1&quot; &amp;&amp; echo &quot;rep1 n’est pas un repertoire&quot;</code></pre>
+</section>
+<section class="page" aria-label="Page 372">
+<span class="page-tag">Page 372</span>
+<h3>Syntaxe allégée :</h3>
+<p class="bullet">Le mot test peut être remplacé par les crochets ouverts et fermés « [...] ».</p>
+<p>Il faut respecter un espace après et avant les crochets.</p>
+<h3>Exemple :</h3>
+<pre><code>$ [ &quot;$a&quot; ‐lt &quot;$b&quot; ] &amp;&amp; echo &quot;$a est inferieur a $b&quot; 10 est</code></pre>
+<p>inferieur a 20</p>
+<h3>TEST DE CONDITIONS</h3>
+</section>
+<section class="page" aria-label="Page 373">
+<span class="page-tag">Page 373</span>
+<h3>Tests étendus :</h3>
+<p>Une nouvelle commande permet des tests étendus et généralement plus performants, par l&#39;utilisation des doubles-crochets « [[...]] ».</p>
+<p>$ test –f fich ⇔[ -f fich ] ⇔[[ -f fich ]]</p>
+<p>Il existe quelques différences entre la commande test (ou []) et la nouvelle :</p>
+<p class="bullet">Les caractères spéciaux (métacaractères) de recherche de fichiers ne sont pas interprétés.</p>
+<p class="bullet">-a et -o (ET et OU) sont remplacés par « &amp;&amp; » et « || ».</p>
+<h3>Exemple :</h3>
+<pre><code>$ [[ -d &quot;rep1&quot; &amp;&amp; -r &quot;rep1&quot; ]] &amp;&amp; echo &quot;rep1 : repertoire avec droits write&quot;</code></pre>
+<h3>TEST DE CONDITIONS</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s37.html">← Redirections &amp; scripts</a><a class="btn" href="s39.html">Expressions arithmétiques →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s38">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 3 — Programmation Shell</h2>
+<ul>
+<li><a href="s28.html">Le shell interpréteur &amp; les types de commandes <span lang="ar" dir="rtl">— الشيل كمفسّر وأنواع الأوامر</span></a></li>
+<li><a href="s29.html">Les scripts shell <span lang="ar" dir="rtl">— سكربتات الشيل</span></a></li>
+<li><a href="s30.html">Paramètres &amp; variables <span lang="ar" dir="rtl">— المعاملات والمتغيرات</span></a></li>
+<li><a href="s31.html">read &amp; saisie au clavier <span lang="ar" dir="rtl">— read والإدخال من لوحة المفاتيح</span></a></li>
+<li><a href="s32.html">Quotes, export &amp; portée des variables <span lang="ar" dir="rtl">— الاقتباس والتصدير ونطاق المتغيرات</span></a></li>
+<li><a href="s33.html">Variables d&#39;environnement <span lang="ar" dir="rtl">— متغيرات البيئة</span></a></li>
+<li><a href="s34.html">Substitutions &amp; paramètres positionnels <span lang="ar" dir="rtl">— الاستبدالات والمعاملات الموضعية</span></a></li>
+<li><a href="s35.html">Paramètres spéciaux, shift &amp; substitution de commande <span lang="ar" dir="rtl">— المعاملات الخاصة وshift واستبدال الأوامر</span></a></li>
+<li><a href="s36.html">Paramètres non définis &amp; unset <span lang="ar" dir="rtl">— المعاملات غير المعرّفة وحذف المتغيرات</span></a></li>
+<li><a href="s37.html">Redirections &amp; scripts <span lang="ar" dir="rtl">— إعادة التوجيه داخل السكربتات</span></a></li>
+<li><a href="s39.html">Expressions arithmétiques <span lang="ar" dir="rtl">— التعابير الحسابية</span></a></li>
+<li><a href="s40.html">Structure conditionnelle if <span lang="ar" dir="rtl">— بنية الشرط if</span></a></li>
+<li><a href="s41.html">Choix multiples avec case <span lang="ar" dir="rtl">— الاختيار المتعدد case</span></a></li>
+<li><a href="s42.html">Boucles for <span lang="ar" dir="rtl">— حلقة for</span></a></li>
+<li><a href="s43.html">Boucles while, until &amp; break/continue <span lang="ar" dir="rtl">— حلقتا while وuntil وbreak/continue</span></a></li>
+<li><a href="s44.html">select, options du shell &amp; exec <span lang="ar" dir="rtl">— select وخيارات الشيل وexec</span></a></li>
+<li><a href="s45.html">La commande expr <span lang="ar" dir="rtl">— الأمر expr</span></a></li>
+<li><a href="s46.html">Fonctions <span lang="ar" dir="rtl">— الدوال</span></a></li>
+<li><a href="s47.html">Récursion &amp; source <span lang="ar" dir="rtl">— الاستدعاء الذاتي وsource</span></a></li>
+<li><a href="s48.html">Les tableaux (arrays) <span lang="ar" dir="rtl">— الجداول (المصفوفات)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

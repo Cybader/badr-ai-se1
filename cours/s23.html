@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archives avec tar — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Archives avec tar (pages 235–244). الأرشيفات باستخدام tar — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Archives avec tar, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Archive, Compression, Extraction, gzip">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s23.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Archives avec tar — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Archives avec tar (pages 235–244). الأرشيفات باستخدام tar — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s23.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Archives avec tar — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Archives avec tar (pages 235–244). الأرشيفات باستخدام tar — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s23.html#resource","name":"Archives avec tar — SE1 | Badr AI","description":"Cours SE1 : Archives avec tar (pages 235–244). الأرشيفات باستخدام tar — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s23.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Archives avec tar, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Archive, Compression, Extraction, gzip"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Archives avec tar","item":"https://cybader.github.io/badr-ai-se1/cours/s23.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Archives avec tar</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 2 · Section 23/48</span>
+<h1>Archives avec tar</h1>
+<p class="ar-title" lang="ar" dir="rtl">الأرشيفات باستخدام tar</p>
+<div class="meta-row"><span class="chip">📄 Pages 235–244</span><span class="chip">10 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">tar تجمع الملفات في أرشيف (لا تضغط وحدها): -c إنشاء، -x استخراج، -t عرض المحتوى، -f اسم الأرشيف، -v تفصيلي، -z ضغط gzip (فتصبح -czf للإنشاء و-xzf للاستخراج)، -C للتغيير إلى مجلد الوجهة، -rf لإضافة عناصر، --delete للحذف من الأرشيف، --exclude لاستثناء نمط. أمثلة: tar -cf a.tar dir، tar -xzf a.tar.gz -C dest.</p>
+<div class="terms">
+<div class="term"><b>Archive</b><span lang="ar" dir="rtl">أرشيف</span></div>
+<div class="term"><b>Compression</b><span lang="ar" dir="rtl">ضغط</span></div>
+<div class="term"><b>Extraction</b><span lang="ar" dir="rtl">استخراج</span></div>
+<div class="term"><b>gzip</b><span lang="ar" dir="rtl">ضغط جنو</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 235–244 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 235">
+<span class="page-tag">Page 235</span>
+<h3>La commande tar (Tape ARchive) :</h3>
+<p>Un outil de compression et décompression pour la gestion des archives. Il permet de regrouper plusieurs fichiers et répertoires en un seul fichier tar. Ce fichier peut ensuite être compressé à l’aide d’autres outils tels que gzip ou zip.</p>
+<h3>COMMANDE TAR : COMPRESSION ET</h3>
+<h3>DÉCOMPRESSION</h3>
+<p>Option</p>
+<p>Signification</p>
+<p>-c</p>
+<p>Crée une nouvelle archive.</p>
+<p>-v</p>
+<p>Affiche des détails sur les fichiers traités</p>
+<p>-f</p>
+<p>Indique le nom du fichier d&#39;archive</p>
+<p>-x</p>
+<p>Extraire les fichiers d’une archive tar</p>
+<p>-t</p>
+<p>Afficher le contenu d’une archive tar sans l’extraire</p>
+<p>-z</p>
+<p>Compresser une archive tar avec gzip</p>
+</section>
+<section class="page" aria-label="Page 236">
+<span class="page-tag">Page 236</span>
+<h3>Pour créer une archive tar, on utilise :</h3>
+<p>l’option -c (create) suivie de l’option -f (file) et du nom de l’archive à créer.</p>
+<h3>Exemple :</h3>
+<p>Pour créer une archive tar nommée &quot;archive.tar&quot; contenant les</p>
+<h3>fichiers &quot;fichier1&quot; et &quot;fichier2&quot;, on utilise la commande suivante :</h3>
+<pre><code>tar -cf exemple.tar fichier1 fichier2</code></pre>
+<h3>COMMANDE TAR : CRÉATION D’UNE</h3>
+<h3>ARCHIVE TAR</h3>
+</section>
+<section class="page" aria-label="Page 237">
+<span class="page-tag">Page 237</span>
+<h3>Pour extraire les fichiers d’une archive tar, on utilise :</h3>
+<p>l’option -x (extract) suivie de l’option -f et du nom de l’archive à extraire.</p>
+<h3>Exemple:</h3>
+<p>pour extraire les fichiers de l’archive &quot;archive.tar&quot;, on utilise la</p>
+<h3>commande suivante :</h3>
+<pre><code>tar -xf archive.tar</code></pre>
+<h3>COMMANDE TAR : EXTRACTION D’UNE</h3>
+<h3>ARCHIVE</h3>
+</section>
+<section class="page" aria-label="Page 238">
+<span class="page-tag">Page 238</span>
+<p>Pour afficher le contenu d’une archive tar sans l’extraire, on</p>
+<h3>utilise:</h3>
+<p>l’option -t (list) suivie de l’option -f et du nom de l’archive.</p>
+<h3>Exemple :</h3>
+<p>Pour afficher le contenu de l’archive &quot;archive.tar&quot;, on utilise la</p>
+<h3>commande suivante :</h3>
+<pre><code>tar -tf archive.tar</code></pre>
+<h3>COMMANDE TAR : LISTER LE CONTENU</h3>
+<h3>D’UNE ARCHIVE</h3>
+</section>
+<section class="page" aria-label="Page 239">
+<span class="page-tag">Page 239</span>
+<p>La commande tar peut également être utilisée pour compresser et décompresser des fichiers à l’aide de l’algorithme gzip.</p>
+<p class="bullet">Pour compresser une archive tar avec gzip :</p>
+<p>On ajoute l’option -z (gzip) lors de la création de l’archive.</p>
+<h3>Exemple :</h3>
+<p>Pour créer une archive tar compressée nommée &quot;archive.tar.gz&quot;</p>
+<p>contenant les fichiers &quot;fichier1&quot; et &quot;fichier2&quot;, on utilise la</p>
+<h3>commande suivante :</h3>
+<pre><code>tar -czf archive.tar.gz fichier1 fichier2</code></pre>
+<h3>COMMANDE TAR : COMPRESSION ET</h3>
+<h3>DÉCOMPRESSION</h3>
+</section>
+<section class="page" aria-label="Page 240">
+<span class="page-tag">Page 240</span>
+<p class="bullet">Pour décompresser une archive tar compressée avec gzip :</p>
+<p>On ajoute également l’option -z lors de l’extraction de l’archive.</p>
+<h3>Exemple :</h3>
+<p>Pour extraire les fichiers de l’archive &quot;archive.tar.gz&quot;, on utilise la</p>
+<h3>commande suivante :</h3>
+<pre><code>tar -xzf archive.tar.gz</code></pre>
+<h3>COMMANDE TAR : COMPRESSION ET</h3>
+<h3>DÉCOMPRESSION</h3>
+</section>
+<section class="page" aria-label="Page 241">
+<span class="page-tag">Page 241</span>
+<p>La commande tar permet de gérer les fichiers et répertoires inclus dans une archive, en ajoutant ou en supprimant des éléments.</p>
+<p class="bullet">Pour ajouter des fichiers ou répertoires à une archive existante, on</p>
+<h3>utilise :</h3>
+<p>l’option -r (append) suivie de l’option -f et du nom de l’archive, ainsi que des fichiers ou répertoires à ajouter.</p>
+<h3>Exemple :</h3>
+<p>Pour ajouter le fichier &quot;fichier3&quot; à l’archive &quot;archive.tar&quot;, on utilise la</p>
+<h3>commande suivante :</h3>
+<pre><code>tar -rf archive.tar fichier3</code></pre>
+<h3>COMMANDE TAR : GÉRER LES FICHIERS ET</h3>
+<h3>RÉPERTOIRES</h3>
+</section>
+<section class="page" aria-label="Page 242">
+<span class="page-tag">Page 242</span>
+<p class="bullet">Pour supprimer un fichier d’une archive, on utilise :</p>
+<p>l’option --delete suivie de l’option -f et du nom de l’archive, ainsi que du nom du fichier à supprimer.</p>
+<h3>Exemple:</h3>
+<p>Pour supprimer le fichier &quot;fichier2&quot; de l’archive &quot;archive.tar&quot;, on</p>
+<h3>utilise la commande suivante :</h3>
+<pre><code>tar --delete -f archive.tar fichier2</code></pre>
+<h3>COMMANDE TAR : GÉRER LES FICHIERS ET</h3>
+<h3>RÉPERTOIRES</h3>
+</section>
+<section class="page" aria-label="Page 243">
+<span class="page-tag">Page 243</span>
+<p>La commande tar permet également de filtrer les fichiers inclus dans une archive en fonction de critères spécifiques.</p>
+<p>Pour cela, on utilise l’option --exclude suivie du motif à exclure.</p>
+<h3>Exemple:</h3>
+<p>Pour créer une archive tar sans les fichiers dont le nom se</p>
+<h3>termine par &quot;.txt&quot;, on utilise la commande suivante :</h3>
+<pre><code>tar -cf archive.tar --exclude=&#39;*.txt&#39; fichier1 fichier2 fichier3</code></pre>
+<h3>COMMANDE TAR : FILTRAGE DES FICHIERS</h3>
+</section>
+<section class="page" aria-label="Page 244">
+<span class="page-tag">Page 244</span>
+<p>Lors de l’extraction d’une archive tar, vous pouvez souhaiter changer le répertoire de destination des fichiers extraits.</p>
+<p>Pour cela, on utilise l’option -C (change-directory) suivie du répertoire de destination.</p>
+<h3>Exemple :</h3>
+<p>Pour extraire les fichiers de l’archive &quot;archive.tar&quot; dans le répertoire &quot;/home/user/documents&quot;, on utilise la commande</p>
+<h3>suivante :</h3>
+<pre><code>tar -xf archive.tar -C /home/user/documents</code></pre>
+<h3>COMMANDE TAR : CHANGER LE</h3>
+<h3>RÉPERTOIRE DE DESTINATION</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s22.html">← Gestion des comptes utilisateurs</a><a class="btn" href="s24.html">Composition des commandes (; &amp; () {}) →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s23">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<ul>
+<li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
+<li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
+<li><a href="s11.html">Inodes, types &amp; données des fichiers <span lang="ar" dir="rtl">— عقد الفهرس وأنواع الملفات وبياناتها</span></a></li>
+<li><a href="s12.html">Commandes d&#39;accès &amp; manipulation <span lang="ar" dir="rtl">— أوامر الوصول والتعامل مع الملفات</span></a></li>
+<li><a href="s13.html">Liens physiques &amp; symboliques <span lang="ar" dir="rtl">— الروابط الصلبة والرمزية</span></a></li>
+<li><a href="s14.html">Lecture &amp; filtrage de fichiers <span lang="ar" dir="rtl">— قراءة الملفات وتصفيتها</span></a></li>
+<li><a href="s15.html">Commandes système &amp; identification <span lang="ar" dir="rtl">— أوامر النظام والهوية</span></a></li>
+<li><a href="s16.html">Expressions régulières <span lang="ar" dir="rtl">— التعابير النمطية</span></a></li>
+<li><a href="s17.html">grep, find &amp; alias (exercices) <span lang="ar" dir="rtl">— grep وfind والاسم المستعار (تمارين)</span></a></li>
+<li><a href="s18.html">Séparateurs conditionnels &amp; redirections <span lang="ar" dir="rtl">— الفواصل الشرطية وإعادة التوجيه</span></a></li>
+<li><a href="s19.html">Utilisateurs &amp; groupes <span lang="ar" dir="rtl">— المستخدمون والمجموعات</span></a></li>
+<li><a href="s20.html">Droits d&#39;accès &amp; chmod <span lang="ar" dir="rtl">— أذونات الوصول وchmod</span></a></li>
+<li><a href="s21.html">chown, chgrp &amp; umask <span lang="ar" dir="rtl">— chown وchgrp وumask</span></a></li>
+<li><a href="s22.html">Gestion des comptes utilisateurs <span lang="ar" dir="rtl">— إدارة حسابات المستخدمين</span></a></li>
+<li><a href="s24.html">Composition des commandes (; &amp; () {}) <span lang="ar" dir="rtl">— تركيب الأوامر (; &amp; () {})</span></a></li>
+<li><a href="s25.html">Contrôle des processus <span lang="ar" dir="rtl">— التحكم في العمليات</span></a></li>
+<li><a href="s26.html">Éditeurs de texte sous Unix <span lang="ar" dir="rtl">— محررات النصوص في يونكس</span></a></li>
+<li><a href="s27.html">Shells &amp; variables d&#39;environnement (intro) <span lang="ar" dir="rtl">— الشيلات ومتغيرات البيئة (مقدمة)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

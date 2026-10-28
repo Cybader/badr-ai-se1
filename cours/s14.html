@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecture &amp; filtrage de fichiers — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Lecture &amp; filtrage de fichiers (pages 141–153). قراءة الملفات وتصفيتها — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Lecture &amp; filtrage de fichiers, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Filtre, Trier, Compter, Comparer">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s14.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Lecture &amp; filtrage de fichiers — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Lecture &amp; filtrage de fichiers (pages 141–153). قراءة الملفات وتصفيتها — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s14.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lecture &amp; filtrage de fichiers — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Lecture &amp; filtrage de fichiers (pages 141–153). قراءة الملفات وتصفيتها — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s14.html#resource","name":"Lecture & filtrage de fichiers — SE1 | Badr AI","description":"Cours SE1 : Lecture & filtrage de fichiers (pages 141–153). قراءة الملفات وتصفيتها — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s14.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Lecture & filtrage de fichiers, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Filtre, Trier, Compter, Comparer"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Lecture & filtrage de fichiers","item":"https://cybader.github.io/badr-ai-se1/cours/s14.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Lecture &amp; filtrage de fichiers</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 2 · Section 14/48</span>
+<h1>Lecture &amp; filtrage de fichiers</h1>
+<p class="ar-title" lang="ar" dir="rtl">قراءة الملفات وتصفيتها</p>
+<div class="meta-row"><span class="chip">📄 Pages 141–153</span><span class="chip">13 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">cat للعرض والدمج، head/tail لأول/آخر 10 أسطر (-n للعدد)، cut لاستخراج الحقول (-d الفاصل، -f الحقل) أو المحارف (-c)، sort للترتيب (-n رقمي، -r عكسي)، uniq لإزالة التكرار المتتالي (-c للعد)، wc للعد (-l أسطر، -w كلمات، -c محارف)، tr للترجمة/الحذف، diff للمقارنة، paste للدمج، echo للطباعة، which لمسار أمر. تُركّب عادة مع الأنابيب.</p>
+<div class="terms">
+<div class="term"><b>Filtre</b><span lang="ar" dir="rtl">مرشح</span></div>
+<div class="term"><b>Trier</b><span lang="ar" dir="rtl">ترتيب</span></div>
+<div class="term"><b>Compter</b><span lang="ar" dir="rtl">عد</span></div>
+<div class="term"><b>Comparer</b><span lang="ar" dir="rtl">مقارنة</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 141–153 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 141">
+<span class="page-tag">Page 141</span>
+<p>Commande : cat Nom_du_fichier</p>
+<p>Afficher le contenu d’un fichier user@pc :~$</p>
+<pre><code>cat</code></pre>
+<p>fichier1.txt</p>
+<p>Bonjour tout le monde, je suis très …;</p>
+<p>user@pc :~$ cat fichier1.txt fichier2.txt</p>
+<p>Bonjour tout le monde, je suis très …;</p>
+<p>Voila le contenu de dexime fichier user@pc :~$ more fichier1.txt (Affichage page par page)</p>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+</section>
+<section class="page" aria-label="Page 142">
+<span class="page-tag">Page 142</span>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+<p>Commande : tr [options] chaine1 chaine2</p>
+<p class="bullet">Permet de transposer ou éliminer des caractères dans un fichier ou dans un flux de données. Autrement dit, un caractère appartenant à chaine1 est remplacé par le caractère de même position dans chaine2.</p>
+</section>
+<section class="page" aria-label="Page 143">
+<span class="page-tag">Page 143</span>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+<p>Commande : tr [options] chaine1 chaine2</p>
+<p>Permet de transposer ou éliminer des caractères dans un fichier ou dans un flux de données. Autrement dit, un caractère appartenant à chaine1 est remplacé par le caractère de même position dans chaine2.</p>
+<p>La commande tr est utilisée ici pour traduire des caractères. Dans cet exemple, tous les caractères de a à f (minuscules) dans le texte d&#39;entrée sont remplacés par leurs équivalents en majuscules (A à F).</p>
+</section>
+<section class="page" aria-label="Page 144">
+<span class="page-tag">Page 144</span>
+<p>Commande : tail [OPTIONS] [FICHIER]</p>
+<p class="bullet">Permet d&#39;afficher les dernières lignes d&#39;un fichier. Par défaut, elle montre les 10 dernières lignes.</p>
+<h3>Exemple :</h3>
+<pre><code>$tail +10 mon-fichier</code></pre>
+<p>Toutes les lignes du fichier de la 10eme jusqu&#39;à la fin.</p>
+<pre><code>$tail -10 mon-fichier</code></pre>
+<p>Les 10 dernières lignes à partir de la fin.</p>
+<pre><code>$tail -c -10 mon-fichier</code></pre>
+<p>Les 10 derniers caractères du fichier.</p>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+</section>
+<section class="page" aria-label="Page 145">
+<span class="page-tag">Page 145</span>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+<p>Commande : head [OPTIONS] [FICHIER]</p>
+<p class="bullet">Afficher les premières lignes d&#39;un fichier. Par défaut, elle affiche les 10 premières lignes.</p>
+<h3>Exemple :</h3>
+<pre><code>$head</code></pre>
+<p>-n +10 mon-fichier</p>
+<p>Toutes les lignes du fichier de la 10eme jusqu’au début.</p>
+<pre><code>$head</code></pre>
+<p>-n -10 mon-fichier</p>
+<p>Les 10 premières lignes à partir de la fin.</p>
+<pre><code>$head</code></pre>
+<p>-n 10 -c mon-fichier</p>
+<p>Les 10 premiers caractères du fichier.</p>
+</section>
+<section class="page" aria-label="Page 146">
+<span class="page-tag">Page 146</span>
+<p>Commande : cut [OPTIONS] [FICHIER]</p>
+<p class="bullet">Permet d&#39;extraire des sections spécifiques d&#39;un fichier texte, souvent utilisée pour manipuler et traiter des fichiers de données structures.</p>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+<p>Option</p>
+<p>Description</p>
+<p>-c</p>
+<p>Permet de sélectionner les colonnes.</p>
+<p>-d</p>
+<p>Permet de spécifier un séparateur de champs</p>
+<p>-f</p>
+<p>Indique le numéro du ou des champs à couper</p>
+<p>-b</p>
+<p>Sélection sur le numéro d’octet</p>
+<p>-s (avec –f)</p>
+<p>Supprime les lignes vides .</p>
+</section>
+<section class="page" aria-label="Page 147">
+<span class="page-tag">Page 147</span>
+<p>Commande : cut [OPTIONS] [FICHIER]</p>
+<h3>Exemple :</h3>
+<pre><code>cut -c1 /etc/passwd</code></pre>
+<p>Affichera le premier caractère (colonne) du fichier /etc/passwd.</p>
+<pre><code>cut –d : -f 6 /etc/passwd</code></pre>
+<p>(avec séparateur de champs)</p>
+<p>Affichera le 6eme champ du fichier /etc/passwd, dont le séparateur de champs est le caractére double point (”:&quot;).</p>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+</section>
+<section class="page" aria-label="Page 148">
+<span class="page-tag">Page 148</span>
+<p>Commande : sort [OPTIONS] [FICHIER]</p>
+<p class="bullet">Permet de trier les lignes d&#39;un fichier texte selon différents critères comme l&#39;ordre alphabétique, numérique, ou basé sur des champs spécifiques.</p>
+<p class="bullet">Syntaxe :</p>
+<pre><code>sort</code></pre>
+<p>[-o|-n|-r|-R|-u] [nom_fichier]</p>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+<p>Option</p>
+<p>Signification</p>
+<p>-o</p>
+<p>Ecrire le résultat dans un fichier</p>
+<p>-u</p>
+<p>Elimine les lignes identiques</p>
+<p>-r</p>
+<p>Trier en ordre inverse</p>
+<p>-R</p>
+<p>Trier aléatoirement</p>
+<p>-n</p>
+<p>Trier des nombres</p>
+</section>
+<section class="page" aria-label="Page 149">
+<span class="page-tag">Page 149</span>
+<p>Commande : diff [options] fichier1 fichier2</p>
+<p class="bullet">Permet de comparer deux fichiers textes. Elle affiche les différences entre ces fichiers, ce qui est particulièrement utile pour voir les modifications apportées à un fichier ou pour vérifier les différences entre deux versions d&#39;un document.</p>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+<p>Option</p>
+<p>Signification</p>
+<p>-i</p>
+<p>Ne fait pas de différence entre les caractères minuscules et majuscules.</p>
+<p>-w</p>
+<p>Ne tient pas compte du caractère espace.</p>
+<p>-B</p>
+<p>Ne tient pas compte des lignes blanches.</p>
+</section>
+<section class="page" aria-label="Page 150">
+<span class="page-tag">Page 150</span>
+<p>Commande : wc</p>
+<p class="bullet">Permet de compter le nombre de ligne d&#39;un fichier, mais aussi le nombre de mot ou de caractères.</p>
+<p>Options courantes</p>
+<p class="bullet">-l : Compte uniquement le nombre de lignes.</p>
+<p class="bullet">-w : Compte uniquement le nombre de mots.</p>
+<p class="bullet">-c : Compte uniquement le nombre de caractères.</p>
+<p class="bullet">-m : Compte le nombre de caractères (en tenant compte des caractères multioctets, si applicable).</p>
+<p class="bullet">-L : Affiche la longueur de la ligne la plus longue.</p>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+</section>
+<section class="page" aria-label="Page 151">
+<span class="page-tag">Page 151</span>
+<p>Commande : paste</p>
+<p class="bullet">Permet la fusion de lignes de fichiers. Elle permet de concaténer les lignes de fichiers en les séparant par un délimiteur, généralement une tabulation.</p>
+<p>Options courantes</p>
+<p class="bullet">-s</p>
+<p>: Les lignes sont remplacées par des colonnes</p>
+<p class="bullet">-dx : Le caractère x définit le séparateur de champ</p>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+</section>
+<section class="page" aria-label="Page 152">
+<span class="page-tag">Page 152</span>
+<p>Commande : echo</p>
+<p class="bullet">Affiche à l’écran le texte qui suit la commande echo</p>
+<h3>Exemple :</h3>
+<p>user@pc :~$ echo bonjour bonjour</p>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+</section>
+<section class="page" aria-label="Page 153">
+<span class="page-tag">Page 153</span>
+<p>Commande : which</p>
+<p class="bullet">Pour connaitre la localisation d’une commande (connaitre le chemin correspondant à une commande).</p>
+<h3>Exemple :</h3>
+<p>user@pc :~$</p>
+<pre><code>which ls</code></pre>
+<p>/usr/bin/ls</p>
+<p class="bullet">Signifie que la commande « ls » est dans le répertoire « bin » qui est un sous répertoire de « usr » qui est un sous-repertoire du répertoire racine</p>
+<p>(repértoire « root »).</p>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>FICHIERS</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s13.html">← Liens physiques &amp; symboliques</a><a class="btn" href="s15.html">Commandes système &amp; identification →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s14">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<ul>
+<li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
+<li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
+<li><a href="s11.html">Inodes, types &amp; données des fichiers <span lang="ar" dir="rtl">— عقد الفهرس وأنواع الملفات وبياناتها</span></a></li>
+<li><a href="s12.html">Commandes d&#39;accès &amp; manipulation <span lang="ar" dir="rtl">— أوامر الوصول والتعامل مع الملفات</span></a></li>
+<li><a href="s13.html">Liens physiques &amp; symboliques <span lang="ar" dir="rtl">— الروابط الصلبة والرمزية</span></a></li>
+<li><a href="s15.html">Commandes système &amp; identification <span lang="ar" dir="rtl">— أوامر النظام والهوية</span></a></li>
+<li><a href="s16.html">Expressions régulières <span lang="ar" dir="rtl">— التعابير النمطية</span></a></li>
+<li><a href="s17.html">grep, find &amp; alias (exercices) <span lang="ar" dir="rtl">— grep وfind والاسم المستعار (تمارين)</span></a></li>
+<li><a href="s18.html">Séparateurs conditionnels &amp; redirections <span lang="ar" dir="rtl">— الفواصل الشرطية وإعادة التوجيه</span></a></li>
+<li><a href="s19.html">Utilisateurs &amp; groupes <span lang="ar" dir="rtl">— المستخدمون والمجموعات</span></a></li>
+<li><a href="s20.html">Droits d&#39;accès &amp; chmod <span lang="ar" dir="rtl">— أذونات الوصول وchmod</span></a></li>
+<li><a href="s21.html">chown, chgrp &amp; umask <span lang="ar" dir="rtl">— chown وchgrp وumask</span></a></li>
+<li><a href="s22.html">Gestion des comptes utilisateurs <span lang="ar" dir="rtl">— إدارة حسابات المستخدمين</span></a></li>
+<li><a href="s23.html">Archives avec tar <span lang="ar" dir="rtl">— الأرشيفات باستخدام tar</span></a></li>
+<li><a href="s24.html">Composition des commandes (; &amp; () {}) <span lang="ar" dir="rtl">— تركيب الأوامر (; &amp; () {})</span></a></li>
+<li><a href="s25.html">Contrôle des processus <span lang="ar" dir="rtl">— التحكم في العمليات</span></a></li>
+<li><a href="s26.html">Éditeurs de texte sous Unix <span lang="ar" dir="rtl">— محررات النصوص في يونكس</span></a></li>
+<li><a href="s27.html">Shells &amp; variables d&#39;environnement (intro) <span lang="ar" dir="rtl">— الشيلات ومتغيرات البيئة (مقدمة)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

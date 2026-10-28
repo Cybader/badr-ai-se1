@@ -1,0 +1,12 @@
+# Systèmes d'exploitation
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Fichiers de test locaux
+qa-*.html
+*.log

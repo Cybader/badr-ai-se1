@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unix, logiciels libres &amp; licence GPL — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Unix, logiciels libres &amp; licence GPL (pages 42–50). يونكس، البرمجيات الحرة ورخصة GPL — explications en arabe, révision en français, QCM et…">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Unix, logiciels libres &amp; licence GPL, Introduction aux systèmes d&#39;exploitation, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Logiciel propriétaire, Logiciel libre, Copyleft, GPL, Open Source">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s6.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Unix, logiciels libres &amp; licence GPL — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Unix, logiciels libres &amp; licence GPL (pages 42–50). يونكس، البرمجيات الحرة ورخصة GPL — explications en arabe, révision en français, QCM et…">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s6.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Unix, logiciels libres &amp; licence GPL — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Unix, logiciels libres &amp; licence GPL (pages 42–50). يونكس، البرمجيات الحرة ورخصة GPL — explications en arabe, révision en français, QCM et…">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s6.html#resource","name":"Unix, logiciels libres & licence GPL — SE1 | Badr AI","description":"Cours SE1 : Unix, logiciels libres & licence GPL (pages 42–50). يونكس، البرمجيات الحرة ورخصة GPL — explications en arabe, révision en français, QCM et…","url":"https://cybader.github.io/badr-ai-se1/cours/s6.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Introduction aux systèmes d'exploitation"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Unix, logiciels libres & licence GPL, Introduction aux systèmes d'exploitation, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Logiciel propriétaire, Logiciel libre, Copyleft, GPL, Open Source"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 1 — Introduction aux systèmes d'exploitation","item":"https://cybader.github.io/badr-ai-se1/cours/#ch1"},{"@type":"ListItem","position":4,"name":"Unix, logiciels libres & licence GPL","item":"https://cybader.github.io/badr-ai-se1/cours/s6.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch1">Chapitre 1</a><span>›</span><span aria-current="page">Unix, logiciels libres &amp; licence GPL</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 1 · Section 6/48</span>
+<h1>Unix, logiciels libres &amp; licence GPL</h1>
+<p class="ar-title" lang="ar" dir="rtl">يونكس، البرمجيات الحرة ورخصة GPL</p>
+<div class="meta-row"><span class="chip">📄 Pages 42–50</span><span class="chip">9 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">Unix متعدد المستخدمين (هويات وأذونات)، متعدد المهام (تقسيم الوقت)، ومتعدد المنصات. بنيته: نواة + أدوات (shells وأوامر ملفات) + قاعدة بيانات نظام. البرمجيات الحرة تعطي 4 حريات: التنفيذ، الدراسة والتعديل، إعادة التوزيع، والتحسين — مع الوصول إلى الشيفرة المصدرية. GPL تعتمد copyleft لحماية هذه الحريات. Linux نواة أنشأها Linus Torvalds سنة 1991، مجانية، وهي clone لـ Unix وليست Unix: اسم Unix محمي بحقوق نشر بينما Linux حر.</p>
+<div class="terms">
+<div class="term"><b>Logiciel propriétaire</b><span lang="ar" dir="rtl">برنامج ملكي/مغلق</span></div>
+<div class="term"><b>Logiciel libre</b><span lang="ar" dir="rtl">برنامج حر</span></div>
+<div class="term"><b>Copyleft</b><span lang="ar" dir="rtl">حقوق النسخ العكسية</span></div>
+<div class="term"><b>GPL</b><span lang="ar" dir="rtl">رخصة GNU العامة</span></div>
+<div class="term"><b>Open Source</b><span lang="ar" dir="rtl">مفتوح المصدر</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 42–50 · texte intégral du support</p></div><span class="chip">Chapitre 1 — Introduction aux systèmes d&#39;exploitation</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 42">
+<span class="page-tag">Page 42</span>
+<h3>SYSTÈME D’EXPLOITATION : UNIX</h3>
+<p class="bullet">Multi-utilisateurs : le système identifie des personnes logiques et permet à ces personnes d&#39;utiliser le système dans certaines limites.</p>
+<p class="bullet">Multi-tâches : le système est étudié pour exécuter plusieurs programmes en même temps, grâce au concept de &quot;temps partagé”.</p>
+<p class="bullet">Multi-plateforme : Unix n&#39;est pas un système dédié à un processeur, mais c&#39;est une famille de systèmes que l&#39;on retrouve sur une multitude de plates-formes.</p>
+</section>
+<section class="page" aria-label="Page 43">
+<span class="page-tag">Page 43</span>
+<h3>ARCHITECTURE ET CARACTÉRISTIQUES</h3>
+<p class="bullet">Noyau : il assure la gestion de la mémoire et des entrées sorties de bas niveau et l&#39;enchaînement des taches.</p>
+<p class="bullet">Ensemble d&#39;utilitaires : dédiés à des tâches diverses :</p>
+<p class="bullet">des interpréteurs de commande appelés Shells permettant de soumettre des tâches au système, tâches pouvant être concurrentes et/ou communicantes.</p>
+<p class="bullet">des commandes de manipulation de fichiers</p>
+<p>(copie, déplacement, effacement, etc.).</p>
+<p class="bullet">Base de données système : un ensemble de fichiers contenant :</p>
+<p class="bullet">des informations sur la configuration des différents services.</p>
+<p class="bullet">des scripts de changement d&#39;état du système (démarrage, arrêt, …).</p>
+</section>
+<section class="page" aria-label="Page 44">
+<span class="page-tag">Page 44</span>
+<h3>ARCHITECTURE ET CARACTÉRISTIQUES</h3>
+</section>
+<section class="page" aria-label="Page 45">
+<span class="page-tag">Page 45</span>
+<h3>LOGICIELS PROPRIÉTAIRES</h3>
+<p class="bullet">Ces logiciels propriétaires sont vendus et sont régis par une licence restrictive qui interdit aux utilisateurs de copier, distribuer, modifier ou vendre le programme en question.</p>
+<p class="bullet">Les logiciels libres sont les logiciels que l&#39;ont peut librement utiliser, échanger, étudier et redistribuer. Cela implique que l&#39;on ait accès à leur code source (d&#39;où le terme équivalent OpenSource).</p>
+</section>
+<section class="page" aria-label="Page 46">
+<span class="page-tag">Page 46</span>
+<h3>LOGICIELS LIBRES</h3>
+<p class="bullet">Liberté d&#39;exécution : tout le monde a le droit de lancer le programme, quel qu&#39;en soit le but.</p>
+<p class="bullet">Liberté de modification : tout le monde a le droit d&#39;étudier le programme et de le modifier, ce qui implique un accès au code source.</p>
+<p class="bullet">Liberté de redistribution : tout le monde a le droit de rediffuser le programme, gratuitement ou non</p>
+<p class="bullet">Liberté d&#39;amélioration : tout le monde a le droit de redistribuer une version modifiée du programme.</p>
+</section>
+<section class="page" aria-label="Page 47">
+<span class="page-tag">Page 47</span>
+<h3>LICENCE GPL</h3>
+<p class="bullet">Copyright : Donne au créateur d’une œuvre (comme un logiciel) le droit exclusif de reproduire, distribuer, modifier et créer des œuvres dérivées de l’œuvre originale. En général, ce droit exclut les autres de faire ces choses sans autorisation.</p>
+<p class="bullet">Copyleft : Contrairement au copyright traditionnel, le copyleft est une manière de garantir que les libertés associées à une œuvre (comme la liberté de modifier et redistribuer le logiciel) sont préservées pour tout le monde.</p>
+<p>❑GPL : General Public License, est une licence de logiciel libre créée par la Free Software Foundation (FSF). Elle met en œuvre le principe du copyleft.</p>
+</section>
+<section class="page" aria-label="Page 48">
+<span class="page-tag">Page 48</span>
+<h3>DISTRIBUTIONS UNIX</h3>
+<h3>Des Unix libres :</h3>
+<p class="bullet">Linux sur plate-forme Intel, Sparc, Alpha, Mac, …</p>
+<p class="bullet">FreeBSD sur plate-forme Intel, Alpha, PC-98</p>
+<p class="bullet">OpenBSD également multi-plate-forme.</p>
+</section>
+<section class="page" aria-label="Page 49">
+<span class="page-tag">Page 49</span>
+<h3>QUELLE EST LA DIFFÉRENCE ENTRE LINUX</h3>
+<h3>ET LES SYSTÈMES D’EXPLOITATION UNIX?</h3>
+<p class="bullet">UNIX est protégé par un copyright, et seules les grandes entreprises sont autorisées à utiliser le nom UNIX. (IBM AIX, Sun Solaris et HP-UX sont tous des systèmes d’exploitation UNIX.).</p>
+<p class="bullet">Linux est un clone d’UNIX. Linux est un noyau développé à partir de zéro par</p>
+<p>Linus Torvalds avec l’aide d’une équipe de collaborateurs à travers le monde.</p>
+<p class="bullet">Linux est un noyau entouré par plusieurs applications et systèmes de gestion</p>
+<p>(GNU/Linux).</p>
+<p class="bullet">Les systèmes d’exploitation UNIX sont considérés comme des systèmes d’exploitation complets.</p>
+</section>
+<section class="page" aria-label="Page 50">
+<span class="page-tag">Page 50</span>
+<p class="bullet">Linux est gratuit.</p>
+<p class="bullet">On peut le télécharger à partir d’Internet ou de le redistribuer sous licences GNU.</p>
+<p class="bullet">La plupart des systèmes d’exploitation UNIX ne sont pas libres.</p>
+<p class="bullet">Linux est considéré comme le plus convivial des UNIX.</p>
+<h3>QUELLE EST LA DIFFÉRENCE ENTRE LINUX</h3>
+<h3>ET LES SYSTÈMES D’EXPLOITATION UNIX?</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s5.html">← Les principaux systèmes d&#39;exploitation</a><a class="btn" href="s7.html">Dual boot, GRUB &amp; séquence de démarrage →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s6">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 1 — Introduction aux systèmes d&#39;exploitation</h2>
+<ul>
+<li><a href="s1.html">Présentation du module &amp; objectifs <span lang="ar" dir="rtl">— تقديم المادة والأهداف</span></a></li>
+<li><a href="s2.html">Le système informatique &amp; l&#39;architecture matérielle <span lang="ar" dir="rtl">— النظام المعلوماتي والمعمارية المادية</span></a></li>
+<li><a href="s3.html">Le système d&#39;exploitation : rôle et services <span lang="ar" dir="rtl">— نظام التشغيل: الدور والخدمات</span></a></li>
+<li><a href="s4.html">Composants &amp; structure externe du SE <span lang="ar" dir="rtl">— مكونات نظام التشغيل وبنيته الخارجية</span></a></li>
+<li><a href="s5.html">Les principaux systèmes d&#39;exploitation <span lang="ar" dir="rtl">— أهم أنظمة التشغيل</span></a></li>
+<li><a href="s7.html">Dual boot, GRUB &amp; séquence de démarrage <span lang="ar" dir="rtl">— الإقلاع المزدوج وGRUB وتسلسل الإقلاع</span></a></li>
+<li><a href="s8.html">GNU/Linux, distributions &amp; Ubuntu <span lang="ar" dir="rtl">— GNU/Linux والتوزيعات وأوبونتو</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

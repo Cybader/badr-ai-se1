@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expressions arithmétiques — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Expressions arithmétiques (pages 374–383). التعابير الحسابية — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Expressions arithmétiques, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Arithmétique, Entier, Expression">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s39.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Expressions arithmétiques — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Expressions arithmétiques (pages 374–383). التعابير الحسابية — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s39.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Expressions arithmétiques — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Expressions arithmétiques (pages 374–383). التعابير الحسابية — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s39.html#resource","name":"Expressions arithmétiques — SE1 | Badr AI","description":"Cours SE1 : Expressions arithmétiques (pages 374–383). التعابير الحسابية — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s39.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Programmation Shell"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Expressions arithmétiques, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Arithmétique, Entier, Expression"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 3 — Programmation Shell","item":"https://cybader.github.io/badr-ai-se1/cours/#ch3"},{"@type":"ListItem","position":4,"name":"Expressions arithmétiques","item":"https://cybader.github.io/badr-ai-se1/cours/s39.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch3">Chapitre 3</a><span>›</span><span aria-current="page">Expressions arithmétiques</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 3 · Section 39/48</span>
+<h1>Expressions arithmétiques</h1>
+<p class="ar-title" lang="ar" dir="rtl">التعابير الحسابية</p>
+<div class="meta-row"><span class="chip">📄 Pages 374–383</span><span class="chip">10 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">bash يعامل المتغيرات كنصوص؛ للحساب: (( x=2+3 )) ثم $((x*2))، ولا حاجة لـ $ داخل (( )). declare -i y يجعل y عددًا. expr يحسب مع مسافات و\* مهرب، وlet كذلك. القسمة صحيحة و% تعطي الباقي. sleep توقف التنفيذ n ثانية. راجع أمثلة القوائم والحلقات العددية.</p>
+<div class="terms">
+<div class="term"><b>Arithmétique</b><span lang="ar" dir="rtl">حساب</span></div>
+<div class="term"><b>Entier</b><span lang="ar" dir="rtl">عدد صحيح</span></div>
+<div class="term"><b>Expression</b><span lang="ar" dir="rtl">تعبير</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 374–383 · texte intégral du support</p></div><span class="chip">Chapitre 3 — Programmation Shell</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 374">
+<span class="page-tag">Page 374</span>
+<p class="bullet">Expressions arithmétiques habituelles évaluées à l&#39;aide de</p>
+<pre><code>expr (révolue),</code></pre>
+<p class="bullet"> let (moderne et fait pour plusieurs expressions)</p>
+<p>((…)) pour une seule expression (Comme let)</p>
+<h3>Ex :</h3>
+<pre><code>$ a=100</code></pre>
+<pre><code>$ expr $a + 1</code></pre>
+<p>=&gt; Affiche la valeur de a incrémenté de 1</p>
+<pre><code>$ let a=a+1 b=2*a/3</code></pre>
+<p>Incrémente a de 1 et affecte à b la valeur 2a/3</p>
+<p>Pas d&#39;espace dans les expressions</p>
+<pre><code>$ ((y = 2 * x +3))</code></pre>
+<p>Affecte à y la valeur de l&#39;expression 2x+3</p>
+<h3>ENTIERS ET EXPRESSIONS ARITHMÉTIQUES</h3>
+</section>
+<section class="page" aria-label="Page 375">
+<span class="page-tag">Page 375</span>
+<h3>Opérateurs identiques à ceux du langage C :</h3>
+<h3>Arithmétiques :</h3>
+<p class="bullet">() pour fixer l&#39;ordre d&#39;évaluation, ! Négation, * multiplication, / quotient, % modulo, + addition, - soustraction.</p>
+<p class="bullet">a++, a-- post-incrémentation, post-décrémentation.</p>
+<p class="bullet">++a, --a pré-incrémentation, pré-décrémentation.</p>
+<h3>Booléens :</h3>
+<p class="bullet">&lt;=, &gt;=, &lt;, &gt;, == (égalité), != (différent), &amp;&amp; (et logique), || (ou logique)</p>
+<h3>Affectation :</h3>
+<p class="bullet">= (affectation simple)</p>
+<h3>ENTIERS ET EXPRESSIONS ARITHMÉTIQUES</h3>
+</section>
+<section class="page" aria-label="Page 376">
+<span class="page-tag">Page 376</span>
+<p>Commandeinterne : (( Cette commande interne est utilisée pour effectuer des opérations arithmétiques :</p>
+<p>Syntaxe : (( expr_arith ))</p>
+<p class="bullet">expr_arith est évaluée ;</p>
+<p>si cette évaluation donne une valeur différente de 0, alors le code de retour de la commande interne (( est égal à 0 sinon le code de retour est égal à 1.</p>
+<h3>Exemple :</h3>
+<pre><code>$ (( 1‐5 ))</code></pre>
+<p>=&gt; la valeur de l&#39;expression arithmétique est égale à ‐4 donc le code de retour de (( est égal à 0</p>
+<pre><code>$ echo $?</code></pre>
+<pre><code>$ (( 5‐5 ))</code></pre>
+<p>=&gt; la valeur de l&#39;expression arithmétique est 0, donc le code de retour de (( est égal à 1</p>
+<pre><code>$echo $?</code></pre>
+<h3>ENTIERS ET EXPRESSIONS ARITHMÉTIQUES</h3>
+</section>
+<section class="page" aria-label="Page 377">
+<span class="page-tag">Page 377</span>
+<h3>ENTIERS ET EXPRESSIONS ARITHMÉTIQUES</h3>
+<p>Commande interne ((</p>
+<p>Il est inutile d&#39;utiliser le caractère de substitution $ devant le nom d&#39;une variable car il n&#39;y a pas d&#39;ambiguïté dans l&#39;interprétation ; par contre, lorsqu&#39;une expression contient des paramètres de position, le caractère $ doit être utilisé.</p>
+<h3>Exemple :</h3>
+<pre><code>$ declare –i a=2</code></pre>
+<pre><code>$ (( b = a + 7 ))</code></pre>
+<pre><code>$ echo $b</code></pre>
+<pre><code>$ date</code></pre>
+<p>jeudi 21 décembre 2006, 19:41:42 (UTC+0100)</p>
+<p>$</p>
+<pre><code>$ set $(date)</code></pre>
+<p>$</p>
+<pre><code>$ (( b = $2 + 1 )) =&gt; incrémentation du jour courant</code></pre>
+<p>$</p>
+<pre><code>$ echo $b</code></pre>
+</section>
+<section class="page" aria-label="Page 378">
+<span class="page-tag">Page 378</span>
+<h3>Valeur d&#39;une expression arithmétique :</h3>
+<p>La commande interne (( expr_arith )) n&#39;affiche pas sur la sortie standard la valeur de l&#39;expression arithmétique expr_arith.</p>
+<p>Pour obtenir la valeur de l&#39;expression arithmétique, on utilise la syntaxe :</p>
+<pre><code>$(( expr_arith ))</code></pre>
+<h3>Exemple :</h3>
+<pre><code>$echo $(( 7 * 2 ))</code></pre>
+<pre><code>$echo $(( a= 2*8 ))</code></pre>
+<pre><code>$echo $(( 7 &lt; 10 ))</code></pre>
+<h3>ENTIERS ET EXPRESSIONS ARITHMÉTIQUES</h3>
+</section>
+<section class="page" aria-label="Page 379">
+<span class="page-tag">Page 379</span>
+<p>Commande expr</p>
+<p>La commande expr permet d&#39;effectuer des calculs sur des valeurs numériques, des comparaisons, et de la recherche dans des chaînes de texte.</p>
+<h3>Exemple :</h3>
+<pre><code>$ expr 7 + 3</code></pre>
+<pre><code>$ expr 7 \* 3</code></pre>
+<pre><code>$ a a=`expr 13 – 10`</code></pre>
+<pre><code>$ echo $a</code></pre>
+<h3>ENTIERS ET EXPRESSIONS ARITHMÉTIQUES</h3>
+</section>
+<section class="page" aria-label="Page 380">
+<span class="page-tag">Page 380</span>
+<p>Commande let</p>
+<p>En bash, les var. sont toutes des chaînes de caractères ⇒Incapable de manipuler des nombres ⇒pas d’opérations!</p>
+<p>On peut faire des calculs en utilisant l&#39;instruction &quot;let&quot;.</p>
+<p>Syntaxe : let &quot;expr_arith&quot;</p>
+<h3>Exemple :</h3>
+<pre><code>$ let &quot;b=12+3&quot;</code></pre>
+<pre><code>$ echo $b</code></pre>
+<h3>Les opérations :</h3>
+<p>L’addition : +</p>
+<p>La soustraction : −</p>
+<p>La multiplication : ∗</p>
+<p>La division : /</p>
+<p>La puissance : ∗∗</p>
+<p>Le modulo : %</p>
+<h3>ENTIERS ET EXPRESSIONS ARITHMÉTIQUES</h3>
+</section>
+<section class="page" aria-label="Page 381">
+<span class="page-tag">Page 381</span>
+<p>Variables de type entier</p>
+<p class="bullet">Pour définir et initialiser une ou plusieurs variables de type entier, on utilise la syntaxe suivante : (même syntaxe avec la commande typeset )</p>
+<pre><code>declare</code></pre>
+<p>-i nom[=expr_arith] nom[=expr_arith] ...</p>
+<p class="bullet">L&#39;avantage est qu&#39;il devient possible d&#39;effectuer des calculs et des comparaisons sans passer par expr. La commande let ou « ((...)) » permet des calcules sur variables.</p>
+<p class="bullet">Pour que la valeur d’une variable entière ne soit pas accidentellement modifiée après qu’elle ait été initialisée, il suffit d’ajouter l’attribut r.</p>
+<p class="bullet">pour connaître toutes les variables entières définies, il suffit d’utiliser la commande</p>
+<pre><code>declare -i</code></pre>
+<h3>ENTIERS ET EXPRESSIONS ARITHMÉTIQUES</h3>
+</section>
+<section class="page" aria-label="Page 382">
+<span class="page-tag">Page 382</span>
+<p>Variables de type entier</p>
+<h3>Exemples :</h3>
+<pre><code>$ declare ‐i x=35</code></pre>
+<p>=&gt; définition et initialisation de la variable entière x</p>
+<pre><code>$ declare ‐i v w</code></pre>
+<p>=&gt; définition des variables entières v et w</p>
+<pre><code>$ v=12</code></pre>
+<p>=&gt; initialisation de v par affectation</p>
+<pre><code>$ read w</code></pre>
+<p>=&gt; initialisation de w par lecture</p>
+<pre><code>$declare ‐ir a=‐6</code></pre>
+<p>=&gt; seule la consultation est autorisée !</p>
+<pre><code>$ typeset ‐i resultat</code></pre>
+<pre><code>$ resultat= 6*7</code></pre>
+<pre><code>$ echo $resultat</code></pre>
+<pre><code>$ resultat=resultat*3</code></pre>
+<pre><code>$ resultat=Erreur</code></pre>
+<p>Erreur: bad number</p>
+<h3>ENTIERS ET EXPRESSIONS ARITHMÉTIQUES</h3>
+</section>
+<section class="page" aria-label="Page 383">
+<span class="page-tag">Page 383</span>
+<p>Commande sleep</p>
+<p>La commande sleep permet d&#39;attendre le nombre de secondes indiqués. Le script est interrompu durant ce temps. Le nombre de secondes et un entier compris entre 0 et 4 milliards (136 ans).</p>
+<h3>Exemple :</h3>
+<pre><code>$ sleep 10 ; date</code></pre>
+<h3>DÉLAI D’ATTENTE</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s38.html">← Tests de conditions</a><a class="btn" href="s40.html">Structure conditionnelle if →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s39">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 3 — Programmation Shell</h2>
+<ul>
+<li><a href="s28.html">Le shell interpréteur &amp; les types de commandes <span lang="ar" dir="rtl">— الشيل كمفسّر وأنواع الأوامر</span></a></li>
+<li><a href="s29.html">Les scripts shell <span lang="ar" dir="rtl">— سكربتات الشيل</span></a></li>
+<li><a href="s30.html">Paramètres &amp; variables <span lang="ar" dir="rtl">— المعاملات والمتغيرات</span></a></li>
+<li><a href="s31.html">read &amp; saisie au clavier <span lang="ar" dir="rtl">— read والإدخال من لوحة المفاتيح</span></a></li>
+<li><a href="s32.html">Quotes, export &amp; portée des variables <span lang="ar" dir="rtl">— الاقتباس والتصدير ونطاق المتغيرات</span></a></li>
+<li><a href="s33.html">Variables d&#39;environnement <span lang="ar" dir="rtl">— متغيرات البيئة</span></a></li>
+<li><a href="s34.html">Substitutions &amp; paramètres positionnels <span lang="ar" dir="rtl">— الاستبدالات والمعاملات الموضعية</span></a></li>
+<li><a href="s35.html">Paramètres spéciaux, shift &amp; substitution de commande <span lang="ar" dir="rtl">— المعاملات الخاصة وshift واستبدال الأوامر</span></a></li>
+<li><a href="s36.html">Paramètres non définis &amp; unset <span lang="ar" dir="rtl">— المعاملات غير المعرّفة وحذف المتغيرات</span></a></li>
+<li><a href="s37.html">Redirections &amp; scripts <span lang="ar" dir="rtl">— إعادة التوجيه داخل السكربتات</span></a></li>
+<li><a href="s38.html">Tests de conditions <span lang="ar" dir="rtl">— اختبار الشروط</span></a></li>
+<li><a href="s40.html">Structure conditionnelle if <span lang="ar" dir="rtl">— بنية الشرط if</span></a></li>
+<li><a href="s41.html">Choix multiples avec case <span lang="ar" dir="rtl">— الاختيار المتعدد case</span></a></li>
+<li><a href="s42.html">Boucles for <span lang="ar" dir="rtl">— حلقة for</span></a></li>
+<li><a href="s43.html">Boucles while, until &amp; break/continue <span lang="ar" dir="rtl">— حلقتا while وuntil وbreak/continue</span></a></li>
+<li><a href="s44.html">select, options du shell &amp; exec <span lang="ar" dir="rtl">— select وخيارات الشيل وexec</span></a></li>
+<li><a href="s45.html">La commande expr <span lang="ar" dir="rtl">— الأمر expr</span></a></li>
+<li><a href="s46.html">Fonctions <span lang="ar" dir="rtl">— الدوال</span></a></li>
+<li><a href="s47.html">Récursion &amp; source <span lang="ar" dir="rtl">— الاستدعاء الذاتي وsource</span></a></li>
+<li><a href="s48.html">Les tableaux (arrays) <span lang="ar" dir="rtl">— الجداول (المصفوفات)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

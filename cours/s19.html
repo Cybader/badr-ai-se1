@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utilisateurs &amp; groupes — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Utilisateurs &amp; groupes (pages 197–202). المستخدمون والمجموعات — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Utilisateurs &amp; groupes, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Utilisateur, Groupe, UID, GID, Root">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s19.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Utilisateurs &amp; groupes — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Utilisateurs &amp; groupes (pages 197–202). المستخدمون والمجموعات — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s19.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Utilisateurs &amp; groupes — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Utilisateurs &amp; groupes (pages 197–202). المستخدمون والمجموعات — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s19.html#resource","name":"Utilisateurs & groupes — SE1 | Badr AI","description":"Cours SE1 : Utilisateurs & groupes (pages 197–202). المستخدمون والمجموعات — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s19.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Utilisateurs & groupes, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Utilisateur, Groupe, UID, GID, Root"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Utilisateurs & groupes","item":"https://cybader.github.io/badr-ai-se1/cours/s19.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Utilisateurs &amp; groupes</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 2 · Section 19/48</span>
+<h1>Utilisateurs &amp; groupes</h1>
+<p class="ar-title" lang="ar" dir="rtl">المستخدمون والمجموعات</p>
+<div class="meta-row"><span class="chip">📄 Pages 197–202</span><span class="chip">6 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">Linux متعدد المستخدمين؛ root يملك كل الصلاحيات. كل مستخدم له UID ومجموعة أساسية GID. كل ملف يُنسب إلى المالك User والمجموعة Group والآخرين Others. ملفات النظام: /etc/passwd للحسابات، /etc/shadow لكلمات السر المشفرة، /etc/group للمجموعات. المجلد الشخصي عادة /home/utilisateur. الأمان يمر عبر الأذونات.</p>
+<div class="terms">
+<div class="term"><b>Utilisateur</b><span lang="ar" dir="rtl">مستخدم</span></div>
+<div class="term"><b>Groupe</b><span lang="ar" dir="rtl">مجموعة</span></div>
+<div class="term"><b>UID</b><span lang="ar" dir="rtl">معرف المستخدم</span></div>
+<div class="term"><b>GID</b><span lang="ar" dir="rtl">معرف المجموعة</span></div>
+<div class="term"><b>Root</b><span lang="ar" dir="rtl">الجذر</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 197–202 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 197">
+<span class="page-tag">Page 197</span>
+<h3>GESTION DES</h3>
+<h3>UTILISATEURS</h3>
+</section>
+<section class="page" aria-label="Page 198">
+<span class="page-tag">Page 198</span>
+<p class="bullet">Linux est un système multi-utilisateurs :</p>
+<p class="bullet">Pour préserver la sécurité et la confidentialité des donnée, Linux assure un système d’identification et de gestion des utilisateurs</p>
+<p class="bullet">Un utilisateur est donc celui qui s’est logué en donnant un nom de login. Ce login permet de définir l’utilisateur et tracer l’activité menée en son nom.</p>
+<h3>LES UTILISATEURS</h3>
+</section>
+<section class="page" aria-label="Page 199">
+<span class="page-tag">Page 199</span>
+<h3>LES UTILISATEURS</h3>
+<p class="bullet">Il existe deux types d’utilisateurs :</p>
+<p>Le root ou le super utilisateur a l’ensemble des droits sur le système.</p>
+<p>Utilisateur ordinaire ayant des droits bien définies sur le système.</p>
+<p class="bullet">Il existe 3 classes d&#39;utilisateurs :</p>
+<p>Le propriétaire du fichier (User)</p>
+<p>Le groupe dans lequel appartient le propriétaire (Group)</p>
+<p>Les autres (Others).</p>
+<p>Others</p>
+</section>
+<section class="page" aria-label="Page 200">
+<span class="page-tag">Page 200</span>
+<h3>LES UTILISATEURS</h3>
+<p>Utilisateur : Personne autorisée à se connecter sur le système.</p>
+<p class="bullet">Son accès est autorisé après identification :</p>
+<p class="bullet">Par son nom d&#39;utilisateur (username ou login).</p>
+<p class="bullet">Par son mot de passe associe (password).</p>
+<p class="bullet">Il dispose d&#39;une zone privée sur le disque :</p>
+<p class="bullet">généralement située dans /home/username ou dans /users/username</p>
+<p class="bullet">sur laquelle il a tous les droits.</p>
+<p class="bullet">La taille de cette zone privée (i.e. le nombre d&#39;octets qu&#39;il est possible d&#39;y stocker) peut être restreinte a un quota.</p>
+<p class="bullet">il est identifié par un numéro unique ou UID (User IDentication number).</p>
+<p class="bullet">il appartient a un ou plusieurs groupes (mais un groupe dans lequel Il est par défaut).</p>
+</section>
+<section class="page" aria-label="Page 201">
+<span class="page-tag">Page 201</span>
+<h3>LES GROUPES</h3>
+<p>Groupe : Ensemble de personnes ou de groupes.</p>
+<p class="bullet">Les groupes sont utilisés pour contrôler les accès au sein du système.</p>
+<p class="bullet">Le changement de groupe est (éventuellement) contrôlé par un mot de passe.</p>
+<p class="bullet">il est géré par un administrateur spécifique au groupe (ou par défaut le super-utilisateur).</p>
+<p class="bullet">il est identité par un numéro unique ou GID (Group IDentication number).</p>
+</section>
+<section class="page" aria-label="Page 202">
+<span class="page-tag">Page 202</span>
+<p class="bullet">Fichiers de description des utilisateurs et des groupes :</p>
+<p class="bullet">/etc/passwd pour les utilisateurs</p>
+<h3>:</h3>
+<p>Contient les informations relatives aux utilisateurs (login, mot de passe crypté, uid, gid, nom complet, répertoire de travail au login, commande exécutée au login).</p>
+<p class="bullet">/etc/group pour les groupes : Contient les informations relatives aux groupes (nom, mot de passe, gid, liste des membres du groupe).</p>
+<h3>LES UTILISATEURS ET LES GROUPES</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s18.html">← Séparateurs conditionnels &amp; redirections</a><a class="btn" href="s20.html">Droits d&#39;accès &amp; chmod →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s19">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<ul>
+<li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
+<li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
+<li><a href="s11.html">Inodes, types &amp; données des fichiers <span lang="ar" dir="rtl">— عقد الفهرس وأنواع الملفات وبياناتها</span></a></li>
+<li><a href="s12.html">Commandes d&#39;accès &amp; manipulation <span lang="ar" dir="rtl">— أوامر الوصول والتعامل مع الملفات</span></a></li>
+<li><a href="s13.html">Liens physiques &amp; symboliques <span lang="ar" dir="rtl">— الروابط الصلبة والرمزية</span></a></li>
+<li><a href="s14.html">Lecture &amp; filtrage de fichiers <span lang="ar" dir="rtl">— قراءة الملفات وتصفيتها</span></a></li>
+<li><a href="s15.html">Commandes système &amp; identification <span lang="ar" dir="rtl">— أوامر النظام والهوية</span></a></li>
+<li><a href="s16.html">Expressions régulières <span lang="ar" dir="rtl">— التعابير النمطية</span></a></li>
+<li><a href="s17.html">grep, find &amp; alias (exercices) <span lang="ar" dir="rtl">— grep وfind والاسم المستعار (تمارين)</span></a></li>
+<li><a href="s18.html">Séparateurs conditionnels &amp; redirections <span lang="ar" dir="rtl">— الفواصل الشرطية وإعادة التوجيه</span></a></li>
+<li><a href="s20.html">Droits d&#39;accès &amp; chmod <span lang="ar" dir="rtl">— أذونات الوصول وchmod</span></a></li>
+<li><a href="s21.html">chown, chgrp &amp; umask <span lang="ar" dir="rtl">— chown وchgrp وumask</span></a></li>
+<li><a href="s22.html">Gestion des comptes utilisateurs <span lang="ar" dir="rtl">— إدارة حسابات المستخدمين</span></a></li>
+<li><a href="s23.html">Archives avec tar <span lang="ar" dir="rtl">— الأرشيفات باستخدام tar</span></a></li>
+<li><a href="s24.html">Composition des commandes (; &amp; () {}) <span lang="ar" dir="rtl">— تركيب الأوامر (; &amp; () {})</span></a></li>
+<li><a href="s25.html">Contrôle des processus <span lang="ar" dir="rtl">— التحكم في العمليات</span></a></li>
+<li><a href="s26.html">Éditeurs de texte sous Unix <span lang="ar" dir="rtl">— محررات النصوص في يونكس</span></a></li>
+<li><a href="s27.html">Shells &amp; variables d&#39;environnement (intro) <span lang="ar" dir="rtl">— الشيلات ومتغيرات البيئة (مقدمة)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

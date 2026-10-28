@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestion des fichiers &amp; arborescence — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Gestion des fichiers &amp; arborescence (pages 92–114). إدارة الملفات وشجرة المجلدات — explications en arabe, révision en français, QCM et examen…">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Gestion des fichiers &amp; arborescence, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Répertoire, Chemin absolu, Chemin relatif, Arborescence, Tilde ~">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s10.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Gestion des fichiers &amp; arborescence — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Gestion des fichiers &amp; arborescence (pages 92–114). إدارة الملفات وشجرة المجلدات — explications en arabe, révision en français, QCM et examen…">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s10.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gestion des fichiers &amp; arborescence — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Gestion des fichiers &amp; arborescence (pages 92–114). إدارة الملفات وشجرة المجلدات — explications en arabe, révision en français, QCM et examen…">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s10.html#resource","name":"Gestion des fichiers & arborescence — SE1 | Badr AI","description":"Cours SE1 : Gestion des fichiers & arborescence (pages 92–114). إدارة الملفات وشجرة المجلدات — explications en arabe, révision en français, QCM et examen…","url":"https://cybader.github.io/badr-ai-se1/cours/s10.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Gestion des fichiers & arborescence, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Répertoire, Chemin absolu, Chemin relatif, Arborescence, Tilde ~"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Gestion des fichiers & arborescence","item":"https://cybader.github.io/badr-ai-se1/cours/s10.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Gestion des fichiers &amp; arborescence</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 2 · Section 10/48</span>
+<h1>Gestion des fichiers &amp; arborescence</h1>
+<p class="ar-title" lang="ar" dir="rtl">إدارة الملفات وشجرة المجلدات</p>
+<div class="meta-row"><span class="chip">📄 Pages 92–114</span><span class="chip">23 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">نظام الملفات شجرة واحدة تبدأ من الجذر /. كل شيء ملف حتى الأجهزة. المجلد حاوية، والملف مجموعة بيانات تحت اسم. المسار المطلق يبدأ بـ /، والنسبي ينطلق من المجلد الحالي؛ . هو المجلد الحالي، .. الأب، و~ المجلد الشخصي. أوامر: pwd (الموقع)، cd (التنقل)، ls (العرض مع -l للتفاصيل و-a للمخفي)، mkdir/rmdir، du (حجم شجرة)، touch. الرموز * ? [a-z] توسّعها القشرة قبل تنفيذ الأمر.</p>
+<div class="terms">
+<div class="term"><b>Répertoire</b><span lang="ar" dir="rtl">مجلد</span></div>
+<div class="term"><b>Chemin absolu</b><span lang="ar" dir="rtl">مسار مطلق</span></div>
+<div class="term"><b>Chemin relatif</b><span lang="ar" dir="rtl">مسار نسبي</span></div>
+<div class="term"><b>Arborescence</b><span lang="ar" dir="rtl">شجرة المجلدات</span></div>
+<div class="term"><b>Tilde ~</b><span lang="ar" dir="rtl">رمز المجلد الشخصي</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 92–114 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 92">
+<span class="page-tag">Page 92</span>
+<h3>GESTION DES FICHIERS ET</h3>
+<h3>DES RÉPERTOIRES</h3>
+</section>
+<section class="page" aria-label="Page 93">
+<span class="page-tag">Page 93</span>
+<p>Mémoire vive</p>
+<p>Répertoires d’arrangement</p>
+<p>Fichiers de stockage</p>
+<h3>SYSTÈMES DE FICHIERS</h3>
+</section>
+<section class="page" aria-label="Page 94">
+<span class="page-tag">Page 94</span>
+<p>Un système de fichier est l&#39;agencement logique et structuré des données sur un support de stockage.</p>
+<p class="bullet">Supports courants :</p>
+<p class="bullet">Disque dur</p>
+<p class="bullet">Clé USB</p>
+<h3>• DVD</h3>
+<p class="bullet">Autres supports de stockage numériques</p>
+<p class="bullet">Fonctionnement :</p>
+<p class="bullet">Les informations ne sont pas écrites aléatoirement sur les disques.</p>
+<p class="bullet">Une organisation spécifique est nécessaire pour stocker à la fois les fichiers et les données qu&#39;ils contiennent.</p>
+<p class="bullet">C&#39;est le système de fichiers qui définit cette structure et permet de gérer les fichiers de manière efficace.</p>
+<p class="bullet">Exemples de systèmes de fichiers :</p>
+<p class="bullet">ext4 (Linux)</p>
+<p class="bullet">NTFS (Windows)</p>
+<h3>• FAT32 (USB, DVD)</h3>
+<h3>SYSTÈMES DE FICHIERS</h3>
+</section>
+<section class="page" aria-label="Page 95">
+<span class="page-tag">Page 95</span>
+<p>Un fichier est un ensemble de données numériques regroupées sous un même nom.</p>
+<p>Ces données peuvent être enregistrées sur différents supports (disques durs, SSD, etc.) et leur méthode de stockage suit un format spécifique.</p>
+<p class="bullet">Caractéristiques techniques d’un fichier :</p>
+<p class="bullet">Information numérique constituée d&#39;une séquence d&#39;octets.</p>
+<p class="bullet">Le format du fichier définit la manière dont les données sont organisées et interprétées.</p>
+<p class="bullet">Organisation des fichiers dans Linux :</p>
+<p class="bullet">Tous les fichiers sont structurés selon une arborescence unique.</p>
+<p class="bullet">Le point de départ de cette structure est appelé racine (représentée par « / »).</p>
+<h3>SYSTÈMES DE FICHIERS</h3>
+</section>
+<section class="page" aria-label="Page 96">
+<span class="page-tag">Page 96</span>
+<h3>SYSTÈMES DE FICHIERS</h3>
+<p class="bullet">Structure hiérarchique :</p>
+<p class="bullet">Un point de départ : le répertoire racine (&quot;root&quot;).</p>
+<p class="bullet">Des sous-répertoires imbriqués, organisés de manière logique.</p>
+<p class="bullet">Exemple de structure :</p>
+<p class="bullet">/ (root)</p>
+<p class="bullet">/home</p>
+<p class="bullet">/usr</p>
+<p class="bullet">/etc</p>
+<p class="bullet">/bin</p>
+<p>Une arborescence est une organisation logique des fichiers sur un ou plusieurs systèmes de fichiers.</p>
+</section>
+<section class="page" aria-label="Page 97">
+<span class="page-tag">Page 97</span>
+<p>Un répertoire est une structure qui permet de ranger et organiser les fichiers.</p>
+<p class="bullet">Fonction principale : Organisation des fichiers en groupes logiques.</p>
+<p class="bullet">Création : Il est possible de créer plusieurs répertoires pour classer les fichiers selon leur utilité.</p>
+<p class="bullet">Équivalent : Folder ou Collection dans d&#39;autres systèmes d&#39;exploitation.</p>
+<h3>SYSTÈMES DE FICHIERS</h3>
+</section>
+<section class="page" aria-label="Page 98">
+<span class="page-tag">Page 98</span>
+<p>Racine de l’arborescence</p>
+<p>Répertoire</p>
+<p>Sous-Répertoire</p>
+<p>Fichier</p>
+<p>Le système de fichiers est organisé en une structure arborescente dont les nœuds sont des répertoires et les feuilles des fichiers ordinaires.</p>
+<h3>SYSTÈMES DE FICHIERS</h3>
+</section>
+<section class="page" aria-label="Page 99">
+<span class="page-tag">Page 99</span>
+<h3>ARBORESCENCE LINUX</h3>
+</section>
+<section class="page" aria-label="Page 100">
+<span class="page-tag">Page 100</span>
+<p>/ etc bin boot dev home root usr var proc</p>
+<p>Racine du système</p>
+<p>Fichiers de configuration</p>
+<p>Commandes principales disponibles</p>
+<p>Fichiers de démarrage du système contenant le noyau</p>
+<p>Point de montage des périphériques</p>
+<p>Répertoires personnels des utilisateurs</p>
+<p>Répertoire personnel du super-utilisateur</p>
+<p>Logiciels et librairies supplémentaires</p>
+<p>Journaux systèmes (log)</p>
+<p>Système de fichiers virtuel (VFS) contenant des infos sur les processus en cours d’exécution nnée</p>
+<p>1iv1e4rsi aire</p>
+<h3>ARBORESCENCE TYPIQUE DE LINUX</h3>
+</section>
+<section class="page" aria-label="Page 101">
+<span class="page-tag">Page 101</span>
+<p>Différents symboles sont utilisés pour</p>
+<h3>désigner des répertoires :</h3>
+<p class="bullet">Le « . »</p>
+<p>→Répertoire courant</p>
+<p class="bullet">Le « .. » →Répertoire parent</p>
+<p class="bullet">Le « ~ » →Répertoire personnel de l’utilisateur courant</p>
+<p class="bullet">Le « / » →Répertoire racine de l’arbre nnée</p>
+<p>1iv1e5rsi aire</p>
+<h3>SYMBOLES ASSOCIÉS À L’ARBORESCENCE</h3>
+</section>
+<section class="page" aria-label="Page 102">
+<span class="page-tag">Page 102</span>
+<p class="bullet">Le système Linux offre trois types de fichiers principaux :</p>
+<p>a.</p>
+<p>Les fichiers ordinaires (regular files).</p>
+<p>b.</p>
+<p>Les fichiers répertoires ou répertoires (directories).</p>
+<p>c.</p>
+<p>Les fichiers spéciaux. Ils désignent les périphériques, les tubes ou autres supports de communication.</p>
+<h3>❑Les fichiers spéciaux sont de plusieurs types, à savoir :</h3>
+<p class="bullet">l</p>
+<p>: un lien symbolique</p>
+<p class="bullet">b</p>
+<p>: un fichier spécial de type bloc (périphériques …)</p>
+<p class="bullet">c</p>
+<p>: un fichier spécial de type caractère (périphériques …)</p>
+<p class="bullet">s</p>
+<p>: socket</p>
+<p class="bullet">…</p>
+<h3>LES TYPES DE FICHIERS LINUX</h3>
+</section>
+<section class="page" aria-label="Page 103">
+<span class="page-tag">Page 103</span>
+<p class="bullet">Le terminal interprète le caractère tilde ~ comme un alias du répertoire personnel, mais le tilde ne doit être précédé d’aucun caractère.</p>
+<p>Exemple: Pour vous déplacer dans le répertoire tmp de votre dossier personnel d’où que</p>
+<h3>vous soyez :</h3>
+<pre><code>$ cd ~/tmp</code></pre>
+<p class="bullet">Mais la commande ci- dessous, génère une erreur :</p>
+<pre><code>$ cd /~</code></pre>
+<h3>LES RÉPERTOIRE PERSONNEL – LE TILDE</h3>
+</section>
+<section class="page" aria-label="Page 104">
+<span class="page-tag">Page 104</span>
+<p class="bullet">La commande permettant d’afficher le chemin d’accès du répertoire courant</p>
+<h3>(C’est-à-dire votre position dans l’arborescence) est:</h3>
+<p>Pwd : Print Working Directory</p>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>RÉPERTOIRES</h3>
+</section>
+<section class="page" aria-label="Page 105">
+<span class="page-tag">Page 105</span>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>RÉPERTOIRES</h3>
+<p class="bullet">On peut se déplacer en utilisant un chemin :</p>
+<pre><code>cd chemin</code></pre>
+<pre><code>% pwd</code></pre>
+<pre><code>% cd Enseignement</code></pre>
+<pre><code>% pwd</code></pre>
+<p class="bullet">La commande permettant de se déplacer dans une arborescence est :</p>
+<p>cd repertoire (change directory)</p>
+</section>
+<section class="page" aria-label="Page 106">
+<span class="page-tag">Page 106</span>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>RÉPERTOIRES</h3>
+<p>Pour identifier un fichier dans l&#39;arborescence, on indique le nom complet du fichier</p>
+<h3>Le nom complet du fichier est représenté par :</h3>
+<p class="bullet">Le chemin composé de répertoires qui conduit de la racine de l&#39;arborescence du système de fichiers jusqu&#39;au répertoire qui contient le fichier.</p>
+<p class="bullet">Chaque répertoire est distingué des autres par un symbole séparateur &quot;/&quot;.</p>
+<p class="bullet">Le nom du fichier.</p>
+</section>
+<section class="page" aria-label="Page 107">
+<span class="page-tag">Page 107</span>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>RÉPERTOIRES : LES CHEMINS D’ACCÈS</h3>
+<h3>On distingue deux expressions d&#39;un chemin :</h3>
+<p class="bullet">Le chemin d&#39;accès absolu (chemin absolu)</p>
+<p class="bullet">Le chemin absolu commence par le symbole séparateur /, il exprime le chemin complet à partir de la racine de l&#39;arborescence.</p>
+<p class="bullet">Le chemin d&#39;accès relatif (chemin relatif)</p>
+<p class="bullet">Le chemin relatif commence par un autre caractère que le caractère séparateur. Il indique un chemin à partir du répertoire de travail courant.</p>
+</section>
+<section class="page" aria-label="Page 108">
+<span class="page-tag">Page 108</span>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>RÉPERTOIRES</h3>
+<h3>Exemple :</h3>
+<p>Le répertoire courant est : /var/log</p>
+<p class="bullet">Le chemin absolu pour désigner le</p>
+<h3>fichier fichier.txt est:</h3>
+<p>/home/etd/etudiant1/fichier.txt</p>
+<p class="bullet">Le chemin relatif est :</p>
+<p>../../home/etd/etudiant1/fichier.txt</p>
+<p class="bullet">&quot;..&quot; désigne le répertoire parent</p>
+<p class="bullet">&quot;.&quot; désigne le répertoire courant</p>
+</section>
+<section class="page" aria-label="Page 109">
+<span class="page-tag">Page 109</span>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>RÉPERTOIRES : LES CHEMINS D’ACCES</h3>
+<p>Voici par exemple l&#39;utilisation de cd pour aller dans le</p>
+<h3>bureau à l&#39;aide d&#39;un chemin absolu:</h3>
+<p>Voici la même commande mais en utilisant un chemin relatif.</p>
+<pre><code>$ pwd</code></pre>
+<pre><code>$ cd Desktop</code></pre>
+</section>
+<section class="page" aria-label="Page 110">
+<span class="page-tag">Page 110</span>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>RÉPERTOIRES : LES CHEMINS D’ACCÈS</h3>
+</section>
+<section class="page" aria-label="Page 111">
+<span class="page-tag">Page 111</span>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>RÉPERTOIRES : LES CHEMINS D’ACCÈS</h3>
+</section>
+<section class="page" aria-label="Page 112">
+<span class="page-tag">Page 112</span>
+<h3>COMMANDE DE MANIPULATION DES</h3>
+<h3>RÉPERTOIRES</h3>
+<p class="bullet">La commande servant à créer des répertoires est :</p>
+<p class="bullet">mkdir [options] répertoires… (make directory)</p>
+<p class="bullet">pour créer une arborescence entière, on utilise l’option –p</p>
+<p>Exemple : créer l’arborescence</p>
+<p>~/TPLinux/Groupe1</p>
+<pre><code>mkdir –p TPLinux/Groupe1</code></pre>
+<p class="bullet">La commande servant à supprimer un répertoire est :</p>
+<p class="bullet">rmdir repertoire</p>
+<p>(remove directory) Le répertoire doit être vide</p>
+<p class="bullet">rmdir -p repertoire : pour supprimer les sous répertoires qui peuvent figurer dans le chemin d’accès à un répertoire s’ils sont vides.</p>
+<p class="bullet">rm -r repertoire : Si le répertoire est non vide</p>
+</section>
+<section class="page" aria-label="Page 113">
+<span class="page-tag">Page 113</span>
+<h3>LA COMMANDE DU</h3>
+<p>La commande du : permet d’afficher la taille d’une arborescence.</p>
+<p>Syntaxe : du [options] [répertoire]</p>
+</section>
+<section class="page" aria-label="Page 114">
+<span class="page-tag">Page 114</span>
+<p>Option description</p>
+<p>-a</p>
+<p>Affiche les statistiques pour tous les fichiers, pas seulement les répertoires.</p>
+<p>-b</p>
+<p>Affiche les tailles en octets.</p>
+<p>-c</p>
+<p>Affiche la totalité de l&#39;espace utilisé par tous les arguments.</p>
+<p>-k</p>
+<p>Affiche la taille en kilo-octets.</p>
+<p>-S</p>
+<p>Affiche séparément la taille de chaque répertoire, sans inclure la taille des sous-répertoires.</p>
+<h3>OPTIONS DE LA COMMANDE DU</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s9.html">← Shell, terminal &amp; format des commandes</a><a class="btn" href="s11.html">Inodes, types &amp; données des fichiers →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s10">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<ul>
+<li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
+<li><a href="s11.html">Inodes, types &amp; données des fichiers <span lang="ar" dir="rtl">— عقد الفهرس وأنواع الملفات وبياناتها</span></a></li>
+<li><a href="s12.html">Commandes d&#39;accès &amp; manipulation <span lang="ar" dir="rtl">— أوامر الوصول والتعامل مع الملفات</span></a></li>
+<li><a href="s13.html">Liens physiques &amp; symboliques <span lang="ar" dir="rtl">— الروابط الصلبة والرمزية</span></a></li>
+<li><a href="s14.html">Lecture &amp; filtrage de fichiers <span lang="ar" dir="rtl">— قراءة الملفات وتصفيتها</span></a></li>
+<li><a href="s15.html">Commandes système &amp; identification <span lang="ar" dir="rtl">— أوامر النظام والهوية</span></a></li>
+<li><a href="s16.html">Expressions régulières <span lang="ar" dir="rtl">— التعابير النمطية</span></a></li>
+<li><a href="s17.html">grep, find &amp; alias (exercices) <span lang="ar" dir="rtl">— grep وfind والاسم المستعار (تمارين)</span></a></li>
+<li><a href="s18.html">Séparateurs conditionnels &amp; redirections <span lang="ar" dir="rtl">— الفواصل الشرطية وإعادة التوجيه</span></a></li>
+<li><a href="s19.html">Utilisateurs &amp; groupes <span lang="ar" dir="rtl">— المستخدمون والمجموعات</span></a></li>
+<li><a href="s20.html">Droits d&#39;accès &amp; chmod <span lang="ar" dir="rtl">— أذونات الوصول وchmod</span></a></li>
+<li><a href="s21.html">chown, chgrp &amp; umask <span lang="ar" dir="rtl">— chown وchgrp وumask</span></a></li>
+<li><a href="s22.html">Gestion des comptes utilisateurs <span lang="ar" dir="rtl">— إدارة حسابات المستخدمين</span></a></li>
+<li><a href="s23.html">Archives avec tar <span lang="ar" dir="rtl">— الأرشيفات باستخدام tar</span></a></li>
+<li><a href="s24.html">Composition des commandes (; &amp; () {}) <span lang="ar" dir="rtl">— تركيب الأوامر (; &amp; () {})</span></a></li>
+<li><a href="s25.html">Contrôle des processus <span lang="ar" dir="rtl">— التحكم في العمليات</span></a></li>
+<li><a href="s26.html">Éditeurs de texte sous Unix <span lang="ar" dir="rtl">— محررات النصوص في يونكس</span></a></li>
+<li><a href="s27.html">Shells &amp; variables d&#39;environnement (intro) <span lang="ar" dir="rtl">— الشيلات ومتغيرات البيئة (مقدمة)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

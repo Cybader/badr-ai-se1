@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Droits d&#39;accès &amp; chmod — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Droits d&#39;accès &amp; chmod (pages 203–220). أذونات الوصول وchmod — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Droits d&#39;accès &amp; chmod, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Droit d&#39;accès, Permission, Octale, Propriétaire, Groupe, Autres">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s20.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Droits d&#39;accès &amp; chmod — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Droits d&#39;accès &amp; chmod (pages 203–220). أذونات الوصول وchmod — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s20.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Droits d&#39;accès &amp; chmod — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Droits d&#39;accès &amp; chmod (pages 203–220). أذونات الوصول وchmod — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s20.html#resource","name":"Droits d'accès & chmod — SE1 | Badr AI","description":"Cours SE1 : Droits d'accès & chmod (pages 203–220). أذونات الوصول وchmod — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s20.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Droits d'accès & chmod, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Droit d'accès, Permission, Octale, Propriétaire, Groupe, Autres"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Droits d'accès & chmod","item":"https://cybader.github.io/badr-ai-se1/cours/s20.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Droits d&#39;accès &amp; chmod</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 2 · Section 20/48</span>
+<h1>Droits d&#39;accès &amp; chmod</h1>
+<p class="ar-title" lang="ar" dir="rtl">أذونات الوصول وchmod</p>
+<div class="meta-row"><span class="chip">📄 Pages 203–220</span><span class="chip">18 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">الأذونات: r=4 قراءة، w=2 كتابة، x=1 تنفيذ (وللمجلد: عبور). ثلاث فئات: u المالك، g المجموعة، o الآخرون. ls -l يعرض النوع ثم 9 خانات (rwx للمالك، ثم المجموعة، ثم الآخرين). بالثماني: chmod 755 = rwxr-xr-x، و644 = rw-r--r--. بالرمزي: chmod u+x، g-w، o=r، a=rw. أمثلة الامتحان المتكررة: 750، 664، 764 — رتّب الخانات دائمًا u ثم g ثم o.</p>
+<div class="terms">
+<div class="term"><b>Droit d&#39;accès</b><span lang="ar" dir="rtl">حق الوصول</span></div>
+<div class="term"><b>Permission</b><span lang="ar" dir="rtl">إذن</span></div>
+<div class="term"><b>Octale</b><span lang="ar" dir="rtl">ثماني</span></div>
+<div class="term"><b>Propriétaire</b><span lang="ar" dir="rtl">المالك</span></div>
+<div class="term"><b>Groupe</b><span lang="ar" dir="rtl">المجموعة</span></div>
+<div class="term"><b>Autres</b><span lang="ar" dir="rtl">الآخرون</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 203–220 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 203">
+<span class="page-tag">Page 203</span>
+<h3>LES DROITS D’ACCÈS</h3>
+</section>
+<section class="page" aria-label="Page 204">
+<span class="page-tag">Page 204</span>
+<p class="bullet">Sous Linux, chaque fichier (ou répertoire) possède un ensemble d&#39;attributs définissant les droits d&#39;accès à ce fichier pour tous les utilisateurs du système.</p>
+<p class="bullet">Àsa création, un fichier appartient à son auteur.</p>
+<p class="bullet">Le propriétaire du fichier peut ensuite distribuer ou restreindre les droits d&#39;accès sur ce fichier.</p>
+<p class="bullet">Pour chaque classe d&#39;utilisateurs, il y a 3 types d&#39;accès à un fichier donné :</p>
+<p class="bullet"> r</p>
+<p>: en lecture (Read).</p>
+<p class="bullet"> w : en écriture (Write).</p>
+<p class="bullet"> x : en exécution (eXecute).</p>
+<h3>LES DROITS D’ACCÈS</h3>
+</section>
+<section class="page" aria-label="Page 205">
+<span class="page-tag">Page 205</span>
+<p class="bullet">Un droit d’accès est un modèle qui décrit pour chaque fichier</p>
+<h3>ou chaque répertoire, qui a le droit :</h3>
+<p class="bullet">De lire;</p>
+<p class="bullet">D’exécuter;</p>
+<p class="bullet">De modifier.</p>
+<h3>LES DROITS D’ACCÈS DES FICHIERS ET DES</h3>
+<h3>RÉPERTOIRES</h3>
+<p>Droits du Propriétaire</p>
+<p>Droits du Groupe</p>
+<p>Droits du Reste du Monde r w x r w x r w x</p>
+</section>
+<section class="page" aria-label="Page 206">
+<span class="page-tag">Page 206</span>
+<h3>LES DROITS D’ACCÈS DES FICHIERS ET DES</h3>
+<h3>RÉPERTOIRES</h3>
+<p>d rwx r-x r-x</p>
+</section>
+<section class="page" aria-label="Page 207">
+<span class="page-tag">Page 207</span>
+<h3>LES DROITS D’ACCÈS</h3>
+</section>
+<section class="page" aria-label="Page 208">
+<span class="page-tag">Page 208</span>
+<h3>LES DROITS D’ACCÈS À UN</h3>
+<h3>RÉPERTOIRE/FICHIER</h3>
+<p>Accès</p>
+<p>Fichier</p>
+<p>Répertoire r</p>
+<p>Lire le contenu du fichier</p>
+<p>Afficher le contenu du répertoire</p>
+<pre><code>w</code></pre>
+<p>Modifier et Supprimer le contenu</p>
+<pre><code>du fichier</code></pre>
+<p>Ajouter, Modifier et Supprimer le contenu du répertoire x</p>
+<p>Lancer un fichier exécutable</p>
+<p>Accéder comme répertoire de travail sur le répertoire</p>
+</section>
+<section class="page" aria-label="Page 209">
+<span class="page-tag">Page 209</span>
+<p>La commande ls -l en console permet d&#39;afficher les détails d&#39;un répertoire ou d&#39;un fichier.</p>
+<p>On y découvre alors une somme importante d&#39;information.</p>
+<h3>D’UNE FAÇON GÉNÉRALE</h3>
+</section>
+<section class="page" aria-label="Page 210">
+<span class="page-tag">Page 210</span>
+<h3>MODIFICATION DES DROITS D’ACCÈS AUX</h3>
+<h3>FICHIERS</h3>
+<p>Description des protections par un nombre octal</p>
+<p>Mode symbolique</p>
+<p>Propriétaire chmod (Change Mode)</p>
+</section>
+<section class="page" aria-label="Page 211">
+<span class="page-tag">Page 211</span>
+<h3>MODIFICATION DES DROITS D’ACCÈS AUX</h3>
+<h3>FICHIERS : LE MODE OCTAL</h3>
+<p>Les droits sont représentés par un nombre octal (Base 8)</p>
+<p class="bullet">De 0 à 7</p>
+<p>La représentation binaire (base 2) donne le détail des droits</p>
+<p class="bullet">Exemple : 6 5 4</p>
+<p>110 101 100 rw- r-x r--</p>
+<p>Ce mode permet de modifier tous les droits en même temps</p>
+<p class="bullet">A utiliser avec précaution</p>
+<p class="bullet">Très efficace pour s’assurer que tous les fichiers ont les mêmes droits</p>
+<p class="bullet">Utilisé pour sécuriser les accès des utilisateurs aux fichiers</p>
+</section>
+<section class="page" aria-label="Page 212">
+<span class="page-tag">Page 212</span>
+<h3>MODIFICATION DES DROITS D’ACCÈS AUX</h3>
+<h3>FICHIERS : LE MODE OCTAL</h3>
+<h3>Exemple:</h3>
+<p>On veut modifier la protection du fichier toto de la manière suivante :</p>
+<p>r-x rw- rwx</p>
+<p class="bullet">Autorisant un accès lecture et exécution au propriétaire,</p>
+<p class="bullet">Lecture et écriture au groupe,</p>
+<p class="bullet">Accès sans restriction aux autres (cas très rare).</p>
+</section>
+<section class="page" aria-label="Page 213">
+<span class="page-tag">Page 213</span>
+<p>le mode symbolique, permet une description absolue ou relative</p>
+<h3>des droits d’accès, comme suit :</h3>
+<pre><code>chmod [qui] op [permission] fich/rep</code></pre>
+<h3>MODIFICATION DES DROITS D’ACCÈS AUX</h3>
+<h3>FICHIERS : LE MODE SYMBOLIQUE</h3>
+<p>Combinaison de lettre u (user), g (groupe),</p>
+<p class="bullet">(other=autre)</p>
+<p>ou a (all=tous) pour ugo</p>
+<p>+ : Permet d’ajouter un droit d’accès, - : Permet de supprimer un droit d’accès</p>
+<p>= : Permet d’affecter un droit de manière absolue r (read=lecture),</p>
+<pre><code>w (write=écriture),</code></pre>
+<p>x (exécution).</p>
+</section>
+<section class="page" aria-label="Page 214">
+<span class="page-tag">Page 214</span>
+<h3>MODIFICATION DES DROITS D’ACCÈS AUX</h3>
+<h3>FICHIERS : LE MODE OCTAL</h3>
+<p class="bullet">Le mode est spécifié par un nombre en octal (base 8), dont les chiffres</p>
+<h3>représentent (dans l&#39;ordre de gauche à droite) :</h3>
+<p class="bullet">Les droits pour l&#39;utilisateur propriétaire du fichier.</p>
+<p class="bullet">Les droits pour le groupe propriétaire du fichier.</p>
+<p class="bullet">Les droits pour tous les autres.</p>
+</section>
+<section class="page" aria-label="Page 215">
+<span class="page-tag">Page 215</span>
+<p class="bullet">Supprimer le droit d’écriture au propriétaire.</p>
+<pre><code>$ chmod u -w file</code></pre>
+<p class="bullet">Ajouter le droit de lecture pour le groupe.</p>
+<pre><code>$ chmod g+r file</code></pre>
+<p class="bullet">Accès uniquement en exécution pour le propriétaire et le groupe, pas de modification pour les autres.</p>
+<pre><code>$ chmod ug=x file</code></pre>
+<h3>MODIFICATION DES DROITS D’ACCÈS AUX</h3>
+<h3>FICHIERS : LE MODE SYMBOLIQUE</h3>
+</section>
+<section class="page" aria-label="Page 216">
+<span class="page-tag">Page 216</span>
+<p>chmod ugo+x monRep</p>
+<p class="bullet">Ajoute l&#39;exécution (ouverture) du répertoire monRep à tous (propriétaire, groupe, autres).</p>
+<p>chmod go-wx monRep</p>
+<p class="bullet">Supprime l&#39;autorisation d&#39;écriture et l&#39;exécution de monRep au groupe et aux autres.</p>
+<pre><code>chmod u=rw, go=r MonFichier</code></pre>
+<p class="bullet">Fixe l&#39;autorisation de lecture et d&#39;écriture au propriétaire et une autorisation de lecture au groupe et aux autres.</p>
+<h3>MODIFICATION DES DROITS D’ACCÈS AUX</h3>
+<h3>FICHIERS : LE MODE SYMBOLIQUE</h3>
+</section>
+<section class="page" aria-label="Page 217">
+<span class="page-tag">Page 217</span>
+<p>chmod 644 MonFichier</p>
+<p class="bullet">Exactement la même chose , mais en utilisant les valeurs octales (Nota : 6 =</p>
+<p>4+2 = lecture + écriture)</p>
+<pre><code>chmod u=rw, g=r, o= MonFichier</code></pre>
+<p class="bullet">Fixe l&#39;autorisation d&#39;ouverture et de lecture au propriétaire, uniquement la lecture au groupe et interdit tout accès aux autres.</p>
+<p>chmod 640 MonFichier</p>
+<p class="bullet">Exactement la même chose que ci-dessus mais en utilisant les valeurs octales.</p>
+<h3>MODIFICATION DES DROITS D’ACCÈS AUX</h3>
+<h3>FICHIERS : LE MODE OCTAL</h3>
+</section>
+<section class="page" aria-label="Page 218">
+<span class="page-tag">Page 218</span>
+<p class="bullet">Interdire la lecture et l&#39;accès au répertoire RepertoireUn aux utilisateurs ne faisant pas partie du groupe en utilisant le mode symbolique.</p>
+<p class="bullet">Donner les droits d&#39;écriture au groupe sur le fichier fichierUn en mode symbolique.</p>
+<p class="bullet">Donner le droit d&#39;exécution sur le fichier fichierUn à l&#39;utilisateur propriétaire en mode symbolique.</p>
+<p class="bullet">Prévoir les droits affichés par la commande ls -l après exécution de ces commandes.</p>
+<p class="bullet">Réécrire les commandes avec l&#39;utilisation numérique de la commande chmod.</p>
+<h3>LA COMMANDE CHMOD : EXERCICE</h3>
+</section>
+<section class="page" aria-label="Page 219">
+<span class="page-tag">Page 219</span>
+<p class="bullet">Mode symbolique</p>
+<p class="bullet">chmod o-rx RepertoireUn</p>
+<p class="bullet">chmod g+w fichierUn</p>
+<p class="bullet">chmod u+x fichierUn</p>
+<p class="bullet">Mode numérique</p>
+<p class="bullet">chmod 750 RepertoireUn</p>
+<p class="bullet">chmod 664 fichierUn</p>
+<p class="bullet">chmod 764 fichierUn</p>
+<h3>LA COMMANDE CHMOD : EXERCICE</h3>
+</section>
+<section class="page" aria-label="Page 220">
+<span class="page-tag">Page 220</span>
+<p class="bullet">Des commandes permettent de modifier les règles de droits sur les</p>
+<h3>fichiers :</h3>
+<p class="bullet">chmod : Permet de changer les droits.</p>
+<p class="bullet">chown : Permet de changer le propriétaire (utilisateur et groupe).</p>
+<p class="bullet">chgrp : Permet de changer le groupe propriétaire.</p>
+<p class="bullet">umask : Permet d&#39;indiquer les droits à la création.</p>
+<h3>COMMANDES POUR MODIFIER LES RÈGLES</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s19.html">← Utilisateurs &amp; groupes</a><a class="btn" href="s21.html">chown, chgrp &amp; umask →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s20">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<ul>
+<li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
+<li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
+<li><a href="s11.html">Inodes, types &amp; données des fichiers <span lang="ar" dir="rtl">— عقد الفهرس وأنواع الملفات وبياناتها</span></a></li>
+<li><a href="s12.html">Commandes d&#39;accès &amp; manipulation <span lang="ar" dir="rtl">— أوامر الوصول والتعامل مع الملفات</span></a></li>
+<li><a href="s13.html">Liens physiques &amp; symboliques <span lang="ar" dir="rtl">— الروابط الصلبة والرمزية</span></a></li>
+<li><a href="s14.html">Lecture &amp; filtrage de fichiers <span lang="ar" dir="rtl">— قراءة الملفات وتصفيتها</span></a></li>
+<li><a href="s15.html">Commandes système &amp; identification <span lang="ar" dir="rtl">— أوامر النظام والهوية</span></a></li>
+<li><a href="s16.html">Expressions régulières <span lang="ar" dir="rtl">— التعابير النمطية</span></a></li>
+<li><a href="s17.html">grep, find &amp; alias (exercices) <span lang="ar" dir="rtl">— grep وfind والاسم المستعار (تمارين)</span></a></li>
+<li><a href="s18.html">Séparateurs conditionnels &amp; redirections <span lang="ar" dir="rtl">— الفواصل الشرطية وإعادة التوجيه</span></a></li>
+<li><a href="s19.html">Utilisateurs &amp; groupes <span lang="ar" dir="rtl">— المستخدمون والمجموعات</span></a></li>
+<li><a href="s21.html">chown, chgrp &amp; umask <span lang="ar" dir="rtl">— chown وchgrp وumask</span></a></li>
+<li><a href="s22.html">Gestion des comptes utilisateurs <span lang="ar" dir="rtl">— إدارة حسابات المستخدمين</span></a></li>
+<li><a href="s23.html">Archives avec tar <span lang="ar" dir="rtl">— الأرشيفات باستخدام tar</span></a></li>
+<li><a href="s24.html">Composition des commandes (; &amp; () {}) <span lang="ar" dir="rtl">— تركيب الأوامر (; &amp; () {})</span></a></li>
+<li><a href="s25.html">Contrôle des processus <span lang="ar" dir="rtl">— التحكم في العمليات</span></a></li>
+<li><a href="s26.html">Éditeurs de texte sous Unix <span lang="ar" dir="rtl">— محررات النصوص في يونكس</span></a></li>
+<li><a href="s27.html">Shells &amp; variables d&#39;environnement (intro) <span lang="ar" dir="rtl">— الشيلات ومتغيرات البيئة (مقدمة)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

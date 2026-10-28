@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Badr AI — OG card</title>
+<style>
+  @page { size: 1200px 630px; margin: 0 }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{
+    font-family:"Segoe UI","SF Pro Display",system-ui,Arial,sans-serif;
+    color:#eef1ff;
+    background:
+      radial-gradient(760px 520px at 8% -12%,rgba(124,92,255,.42),transparent 62%),
+      radial-gradient(700px 480px at 96% 6%,rgba(34,211,238,.26),transparent 58%),
+      radial-gradient(700px 560px at 60% 118%,rgba(244,114,182,.16),transparent 62%),
+      linear-gradient(150deg,#070b18 0%,#0b1024 58%,#080d1e 100%);
+    position:relative;
+  }
+  .grid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(circle at 30% 20%,#000 0%,transparent 72%);
+    -webkit-mask-image:radial-gradient(circle at 30% 20%,#000 0%,transparent 72%);
+  }
+  .glow{position:absolute;width:520px;height:520px;border-radius:50%;right:-150px;bottom:-220px;background:radial-gradient(circle,rgba(124,92,255,.34),transparent 68%)}
+  .ring{position:absolute;width:300px;height:300px;border-radius:50%;border:1px solid rgba(124,92,255,.28);right:70px;top:70px}
+  .ring::after{content:"";position:absolute;inset:42px;border-radius:50%;border:1px dashed rgba(34,211,238,.28)}
+  .wrap{position:relative;z-index:2;height:100%;padding:64px 72px;display:flex;flex-direction:column}
+  .brand{display:flex;align-items:center;gap:16px}
+  .logo{
+    width:66px;height:66px;border-radius:19px;display:grid;place-items:center;
+    font-size:34px;font-weight:800;color:#fff;
+    background:linear-gradient(140deg,#7c5cff,#22d3ee);
+    box-shadow:0 16px 42px rgba(124,92,255,.45),inset 0 1px 0 rgba(255,255,255,.4);
+  }
+  .brand b{display:block;font-size:27px;letter-spacing:.2px;line-height:1.1}
+  .brand small{display:block;font-size:13px;letter-spacing:2.6px;text-transform:uppercase;color:#8f99bd;margin-top:4px;font-weight:600}
+  .badge{
+    align-self:flex-start;margin-top:52px;display:inline-flex;align-items:center;gap:9px;
+    font-size:13px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#dbd4ff;
+    border:1px solid rgba(124,92,255,.45);background:rgba(124,92,255,.16);
+    padding:8px 16px;border-radius:999px;
+  }
+  h1{margin:20px 0 0;font-size:62px;line-height:1.04;letter-spacing:-1.6px;max-width:880px}
+  h1 em{font-style:normal;background:linear-gradient(95deg,#a78bfa,#67e8f9 60%,#86efac);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ar{margin-top:16px;direction:rtl;text-align:right;font-size:25px;line-height:1.65;color:#cfd6f5;max-width:840px}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-bottom:6px}
+  .chip{
+    display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#dbe1f8;
+    border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);
+    padding:9px 15px;border-radius:12px;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 12px #34d399}
+  .foot{margin-top:16px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#7c86a8;letter-spacing:.4px}
+  .foot b{color:#a7b0cf;font-weight:600}
+  .url{font-family:"Cascadia Code",Consolas,monospace;font-size:12.5px;color:#8f99bd}
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow"></div>
+  <div class="ring"></div>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">B</div>
+      <div><b>Badr AI</b><small>Plateforme de révision</small></div>
+    </div>
+    <span class="badge">Cours complet · 436 pages</span>
+    <h1>Système d'Exploitation 1<br><em>Unix &amp; Programmation Shell</em></h1>
+    <p class="ar" lang="ar" dir="rtl">أنظمة التشغيل 1 — شرح عربي مبسّط ومراجعة بالفرنسية</p>
+    <div class="chips">
+      <span class="chip"><span class="dot"></span>436 pages de cours</span>
+      <span class="chip">120 QCM corrigés</span>
+      <span class="chip">90 flashcards</span>
+      <span class="chip">Terminal Unix</span>
+      <span class="chip">Examen blanc</span>
+    </div>
+    <div class="foot">
+      <span><b>Badr AI</b> · Système d'Exploitation 1 (SE1)</span>
+      <span class="url">cybader.github.io/badr-ai-se1</span>
+    </div>
+  </div>
+</body>
+</html>

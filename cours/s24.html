@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Composition des commandes (; &amp; () {}) — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Composition des commandes (; &amp; () {}) (pages 245–249). تركيب الأوامر (; &amp; () {}) — explications en arabe, révision en français, QCM et examen…">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Composition des commandes (; &amp; () {}), Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Sous-shell, Séquence, Arrière-plan">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s24.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Composition des commandes (; &amp; () {}) — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Composition des commandes (; &amp; () {}) (pages 245–249). تركيب الأوامر (; &amp; () {}) — explications en arabe, révision en français, QCM et examen…">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s24.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Composition des commandes (; &amp; () {}) — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Composition des commandes (; &amp; () {}) (pages 245–249). تركيب الأوامر (; &amp; () {}) — explications en arabe, révision en français, QCM et examen…">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s24.html#resource","name":"Composition des commandes (; & () {}) — SE1 | Badr AI","description":"Cours SE1 : Composition des commandes (; & () {}) (pages 245–249). تركيب الأوامر (; & () {}) — explications en arabe, révision en français, QCM et examen…","url":"https://cybader.github.io/badr-ai-se1/cours/s24.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Composition des commandes (; & () {}), Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Sous-shell, Séquence, Arrière-plan"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Composition des commandes (; & () {})","item":"https://cybader.github.io/badr-ai-se1/cours/s24.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Composition des commandes (; &amp; () {})</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 2 · Section 24/48</span>
+<h1>Composition des commandes (; &amp; () {})</h1>
+<p class="ar-title" lang="ar" dir="rtl">تركيب الأوامر (; &amp; () {})</p>
+<div class="meta-row"><span class="chip">📄 Pages 245–249</span><span class="chip">5 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">الفاصلة ; تعاقب الأوامر دائمًا، و&amp; تشغّل في الخلفية. الأقواس () تنفّذ في sous-shell فرعي، لذلك تغييرات cd داخلها لا تبقى بعدها؛ أما {} فتنفّذ في نفس الـ shell وتبقى التأثيرات. هذا فرق امتحاني شهير. &amp;&amp; و|| شرطيتان حسب كود الخروج $? (0 = نجاح).</p>
+<div class="terms">
+<div class="term"><b>Sous-shell</b><span lang="ar" dir="rtl">شيل فرعي</span></div>
+<div class="term"><b>Séquence</b><span lang="ar" dir="rtl">تسلسل</span></div>
+<div class="term"><b>Arrière-plan</b><span lang="ar" dir="rtl">الخلفية</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 245–249 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 245">
+<span class="page-tag">Page 245</span>
+<p>Symbole « ; »</p>
+<p class="bullet">Le symbole « ; » permet de lancer plusieurs commandes sur une même ligne en les séparant les unes des autres. Cela crée une séquence de commandes exécutées dans l’ordre spécifié.</p>
+<p class="bullet">Chaque commande est exécutée successivement, le shell attendant la fin de cmd1 avant de passer à cmd2.</p>
+<p>cmd1 ; cmd2 ; ...</p>
+<h3>Exemple :</h3>
+<p>echo &quot;Début&quot; ; ls ; echo &quot;Fin&quot;</p>
+<h3>COMPOSITION DES COMMANDES</h3>
+</section>
+<section class="page" aria-label="Page 246">
+<span class="page-tag">Page 246</span>
+<h3>Symbole « &amp; » pour l’exécution en arrière-plan:</h3>
+<p class="bullet">Le symbole « &amp; » est utilisé pour exécuter des commandes en arrière-plan, permettant au terminal de rester disponible pour d&#39;autres opérations. Cela est particulièrement utile pour les commandes ou scripts de longue durée, car le shell ne reste pas bloqué en attendant leur achèvement.</p>
+<p class="bullet">Lorsqu’une commande est suivie du symbole « &amp; », le shell lance la commande en tâche de fond et revient immédiatement au prompt pour permettre d&#39;autres entrées.</p>
+<p>nom_cmd &amp;</p>
+<p class="bullet">Avantages de l&#39;exécution en arrière-plan</p>
+<p class="bullet">Permet de libérer le terminal pour d&#39;autres commandes sans attendre la fin de la tâche.</p>
+<p class="bullet">Utile pour des opérations lourdes, telles que les sauvegardes, téléchargements, ou scripts de traitement de données.</p>
+<h3>COMPOSITION DES COMMANDES</h3>
+</section>
+<section class="page" aria-label="Page 247">
+<span class="page-tag">Page 247</span>
+<h3>COMPOSITION DES COMMANDES</h3>
+<p>Les séquences de commandes () et {}</p>
+<p class="bullet">Les symboles () et {} permettent de regrouper plusieurs commandes pour créer une macrocommande. Cette combinaison est pratique pour structurer et organiser des séquences de commandes complexes.</p>
+<p class="bullet">( suite_cmds ) : Utilisation des parenthèses</p>
+<p class="bullet">Les commandes placées entre parenthèses sont exécutées dans un sous-shell (processus fils).</p>
+<p class="bullet">Cela signifie que les modifications faites dans ce bloc (comme les changements de variables ou de répertoires) n&#39;affectent pas le shell principal.</p>
+<p class="bullet">{ suite_cmds ; } : Utilisation des accolades</p>
+<p class="bullet">Les commandes entre accolades sont exécutées par le shell principal (pas de sous-shell).</p>
+<p class="bullet">Les modifications apportées dans ce bloc sont donc visibles dans le shell principal.</p>
+</section>
+<section class="page" aria-label="Page 248">
+<span class="page-tag">Page 248</span>
+<p>Exemple : Utilisation d&#39;une macro-commande avec () pour le sous-shell</p>
+<h3>Considérons la macro-commande (cd cours; pwd) :</h3>
+<pre><code>% pwd</code></pre>
+<p>/home/etudiant</p>
+<pre><code>% (cd cours; pwd)</code></pre>
+<p>/home/etudiant/cours</p>
+<pre><code>% pwd</code></pre>
+<p>/home/etudiant</p>
+<p>Les commandes cd cours et pwd, placées entre parenthèses, sont exécutées dans un sous-shell.</p>
+<p>Une fois le sous-shell terminé, le shell courant reste inchangé, d’où le retour au répertoire initial</p>
+<p>/home/etudiant.</p>
+<p class="bullet">Cela montre l’avantage des parenthèses pour exécuter des séquences de commandes sans impacter le contexte du shell principal.</p>
+<h3>COMPOSITION DES COMMANDES</h3>
+</section>
+<section class="page" aria-label="Page 249">
+<span class="page-tag">Page 249</span>
+<p>Exemple : Utilisation d&#39;une macro-commande avec {} dans le shell principal</p>
+<h3>Considérons la macro-commande { cd cours; pwd; } :</h3>
+<pre><code>% pwd</code></pre>
+<p>/home/etudiant</p>
+<pre><code>% { cd cours; pwd; }</code></pre>
+<p>/home/etudiant/cours</p>
+<pre><code>% pwd</code></pre>
+<p>/home/etudiant/cours</p>
+<p>Les commandes entre accolades { cd cours; pwd; } sont exécutées dans le shell principal et non dans un sousshell.</p>
+<p>Commande pwd en dehors des accolades : Confirme que le répertoire est toujours /home/etudiant/cours, car le changement de répertoire fait partie du shell principal.</p>
+<p class="bullet">Cet exemple montre que l’utilisation des accolades {} est idéale lorsque l’on souhaite que les changements apportés par les commandes regroupées soient conservés dans le shell courant.</p>
+<h3>COMPOSITION DES COMMANDES</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s23.html">← Archives avec tar</a><a class="btn" href="s25.html">Contrôle des processus →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s24">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<ul>
+<li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
+<li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
+<li><a href="s11.html">Inodes, types &amp; données des fichiers <span lang="ar" dir="rtl">— عقد الفهرس وأنواع الملفات وبياناتها</span></a></li>
+<li><a href="s12.html">Commandes d&#39;accès &amp; manipulation <span lang="ar" dir="rtl">— أوامر الوصول والتعامل مع الملفات</span></a></li>
+<li><a href="s13.html">Liens physiques &amp; symboliques <span lang="ar" dir="rtl">— الروابط الصلبة والرمزية</span></a></li>
+<li><a href="s14.html">Lecture &amp; filtrage de fichiers <span lang="ar" dir="rtl">— قراءة الملفات وتصفيتها</span></a></li>
+<li><a href="s15.html">Commandes système &amp; identification <span lang="ar" dir="rtl">— أوامر النظام والهوية</span></a></li>
+<li><a href="s16.html">Expressions régulières <span lang="ar" dir="rtl">— التعابير النمطية</span></a></li>
+<li><a href="s17.html">grep, find &amp; alias (exercices) <span lang="ar" dir="rtl">— grep وfind والاسم المستعار (تمارين)</span></a></li>
+<li><a href="s18.html">Séparateurs conditionnels &amp; redirections <span lang="ar" dir="rtl">— الفواصل الشرطية وإعادة التوجيه</span></a></li>
+<li><a href="s19.html">Utilisateurs &amp; groupes <span lang="ar" dir="rtl">— المستخدمون والمجموعات</span></a></li>
+<li><a href="s20.html">Droits d&#39;accès &amp; chmod <span lang="ar" dir="rtl">— أذونات الوصول وchmod</span></a></li>
+<li><a href="s21.html">chown, chgrp &amp; umask <span lang="ar" dir="rtl">— chown وchgrp وumask</span></a></li>
+<li><a href="s22.html">Gestion des comptes utilisateurs <span lang="ar" dir="rtl">— إدارة حسابات المستخدمين</span></a></li>
+<li><a href="s23.html">Archives avec tar <span lang="ar" dir="rtl">— الأرشيفات باستخدام tar</span></a></li>
+<li><a href="s25.html">Contrôle des processus <span lang="ar" dir="rtl">— التحكم في العمليات</span></a></li>
+<li><a href="s26.html">Éditeurs de texte sous Unix <span lang="ar" dir="rtl">— محررات النصوص في يونكس</span></a></li>
+<li><a href="s27.html">Shells &amp; variables d&#39;environnement (intro) <span lang="ar" dir="rtl">— الشيلات ومتغيرات البيئة (مقدمة)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

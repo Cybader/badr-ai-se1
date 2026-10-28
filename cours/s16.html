@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expressions régulières — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Expressions régulières (pages 158–165). التعابير النمطية — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Expressions régulières, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Expression régulière, Motif, Métacaractère">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s16.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Expressions régulières — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Expressions régulières (pages 158–165). التعابير النمطية — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s16.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Expressions régulières — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Expressions régulières (pages 158–165). التعابير النمطية — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s16.html#resource","name":"Expressions régulières — SE1 | Badr AI","description":"Cours SE1 : Expressions régulières (pages 158–165). التعابير النمطية — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s16.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Expressions régulières, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Expression régulière, Motif, Métacaractère"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Expressions régulières","item":"https://cybader.github.io/badr-ai-se1/cours/s16.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Expressions régulières</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 2 · Section 16/48</span>
+<h1>Expressions régulières</h1>
+<p class="ar-title" lang="ar" dir="rtl">التعابير النمطية</p>
+<div class="meta-row"><span class="chip">📄 Pages 158–165</span><span class="chip">8 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">التعبير النمطي نمط يصف سلاسل محارف: . أي محرف، * صفر أو أكثر من المحرف السابق، + واحد أو أكثر، ? اختياري، ^ بداية السطر، $ نهايته، [abc] أحد المحارف، [a-z] نطاق، [^..] نفي، {n,m} تكرار، | بديل، () تجميع، \ هروب. لا تخلطها مع wildcards القشرة: هناك * تعني أي سلسلة أسماء، وهنا تعني تكرار المحرف السابق.</p>
+<div class="terms">
+<div class="term"><b>Expression régulière</b><span lang="ar" dir="rtl">تعبير نمطي</span></div>
+<div class="term"><b>Motif</b><span lang="ar" dir="rtl">نمط</span></div>
+<div class="term"><b>Métacaractère</b><span lang="ar" dir="rtl">محرف خاص</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 158–165 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 158">
+<span class="page-tag">Page 158</span>
+<h3>LES FILTRES</h3>
+<h3>DE RECHERCHE</h3>
+</section>
+<section class="page" aria-label="Page 159">
+<span class="page-tag">Page 159</span>
+<p class="bullet">Définition : Formule qui représente une chaîne de caractères.</p>
+<p>Composée de caractères et d&#39;opérateurs.</p>
+<p class="bullet">Utilisation : On recherche alors non pas un mot ou une simple chaîne de caractères mais une suite de caractères qui correspondent au critères énoncés par la formule.</p>
+<p class="bullet">Certains opérateurs doivent être précédés d&#39;un \ pour ne pas</p>
+<h3>entrer en conflit avec le shell, ainsi :</h3>
+<p>{ , } , ESPACE , ( , ) et | seront écrits \{ , \} , \ , \( , \) et \|.</p>
+<h3>LES EXPRESSIONS RÉGULIÈRES</h3>
+</section>
+<section class="page" aria-label="Page 160">
+<span class="page-tag">Page 160</span>
+<h3>Rappel :</h3>
+<p>* : N’importe quelle séquence de caractères.</p>
+<p>?</p>
+<p>: N’importe quel caractère.</p>
+<p>[]</p>
+<p>: N’importe quel caractère choisi dans les caractères donnés entre crochets.</p>
+<p>[^] : n’importe quel caractère sauf ceux dans les caractères donnés entre crochets.</p>
+<p>[−] : n’importe quel caractère dans la plage de caractères donnés entre crochets.</p>
+<h3>Exemples :</h3>
+<pre><code>$ ls *</code></pre>
+<pre><code>$ ls ?ateau</code></pre>
+<pre><code>$ ls *ateau</code></pre>
+<pre><code>$ ls [gr]ate*</code></pre>
+<pre><code>$ ls [^br]ateau</code></pre>
+<pre><code>$ ls [a-c]*</code></pre>
+<h3>LES EXPRESSIONS RÉGULIÈRES</h3>
+</section>
+<section class="page" aria-label="Page 161">
+<span class="page-tag">Page 161</span>
+<h3>LES EXPRESSIONS RÉGULIÈRES</h3>
+<p>Les expressions régulières sont aussi des suites de caractères permettant de faire des sélections.</p>
+<h3>Les différentes expressions régulières sont :</h3>
+</section>
+<section class="page" aria-label="Page 162">
+<span class="page-tag">Page 162</span>
+<h3>LES EXPRESSIONS RÉGULIÈRES</h3>
+<h3>Représentation :</h3>
+<p class="bullet">Un caractère compris entre &#39;a&#39; et &#39;z&#39; : [a-z]</p>
+<p class="bullet">Un caractère compris entre &#39;0&#39; et &#39;9&#39; : [0-9]</p>
+<p class="bullet">Le début d&#39;une ligne : ^</p>
+<p class="bullet">La fin d&#39;une ligne : $</p>
+<p class="bullet">Un choix entre deux chaînes : \ |</p>
+<p class="bullet">Caractère compris entre &#39;a&#39; et &#39;z&#39; ou &#39;A&#39; et &#39;Z&#39; : [a-zA-Z]</p>
+<p class="bullet">Répétitions d&#39;une occurrence</p>
+<p class="bullet">Exactement 2 répétitions de &#39;x&#39; : x\{2\}</p>
+<p class="bullet">Entre 2 et 5 répétitions de &#39;x&#39; : x\{2, 5\}</p>
+<p class="bullet">Au moins 2 répétitions de &#39;x&#39; : x\{2, \}</p>
+</section>
+<section class="page" aria-label="Page 163">
+<span class="page-tag">Page 163</span>
+<h3>LES EXPRESSIONS RÉGULIÈRES</h3>
+<h3>Exemple :</h3>
+<p class="bullet">L&#39;expression [a-z][a-z] * cherche les lignes contenant au minimum un caractère en minuscule.</p>
+<p>[a-z] caractère permis, [a-z]* recherche d&#39;occurrence des lettres permises.</p>
+<p class="bullet">L&#39;expression ^[0-9] \{ 4 \}$ a pour signification, du début à la fin du fichier $, recherche les nombres [0-9] de 4 chiffres \ {4\} .</p>
+<h3>Remarque :</h3>
+<p class="bullet">Le caractère ^ n&#39;a la signification de non qu&#39;entre crochets.</p>
+<p class="bullet">Quelle est la différence entre [^abc] et ^[abc] ?</p>
+</section>
+<section class="page" aria-label="Page 164">
+<span class="page-tag">Page 164</span>
+<h3>LES EXPRESSIONS RÉGULIÈRES</h3>
+<h3>Exemple :</h3>
+<p class="bullet">[02-57]</p>
+<p>0, 2, 3, 4, 5 ou 7</p>
+<p class="bullet">[a-d5-8X-Z] a, b, c, d, 5, 6, 7, 8, X, Y ou Z</p>
+<p class="bullet">[0-5-]</p>
+<p>0, 1, 2, 3, 4, 5 ou –</p>
+<p class="bullet">[^0-9] pas un chiffre</p>
+<p class="bullet">Un code permanent contient 4 majuscules suivies de 8 chiffres :</p>
+<p>[A-Z]\{4\}[0-9]\{8\}</p>
+<p class="bullet">Un code permanent contient 12 caractères lettres ou chiffres :</p>
+<p>[A-Z0-9]\{12\}</p>
+</section>
+<section class="page" aria-label="Page 165">
+<span class="page-tag">Page 165</span>
+<h3>LES EXPRESSIONS RÉGULIÈRES</h3>
+<h3>Exemple plus avancé:</h3>
+<p>Repérer les lignes contenant une date qui est exprimée par JJ/MM/AAou bien JJ/MM/AAAA</p>
+<p>Jours 01 à 09 : 0[1-9]</p>
+<p>Jours 10 à 29 : [1-2][0-9]</p>
+<p>Jours 30 et 31: 3[0-1]</p>
+<h3>On obtient alors :</h3>
+<p>\(0[1-9]\|[1-2][0-9]\|3[0-1]\)</p>
+<p>Mois 01 à 09 : 0[1-9]</p>
+<p>Mois 10 à 12 : 1[0-2]</p>
+<h3>On obtient alors :</h3>
+<p>\(0[1-9]\|1[0-2]\)</p>
+<h3>Une année contient simplement 2 ou 4 chiffres :</h3>
+<p>\([0-9]\{2\}\|[0-9]\{4\}\)</p>
+<p>Concaténation des expressions formalisant les jours, mois et années avec un &#39;/&#39; entre elles :</p>
+<p>\(0[1-9]\|[1-2][0-9]\|3[0-1]\)/\(0[1-9]\|1[0-2]\)/\([0- 9]\{2\}\|[0-9]\{4\}\)</p>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s15.html">← Commandes système &amp; identification</a><a class="btn" href="s17.html">grep, find &amp; alias (exercices) →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s16">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<ul>
+<li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
+<li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
+<li><a href="s11.html">Inodes, types &amp; données des fichiers <span lang="ar" dir="rtl">— عقد الفهرس وأنواع الملفات وبياناتها</span></a></li>
+<li><a href="s12.html">Commandes d&#39;accès &amp; manipulation <span lang="ar" dir="rtl">— أوامر الوصول والتعامل مع الملفات</span></a></li>
+<li><a href="s13.html">Liens physiques &amp; symboliques <span lang="ar" dir="rtl">— الروابط الصلبة والرمزية</span></a></li>
+<li><a href="s14.html">Lecture &amp; filtrage de fichiers <span lang="ar" dir="rtl">— قراءة الملفات وتصفيتها</span></a></li>
+<li><a href="s15.html">Commandes système &amp; identification <span lang="ar" dir="rtl">— أوامر النظام والهوية</span></a></li>
+<li><a href="s17.html">grep, find &amp; alias (exercices) <span lang="ar" dir="rtl">— grep وfind والاسم المستعار (تمارين)</span></a></li>
+<li><a href="s18.html">Séparateurs conditionnels &amp; redirections <span lang="ar" dir="rtl">— الفواصل الشرطية وإعادة التوجيه</span></a></li>
+<li><a href="s19.html">Utilisateurs &amp; groupes <span lang="ar" dir="rtl">— المستخدمون والمجموعات</span></a></li>
+<li><a href="s20.html">Droits d&#39;accès &amp; chmod <span lang="ar" dir="rtl">— أذونات الوصول وchmod</span></a></li>
+<li><a href="s21.html">chown, chgrp &amp; umask <span lang="ar" dir="rtl">— chown وchgrp وumask</span></a></li>
+<li><a href="s22.html">Gestion des comptes utilisateurs <span lang="ar" dir="rtl">— إدارة حسابات المستخدمين</span></a></li>
+<li><a href="s23.html">Archives avec tar <span lang="ar" dir="rtl">— الأرشيفات باستخدام tar</span></a></li>
+<li><a href="s24.html">Composition des commandes (; &amp; () {}) <span lang="ar" dir="rtl">— تركيب الأوامر (; &amp; () {})</span></a></li>
+<li><a href="s25.html">Contrôle des processus <span lang="ar" dir="rtl">— التحكم في العمليات</span></a></li>
+<li><a href="s26.html">Éditeurs de texte sous Unix <span lang="ar" dir="rtl">— محررات النصوص في يونكس</span></a></li>
+<li><a href="s27.html">Shells &amp; variables d&#39;environnement (intro) <span lang="ar" dir="rtl">— الشيلات ومتغيرات البيئة (مقدمة)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

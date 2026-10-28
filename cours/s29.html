@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les scripts shell — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Les scripts shell (pages 287–292). سكربتات الشيل — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Les scripts shell, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Script, Shebang, Commentaire, Exécutable">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s29.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Les scripts shell — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Les scripts shell (pages 287–292). سكربتات الشيل — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s29.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Les scripts shell — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Les scripts shell (pages 287–292). سكربتات الشيل — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s29.html#resource","name":"Les scripts shell — SE1 | Badr AI","description":"Cours SE1 : Les scripts shell (pages 287–292). سكربتات الشيل — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s29.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Programmation Shell"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Les scripts shell, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Script, Shebang, Commentaire, Exécutable"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 3 — Programmation Shell","item":"https://cybader.github.io/badr-ai-se1/cours/#ch3"},{"@type":"ListItem","position":4,"name":"Les scripts shell","item":"https://cybader.github.io/badr-ai-se1/cours/s29.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch3">Chapitre 3</a><span>›</span><span aria-current="page">Les scripts shell</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 3 · Section 29/48</span>
+<h1>Les scripts shell</h1>
+<p class="ar-title" lang="ar" dir="rtl">سكربتات الشيل</p>
+<div class="meta-row"><span class="chip">📄 Pages 287–292</span><span class="chip">6 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">السكربت ملف نصي يحوي أوامر. السطر الأول #!/bin/bash (shebang) يحدد المفسر. التعليقات تبدأ بـ #. التفعيل: chmod u+x script ثم ./script، أو bash script. الامتداد .sh عرف وليس شرطًا. الأسماء بدون مسافات وحساسة لحالة الأحرف. جرب الأمثلة مباشرة في قسم Terminal.</p>
+<div class="terms">
+<div class="term"><b>Script</b><span lang="ar" dir="rtl">سكربت</span></div>
+<div class="term"><b>Shebang</b><span lang="ar" dir="rtl">محدد المفسر</span></div>
+<div class="term"><b>Commentaire</b><span lang="ar" dir="rtl">تعليق</span></div>
+<div class="term"><b>Exécutable</b><span lang="ar" dir="rtl">قابل للتنفيذ</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 287–292 · texte intégral du support</p></div><span class="chip">Chapitre 3 — Programmation Shell</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 287">
+<span class="page-tag">Page 287</span>
+<p>Un commentaire débute avec le caractère # et se termine avec la fin de la ligne. Un commentaire est ignoré par le shell.</p>
+<h3>Example :</h3>
+<pre><code>$ echo bonjour # l&#39;ami</code></pre>
+<pre><code>$ bonjour</code></pre>
+<pre><code>$ echo coucou #l&#39; ami</code></pre>
+<pre><code>$ coucou</code></pre>
+<p># echo coucou</p>
+<p>$</p>
+<h3>COMMENTAIRES</h3>
+</section>
+<section class="page" aria-label="Page 288">
+<span class="page-tag">Page 288</span>
+<p>Lorsqu’un traitement nécessite l’exécution de plusieurs commandes, il est préférable de les sauvegarder dans un fichier plutôt que de les retaper au clavier chaque fois que le traitement doit être lancé.</p>
+<p class="bullet">Ce type de fichier est appelé fichier de commandes ou fichier shell ou encore script shell.</p>
+<h3>FICHIERS SHELL</h3>
+</section>
+<section class="page" aria-label="Page 289">
+<span class="page-tag">Page 289</span>
+<p class="bullet">Les shell scripts se terminent généralement par « .sh » pour le Bourne Shell et le Bourne Again Shell, par</p>
+<p>« .ksh » pour le Korn Shell et par « .csh » pour le C Shell.</p>
+<p>Pour lancer l’exécution d’un fichier shell, on peut utiliser la commande : bash</p>
+<pre><code>$ bash monscript</code></pre>
+<p>Il est plus simple de lancer l’exécution d’un programme shell en tapant directement son nom, comme on le ferait pour une commande unix ou une commande interne.</p>
+<p>Pour que cela soit réalisable, deux conditions doivent être remplies :</p>
+<p>l’utilisateur doit posséder les permissions r (lecture) et x (exécution) sur le fichier shell :</p>
+<pre><code>$ chmod u+x monscript</code></pre>
+<p>Pour l&#39;exécuter : $ ./monscript</p>
+<p>Pour éviter le ./ le répertoire dans lequel se trouve le fichier shell doit être présent dans la liste des chemins</p>
+<h3>contenue dans PATH. :</h3>
+<h3>$ PATH=$PATH:.</h3>
+<pre><code>$ monscript</code></pre>
+<h3>STRUCTURE ET EXÉCUTION D&#39;UN SCRIPT</h3>
+</section>
+<section class="page" aria-label="Page 290">
+<span class="page-tag">Page 290</span>
+<p class="bullet">Une ligne de commentaire commence toujours par le caractère « # ». Un commentaire peut être placé à la fin d&#39;une ligne comportant déjà des commandes.</p>
+<p># La ligne suivante effectue un ls ls # La ligne en question</p>
+<p class="bullet">La première ligne à une importance particulière car elle permet de préciser quel shell va exécuter le script.</p>
+<pre><code>#!/bin/ sh</code></pre>
+<pre><code>#!/bin/ksh</code></pre>
+<p class="bullet">Dans le premier cas c&#39;est un script Bourne, dans l&#39;autre un script Korn</p>
+<p class="bullet">Dans notre cas on va utiliser le Bourne Again Shell</p>
+<pre><code>#!/bin/bash</code></pre>
+<h3>STRUCTURE ET EXÉCUTION D&#39;UN SCRIPT</h3>
+</section>
+<section class="page" aria-label="Page 291">
+<span class="page-tag">Page 291</span>
+<h3>Exercice :</h3>
+<p class="bullet">A l’aide d’un éditeur de texte, créer un fichier premier contenant les lignes suivantes :</p>
+<pre><code>#!/bin/bash</code></pre>
+<p># premier echo &quot;La date du jour est: &quot;</p>
+<pre><code>Date</code></pre>
+<p>La notation #! en première ligne d&#39;un fichier interprété précise au shell courant quel interpréteur doit être utilisé pour exécuter le programme (dans cet exemple, il s’agit de /bin/bash).</p>
+<p class="bullet">Vérifier le contenu de ce fichier.</p>
+<p class="bullet">Pour lancer l’exécution d’un fichier shell premier, on peut utiliser la commande : bash premier ou ./premier ou directement premier</p>
+<h3>Ex :</h3>
+<pre><code>$ bash premier</code></pre>
+<p>la date du jour est : jeudi 27 février 2014, 17:34:25 (UTC+0100)</p>
+<p>$</p>
+<h3>STRUCTURE ET EXÉCUTION D&#39;UN SCRIPT</h3>
+</section>
+<section class="page" aria-label="Page 292">
+<span class="page-tag">Page 292</span>
+<h3>Exercice :</h3>
+<p>Écrire un programme shell monscript1 qui affiche le nom de connexion de l&#39;utilisateur et le chemin absolu de son répertoire courant de la</p>
+<h3>manière suivante :</h3>
+<p>Ex : $ monscript1 mon nom de connexion est : stagiaire mon repertoire courant est : /home/stagiaire</p>
+<p>$</p>
+<h3>STRUCTURE ET EXÉCUTION D&#39;UN SCRIPT</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s28.html">← Le shell interpréteur &amp; les types de…</a><a class="btn" href="s30.html">Paramètres &amp; variables →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s29">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 3 — Programmation Shell</h2>
+<ul>
+<li><a href="s28.html">Le shell interpréteur &amp; les types de commandes <span lang="ar" dir="rtl">— الشيل كمفسّر وأنواع الأوامر</span></a></li>
+<li><a href="s30.html">Paramètres &amp; variables <span lang="ar" dir="rtl">— المعاملات والمتغيرات</span></a></li>
+<li><a href="s31.html">read &amp; saisie au clavier <span lang="ar" dir="rtl">— read والإدخال من لوحة المفاتيح</span></a></li>
+<li><a href="s32.html">Quotes, export &amp; portée des variables <span lang="ar" dir="rtl">— الاقتباس والتصدير ونطاق المتغيرات</span></a></li>
+<li><a href="s33.html">Variables d&#39;environnement <span lang="ar" dir="rtl">— متغيرات البيئة</span></a></li>
+<li><a href="s34.html">Substitutions &amp; paramètres positionnels <span lang="ar" dir="rtl">— الاستبدالات والمعاملات الموضعية</span></a></li>
+<li><a href="s35.html">Paramètres spéciaux, shift &amp; substitution de commande <span lang="ar" dir="rtl">— المعاملات الخاصة وshift واستبدال الأوامر</span></a></li>
+<li><a href="s36.html">Paramètres non définis &amp; unset <span lang="ar" dir="rtl">— المعاملات غير المعرّفة وحذف المتغيرات</span></a></li>
+<li><a href="s37.html">Redirections &amp; scripts <span lang="ar" dir="rtl">— إعادة التوجيه داخل السكربتات</span></a></li>
+<li><a href="s38.html">Tests de conditions <span lang="ar" dir="rtl">— اختبار الشروط</span></a></li>
+<li><a href="s39.html">Expressions arithmétiques <span lang="ar" dir="rtl">— التعابير الحسابية</span></a></li>
+<li><a href="s40.html">Structure conditionnelle if <span lang="ar" dir="rtl">— بنية الشرط if</span></a></li>
+<li><a href="s41.html">Choix multiples avec case <span lang="ar" dir="rtl">— الاختيار المتعدد case</span></a></li>
+<li><a href="s42.html">Boucles for <span lang="ar" dir="rtl">— حلقة for</span></a></li>
+<li><a href="s43.html">Boucles while, until &amp; break/continue <span lang="ar" dir="rtl">— حلقتا while وuntil وbreak/continue</span></a></li>
+<li><a href="s44.html">select, options du shell &amp; exec <span lang="ar" dir="rtl">— select وخيارات الشيل وexec</span></a></li>
+<li><a href="s45.html">La commande expr <span lang="ar" dir="rtl">— الأمر expr</span></a></li>
+<li><a href="s46.html">Fonctions <span lang="ar" dir="rtl">— الدوال</span></a></li>
+<li><a href="s47.html">Récursion &amp; source <span lang="ar" dir="rtl">— الاستدعاء الذاتي وsource</span></a></li>
+<li><a href="s48.html">Les tableaux (arrays) <span lang="ar" dir="rtl">— الجداول (المصفوفات)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

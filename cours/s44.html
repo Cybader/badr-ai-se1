@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>select, options du shell &amp; exec — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : select, options du shell &amp; exec (pages 402–406). select وخيارات الشيل وexec — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, select, options du shell &amp; exec, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Menu, Options du shell, exec">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s44.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="select, options du shell &amp; exec — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : select, options du shell &amp; exec (pages 402–406). select وخيارات الشيل وexec — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s44.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="select, options du shell &amp; exec — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : select, options du shell &amp; exec (pages 402–406). select وخيارات الشيل وexec — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s44.html#resource","name":"select, options du shell & exec — SE1 | Badr AI","description":"Cours SE1 : select, options du shell & exec (pages 402–406). select وخيارات الشيل وexec — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s44.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Programmation Shell"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, select, options du shell & exec, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Menu, Options du shell, exec"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 3 — Programmation Shell","item":"https://cybader.github.io/badr-ai-se1/cours/#ch3"},{"@type":"ListItem","position":4,"name":"select, options du shell & exec","item":"https://cybader.github.io/badr-ai-se1/cours/s44.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch3">Chapitre 3</a><span>›</span><span aria-current="page">select, options du shell &amp; exec</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 3 · Section 44/48</span>
+<h1>select, options du shell &amp; exec</h1>
+<p class="ar-title" lang="ar" dir="rtl">select وخيارات الشيل وexec</p>
+<div class="meta-row"><span class="chip">📄 Pages 402–406</span><span class="chip">5 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">select x in a b c; do ...; done يعرض قائمة مرقمة ويضع اختيار المستخدم في x (وREPLY). من خيارات set: -o vi/emacs، -x لتتبع التنفيذ، -v لعرض الأوامر، -n لفحص الصياغة دون تنفيذ. exec command يستبدل الشيل الحالي دون إنشاء عملية جديدة.</p>
+<div class="terms">
+<div class="term"><b>Menu</b><span lang="ar" dir="rtl">قائمة</span></div>
+<div class="term"><b>Options du shell</b><span lang="ar" dir="rtl">خيارات الشيل</span></div>
+<div class="term"><b>exec</b><span lang="ar" dir="rtl">استبدال العملية</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 402–406 · texte intégral du support</p></div><span class="chip">Chapitre 3 — Programmation Shell</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 402">
+<span class="page-tag">Page 402</span>
+<h3>Select :</h3>
+<p>La commande select est utilisée pour afficher un menu permettant à l&#39;utilisateur de choisir une option parmi plusieurs.</p>
+<p>select var in selection1 selection2 ... selectionN do instructions done</p>
+<p>Chaque option du menu est affichée précédée par son numéro d’ordre. La sélection de l&#39;utilisateur est stockée dans la variable d&#39;environnement REPLY, tandis que la valeur sélectionnée est assignée à la variable var.</p>
+<pre><code>$PS1 :</code></pre>
+<p>Définit le prompt principal du shell. Par défaut, sa valeur est $ (ou # pour l&#39;utilisateur root). Vous pouvez personnaliser $PS1 pour afficher des informations comme l&#39;heure, le nom de l&#39;utilisateur ou le répertoire courant.</p>
+<pre><code>$PS2 :</code></pre>
+<p>Définit le prompt secondaire, affiché lorsque l&#39;utilisateur continue une saisie (exemple : lorsque vous utilisez une commande sur plusieurs lignes). Par défaut, sa valeur est &gt;.</p>
+<pre><code>$PS3 :</code></pre>
+<p>Définit le prompt pour la commande select. Par défaut, aucune valeur spécifique n&#39;est définie, mais vous pouvez personnaliser $PS3 pour afficher un message contextuel dans les menus créés par select.</p>
+<h3>STRUCTURES DE CONTRÔLE</h3>
+</section>
+<section class="page" aria-label="Page 403">
+<span class="page-tag">Page 403</span>
+<h3>Select :</h3>
+<p>Écrire un script qui affiche « Bonjour Madame » ou « Bonjour Monsieur » selon si l&#39;utilisateur indique être une femme ou un homme.</p>
+<p>echo &quot;Êtes-vous un homme ou une femme ?&quot;</p>
+<p>PS3=&quot;Femme ou Homme ? &quot;</p>
+<p>select choix in &quot;homme&quot; &quot;femme&quot;; do case $REPLY in</p>
+<p class="bullet">echo &quot;Bonjour Monsieur&quot;; break ;;</p>
+<p class="bullet">echo &quot;Bonjour Madame&quot;; break ;;</p>
+<p>*) echo &quot;Mauvaise réponse, veuillez réessayer.&quot; ;;</p>
+<p>esac done</p>
+<h3>Affichage :</h3>
+<p class="bullet">Homme</p>
+<p class="bullet">femme</p>
+<p>Femme ou Homme ?</p>
+<h3>STRUCTURES DE CONTRÔLE</h3>
+</section>
+<section class="page" aria-label="Page 404">
+<span class="page-tag">Page 404</span>
+<pre><code>#!/bin/bash</code></pre>
+<p># Afficher un message pour sélectionner un type de terminal echo &quot;Select your terminal type:&quot;</p>
+<p># Personnalisation du prompt pour `select`</p>
+<p>PS3=&quot;terminal? &quot;</p>
+<p># Menu avec les types de terminaux disponibles select term in &quot;Givalt VT100&quot; &quot;Tsoris VT220&quot; &quot;Shande VT320&quot; &quot;Vey VT520&quot;; do case $REPLY in</p>
+<p class="bullet">TERM=&quot;gl35a&quot;;; # Si l&#39;utilisateur choisit 1, TERM est défini à &quot;gl35a&quot;</p>
+<p class="bullet">TERM=&quot;t2000&quot;;; # Si l&#39;utilisateur choisit 2, TERM est défini à &quot;t2000&quot;</p>
+<p class="bullet">TERM=&quot;s531&quot;;; # Si l&#39;utilisateur choisit 3, TERM est défini à &quot;s531&quot;</p>
+<p class="bullet">TERM=&quot;vt99&quot;;; # Si l&#39;utilisateur choisit 4, TERM est défini à &quot;vt99&quot;</p>
+<p>*) echo &quot;Invalid choice.&quot;; continue ;; # Toute autre saisie affiche &quot;Invalid&quot;</p>
+<p>esac</p>
+<p># Si une sélection valide est faite, afficher le type de terminal choisi if [[ -n $TERM ]]; then echo &quot;TERM is $TERM&quot;</p>
+<p>break # Quitter la boucle fi done</p>
+<h3>STRUCTURES DE CONTRÔLE</h3>
+</section>
+<section class="page" aria-label="Page 405">
+<span class="page-tag">Page 405</span>
+<p class="bullet">A l’intérieur de ces différentes structures, il est important que l’utilisateur puisse fixer lui-même et selon ses propres critères la sortie de boucles.</p>
+<p class="bullet">La commande: continue [n] permet de sauter à la fin de la boucle et de recommencer une nouvelle boucle.</p>
+<p class="bullet">La commande: break [n] provoque, quand à elle la sortie de la boucle en cours et passe à l’instruction qui suit la boucle.</p>
+<p class="bullet">Dans les deux cas, l’entier n permet d’indiquer que l’action se porte sur une boucle externe.</p>
+<p class="bullet">Par exemple, break 2 sortira de la boucle qui englobe la boucle dans laquelle cette instruction est écrite.</p>
+<h3>INSTRUCTIONS LIÉES AUX BOUCLES</h3>
+</section>
+<section class="page" aria-label="Page 406">
+<span class="page-tag">Page 406</span>
+<p>La commande exec exécute la commande à la place du processus (shell) courant :</p>
+<p>exec [commande [arg ...]]</p>
+<p class="bullet">Il n’y a pas de création de nouveau processus</p>
+<p class="bullet">arg, . . . deviennent les arguments de commande</p>
+<p class="bullet">si commande n’existe pas, le shell termine avec un code de retour</p>
+<h3>Exemple:</h3>
+<p>exec vi myfile exec 1&gt;/tmp/out</p>
+<h3>COMMANDE EXEC</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s43.html">← Boucles while, until &amp; break/continue</a><a class="btn" href="s45.html">La commande expr →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s44">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 3 — Programmation Shell</h2>
+<ul>
+<li><a href="s28.html">Le shell interpréteur &amp; les types de commandes <span lang="ar" dir="rtl">— الشيل كمفسّر وأنواع الأوامر</span></a></li>
+<li><a href="s29.html">Les scripts shell <span lang="ar" dir="rtl">— سكربتات الشيل</span></a></li>
+<li><a href="s30.html">Paramètres &amp; variables <span lang="ar" dir="rtl">— المعاملات والمتغيرات</span></a></li>
+<li><a href="s31.html">read &amp; saisie au clavier <span lang="ar" dir="rtl">— read والإدخال من لوحة المفاتيح</span></a></li>
+<li><a href="s32.html">Quotes, export &amp; portée des variables <span lang="ar" dir="rtl">— الاقتباس والتصدير ونطاق المتغيرات</span></a></li>
+<li><a href="s33.html">Variables d&#39;environnement <span lang="ar" dir="rtl">— متغيرات البيئة</span></a></li>
+<li><a href="s34.html">Substitutions &amp; paramètres positionnels <span lang="ar" dir="rtl">— الاستبدالات والمعاملات الموضعية</span></a></li>
+<li><a href="s35.html">Paramètres spéciaux, shift &amp; substitution de commande <span lang="ar" dir="rtl">— المعاملات الخاصة وshift واستبدال الأوامر</span></a></li>
+<li><a href="s36.html">Paramètres non définis &amp; unset <span lang="ar" dir="rtl">— المعاملات غير المعرّفة وحذف المتغيرات</span></a></li>
+<li><a href="s37.html">Redirections &amp; scripts <span lang="ar" dir="rtl">— إعادة التوجيه داخل السكربتات</span></a></li>
+<li><a href="s38.html">Tests de conditions <span lang="ar" dir="rtl">— اختبار الشروط</span></a></li>
+<li><a href="s39.html">Expressions arithmétiques <span lang="ar" dir="rtl">— التعابير الحسابية</span></a></li>
+<li><a href="s40.html">Structure conditionnelle if <span lang="ar" dir="rtl">— بنية الشرط if</span></a></li>
+<li><a href="s41.html">Choix multiples avec case <span lang="ar" dir="rtl">— الاختيار المتعدد case</span></a></li>
+<li><a href="s42.html">Boucles for <span lang="ar" dir="rtl">— حلقة for</span></a></li>
+<li><a href="s43.html">Boucles while, until &amp; break/continue <span lang="ar" dir="rtl">— حلقتا while وuntil وbreak/continue</span></a></li>
+<li><a href="s45.html">La commande expr <span lang="ar" dir="rtl">— الأمر expr</span></a></li>
+<li><a href="s46.html">Fonctions <span lang="ar" dir="rtl">— الدوال</span></a></li>
+<li><a href="s47.html">Récursion &amp; source <span lang="ar" dir="rtl">— الاستدعاء الذاتي وsource</span></a></li>
+<li><a href="s48.html">Les tableaux (arrays) <span lang="ar" dir="rtl">— الجداول (المصفوفات)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

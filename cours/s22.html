@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestion des comptes utilisateurs — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Gestion des comptes utilisateurs (pages 227–234). إدارة حسابات المستخدمين — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Gestion des comptes utilisateurs, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Compte, Mot de passe, Groupe secondaire, Super-utilisateur">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s22.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Gestion des comptes utilisateurs — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Gestion des comptes utilisateurs (pages 227–234). إدارة حسابات المستخدمين — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s22.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gestion des comptes utilisateurs — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Gestion des comptes utilisateurs (pages 227–234). إدارة حسابات المستخدمين — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s22.html#resource","name":"Gestion des comptes utilisateurs — SE1 | Badr AI","description":"Cours SE1 : Gestion des comptes utilisateurs (pages 227–234). إدارة حسابات المستخدمين — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s22.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Gestion des comptes utilisateurs, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Compte, Mot de passe, Groupe secondaire, Super-utilisateur"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Gestion des comptes utilisateurs","item":"https://cybader.github.io/badr-ai-se1/cours/s22.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Gestion des comptes utilisateurs</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 2 · Section 22/48</span>
+<h1>Gestion des comptes utilisateurs</h1>
+<p class="ar-title" lang="ar" dir="rtl">إدارة حسابات المستخدمين</p>
+<div class="meta-row"><span class="chip">📄 Pages 227–234</span><span class="chip">8 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">أوامر إدارة الحسابات (root): adduser/useradd للإنشاء، passwd لتغيير كلمة السر، deluser/userdel للحذف (لا يحذف المجلد الشخصي إلا مع -r/--remove-home)، addgroup/groupadd للمجموعات، usermod للتعديل (-l لتغيير الاسم، -G تستبدل المجموعات، -aG تضيف). su - للانتقال إلى root ثم exit للعودة. ظهور # في الدليل يعني أنك root.</p>
+<div class="terms">
+<div class="term"><b>Compte</b><span lang="ar" dir="rtl">حساب</span></div>
+<div class="term"><b>Mot de passe</b><span lang="ar" dir="rtl">كلمة السر</span></div>
+<div class="term"><b>Groupe secondaire</b><span lang="ar" dir="rtl">مجموعة ثانوية</span></div>
+<div class="term"><b>Super-utilisateur</b><span lang="ar" dir="rtl">المستخدم الخارق</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 227–234 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 227">
+<span class="page-tag">Page 227</span>
+<p class="bullet">Vous passerez root indéfiniment.</p>
+<p class="bullet">Le symbole # à la fin de l&#39;invite de commandes vous indique que vous êtes devenu super-utilisateur.</p>
+<p class="bullet">Vous pouvez alors exécuter autant de commandes en root que vous le voulez.</p>
+<p class="bullet">Pour quitter le &quot;mode root&quot;, tapez exit.</p>
+<h3>DEVENIR ROOT</h3>
+</section>
+<section class="page" aria-label="Page 228">
+<span class="page-tag">Page 228</span>
+<p>Les commandes adduser et deluser font partie des commandes de la gestion des utilisateurs. Si vous essayez de les exécuter avec un utilisateur normal, un message vous informera que vous n&#39;avez pas les permissions nécessaires.</p>
+<p class="bullet">Seul root peut gérer les utilisateurs</p>
+<h3>Par exemple, pour créer un compte pour karim :</h3>
+<p>Rajouter un sudo devant la commande si vous n&#39;êtes pas déjà root, c&#39;est à dire tapez sudo adduser karim</p>
+<h3>AJOUTER UN UTILISATEUR</h3>
+</section>
+<section class="page" aria-label="Page 229">
+<span class="page-tag">Page 229</span>
+<p>Pour changer le mot de passe d&#39;un utilisateur, utilisez la commande passwd en spécifiant le nom du compte à modifier.</p>
+<h3>Exemple :</h3>
+<p>root@user:/home# passwd karim</p>
+<h3>Entrez le nouveau mot de passe UNIX :</h3>
+<h3>Retapez le nouveau mot de passe UNIX :</h3>
+<p>passwd : le mot de passe a été mis à jour avec succès</p>
+<p>Attention : Si vous utilisez passwd sans spécifier de nom d&#39;utilisateur, c&#39;est le mot de passe de l&#39;utilisateur courant (root dans ce cas) qui sera modifié.</p>
+<h3>COMMANDE PASSWD : CHANGER LE MOT</h3>
+<h3>DE PASSE</h3>
+</section>
+<section class="page" aria-label="Page 230">
+<span class="page-tag">Page 230</span>
+<p>La commande deluser permet de supprimer un utilisateur déjà créé.</p>
+<h3>Exemple :</h3>
+<p>root@user:/home# deluser karim</p>
+<p>Ne supprimez pas votre propre compte utilisateur (ex. : user), sinon il ne restera que root, et Ubuntu interdit la connexion directe en tant que root.</p>
+<p>Cela vous empêchera de vous connecter au prochain démarrage.</p>
+<p>La commande seule ne supprime pas le répertoire personnel de l&#39;utilisateur.</p>
+<p>Pour supprimer également le dossier home et les fichiers personnels,</p>
+<h3>utilisez l&#39;option --remove-home :</h3>
+<pre><code>deluser --remove-home karim</code></pre>
+<h3>COMMANDE DELUSER : SUPPRIMER UN</h3>
+<h3>COMPTE</h3>
+</section>
+<section class="page" aria-label="Page 231">
+<span class="page-tag">Page 231</span>
+<p>addgroup : Cette commande sert à ajouter un nouveau groupe.</p>
+<p>Chaque utilisateur appartient à un groupe par défaut.</p>
+<p>Pour ajouter un groupe : addgroup nom_groupe</p>
+<h3>Définition des groupes par défaut :</h3>
+<p>Si aucun groupe n&#39;est défini, un groupe du même nom que l&#39;utilisateur sera automatiquement créé. Ainsi, karim appartiendra au groupe karim.</p>
+<h3>AJOUT DE GROUPES AVEC ADDGROUP</h3>
+</section>
+<section class="page" aria-label="Page 232">
+<span class="page-tag">Page 232</span>
+<p>Pour vérifier l&#39;appartenance des utilisateurs aux groupes, utilisez la</p>
+<h3>commande ls -l dans le répertoire /home :</h3>
+<p>root@user:~# cd /home root@user:/home# ls -l total 24 drwx------ 2 root root 16384 2007-09-19 18:22 lost+found drwxr-xr-x 65 karim karim 4096 2007-11-15 22:40 karim</p>
+<p>Colonne 3 : Indique le propriétaire du fichier ou dossier.</p>
+<p>Colonne 4 : Indique le groupe qui possède ce fichier ou dossier.</p>
+<p>Exemple : Le dossier karim appartient à l&#39;utilisateur karim et au groupe karim.</p>
+<h3>AJOUT DE GROUPES AVEC ADDGROUP</h3>
+</section>
+<section class="page" aria-label="Page 233">
+<span class="page-tag">Page 233</span>
+<p>La commande usermod permet d&#39;éditer un utilisateur.</p>
+<h3>Principaux paramètres :</h3>
+<p class="bullet">-l : Renommer un utilisateur (ne change pas son répertoire personnel).</p>
+<p class="bullet">-g : Changer le groupe principal de l&#39;utilisateur.</p>
+<h3>Exemples :</h3>
+<p class="bullet">Mettre karim dans le groupe amis :</p>
+<pre><code>usermod -g amis karim</code></pre>
+<p class="bullet">Remettre karim dans son groupe d&#39;origine karim :</p>
+<pre><code>usermod -g karim karim</code></pre>
+<p class="bullet">Ajouter karim à plusieurs groupes simultanément (amis, math, physique)</p>
+<pre><code>usermod -G amis,math,physique karim</code></pre>
+<p class="bullet">Remarque : Séparez les groupes par des virgules sans espace entre les noms.</p>
+<h3>COMMANDE USERMOD : MODIFIER UN</h3>
+<h3>UTILISATEUR</h3>
+</section>
+<section class="page" aria-label="Page 234">
+<span class="page-tag">Page 234</span>
+<p class="bullet">Attention : -G remplace tous les groupes auxquels l&#39;utilisateur appartient.</p>
+<pre><code>usermod -G amis karim</code></pre>
+<p class="bullet">l’utilisateur karim sera retiré de tous ses groupes actuels et ajouté uniquement au groupe amis.</p>
+<p class="bullet">Pour ajouter des groupes sans supprimer les groupes actuels,</p>
+<h3>utilisez -aG :</h3>
+<pre><code>usermod -aG amis karim</code></pre>
+<p>Commande delgroup : Supprimer un groupe delgroup amis</p>
+<h3>COMMANDE USERMOD : MODIFIER UN</h3>
+<h3>UTILISATEUR</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s21.html">← chown, chgrp &amp; umask</a><a class="btn" href="s23.html">Archives avec tar →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s22">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<ul>
+<li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
+<li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
+<li><a href="s11.html">Inodes, types &amp; données des fichiers <span lang="ar" dir="rtl">— عقد الفهرس وأنواع الملفات وبياناتها</span></a></li>
+<li><a href="s12.html">Commandes d&#39;accès &amp; manipulation <span lang="ar" dir="rtl">— أوامر الوصول والتعامل مع الملفات</span></a></li>
+<li><a href="s13.html">Liens physiques &amp; symboliques <span lang="ar" dir="rtl">— الروابط الصلبة والرمزية</span></a></li>
+<li><a href="s14.html">Lecture &amp; filtrage de fichiers <span lang="ar" dir="rtl">— قراءة الملفات وتصفيتها</span></a></li>
+<li><a href="s15.html">Commandes système &amp; identification <span lang="ar" dir="rtl">— أوامر النظام والهوية</span></a></li>
+<li><a href="s16.html">Expressions régulières <span lang="ar" dir="rtl">— التعابير النمطية</span></a></li>
+<li><a href="s17.html">grep, find &amp; alias (exercices) <span lang="ar" dir="rtl">— grep وfind والاسم المستعار (تمارين)</span></a></li>
+<li><a href="s18.html">Séparateurs conditionnels &amp; redirections <span lang="ar" dir="rtl">— الفواصل الشرطية وإعادة التوجيه</span></a></li>
+<li><a href="s19.html">Utilisateurs &amp; groupes <span lang="ar" dir="rtl">— المستخدمون والمجموعات</span></a></li>
+<li><a href="s20.html">Droits d&#39;accès &amp; chmod <span lang="ar" dir="rtl">— أذونات الوصول وchmod</span></a></li>
+<li><a href="s21.html">chown, chgrp &amp; umask <span lang="ar" dir="rtl">— chown وchgrp وumask</span></a></li>
+<li><a href="s23.html">Archives avec tar <span lang="ar" dir="rtl">— الأرشيفات باستخدام tar</span></a></li>
+<li><a href="s24.html">Composition des commandes (; &amp; () {}) <span lang="ar" dir="rtl">— تركيب الأوامر (; &amp; () {})</span></a></li>
+<li><a href="s25.html">Contrôle des processus <span lang="ar" dir="rtl">— التحكم في العمليات</span></a></li>
+<li><a href="s26.html">Éditeurs de texte sous Unix <span lang="ar" dir="rtl">— محررات النصوص في يونكس</span></a></li>
+<li><a href="s27.html">Shells &amp; variables d&#39;environnement (intro) <span lang="ar" dir="rtl">— الشيلات ومتغيرات البيئة (مقدمة)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

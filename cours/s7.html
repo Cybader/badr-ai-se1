@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dual boot, GRUB &amp; séquence de démarrage — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Dual boot, GRUB &amp; séquence de démarrage (pages 51–55). الإقلاع المزدوج وGRUB وتسلسل الإقلاع — explications en arabe, révision en français, QCM…">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Dual boot, GRUB &amp; séquence de démarrage, Introduction aux systèmes d&#39;exploitation, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Boot loader, GRUB, Dual boot, BIOS, Noyau">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s7.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Dual boot, GRUB &amp; séquence de démarrage — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Dual boot, GRUB &amp; séquence de démarrage (pages 51–55). الإقلاع المزدوج وGRUB وتسلسل الإقلاع — explications en arabe, révision en français, QCM…">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s7.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dual boot, GRUB &amp; séquence de démarrage — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Dual boot, GRUB &amp; séquence de démarrage (pages 51–55). الإقلاع المزدوج وGRUB وتسلسل الإقلاع — explications en arabe, révision en français, QCM…">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s7.html#resource","name":"Dual boot, GRUB & séquence de démarrage — SE1 | Badr AI","description":"Cours SE1 : Dual boot, GRUB & séquence de démarrage (pages 51–55). الإقلاع المزدوج وGRUB وتسلسل الإقلاع — explications en arabe, révision en français, QCM…","url":"https://cybader.github.io/badr-ai-se1/cours/s7.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Introduction aux systèmes d'exploitation"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Dual boot, GRUB & séquence de démarrage, Introduction aux systèmes d'exploitation, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Boot loader, GRUB, Dual boot, BIOS, Noyau"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 1 — Introduction aux systèmes d'exploitation","item":"https://cybader.github.io/badr-ai-se1/cours/#ch1"},{"@type":"ListItem","position":4,"name":"Dual boot, GRUB & séquence de démarrage","item":"https://cybader.github.io/badr-ai-se1/cours/s7.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch1">Chapitre 1</a><span>›</span><span aria-current="page">Dual boot, GRUB &amp; séquence de démarrage</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 1 · Section 7/48</span>
+<h1>Dual boot, GRUB &amp; séquence de démarrage</h1>
+<p class="ar-title" lang="ar" dir="rtl">الإقلاع المزدوج وGRUB وتسلسل الإقلاع</p>
+<div class="meta-row"><span class="chip">📄 Pages 51–55</span><span class="chip">5 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">يمكن تثبيت نظامين على نفس الحاسوب (dual boot). بعد الإقلاع يظهر محمّل الإقلاع Boot Loader واسمه GRUB ليختار المستخدم بين Windows وLinux، ويشغّل النظام الافتراضي تلقائيًا بعد بضع ثوانٍ. التسلسل: التشغيل ← BIOS (من ROM) ← تحميل قطاع الإقلاع ← GRUB ← تحميل نواة النظام ← shell.</p>
+<div class="terms">
+<div class="term"><b>Boot loader</b><span lang="ar" dir="rtl">محمل الإقلاع</span></div>
+<div class="term"><b>GRUB</b><span lang="ar" dir="rtl">محمل إقلاع GNU</span></div>
+<div class="term"><b>Dual boot</b><span lang="ar" dir="rtl">إقلاع مزدوج</span></div>
+<div class="term"><b>BIOS</b><span lang="ar" dir="rtl">نظام الإدخال/الإخراج الأساسي</span></div>
+<div class="term"><b>Noyau</b><span lang="ar" dir="rtl">النواة</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 51–55 · texte intégral du support</p></div><span class="chip">Chapitre 1 — Introduction aux systèmes d&#39;exploitation</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 51">
+<span class="page-tag">Page 51</span>
+<h3>PEUT-ON AVOIR 2 OS</h3>
+<h3>INSTALLÉS SUR SON</h3>
+<h3>ORDINATEUR EN MÊME TEMPS ?</h3>
+</section>
+<section class="page" aria-label="Page 52">
+<span class="page-tag">Page 52</span>
+<p class="bullet">Dans ce cas, juste après l&#39;écran de boot, vous aurez un programme appelé Boot Loader qui s&#39;affichera pour que vous puissiez faire votre choix.</p>
+<p class="bullet">Le boot loader dont nous parlerons ici porte le nom: Grub.</p>
+<p class="bullet">Grub vous proposera de choisir entre Windows et Linux à chaque démarrage de l&#39;ordinateur.</p>
+<p class="bullet">Il lancera l&#39;OS par défaut si vous ne faites pas de choix avant quelques secondes.</p>
+<p class="bullet">C&#39;est vous qui choisissez l&#39;OS par défaut bien entendu, on ne vous impose rien.</p>
+<h3>BOOT LOADER : GRUB</h3>
+</section>
+<section class="page" aria-label="Page 53">
+<span class="page-tag">Page 53</span>
+<p class="bullet">GRUB est responsable du démarrage du système d&#39;exploitation.</p>
+<p>Lorsqu&#39;un ordinateur est allumé, le BIOS charge le chargeur de démarrage depuis le disque dur ou un autre périphérique de stockage. GRUB se charge de gérer le processus de démarrage du système d&#39;exploitation.</p>
+<h3>BOOT LOADER : GRUB</h3>
+</section>
+<section class="page" aria-label="Page 54">
+<span class="page-tag">Page 54</span>
+<h3>SCHÉMA DU DÉMARRAGE</h3>
+</section>
+<section class="page" aria-label="Page 55">
+<span class="page-tag">Page 55</span>
+<h3>SCHÉMA DU DÉMARRAGE</h3>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s6.html">← Unix, logiciels libres &amp; licence GPL</a><a class="btn" href="s8.html">GNU/Linux, distributions &amp; Ubuntu →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s7">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 1 — Introduction aux systèmes d&#39;exploitation</h2>
+<ul>
+<li><a href="s1.html">Présentation du module &amp; objectifs <span lang="ar" dir="rtl">— تقديم المادة والأهداف</span></a></li>
+<li><a href="s2.html">Le système informatique &amp; l&#39;architecture matérielle <span lang="ar" dir="rtl">— النظام المعلوماتي والمعمارية المادية</span></a></li>
+<li><a href="s3.html">Le système d&#39;exploitation : rôle et services <span lang="ar" dir="rtl">— نظام التشغيل: الدور والخدمات</span></a></li>
+<li><a href="s4.html">Composants &amp; structure externe du SE <span lang="ar" dir="rtl">— مكونات نظام التشغيل وبنيته الخارجية</span></a></li>
+<li><a href="s5.html">Les principaux systèmes d&#39;exploitation <span lang="ar" dir="rtl">— أهم أنظمة التشغيل</span></a></li>
+<li><a href="s6.html">Unix, logiciels libres &amp; licence GPL <span lang="ar" dir="rtl">— يونكس، البرمجيات الحرة ورخصة GPL</span></a></li>
+<li><a href="s8.html">GNU/Linux, distributions &amp; Ubuntu <span lang="ar" dir="rtl">— GNU/Linux والتوزيعات وأوبونتو</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>

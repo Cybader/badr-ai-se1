@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le shell interpréteur &amp; les types de commandes — SE1 | Badr AI</title>
+<meta name="description" content="Cours SE1 : Le shell interpréteur &amp; les types de commandes (pages 283–286). الشيل كمفسّر وأنواع الأوامر — explications en arabe, révision en français, QCM…">
+<meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Le shell interpréteur &amp; les types de commandes, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Commande interne, Commande externe, Interpréteur">
+<meta name="author" content="Badr AI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#070b18">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s28.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Badr AI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="ar_MA">
+<meta property="og:title" content="Le shell interpréteur &amp; les types de commandes — SE1 | Badr AI">
+<meta property="og:description" content="Cours SE1 : Le shell interpréteur &amp; les types de commandes (pages 283–286). الشيل كمفسّر وأنواع الأوامر — explications en arabe, révision en français, QCM…">
+<meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s28.html">
+<meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Le shell interpréteur &amp; les types de commandes — SE1 | Badr AI">
+<meta name="twitter:description" content="Cours SE1 : Le shell interpréteur &amp; les types de commandes (pages 283–286). الشيل كمفسّر وأنواع الأوامر — explications en arabe, révision en français, QCM…">
+<meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%237c5cff'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s28.html#resource","name":"Le shell interpréteur & les types de commandes — SE1 | Badr AI","description":"Cours SE1 : Le shell interpréteur & les types de commandes (pages 283–286). الشيل كمفسّر وأنواع الأوامر — explications en arabe, révision en français, QCM…","url":"https://cybader.github.io/badr-ai-se1/cours/s28.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Programmation Shell"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Le shell interpréteur & les types de commandes, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Commande interne, Commande externe, Interpréteur"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 3 — Programmation Shell","item":"https://cybader.github.io/badr-ai-se1/cours/#ch3"},{"@type":"ListItem","position":4,"name":"Le shell interpréteur & les types de commandes","item":"https://cybader.github.io/badr-ai-se1/cours/s28.html"}]}]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-head">
+<div class="head-in">
+<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
+</a>
+<nav class="head-nav" aria-label="Navigation">
+<a href="index.html">Plan du cours</a>
+<a href="../index.html#terminal">Terminal</a>
+<a href="../index.html#quiz">QCM</a>
+<a href="../index.html#exam">Examen</a>
+</nav>
+</div>
+</header>
+<div class="wrap">
+<nav class="crumbs" aria-label="Fil d'Ariane">
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch3">Chapitre 3</a><span>›</span><span aria-current="page">Le shell interpréteur &amp; les types de commandes</span>
+</nav>
+<main id="contenu">
+<article>
+<header class="hero">
+<span class="badge">Chapitre 3 · Section 28/48</span>
+<h1>Le shell interpréteur &amp; les types de commandes</h1>
+<p class="ar-title" lang="ar" dir="rtl">الشيل كمفسّر وأنواع الأوامر</p>
+<div class="meta-row"><span class="chip">📄 Pages 283–286</span><span class="chip">4 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+</header>
+<section class="ar-panel" aria-labelledby="ar-title">
+<h2 id="ar-title"> الشرح بالعربية</h2>
+<p class="ar-text" lang="ar" dir="rtl">الـ Shell لغة برمجة كاملة: تفسير فوري، متغيرات، أوامر داخلية مدمجة (cd, echo, pwd, read, export, set) وأوامر خارجية ملفات (ls, sleep). الأمر type -t يحدد النوع (builtin أو file)، وps يعرض اسم الشيل الجاري، وbash --version نسخته.</p>
+<div class="terms">
+<div class="term"><b>Commande interne</b><span lang="ar" dir="rtl">أمر داخلي</span></div>
+<div class="term"><b>Commande externe</b><span lang="ar" dir="rtl">أمر خارجي</span></div>
+<div class="term"><b>Interpréteur</b><span lang="ar" dir="rtl">مفسّر</span></div>
+</div>
+</section>
+<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 283–286 · texte intégral du support</p></div><span class="chip">Chapitre 3 — Programmation Shell</span></div>
+<div class="pages">
+<section class="page" aria-label="Page 283">
+<span class="page-tag">Page 283</span>
+<p>Le shell est un environnement puissant pour l’automatisation et le développement de</p>
+<h3>scripts complexes sous Unix :</h3>
+<p class="bullet">Un Langage de Programmation Complet :</p>
+<p class="bullet">Gestion des Variables :</p>
+<p>Possibilité de définir et manipuler des variables pour stocker et traiter des données.</p>
+<p class="bullet">Tests et utilisation des Boucles :</p>
+<p>Structures conditionnelles (if, else) et boucles (for, while) pour automatiser les tâches.</p>
+<p class="bullet">Opérations sur Variables :</p>
+<p>Calculs, concaténations et manipulations avancées de chaînes de caractères.</p>
+<p class="bullet">Définitions des Fonctions :</p>
+<p>Capacité de définir des fonctions pour structurer le code et réutiliser des blocs d’instructions.</p>
+<h3>LE SHELL : INTERPRÉTEUR DE</h3>
+<h3>COMMANDES</h3>
+</section>
+<section class="page" aria-label="Page 284">
+<span class="page-tag">Page 284</span>
+<p class="bullet">La commande ps: Donne le nom du SHELL</p>
+<p class="bullet">La commande bash –version : Donne la version du SHELL</p>
+<h3>LE SHELL : INTERPRÉTEUR DE</h3>
+<h3>COMMANDES</h3>
+<p>l’interpréteur utilisé est bash</p>
+</section>
+<section class="page" aria-label="Page 285">
+<span class="page-tag">Page 285</span>
+<p class="bullet">Le shell distingue deux sortes de commandes :</p>
+<p class="bullet"> les commandes internes : le code est implanté au sein de l’interpréteur de commande (cd , echo , pwd,…)</p>
+<p class="bullet"> les commandes externes : le code se trouve dans un fichier ordinaire (ls, mkdir, cat, sleep,…)</p>
+<h3>Syntaxe :</h3>
+<p>type –t Commande</p>
+<p class="bullet">Builtin : Commande Interne</p>
+<p class="bullet">File : Commande externe</p>
+<h3>COMMANDES INTERNES ET EXTERNES</h3>
+</section>
+<section class="page" aria-label="Page 286">
+<span class="page-tag">Page 286</span>
+<h3>COMMADES INTERNES ET EXTERNES</h3>
+<h3>Example :</h3>
+<pre><code>$ type -t sleep</code></pre>
+<pre><code>file</code></pre>
+<p>La commande sleep est identifiée comme un fichier, c&#39;est donc une commande externe.</p>
+<pre><code>$ type -t echo</code></pre>
+<p>builtin</p>
+<p>La commande echo est identifiée comme une commande interne du shell (builtin).</p>
+</section>
+</div>
+<nav class="pager" aria-label="Sections précédente et suivante">
+<a class="btn" href="s27.html">← Shells &amp; variables d&#39;environnement (intro)</a><a class="btn" href="s29.html">Les scripts shell →</a>
+</nav>
+<aside class="cta">
+<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s28">Ouvrir la plateforme</a><a class="btn btn-soft" href="../index.html#quiz">QCM</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
+</aside>
+<section class="related" aria-labelledby="related-title">
+<h2 id="related-title">Autres sections du chapitre 3 — Programmation Shell</h2>
+<ul>
+<li><a href="s29.html">Les scripts shell <span lang="ar" dir="rtl">— سكربتات الشيل</span></a></li>
+<li><a href="s30.html">Paramètres &amp; variables <span lang="ar" dir="rtl">— المعاملات والمتغيرات</span></a></li>
+<li><a href="s31.html">read &amp; saisie au clavier <span lang="ar" dir="rtl">— read والإدخال من لوحة المفاتيح</span></a></li>
+<li><a href="s32.html">Quotes, export &amp; portée des variables <span lang="ar" dir="rtl">— الاقتباس والتصدير ونطاق المتغيرات</span></a></li>
+<li><a href="s33.html">Variables d&#39;environnement <span lang="ar" dir="rtl">— متغيرات البيئة</span></a></li>
+<li><a href="s34.html">Substitutions &amp; paramètres positionnels <span lang="ar" dir="rtl">— الاستبدالات والمعاملات الموضعية</span></a></li>
+<li><a href="s35.html">Paramètres spéciaux, shift &amp; substitution de commande <span lang="ar" dir="rtl">— المعاملات الخاصة وshift واستبدال الأوامر</span></a></li>
+<li><a href="s36.html">Paramètres non définis &amp; unset <span lang="ar" dir="rtl">— المعاملات غير المعرّفة وحذف المتغيرات</span></a></li>
+<li><a href="s37.html">Redirections &amp; scripts <span lang="ar" dir="rtl">— إعادة التوجيه داخل السكربتات</span></a></li>
+<li><a href="s38.html">Tests de conditions <span lang="ar" dir="rtl">— اختبار الشروط</span></a></li>
+<li><a href="s39.html">Expressions arithmétiques <span lang="ar" dir="rtl">— التعابير الحسابية</span></a></li>
+<li><a href="s40.html">Structure conditionnelle if <span lang="ar" dir="rtl">— بنية الشرط if</span></a></li>
+<li><a href="s41.html">Choix multiples avec case <span lang="ar" dir="rtl">— الاختيار المتعدد case</span></a></li>
+<li><a href="s42.html">Boucles for <span lang="ar" dir="rtl">— حلقة for</span></a></li>
+<li><a href="s43.html">Boucles while, until &amp; break/continue <span lang="ar" dir="rtl">— حلقتا while وuntil وbreak/continue</span></a></li>
+<li><a href="s44.html">select, options du shell &amp; exec <span lang="ar" dir="rtl">— select وخيارات الشيل وexec</span></a></li>
+<li><a href="s45.html">La commande expr <span lang="ar" dir="rtl">— الأمر expr</span></a></li>
+<li><a href="s46.html">Fonctions <span lang="ar" dir="rtl">— الدوال</span></a></li>
+<li><a href="s47.html">Récursion &amp; source <span lang="ar" dir="rtl">— الاستدعاء الذاتي وsource</span></a></li>
+<li><a href="s48.html">Les tableaux (arrays) <span lang="ar" dir="rtl">— الجداول (المصفوفات)</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+</div>
+<footer class="site-foot">
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../index.html#quiz">QCM</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
+</footer>
+</body>
+</html>
