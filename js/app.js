@@ -7,7 +7,6 @@ window.APP = (function () {
   const KEY = "badrai.se1.progress";
   const $ = function (sel, root) { return (root || document).querySelector(sel); };
   const $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
-  const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function esc(s) {
     return String(s == null ? "" : s)
@@ -65,7 +64,6 @@ window.APP = (function () {
     });
   });
   const TOTAL_SECTIONS = SECTIONS.length;
-  const ALL_PAGES = COURS.meta.totalPages || 436;
 
   function readCount() {
     return SECTIONS.filter(function (it) { return state.read[it.sec.id]; }).length;
@@ -141,136 +139,7 @@ window.APP = (function () {
     return close;
   }
 
-  /* ============================ Confetti ============================ */
-  const confCanvas = $("#confetti");
-  let confCtx = null, confParts = [], confRAF = null;
-  function resizeConfetti() {
-    if (!confCanvas) return;
-    confCanvas.width = window.innerWidth * (window.devicePixelRatio || 1);
-    confCanvas.height = window.innerHeight * (window.devicePixelRatio || 1);
-    confCtx = confCanvas.getContext("2d");
-    confCtx.setTransform(window.devicePixelRatio || 1, 0, 0, window.devicePixelRatio || 1, 0, 0);
-  }
-  function confetti(n) {
-    if (!confCtx || reduceMotion) return;
-    const colors = ["#0f5c52", "#a9472f", "#c79a3b", "#2f7d5a", "#9a6a18"];
-    for (let i = 0; i < (n || 60); i++) {
-      confParts.push({
-        x: window.innerWidth / 2 + (Math.random() - 0.5) * 220,
-        y: window.innerHeight * 0.35 + (Math.random() - 0.5) * 80,
-        vx: (Math.random() - 0.5) * 9,
-        vy: -Math.random() * 9 - 2,
-        g: 0.22 + Math.random() * 0.12,
-        s: 4 + Math.random() * 6,
-        rot: Math.random() * Math.PI,
-        vr: (Math.random() - 0.5) * 0.3,
-        c: colors[i % colors.length],
-        life: 1
-      });
-    }
-    if (!confRAF) confRAF = requestAnimationFrame(tickConfetti);
-  }
-  function tickConfetti() {
-    confCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    confParts.forEach(function (p) {
-      p.vy += p.g; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life -= 0.012;
-      confCtx.save();
-      confCtx.globalAlpha = Math.max(0, p.life);
-      confCtx.translate(p.x, p.y);
-      confCtx.rotate(p.rot);
-      confCtx.fillStyle = p.c;
-      confCtx.fillRect(-p.s / 2, -p.s / 2, p.s, p.s * 0.6);
-      confCtx.restore();
-    });
-    confParts = confParts.filter(function (p) { return p.life > 0 && p.y < window.innerHeight + 60; });
-    if (confParts.length) confRAF = requestAnimationFrame(tickConfetti);
-    else { confCtx.clearRect(0, 0, window.innerWidth, window.innerHeight); confRAF = null; }
-  }
-
-  /* ============================ Particules ============================ */
-  function initParticles() {
-    const canvas = $("#particles");
-    if (!canvas || reduceMotion) return;
-    const ctx = canvas.getContext("2d");
-    let w = 0, h = 0, dots = [];
-    function resize() {
-      w = canvas.width = window.innerWidth * (window.devicePixelRatio || 1);
-      h = canvas.height = window.innerHeight * (window.devicePixelRatio || 1);
-      canvas.style.width = window.innerWidth + "px";
-      canvas.style.height = window.innerHeight + "px";
-      const count = Math.min(70, Math.floor(window.innerWidth / 22));
-      dots = [];
-      for (let i = 0; i < count; i++) {
-        dots.push({
-          x: Math.random() * w, y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.25 * (window.devicePixelRatio || 1),
-          vy: (Math.random() - 0.5) * 0.25 * (window.devicePixelRatio || 1),
-          r: (Math.random() * 1.4 + 0.4) * (window.devicePixelRatio || 1)
-        });
-      }
-    }
-    resize();
-    window.addEventListener("resize", resize);
-    function tick() {
-      ctx.clearRect(0, 0, w, h);
-      dots.forEach(function (d) {
-        d.x += d.vx; d.y += d.vy;
-        if (d.x < 0 || d.x > w) d.vx *= -1;
-        if (d.y < 0 || d.y > h) d.vy *= -1;
-        ctx.beginPath();
-        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(15,92,82,.28)";
-        ctx.fill();
-      });
-      if (!document.hidden) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-
-  /* ============================ Effects (ripple / tilt / glow) ============================ */
-  function initEffects() {
-    if (window.matchMedia && window.matchMedia("(pointer:fine)").matches) {
-      document.body.classList.add("pointer-fine");
-      const glow = $("#cursor-glow");
-      if (glow) {
-        window.addEventListener("mousemove", function (e) {
-          glow.style.left = e.clientX + "px";
-          glow.style.top = e.clientY + "px";
-        }, { passive: true });
-      }
-    }
-
-    document.addEventListener("click", function (e) {
-      const btn = e.target.closest(".btn, .nav-btn, .choice, .quiz-cat, .deck-chip, .chapter-btn, .icon-btn, .mission-num");
-      if (!btn) return;
-      const r = btn.getBoundingClientRect();
-      const span = document.createElement("span");
-      const size = Math.max(r.width, r.height);
-      span.className = "ripple";
-      span.style.width = span.style.height = size + "px";
-      span.style.left = (e.clientX - r.left - size / 2) + "px";
-      span.style.top = (e.clientY - r.top - size / 2) + "px";
-      if (getComputedStyle(btn).position === "static") btn.style.position = "relative";
-      btn.appendChild(span);
-      setTimeout(function () { span.remove(); }, 650);
-      if (window.SFX) window.SFX.play("click");
-    });
-
-    document.addEventListener("mousemove", function (e) {
-      const card = e.target.closest(".card");
-      if (!card || reduceMotion) return;
-      const r = card.getBoundingClientRect();
-      card.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100) + "%");
-      card.style.setProperty("--my", ((e.clientY - r.top) / r.height * 100) + "%");
-      const rx = ((e.clientY - r.top) / r.height - 0.5) * -3;
-      const ry = ((e.clientX - r.left) / r.width - 0.5) * 3;
-      card.style.transform = "perspective(900px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) translateY(-2px)";
-    });
-    document.addEventListener("mouseleave", function (e) {
-      const card = e.target.closest && e.target.closest(".card");
-      if (card) card.style.transform = "";
-    }, true);
-  }
+  /* Les effets décoratifs ont été retirés : interface calme, sans animation. */
 
   /* ============================ Sound ============================ */
   function syncSound() {
@@ -338,10 +207,10 @@ window.APP = (function () {
       const btn = $("#listen-ar");
       if (!btn) return;
       if (d.type === "start" && d.tag === "section") {
-        btn.textContent = "⏹ إيقاف الشرح";
+        btn.textContent = "إيقاف الشرح";
         btn.setAttribute("aria-pressed", "true");
       } else if (d.type === "start" || d.type === "end" || d.type === "stop" || d.type === "error") {
-        btn.textContent = "🔊 استمع للشرح";
+        btn.textContent = "استمع للشرح";
         btn.setAttribute("aria-pressed", "false");
       }
     });
@@ -388,7 +257,7 @@ window.APP = (function () {
     function updateStatus() {
       if (!status || !window.VOICE || !document.body.contains(card)) return;
       if (!supported) {
-        status.textContent = "⚠️ هذا المتصفح لا يدعم النطق. جرّب Chrome أو Edge على الحاسوب، أو Safari على iPhone.";
+        status.textContent = "هذا المتصفح لا يدعم النطق. جرّب Chrome أو Edge على الحاسوب، أو Safari على iPhone.";
         status.className = "voice-status warn";
         if (badge) { badge.textContent = "غير مدعوم"; badge.className = "voice-badge off"; }
         return;
@@ -396,19 +265,19 @@ window.APP = (function () {
       const info = VOICE.voiceInfo();
       const s = VOICE.getSettings();
       if (VOICE.isSpeaking()) {
-        status.textContent = "🔊 يتحدث الآن… اضغط «إيقاف» لإنهاء الصوت.";
+        status.textContent = "يتحدث الآن… اضغط «إيقاف» لإنهاء الصوت.";
         status.className = "voice-status live";
         if (badge) { badge.textContent = "يتحدث"; badge.className = "voice-badge live"; }
         return;
       }
       if (!info.total) {
-        status.textContent = "⚠️ لا يوجد صوت عربي مثبّت على هذا الجهاز. أضف صوتًا عربيًا من إعدادات النظام ثم أعد تحميل الصفحة. يمكنك تجربة الصوت الافتراضي.";
+        status.textContent = "لا يوجد صوت عربي مثبّت على هذا الجهاز. أضف صوتًا عربيًا من إعدادات النظام ثم أعد تحميل الصفحة. يمكنك تجربة الصوت الافتراضي.";
         status.className = "voice-status warn";
         if (badge) { badge.textContent = "بلا صوت عربي"; badge.className = "voice-badge off"; }
         return;
       }
       status.textContent = s.enabled
-        ? "✅ المرافق مفعّل — " + info.total + " صوت عربي متاح (" + info.local + " محلي)."
+        ? "المرافق مفعّل — " + info.total + " صوت عربي متاح (" + info.local + " محلي)."
         : "المرافق متوقف. لن يتحدث تلقائيًا حتى تشغّله.";
       status.className = "voice-status" + (s.enabled ? " on" : "");
       if (badge) {
@@ -485,12 +354,12 @@ window.APP = (function () {
   /* ============================ Router ============================ */
   const TITLES = {
     home: ["Badr AI", "Accueil"],
-    cours: ["Programme · 436 pages", "Cours"],
-    terminal: ["Unix · 16 missions", "Terminal"],
-    quiz: ["QCM · 120 questions", "Quiz"],
-    flash: ["Révision · 90 cartes", "Flashcards"],
-    exam: ["20 questions · 30 min", "Examen"],
-    outils: ["chmod · boot · arborescence", "Outils"]
+    cours: ["Programme", "Cours"],
+    terminal: ["Atelier Unix", "Terminal"],
+    quiz: ["Quiz", "Quiz"],
+    flash: ["Révision", "Flashcards"],
+    exam: ["Examen blanc", "Examen"],
+    outils: ["Outils", "Outils"]
   };
   function parseHash() {
     const raw = (location.hash || "").replace(/^#/, "").trim();
@@ -506,12 +375,15 @@ window.APP = (function () {
     if (window.VOICE) VOICE.stop();
     view = name;
     $$(".view").forEach(function (v) { v.classList.toggle("active", v.id === "view-" + name); });
-    $$(".nav-btn").forEach(function (b) { b.classList.toggle("active", b.getAttribute("data-view") === name); });
+    $$(".nav-btn").forEach(function (b) {
+      const on = b.getAttribute("data-view") === name;
+      b.classList.toggle("active", on);
+      if (on) b.setAttribute("aria-current", "page");
+      else b.removeAttribute("aria-current");
+    });
     const t = TITLES[name];
-    const crumb = $("#crumb"), title = $("#topbar-title");
-    if (crumb) crumb.textContent = t[0];
-    if (title) title.textContent = t[1];
-    closeSidebar();
+    document.title = name === "home" ? "Badr AI — Cours Système d'Exploitation 1 (SE1)" : t[1] + " — Badr AI";
+    closeMenu();
     if (name === "home") renderHome();
     else if (name === "cours") renderCours();
     else if (name === "terminal") { if (window.TERM) TERM.mount($("#terminal-root")); }
@@ -521,42 +393,41 @@ window.APP = (function () {
     else if (name === "outils") renderTools();
     const hash = name === "cours" && currentSection ? "#cours/" + currentSection : "#" + name;
     try { history.replaceState(null, "", hash); } catch (e) { /* file:// */ }
-    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    window.scrollTo(0, 0);
   }
 
   function openSection(id) {
     if (!SECMAP[id]) return;
     currentSection = id;
     navigate("cours");
-    const side = $(".cours-side");
-    if (side && window.innerWidth <= 1080) side.classList.remove("open");
-    if (window.innerWidth <= 1080) {
+    if (window.innerWidth <= 900) {
       setTimeout(function () {
         const reader = $("#reader");
-        if (reader) reader.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
-      }, 80);
+        if (reader) reader.scrollIntoView({ block: "start" });
+      }, 40);
     }
   }
 
-  function closeSidebar() {
-    const sb = $("#sidebar"), bd = $("#sidebar-backdrop");
-    if (sb) sb.classList.remove("open");
-    if (bd) bd.classList.remove("show");
+  function closeMenu() {
+    const menu = $("#mobile-menu"), btn = $("#menu-toggle");
+    if (menu) menu.hidden = true;
+    if (btn) {
+      btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label", "Ouvrir le menu");
+    }
   }
 
   /* ============================ Ring helper ============================ */
-  function ringSVG(pct, size, stroke, gid, label) {
+  function ringSVG(pct, size, stroke) {
     size = size || 96; stroke = stroke || 8;
     const r = (size - stroke) / 2, c = 2 * Math.PI * r;
     const off = c * (1 - clamp(pct, 0, 100) / 100);
     const cx = size / 2;
-    return '<svg viewBox="0 0 ' + size + " " + size + '" width="' + size + '" height="' + size + '">' +
-      "<defs><linearGradient id=\"" + gid + "\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">" +
-      '<stop offset="0" stop-color="#0f5c52"/><stop offset="1" stop-color="#a9472f"/></linearGradient></defs>' +
+    return '<svg viewBox="0 0 ' + size + " " + size + '" width="' + size + '" height="' + size + '" aria-hidden="true">' +
       '<circle class="ring-track" cx="' + cx + '" cy="' + cx + '" r="' + r + '" fill="none" stroke-width="' + stroke + '"/>' +
-      '<circle cx="' + cx + '" cy="' + cx + '" r="' + r + '" fill="none" stroke="url(#' + gid + ')" stroke-width="' + stroke +
+      '<circle cx="' + cx + '" cy="' + cx + '" r="' + r + '" fill="none" stroke="#0071e3" stroke-width="' + stroke +
       '" stroke-linecap="round" stroke-dasharray="' + c.toFixed(1) + '" stroke-dashoffset="' + off.toFixed(1) + '"/>' +
-      "</svg>" + (label == null ? "" : label);
+      "</svg>";
   }
 
 
@@ -570,8 +441,8 @@ window.APP = (function () {
     if (!imgs.length) return "";
     return '<section class="lesson-gallery" aria-labelledby="lg-title">' +
       '<div class="lg-head">' +
-        '<h3 id="lg-title">🖼️ Illustrations de la leçon</h3>' +
-        '<span class="lg-count">' + imgs.length + (imgs.length > 1 ? " planches" : " planche") +
+        '<h3 id="lg-title">Illustrations de la leçon</h3>' +
+        '<span class="lg-count">' + imgs.length + (imgs.length > 1 ? " illustrations" : " illustration") +
         " · cliquez pour agrandir</span>" +
       "</div>" +
       '<div class="lg-grid">' + imgs.map(function (im, i) {
@@ -682,73 +553,82 @@ window.APP = (function () {
       return FLASH.cards.some(function (c) { return c.id === id; });
     }).length;
     const tip = TIPS[Math.floor(Math.random() * TIPS.length)];
-    let nextSec = SECTIONS.find(function (it) { return !state.read[it.sec.id]; }) || SECTIONS[0];
+    const nextSec = SECTIONS.find(function (it) { return !state.read[it.sec.id]; }) || SECTIONS[0];
 
     const chaptersHtml = COURS.chapters.map(function (ch) {
       const rd = chapterRead(ch);
       const p = Math.round(rd / ch.sections.length * 100);
-      return '<article class="card chapter-card">' +
-        '<div class="chapter-top"><div class="chapter-num">' + String(ch.num).padStart(2, "0") + "</div>" +
-        '<span class="badge badge-violet">' + ch.sections.length + " sections</span></div>" +
-        "<div><h3>" + esc(ch.title) + '</h3><div class="ar">' + esc(ch.ar) + "</div></div>" +
-        '<div class="chapter-meta"><span>' + ch.sections.reduce(function (a, s) { return a + s.pageCount; }, 0) + " pages</span><span>" + rd + "/" + ch.sections.length + " lues</span></div>" +
-        '<div class="progress"><i style="width:' + p + '%"></i></div>' +
-        '<button class="btn btn-sm btn-soft" data-ch="' + ch.id + '">Ouvrir le chapitre →</button>' +
+      return '<article class="chapter-card">' +
+        '<div class="chapter-top">' +
+          '<span class="chapter-index">Chapitre ' + ch.num + "</span>" +
+          '<span class="chapter-count">' + ch.sections.length + " leçons</span>" +
+        "</div>" +
+        "<h3>" + esc(ch.title) + "</h3>" +
+        '<p class="chapter-ar ar" lang="ar" dir="rtl">' + esc(ch.ar) + "</p>" +
+        '<div class="chapter-progress"><div class="progress"><i style="width:' + p + '%"></i></div>' +
+          "<span>" + rd + "/" + ch.sections.length + "</span></div>" +
+        '<button class="link-btn" type="button" data-ch="' + ch.id + '">Ouvrir le chapitre <span aria-hidden="true">›</span></button>' +
         "</article>";
     }).join("");
 
     host.innerHTML =
       '<section class="hero">' +
-        '<span class="hero-badge">✦ Badr AI · Système d\'Exploitation 1</span>' +
+        '<span class="eyebrow">Badr AI · Système d\'Exploitation 1</span>' +
         "<h1>Comprendre en arabe.<br>Réussir en français.</h1>" +
-        '<p class="hero-ar">افهم بالعربية · راجع بالفرنسية · استعد للامتحان بثقة</p>' +
-        '<p class="hero-desc">Le cours complet (436 pages), 120 QCM corrigés, 90 flashcards, un terminal Unix interactif et un examen chronométré. Tout est hors-ligne, dans un seul espace pensé pour la réussite.</p>' +
+        '<p class="hero-ar" lang="ar" dir="rtl">افهم بالعربية، راجع بالفرنسية، واستعد للامتحان بثقة.</p>' +
+        '<p class="hero-desc">Le cours SE1 complet, les QCM corrigés, les flashcards et un terminal Unix interactif. Un espace calme, hors-ligne et sans compte.</p>' +
         '<div class="hero-cta">' +
-          '<button class="btn btn-primary btn-lg" id="hero-continue">▶ Reprendre le cours</button>' +
-          '<button class="btn btn-lg" data-go="terminal">⌨ Terminal</button>' +
-          '<button class="btn btn-lg" data-go="exam">🎓 Examen blanc</button>' +
-          '<button class="btn btn-lg btn-ghost" id="hero-motivate" type="button">🎙️ حفّزني</button>' +
+          '<button class="btn btn-primary btn-lg" id="hero-continue" type="button">Continuer le cours</button>' +
+          '<button class="btn-link" data-go="exam" type="button">Passer l\'examen blanc <span aria-hidden="true">›</span></button>' +
+          '<button class="btn-link" id="hero-motivate" type="button" lang="ar" dir="rtl">حفّزني</button>' +
         "</div>" +
-        '<div class="hero-strip">' +
-          '<div class="hero-stat"><b>' + ALL_PAGES + "</b><span>PAGES DE COURS</span></div>" +
-          '<div class="hero-stat"><b>' + TOTAL_SECTIONS + "</b><span>SECTIONS</span></div>" +
-          '<div class="hero-stat"><b>' + QUIZ.questions.length + "</b><span>QUESTIONS QCM</span></div>" +
-          '<div class="hero-stat"><b>16</b><span>MISSIONS UNIX</span></div>' +
-        "</div>" +
-        '<div class="hero-glow"><div class="hero-ring">' + ringSVG(pct, 96, 8, "heroGrad") +
-          "<b>" + pct + "%</b><span>COURS</span></div>" +
-          '<div style="font-size:.7rem;color:var(--muted-2);max-width:110px;line-height:1.5">' + done + " / " + TOTAL_SECTIONS + " sections lues<br>Niveau " + li.level + " · " + li.xp + " XP</div>" +
+        '<div class="hero-meta">' +
+          "<span><b>" + COURS.chapters.length + "</b> chapitres</span>" +
+          "<span><b>" + TOTAL_SECTIONS + "</b> leçons</span>" +
+          "<span><b>" + QUIZ.questions.length + "</b> QCM corrigés</span>" +
+          "<span><b>" + FLASH.cards.length + "</b> flashcards</span>" +
         "</div>" +
       "</section>" +
 
-      '<div class="section-head"><div><h2>Votre progression</h2><p>Chaque section lue vous rapproche de l\'examen.</p></div>' +
-        '<span class="chip chip-soft">' + done + "/" + TOTAL_SECTIONS + " sections</span></div>" +
+      '<div class="home-block"><div class="progress-card">' +
+        '<div class="progress-ring">' + ringSVG(pct, 96, 8) + "<b>" + pct + "%</b></div>" +
+        '<div class="progress-main">' +
+          "<h2>Votre progression</h2>" +
+          "<p>" + done + " leçons sur " + TOTAL_SECTIONS + " · Niveau " + li.level + " · " + li.xp + " XP</p>" +
+          '<div class="progress"><i style="width:' + pct + '%"></i></div>' +
+        "</div>" +
+        '<div class="progress-stats">' +
+          "<div><b>" + (bestQuiz == null ? "—" : bestQuiz + "%") + "</b><span>Meilleur quiz</span></div>" +
+          "<div><b>" + state.missions.length + "/16</b><span>Missions Unix</span></div>" +
+          "<div><b>" + known + "/" + FLASH.cards.length + "</b><span>Cartes maîtrisées</span></div>" +
+        "</div>" +
+      "</div></div>" +
 
-      '<div class="grid-4" style="margin-bottom:16px">' +
-        '<div class="card stat-card"><div class="stat-ico">📖</div><div><div class="stat-value">' + done + "/" + TOTAL_SECTIONS + '</div><div class="stat-label">Sections lues</div></div></div>' +
-        '<div class="card stat-card"><div class="stat-ico">🎯</div><div><div class="stat-value">' + (bestQuiz == null ? "—" : bestQuiz + "%") + '</div><div class="stat-label">Meilleur quiz</div></div></div>' +
-        '<div class="card stat-card"><div class="stat-ico">⌨️</div><div><div class="stat-value">' + state.missions.length + "/16" + '</div><div class="stat-label">Missions Unix</div></div></div>' +
-        '<div class="card stat-card"><div class="stat-ico">🃏</div><div><div class="stat-value">' + known + "/" + FLASH.cards.length + '</div><div class="stat-label">Cartes maîtrisées</div></div></div>' +
+      '<div class="home-block">' +
+        '<div class="section-head"><div><h2>Programme</h2><p>Trois chapitres, du premier concept au script Shell.</p></div>' +
+          '<button class="btn btn-sm" data-go="cours" type="button">Voir toutes les leçons</button></div>' +
+        '<div class="chapter-grid">' + chaptersHtml + "</div>" +
       "</div>" +
 
-      '<div class="grid-3">' + chaptersHtml + "</div>" +
-
-      '<div class="section-head" style="margin-top:26px"><div><h2>Continuer</h2><p>Reprenez là où vous vous êtes arrêté.</p></div></div>' +
-      '<div class="grid-2">' +
-        '<article class="card" style="display:flex;flex-direction:column;gap:10px">' +
-          '<div class="card-head"><div class="card-ico">▶</div><div><h3 style="margin:0">Prochaine section</h3><p class="small muted">' + esc(nextSec.ch.title) + "</p></div></div>" +
-          "<b>" + esc(nextSec.sec.fr) + "</b>" +
-          '<div class="ar" style="color:var(--muted);font-size:.8rem">' + esc(nextSec.sec.ar) + "</div>" +
-          '<button class="btn btn-primary btn-sm" data-open="' + nextSec.sec.id + '" style="align-self:flex-start;margin-top:6px">Lire maintenant →</button>' +
+      '<div class="home-block two-col">' +
+        '<article class="next-card">' +
+          '<span class="eyebrow">Reprendre</span>' +
+          "<h3>" + esc(nextSec.sec.fr) + "</h3>" +
+          '<p class="ar" lang="ar" dir="rtl">' + esc(nextSec.sec.ar) + "</p>" +
+          '<button class="btn btn-primary btn-sm" data-open="' + nextSec.sec.id + '" type="button">Lire la leçon</button>' +
         "</article>" +
-        '<article class="card" style="display:flex;flex-direction:column;gap:10px">' +
-          '<div class="card-head"><div class="card-ico">🎓</div><div><h3 style="margin:0">Examen blanc</h3><p class="small muted">20 questions · 30 minutes · note /20</p></div></div>' +
-          '<p>Conditions réelles : pas de correction immédiate, chronomètre, grille de navigation. Le meilleur score est sauvegardé.</p>' +
-          '<div style="display:flex;gap:8px;margin-top:auto"><button class="btn btn-primary btn-sm" data-go="exam">Commencer</button><button class="btn btn-sm" data-go="quiz">Quiz rapide</button></div>' +
+        '<article class="exam-teaser">' +
+          '<span class="eyebrow">Examen blanc</span>' +
+          "<h3>20 questions · 30 minutes</h3>" +
+          "<p>Conditions réelles, chronomètre et correction détaillée en arabe. Votre meilleure note est conservée.</p>" +
+          '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+            '<button class="btn btn-primary btn-sm" data-go="exam" type="button">Commencer</button>' +
+            '<button class="btn btn-sm" data-go="quiz" type="button">Quiz rapide</button>' +
+          "</div>" +
         "</article>" +
       "</div>" +
 
-      '<div class="tip-line" style="margin-top:18px"><span>💡</span><span>' + esc(tip) + "</span></div>";
+      '<div class="tip-line"><span class="eyebrow">Conseil</span><span>' + esc(tip) + "</span></div>";
 
     const cont = $("#hero-continue");
     if (cont) cont.addEventListener("click", function () { openSection(nextSec.sec.id); });
@@ -822,9 +702,10 @@ window.APP = (function () {
       renderSection(currentSection, true);
     } else if (reader && !reader.querySelector(".reader-head")) {
       reader.innerHTML =
-        '<div class="empty-state"><div class="empty-ico">📖</div><h3>Choisissez une section</h3>' +
-        "<p>Le cours complet (" + ALL_PAGES + " pages) est organisé en " + COURS.chapters.length +
-        " chapitres et " + TOTAL_SECTIONS + " sections. Chaque section contient une explication en arabe et ses pages originales.</p></div>";
+        '<div class="empty-state"><span class="empty-kicker">Programme</span>' +
+        "<h3>Choisissez une leçon</h3>" +
+        "<p>" + COURS.chapters.length + " chapitres et " + TOTAL_SECTIONS +
+        " leçons. Chaque leçon commence par une explication en arabe, puis le cours en français.</p></div>";
     }
     bindSearch();
   }
@@ -878,11 +759,9 @@ window.APP = (function () {
   }
 
   function pageBlocksHTML(pg) {
-    if (!pg.blocks || !pg.blocks.length) {
-      return '<p class="page-empty">Diapositive sans texte — titre visuel du support original.</p>';
-    }
+    if (!pg.blocks || !pg.blocks.length) return "";
     return pg.blocks.map(function (b) {
-      if (b.k === "h") return '<h4 class="page-h">' + esc(b.v) + "</h4>";
+      if (b.k === "h") return '<h3 class="page-h">' + esc(b.v) + "</h3>";
       if (b.k === "c") return '<pre class="page-code">' + esc(b.v) + "</pre>";
       if (b.k === "b") return '<p class="page-bullet">' + esc(b.v) + "</p>";
       return '<p class="page-text">' + esc(b.v) + "</p>";
@@ -898,40 +777,33 @@ window.APP = (function () {
     const idx = SECTIONS.findIndex(function (s) { return s.sec.id === id; });
     const prev = SECTIONS[idx - 1], next = SECTIONS[idx + 1];
     const isRead = !!state.read[id];
-    const firstPage = sec.pages.length ? sec.pages[0].n : 0;
-    const lastPage = sec.pages.length ? sec.pages[sec.pages.length - 1].n : 0;
-    const pagesHtml = sec.pages.map(function (pg) {
-      return '<article class="page-card">' +
-        '<span class="page-chip">PAGE ' + pg.n + "</span>" +
-        pageBlocksHTML(pg) +
-        "</article>";
-    }).join("");
+    const pagesHtml = sec.pages.map(pageBlocksHTML).join("");
     const gallery = galleryHTML(id);
 
     reader.innerHTML =
       '<div class="reader-head">' +
         '<div class="rh-main">' +
-          '<div class="crumbline">Chapitre ' + ch.num + " · pages " + firstPage + "–" + lastPage + " · " + sec.pageCount + " pages</div>" +
+          '<div class="crumbline">Chapitre ' + ch.num + " · Leçon " + (idx + 1) + " sur " + TOTAL_SECTIONS + "</div>" +
           "<h2>" + esc(sec.fr) + "</h2>" +
-          '<div class="sec-ar ar">' + esc(sec.ar) + "</div>" +
+          '<div class="sec-ar ar" lang="ar" dir="rtl">' + esc(sec.ar) + "</div>" +
         "</div>" +
         '<div class="rh-actions">' +
-          '<button class="btn btn-sm btn-ghost" id="listen-ar" type="button" aria-pressed="false">🔊 استمع للشرح</button>' +
-          '<button class="btn btn-sm btn-ghost" id="toggle-ar" type="button">📘 Masquer l\'arabe</button>' +
+          '<button class="btn btn-sm btn-ghost" id="listen-ar" type="button" aria-pressed="false" title="Écouter l\'explication en arabe">استمع للشرح</button>' +
+          '<button class="btn btn-sm btn-ghost" id="toggle-ar" type="button" title="Afficher ou masquer l\'arabe">إخفاء العربية</button>' +
           '<button class="btn btn-sm ' + (isRead ? "btn-soft" : "btn-primary") + '" id="mark-read" type="button">' +
-            (isRead ? "✓ Section lue" : "Marquer comme lu") + "</button>" +
+            (isRead ? "Leçon lue" : "Marquer comme lu") + "</button>" +
         "</div>" +
       "</div>" +
       '<div class="reader-body">' +
-        '<div class="ar-panel open" id="ar-panel">' +
-          '<h3>📘 الشرح بالعربية</h3>' +
+        '<div class="ar-panel open" id="ar-panel" lang="ar" dir="rtl">' +
+          "<h3>الشرح بالعربية</h3>" +
           '<p class="ar">' + esc(sec.arText) + "</p>" +
           (sec.terms && sec.terms.length ? '<div class="terms">' + sec.terms.map(function (t) {
             return '<span class="term"><b>' + esc(t.fr) + "</b><span>" + esc(t.ar) + "</span></span>";
           }).join("") + "</div>" : "") +
         "</div>" +
         gallery +
-        pagesHtml +
+        '<div class="lesson-flow">' + pagesHtml + "</div>" +
       "</div>" +
       '<div class="pager">' +
         (prev ? '<button class="btn btn-sm" id="prev-sec" type="button">← ' + esc(prev.sec.fr) + "</button>" : "<span></span>") +
@@ -943,7 +815,7 @@ window.APP = (function () {
       const p = $("#ar-panel");
       if (!p) return;
       p.classList.toggle("open");
-      toggle.textContent = p.classList.contains("open") ? "📘 Masquer l'arabe" : "📘 الشرح بالعربية";
+      toggle.textContent = p.classList.contains("open") ? "إخفاء العربية" : "إظهار العربية";
     });
     const listen = $("#listen-ar");
     if (listen) {
@@ -963,13 +835,12 @@ window.APP = (function () {
     if (mark) mark.addEventListener("click", function () {
       if (!state.read[id]) {
         state.read[id] = true;
-        addXP(10, "Section lue");
+        addXP(10, "Leçon lue");
         save();
-        confetti(40);
         if (window.SFX) window.SFX.play("success");
         if (window.VOICE) VOICE.say("section_done");
       }
-      mark.textContent = "✓ Section lue";
+      mark.textContent = "Leçon lue";
       mark.className = "btn btn-sm btn-soft";
       const sb = $('.section-btn[data-sec="' + id + '"]');
       if (sb) sb.classList.add("done");
@@ -1022,7 +893,7 @@ window.APP = (function () {
       const pool = quizPool(scope);
       const best = state.quiz[scope];
       return '<button class="quiz-cat" type="button" data-scope="' + scope + '">' +
-        '<span class="qc-ico">' + (ch.num === 1 ? "🧠" : ch.num === 2 ? "⌨️" : "📜") + "</span>" +
+        '<span class="qc-ico">' + String(ch.num).padStart(2, "0") + "</span>" +
         "<b>" + esc(ch.title) + "</b>" +
         "<span>" + pool.length + " questions disponibles · 10 tirées au hasard</span>" +
         "<small>" + (best == null ? "Pas encore tenté" : "Meilleur score : " + best + "%") + "</small>" +
@@ -1036,12 +907,12 @@ window.APP = (function () {
           '<span class="chip chip-soft">' + QUIZ.questions.length + " QCM</span></div>" +
         '<div class="quiz-cat-grid">' + cards +
           '<button class="quiz-cat" type="button" data-scope="all">' +
-            '<span class="qc-ico">🎲</span><b>Tout le cours</b>' +
+            '<span class="qc-ico">20</span><b>Tout le cours</b>' +
             "<span>20 questions mélangées sur les 3 chapitres</span>" +
             "<small>" + (state.quiz.all == null ? "Mode examen rapide" : "Meilleur score : " + state.quiz.all + "%") + "</small>" +
           "</button>" +
         "</div>" +
-        '<div class="tip-line" style="margin-top:18px"><span>💡</span><span>Après chaque réponse, l\'explication arabe vous explique le piège — lisez-la même si vous avez juste.</span></div>' +
+        '<div class="tip-line" style="margin-top:18px"><span class="eyebrow">Conseil</span><span>Après chaque réponse, l\'explication arabe vous explique le piège — lisez-la même si vous avez juste.</span></div>' +
       "</div>";
 
     $$("[data-scope]", host).forEach(function (b) {
@@ -1117,7 +988,6 @@ window.APP = (function () {
         next.disabled = false;
         if (window.SFX) window.SFX.play(good ? "success" : "error");
         if (window.VOICE) VOICE.feedback(good);
-        if (good) confetti(16);
       });
     });
 
@@ -1141,7 +1011,7 @@ window.APP = (function () {
     }
     save();
     const good = pct >= 80 ? "Excellent !" : pct >= 60 ? "Bien joué !" : pct >= 40 ? "À consolider" : "À retravailler";
-    const sub = pct >= 60 ? "Vous êtes sur la bonne voie pour l'examen." : "Relisez les sections concernées puis retentez le quiz.";
+    const sub = pct >= 60 ? "Vous êtes sur la bonne voie pour l'examen." : "Relisez les leçons concernées puis retentez le quiz.";
     if (window.VOICE) VOICE.say(pct >= 80 ? "quiz_result_high" : pct >= 60 ? "quiz_result_mid" : "quiz_result_low");
     const wrong = s.items.filter(function (q, i) { return s.answers[i] != null && s.answers[i] !== q.a; });
     const host = $("#quiz-root");
@@ -1158,14 +1028,14 @@ window.APP = (function () {
               '<div class="ri-a">✓ ' + esc(q.choices[q.a]) + "</div>" +
               '<div class="ri-ar">' + esc(q.ar) + "</div></div>";
           }).join("") + "</div>"
-          : '<div class="review-list"><div class="review-item"><div class="ri-q">Aucune erreur — sans faute ! 🎉</div><div class="ri-ar">ممتاز، أتقنت هذا الجزء. جرّب فصلًا آخر أو الامتحان الكامل.</div></div></div>') +
+          : '<div class="review-list"><div class="review-item"><div class="ri-q">Aucune erreur — sans faute.</div><div class="ri-ar">ممتاز، أتقنت هذا الجزء. جرّب فصلًا آخر أو الامتحان الكامل.</div></div></div>') +
         '<div class="result-actions">' +
-          '<button class="btn btn-primary" id="retry-quiz" type="button">↻ Recommencer</button>' +
+          '<button class="btn btn-primary" id="retry-quiz" type="button">Recommencer</button>' +
           '<button class="btn" id="other-quiz" type="button">Choisir un autre quiz</button>' +
-          '<button class="btn btn-ghost" id="goto-cours" type="button">📖 Revoir le cours</button>' +
+          '<button class="btn btn-ghost" id="goto-cours" type="button">Revoir le cours</button>' +
         "</div>" +
       "</div></div>";
-    if (pct >= 60) { confetti(110); if (window.SFX) window.SFX.play("fanfare"); }
+    if (pct >= 60 && window.SFX) window.SFX.play("fanfare");
     $("#retry-quiz").addEventListener("click", function () { startQuiz(s.scope); });
     $("#other-quiz").addEventListener("click", function () { quizSession = null; renderQuiz(); });
     $("#goto-cours").addEventListener("click", function () { navigate("cours"); });
@@ -1208,14 +1078,14 @@ window.APP = (function () {
             return '<button class="deck-chip' + (flashView.deck === d.id ? " active" : "") + '" data-deck="' + d.id + '">' +
               esc(d.name) + " · " + deckCards(d.id).length + "</button>";
           }).join("") +
-          '<button class="deck-chip" id="shuffle-cards" type="button">🔀 Mélanger</button>' +
+          '<button class="deck-chip" id="shuffle-cards" type="button">Mélanger</button>' +
         "</div>" +
-        '<div class="flash-stage"><div class="flash-card' + (flashView.flipped ? " flipped" : "") + '" id="flash-card" tabindex="0" role="button" aria-label="Retourner la carte">' +
+        '<div class="flash-stage"><div class="flash-card' + (flashView.flipped ? " flipped" : "") + '" id="flash-card" tabindex="0" role="button" aria-label="Afficher la réponse">' +
           '<div class="flash-face front">' +
             '<span class="flash-cat">' + esc(deckName) + " · " + (flashView.idx + 1) + "/" + order.length + "</span>" +
             '<div class="flash-front-text">' + esc(card.front) + "</div>" +
             '<div class="flash-hint">' + esc(card.hint || "") + "</div>" +
-            '<div class="flash-hint" style="margin-top:6px">Cliquez pour retourner ⟳</div>' +
+            '<div class="flash-hint" style="margin-top:6px">Cliquez pour afficher la réponse</div>' +
           "</div>" +
           '<div class="flash-face back">' +
             '<span class="flash-cat">Réponse</span>' +
@@ -1226,11 +1096,11 @@ window.APP = (function () {
         '<div class="flash-meta">Carte ' + (flashView.idx + 1) + " / " + order.length + "</div>" +
         "</div>" +
         '<div class="flash-controls">' +
-          '<button class="btn" id="prev-card" type="button">← Précédente</button>' +
-          '<button class="btn btn-soft" id="flip-card" type="button">⟳ Retourner</button>' +
+          '<button class="btn" id="prev-card" type="button">Précédente</button>' +
+          '<button class="btn btn-soft" id="flip-card" type="button">Voir la réponse</button>' +
           '<button class="btn btn-danger" id="review-card" type="button">À revoir</button>' +
-          '<button class="btn btn-primary" id="known-card" type="button">Je connais ✓</button>' +
-          '<button class="btn" id="next-card" type="button">Suivante →</button>' +
+          '<button class="btn btn-primary" id="known-card" type="button">Je connais</button>' +
+          '<button class="btn" id="next-card" type="button">Suivante</button>' +
         "</div>" +
         '<div class="flash-stats"><span><b>' + deckKnown + "</b> / " + order.length + " maîtrisées dans ce deck</span><span>·</span><span>" + known.length + " au total</span></div>" +
         '<div class="progress flash-progress"><i style="width:' + pct + '%"></i></div>' +
@@ -1239,7 +1109,12 @@ window.APP = (function () {
     function flip() {
       flashView.flipped = !flashView.flipped;
       const el = $("#flash-card");
-      if (el) el.classList.toggle("flipped", flashView.flipped);
+      if (el) {
+        el.classList.toggle("flipped", flashView.flipped);
+        el.setAttribute("aria-label", flashView.flipped ? "Revenir à la question" : "Afficher la réponse");
+      }
+      const fb = $("#flip-card");
+      if (fb) fb.textContent = flashView.flipped ? "Voir la question" : "Voir la réponse";
       if (window.SFX) window.SFX.play("pop");
     }
     function go(delta) {
@@ -1264,7 +1139,6 @@ window.APP = (function () {
         save();
         addXP(5, "Carte maîtrisée");
         if (window.SFX) window.SFX.play("success");
-        confetti(14);
       }
       const after = state.flash.known.length;
       if (after > before && (after === 10 || after === 30 || after === 60 || after === 90) && window.VOICE) {
@@ -1311,7 +1185,7 @@ window.APP = (function () {
     const el = $("#exam-timer");
     if (!el || !examSession) return;
     const left = examRemaining();
-    el.textContent = "⏱ " + fmtTime(left);
+    el.textContent = fmtTime(left);
     el.classList.toggle("danger", left < 5 * 60 * 1000);
     if (left > 0 && left <= 5 * 60 * 1000 && !examSession.warned5) {
       examSession.warned5 = true;
@@ -1343,9 +1217,9 @@ window.APP = (function () {
           "<p>Conditions réelles : 20 questions, 30 minutes, note sur 20 et correction détaillée en arabe.</p></div>" +
           '<span class="chip chip-soft">Note /20</span></div>' +
         '<div class="exam-rules">' +
-          '<div class="rule"><b>🎲 20 questions</b> Tirées au hasard sur les 3 chapitres, sans doublon.</div>' +
-          '<div class="rule"><b>⏱ 30 minutes</b> Chronomètre réel, remise automatique à la fin du temps.</div>' +
-          '<div class="rule"><b>📝 Note /20</b> Pas de correction immédiate — tout est corrigé à la remise.</div>' +
+          '<div class="rule"><b>20 questions</b> Tirées au hasard sur les 3 chapitres, sans doublon.</div>' +
+          '<div class="rule"><b>30 minutes</b> Chronomètre réel, remise automatique à la fin du temps.</div>' +
+          '<div class="rule"><b>Note /20</b> Pas de correction immédiate — tout est corrigé à la remise.</div>' +
         "</div>" +
         '<div class="card" style="display:flex;gap:22px;align-items:center;flex-wrap:wrap;padding:26px">' +
           '<div class="ring-wrap">' + ringSVG(pct, 64, 6, "examBest") + "<b>" + best + "</b></div>" +
@@ -1355,7 +1229,7 @@ window.APP = (function () {
           "</div>" +
           '<button class="btn btn-primary btn-lg" id="start-exam" type="button">Commencer l\'examen →</button>' +
         "</div>" +
-        '<div class="tip-line" style="margin-top:18px"><span>⚖️</span><span>Barème : 1 point par bonne réponse. Une question sans réponse ne rapporte rien et ne retire rien.</span></div>' +
+        '<div class="tip-line" style="margin-top:18px"><span class="eyebrow">Barème</span><span>1 point par bonne réponse. Une question sans réponse ne rapporte rien et ne retire rien.</span></div>' +
       "</div>";
     $("#start-exam").addEventListener("click", startExam);
   }
@@ -1387,7 +1261,7 @@ window.APP = (function () {
       '<div class="exam-wrap">' +
         '<div class="quiz-top">' +
           '<span class="q-count">Question ' + (s.idx + 1) + " / " + s.items.length + "</span>" +
-          '<span class="exam-timer' + (left < 5 * 60 * 1000 ? " danger" : "") + '" id="exam-timer">⏱ ' + fmtTime(left) + "</span>" +
+          '<span class="exam-timer' + (left < 5 * 60 * 1000 ? " danger" : "") + '" id="exam-timer">' + fmtTime(left) + "</span>" +
           '<span class="badge badge-amber">Examen en cours</span>' +
         "</div>" +
         '<div class="exam-grid">' +
@@ -1407,7 +1281,7 @@ window.APP = (function () {
             '<div class="qnav">' + s.items.map(function (_, i) {
               return '<button type="button" data-jump="' + i + '" class="' + (s.answers[i] != null ? "answered " : "") + (i === s.idx ? "current" : "") + '">' + (i + 1) + "</button>";
             }).join("") + "</div>" +
-            '<div class="exam-legend"><b style="color:var(--violet-2)">■</b> Répondue · <b style="color:var(--cyan)">□</b> Courante<br>Sans réponse : 0 point.</div>' +
+            '<div class="exam-legend"><b style="color:var(--accent)">■</b> Répondue · <b style="color:var(--line)">□</b> Courante<br>Sans réponse : 0 point.</div>' +
             '<button class="btn btn-primary" id="finish-exam" type="button" style="width:100%;margin-top:12px">Remettre la copie</button>' +
             '<button class="btn btn-ghost btn-sm" id="abandon-exam" type="button" style="width:100%;margin-top:6px">Abandonner</button>' +
           "</aside>" +
@@ -1489,26 +1363,26 @@ window.APP = (function () {
       '<div class="quiz-result"><div class="card result-card">' +
         '<div class="result-ring">' + ringSVG(pct, 150, 11, "examGrad") +
           "<b>" + correct + "/20</b><small>" + pct + "%</small></div>" +
-        '<div class="result-note">' + (correct >= 14 ? "🎉 Objectif atteint !" : correct >= 10 ? "Presque !" : "Il faut retravailler.") + "</div>" +
+        '<div class="result-note">' + (correct >= 14 ? "Objectif atteint." : correct >= 10 ? "Presque." : "Il faut retravailler.") + "</div>" +
         '<p class="result-sub">' + note + (unanswered ? " · " + unanswered + " sans réponse" : "") + "</p>" +
         '<div class="review-list">' + s.items.map(function (q, i) {
           const pick = s.answers[i];
           const good = pick === q.a;
-          return '<div class="review-item" style="border-color:' + (good ? "rgba(47,125,90,.35)" : "rgba(184,67,63,.35)") + '">' +
+          return '<div class="review-item" style="border-color:' + (good ? "rgba(29,127,78,.3)" : "rgba(196,54,47,.28)") + '">' +
             '<div class="ri-q">' + (good ? "✓" : "✗") + " " + (i + 1) + ". " + esc(q.text) + "</div>" +
-            '<div class="ri-a" style="color:' + (good ? "#1f6b4b" : "#a33f2b") + '">' +
+            '<div class="ri-a" style="color:' + (good ? "var(--green)" : "var(--red)") + '">' +
               (pick == null ? "Sans réponse" : "Votre réponse : " + esc(q.choices[pick])) +
               (good ? "" : " · Bonne réponse : " + esc(q.choices[q.a])) + "</div>" +
             '<div class="ri-ar">' + esc(q.ar) + "</div></div>";
         }).join("") + "</div>" +
         '<div class="result-actions">' +
-          '<button class="btn btn-primary" id="new-exam" type="button">↻ Nouvel examen</button>' +
+          '<button class="btn btn-primary" id="new-exam" type="button">Nouvel examen</button>' +
           '<button class="btn" id="exam-quiz" type="button">Quiz ciblé</button>' +
-          '<button class="btn btn-ghost" id="exam-cours" type="button">📖 Revoir le cours</button>' +
+          '<button class="btn btn-ghost" id="exam-cours" type="button">Revoir le cours</button>' +
         "</div>" +
       "</div></div>";
     examSession = null;
-    if (pct >= 70) { confetti(130); if (window.SFX) window.SFX.play("fanfare"); }
+    if (pct >= 70 && window.SFX) window.SFX.play("fanfare");
     $("#new-exam").addEventListener("click", function () { renderExam(); });
     $("#exam-quiz").addEventListener("click", function () { navigate("quiz"); });
     $("#exam-cours").addEventListener("click", function () { navigate("cours"); });
@@ -1517,6 +1391,17 @@ window.APP = (function () {
 
   /* ============================ Outils ============================ */
   const PERMS = ["---", "--x", "-w-", "-wx", "r--", "r-x", "rw-", "rwx"];
+
+  function toolIcon(name) {
+    const paths = {
+      lock: '<rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',
+      power: '<path d="M12 3v9"/><path d="M6.6 6.6a8 8 0 1 0 10.8 0"/>',
+      folder: '<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>',
+      mic: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M9 21h6"/>'
+    };
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" ' +
+      'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + paths[name] + "</svg>";
+  }
 
   function renderTools() {
     const host = $("#outils-root");
@@ -1531,7 +1416,7 @@ window.APP = (function () {
       '<div class="tools-grid">' +
 
         '<section class="card tool-card">' +
-          '<div class="tool-head"><div class="card-ico">🔐</div><div><h3>Calculateur chmod</h3><p>Octal ↔ rwx ↔ symbolique, en direct.</p></div></div>' +
+          '<div class="tool-head"><div class="card-ico">' + toolIcon("lock") + '</div><div><h3>Calculateur chmod</h3><p>Octal ↔ rwx ↔ symbolique, en direct.</p></div></div>' +
           '<div class="chmod-grid">' +
             ["u", "g", "o"].map(function (role, idx) {
               return '<div class="perm-col"><h4>' + esc(roleNames[role]) + "</h4>" +
@@ -1541,20 +1426,20 @@ window.APP = (function () {
                     (idx === 0 || (role === "g" && p !== "x") || (role === "o" && p !== "x") ? "" : "") + "> " +
                     p + " — " + (p === "r" ? "lire" : p === "w" ? "écrire" : "exécuter") + " (" + weight + ")</label>";
                 }).join("") +
-                '<div style="font-size:.64rem;color:var(--muted-2);margin-top:4px;direction:rtl;text-align:right">' + roleDesc[role] + "</div></div>";
+                '<div style="font-size:.64rem;color:var(--text-3);margin-top:4px;direction:rtl;text-align:right">' + roleDesc[role] + "</div></div>";
             }).join("") +
           "</div>" +
           '<div class="chmod-result">' +
             '<div class="octal-box"><span>Octal</span><input id="octal-input" inputmode="numeric" maxlength="3" value="755" aria-label="Valeur octale"></div>' +
             '<div class="symbolic-box" id="symbolic-out">rwxr-xr-x</div>' +
-            '<label style="display:inline-flex;align-items:center;gap:7px;font-size:.74rem;color:var(--muted);margin-left:auto"><input type="checkbox" id="chmod-dir" style="accent-color:#0f5c52"> Dossier</label>' +
+            '<label style="display:inline-flex;align-items:center;gap:7px;font-size:.74rem;color:var(--text-2);margin-left:auto"><input type="checkbox" id="chmod-dir" style="accent-color:var(--accent)"> Dossier</label>' +
           "</div>" +
           '<div class="ls-preview" id="ls-preview"></div>' +
           '<div class="chmod-note">r = 4 · w = 2 · x = 1. Pour un dossier, x = droit de le traverser (entrer).<br><span class="ar" style="display:block;margin-top:6px">r قراءة، w كتابة، x تنفيذ — وللمجلد x يعني حق الدخول/العبور.</span></div>' +
         "</section>" +
 
         '<section class="card tool-card">' +
-          '<div class="tool-head"><div class="card-ico">🚀</div><div><h3>Séquence de démarrage</h3><p>Du bouton power au prompt du shell.</p></div></div>' +
+          '<div class="tool-head"><div class="card-ico">' + toolIcon("power") + '</div><div><h3>Séquence de démarrage</h3><p>Du bouton power au prompt du shell.</p></div></div>' +
           '<div class="boot-steps" id="boot-steps"></div>' +
           '<div class="boot-panel" id="boot-panel"></div>' +
           '<div class="exam-actions"><button class="btn btn-primary btn-sm" id="boot-play" type="button">▶ Lancer la séquence</button>' +
@@ -1562,7 +1447,7 @@ window.APP = (function () {
         "</section>" +
 
         '<section class="card tool-card wide">' +
-          '<div class="tool-head"><div class="card-ico">🌳</div><div><h3>Arborescence Linux</h3><p>Cliquez sur un dossier pour découvrir son rôle.</p></div></div>' +
+          '<div class="tool-head"><div class="card-ico">' + toolIcon("folder") + '</div><div><h3>Arborescence Linux</h3><p>Cliquez sur un dossier pour découvrir son rôle.</p></div></div>' +
           '<div class="tree-layout">' +
             '<div class="tree" id="linux-tree"></div>' +
             '<div class="tree-detail" id="tree-detail"></div>' +
@@ -1570,7 +1455,7 @@ window.APP = (function () {
         "</section>" +
 
         '<section class="card tool-card wide voice-card" id="voice-card">' +
-          '<div class="tool-head"><div class="card-ico">🎙️</div><div><h3>المرافق الصوتي — Coach vocal</h3><p>تحفيز وتوجيه بالعربية، اختياري ويعمل محليًا.</p></div>' +
+          '<div class="tool-head"><div class="card-ico">' + toolIcon("mic") + '</div><div><h3>المرافق الصوتي — Coach vocal</h3><p>تحفيز وتوجيه بالعربية، اختياري ويعمل محليًا.</p></div>' +
             '<span class="voice-badge off" id="voice-badge">متوقف</span></div>' +
           '<div class="voice-grid">' +
             '<div class="voice-col">' +
@@ -1590,12 +1475,12 @@ window.APP = (function () {
             "</div>" +
           "</div>" +
           '<div class="voice-actions">' +
-            '<button class="btn btn-primary btn-sm" id="voice-test" type="button">🔊 اختبار الصوت</button>' +
-            '<button class="btn btn-sm" id="voice-motivate" type="button">✨ حفّزني</button>' +
-            '<button class="btn btn-sm btn-ghost" id="voice-stop" type="button">⏹ إيقاف</button>' +
+            '<button class="btn btn-primary btn-sm" id="voice-test" type="button">اختبار الصوت</button>' +
+            '<button class="btn btn-sm" id="voice-motivate" type="button">حفّزني</button>' +
+            '<button class="btn btn-sm btn-ghost" id="voice-stop" type="button">إيقاف</button>' +
           "</div>" +
           '<div class="voice-status" id="voice-status" role="status" aria-live="polite">جارٍ فحص الأصوات المتاحة…</div>' +
-          '<p class="voice-note" id="voice-note">🔒 لا يرسل Badr AI أي صوت أو نص إلى خوادم خارجية. قد يستخدم المتصفح أصواتًا محلية أو سحابية حسب نظامك؛ اختر صوتًا «محليًا» للعمل دون اتصال. إن كنت تستخدم قارئ الشاشة، اترك المرافق متوقفًا لتجنب تعارض الصوت.</p>' +
+          '<p class="voice-note" id="voice-note">الخصوصية: لا يرسل Badr AI أي صوت أو نص إلى خوادم خارجية. قد يستخدم المتصفح أصواتًا محلية أو سحابية حسب نظامك؛ اختر صوتًا «محليًا» للعمل دون اتصال. إن كنت تستخدم قارئ الشاشة، اترك المرافق متوقفًا لتجنب تعارض الصوت.</p>' +
         "</section>" +
 
       "</div>";
@@ -1667,10 +1552,10 @@ window.APP = (function () {
 
   /* ---------- démarrage ---------- */
   const BOOT = [
-    { key: "bios", ico: "🔌", title: "BIOS", sub: "ROM", fr: "Au démarrage, le BIOS (stocké dans la ROM) teste le matériel, initialise les périphériques puis cherche un périphérique de démarrage.", ar: "عند التشغيل يُنفَّذ BIOS من ROM: يفحص العتاد، يهيئ الأجهزة ويبحث عن قرص الإقلاع." },
-    { key: "grub", ico: "🧭", title: "GRUB", sub: "Boot loader", fr: "GRUB est le chargeur d'amorçage : il affiche le menu (Windows / Linux), charge le noyau choisi et lui transmet les paramètres.", ar: "GRUB هو محمّل الإقلاع: يعرض قائمة الأنظمة، يحمّل النواة المختارة ويمرر لها الإعدادات." },
-    { key: "noyau", ico: "⚙️", title: "Noyau", sub: "kernel", fr: "Le noyau est chargé en mémoire, initialise les pilotes et lance le premier processus (init/systemd) qui démarrera les services.", ar: "تُحمَّل النواة في الذاكرة، تهيئ التعريفات وتطلق أول عملية (init/systemd) التي تشغل الخدمات." },
-    { key: "shell", ico: "⌨️", title: "Shell", sub: "bash", fr: "Le shell démarre, lit .bashrc/.profile, affiche l'invite et attend vos commandes. Le système est prêt.", ar: "يبدأ الشل، يقرأ .bashrc/.profile، يعرض الدعوة وينتظر أوامرك. النظام جاهز." }
+    { key: "bios", title: "BIOS", sub: "ROM", fr: "Au démarrage, le BIOS (stocké dans la ROM) teste le matériel, initialise les périphériques puis cherche un périphérique de démarrage.", ar: "عند التشغيل يُنفَّذ BIOS من ROM: يفحص العتاد، يهيئ الأجهزة ويبحث عن قرص الإقلاع." },
+    { key: "grub", title: "GRUB", sub: "Boot loader", fr: "GRUB est le chargeur d'amorçage : il affiche le menu (Windows / Linux), charge le noyau choisi et lui transmet les paramètres.", ar: "GRUB هو محمّل الإقلاع: يعرض قائمة الأنظمة، يحمّل النواة المختارة ويمرر لها الإعدادات." },
+    { key: "noyau", title: "Noyau", sub: "kernel", fr: "Le noyau est chargé en mémoire, initialise les pilotes et lance le premier processus (init/systemd) qui démarrera les services.", ar: "تُحمَّل النواة في الذاكرة، تهيئ التعريفات وتطلق أول عملية (init/systemd) التي تشغل الخدمات." },
+    { key: "shell", title: "Shell", sub: "bash", fr: "Le shell démarre, lit .bashrc/.profile, affiche l'invite et attend vos commandes. Le système est prêt.", ar: "يبدأ الشل، يقرأ .bashrc/.profile، يعرض الدعوة وينتظر أوامرك. النظام جاهز." }
   ];
   let bootTimers = [];
   function clearBootTimers() {
@@ -1683,7 +1568,7 @@ window.APP = (function () {
     if (!steps || !panel) return;
     steps.innerHTML = BOOT.map(function (b, i) {
       return '<button class="boot-step" type="button" data-step="' + i + '">' +
-        '<div class="bs-ico">' + b.ico + "</div><b>" + b.title + "</b><span>" + b.sub + "</span></button>";
+        '<div class="bs-ico">' + String(i + 1).padStart(2, "0") + "</div><b>" + b.title + "</b><span>" + b.sub + "</span></button>";
     }).join("");
     function show(i) {
       $$(".boot-step", steps).forEach(function (el, k) {
@@ -1691,7 +1576,7 @@ window.APP = (function () {
         el.classList.toggle("done", k < i);
       });
       const b = BOOT[i];
-      panel.innerHTML = "<h4>" + b.ico + " " + b.title + " <span style='color:var(--muted-2);font-size:.7rem'>(" + b.sub + ")</span></h4>" +
+      panel.innerHTML = "<h4>" + b.title + " <span style='color:var(--text-3);font-size:.7rem'>(" + b.sub + ")</span></h4>" +
         '<div class="fr">' + esc(b.fr) + '</div><div class="ar">' + esc(b.ar) + "</div>";
     }
     $$(".boot-step", steps).forEach(function (el) {
@@ -1752,7 +1637,7 @@ window.APP = (function () {
       const depth = n.path === "/" ? 0 : n.path.split("/").length - 1;
       const label = n.path === "/" ? "/" : n.path.split("/").pop();
       return '<div class="tree-node" data-path="' + n.path + '" style="padding-left:' + (depth * 16 + 6) + 'px">' +
-        '<span class="tn-ico">' + (n.path === "/" ? "🗂" : "📁") + "</span>" +
+        '<span class="tn-ico">' + (n.path === "/" ? "" : "›") + "</span>" +
         '<span class="tn-sub">' + (depth ? "└ " : "") + esc(label) + "</span></div>";
     }).join("");
     $$(".tree-node", tree).forEach(function (el) {
@@ -1771,25 +1656,32 @@ window.APP = (function () {
     renderXP();
     initSound();
     initVoice();
-    initParticles();
-    resizeConfetti();
-    initEffects();
 
     $$(".nav-btn").forEach(function (btn) {
       btn.addEventListener("click", function () { navigate(btn.getAttribute("data-view")); });
     });
-    const burger = $("#burger");
-    const sidebar = $("#sidebar");
-    const backdrop = $("#sidebar-backdrop");
-    if (burger) burger.addEventListener("click", function () {
-      if (sidebar) sidebar.classList.add("open");
-      if (backdrop) backdrop.classList.add("show");
-    });
-    if (backdrop) backdrop.addEventListener("click", closeSidebar);
+
+    const menuBtn = $("#menu-toggle");
+    const menu = $("#mobile-menu");
+    if (menuBtn && menu) {
+      menuBtn.addEventListener("click", function () {
+        const open = menu.hidden;
+        menu.hidden = !open;
+        menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        menuBtn.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+      });
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".site-header")) closeMenu();
+      });
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 1060) closeMenu();
+      });
+    }
+
     const reset = $("#reset-progress");
     if (reset) reset.addEventListener("click", function () {
       modal("Réinitialiser la progression ?",
-        "Sections lues, XP, scores de quiz, note d'examen, missions et cartes maîtrisées seront effacés. Cette action est définitive.",
+        "Leçons lues, XP, scores de quiz, note d'examen, missions et cartes maîtrisées seront effacés. Cette action est définitive.",
         [
           { label: "Annuler", cls: "btn-ghost" },
           { label: "Tout effacer", cls: "btn-danger", onClick: function () {
@@ -1801,7 +1693,6 @@ window.APP = (function () {
           } }
         ]);
     });
-    window.addEventListener("resize", resizeConfetti);
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && document.body.classList.contains("locked")) {
         const root = $("#modal-root");
@@ -1815,7 +1706,7 @@ window.APP = (function () {
         else if (e.key === "ArrowLeft") { const b = $("#prev-card"); if (b) { e.preventDefault(); b.click(); } }
         else if (e.key === " ") { const b = $("#flip-card"); if (b) { e.preventDefault(); b.click(); } }
       }
-      if (e.key === "Escape") closeSidebar();
+      if (e.key === "Escape") closeMenu();
     });
 
     window.addEventListener("hashchange", function () {
@@ -1840,7 +1731,7 @@ window.APP = (function () {
     addXP: addXP,
     missionDone: missionDone,
     toast: toast,
-    confetti: confetti,
+    confetti: function () { /* les effets décoratifs ont été retirés */ },
     renderHome: renderHome,
     save: save,
     levelInfo: levelInfo,

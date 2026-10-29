@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>grep, find &amp; alias (exercices) — SE1 | Badr AI</title>
-<meta name="description" content="Cours SE1 : grep, find &amp; alias (exercices) (pages 166–179). grep وfind والاسم المستعار (تمارين) — explications en arabe, révision en français, QCM et examen…">
+<meta name="description" content="Cours SE1 : grep, find &amp; alias (exercices). grep وfind والاسم المستعار (تمارين) — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, grep, find &amp; alias (exercices), Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Alias, Opérateur logique, Motif">
 <meta name="author" content="Badr AI">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-<meta name="theme-color" content="#f6edda">
+<meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s17.html">
 <meta property="og:type" content="article">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="ar_MA">
 <meta property="og:title" content="grep, find &amp; alias (exercices) — SE1 | Badr AI">
-<meta property="og:description" content="Cours SE1 : grep, find &amp; alias (exercices) (pages 166–179). grep وfind والاسم المستعار (تمارين) — explications en arabe, révision en français, QCM et examen…">
+<meta property="og:description" content="Cours SE1 : grep, find &amp; alias (exercices). grep وfind والاسم المستعار (تمارين) — explications en arabe, révision en français, QCM et examen blanc.">
 <meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s17.html">
 <meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -24,24 +24,24 @@
 <meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="grep, find &amp; alias (exercices) — SE1 | Badr AI">
-<meta name="twitter:description" content="Cours SE1 : grep, find &amp; alias (exercices) (pages 166–179). grep وfind والاسم المستعار (تمارين) — explications en arabe, révision en français, QCM et examen…">
+<meta name="twitter:description" content="Cours SE1 : grep, find &amp; alias (exercices). grep وfind والاسم المستعار (تمارين) — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%230f5c52'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="../css/seo.css?v=20261103">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%231d1d1f'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css?v=20261111">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s17.html#resource","name":"grep, find & alias (exercices) — SE1 | Badr AI","description":"Cours SE1 : grep, find & alias (exercices) (pages 166–179). grep وfind والاسم المستعار (تمارين) — explications en arabe, révision en français, QCM et examen…","url":"https://cybader.github.io/badr-ai-se1/cours/s17.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, grep, find & alias (exercices), Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Alias, Opérateur logique, Motif","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s17-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-10.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-11.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-12.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-13.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-14.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-15.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s17-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"grep, find & alias (exercices)","item":"https://cybader.github.io/badr-ai-se1/cours/s17.html"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s17.html#resource","name":"grep, find & alias (exercices) — SE1 | Badr AI","description":"Cours SE1 : grep, find & alias (exercices). grep وfind والاسم المستعار (تمارين) — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s17.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, grep, find & alias (exercices), Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Alias, Opérateur logique, Motif","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s17-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-10.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-11.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-12.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-13.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-14.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s17-15.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s17-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Programme","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"grep, find & alias (exercices)","item":"https://cybader.github.io/badr-ai-se1/cours/s17.html"}]}]}
 </script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="site-head">
 <div class="head-in">
-<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<a class="brand" href="../index.html">
 <span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
 </a>
 <nav class="head-nav" aria-label="Navigation">
-<a href="index.html">Plan du cours</a>
+<a href="index.html">Programme</a>
 <a href="../qcm.html">QCM corrigés</a>
 <a href="../flashcards.html">Flashcards</a>
 <a href="../index.html#terminal">Terminal</a>
@@ -51,15 +51,15 @@
 </header>
 <div class="wrap">
 <nav class="crumbs" aria-label="Fil d'Ariane">
-<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">grep, find &amp; alias (exercices)</span>
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Programme</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">grep, find &amp; alias (exercices)</span>
 </nav>
 <main id="contenu">
 <article>
 <header class="hero">
-<span class="badge">Chapitre 2 · Section 17/48</span>
+<span class="badge">Chapitre 2 · Leçon 17 sur 48</span>
 <h1>grep, find &amp; alias (exercices)</h1>
 <p class="ar-title" lang="ar" dir="rtl">grep وfind والاسم المستعار (تمارين)</p>
-<div class="meta-row"><span class="chip">📄 Pages 166–179</span><span class="chip">14 pages</span><span class="chip">🖼️ 15 illustrations</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+<div class="meta-row"><span class="chip">15 illustrations</span><span class="chip">Cours en français</span><span class="chip">شرح بالعربية</span></div>
 </header>
 <section class="ar-panel" aria-labelledby="ar-title">
 <h2 id="ar-title"> الشرح بالعربية</h2>
@@ -90,16 +90,11 @@
 <figure class="lg-item"><a class="lg-thumb" href="../assets/lecons/s17-15.webp" target="_blank" rel="noopener" aria-label="Agrandir : أوامر مساعدة مهمة"><img src="../assets/lecons/thumbs/s17-15.webp" alt="أوامر مساعدة مهمة" loading="lazy" decoding="async" width="360" height="467"><span class="lg-zoom" aria-hidden="true">⤢</span></a><figcaption lang="ar" dir="rtl">أوامر مساعدة مهمة</figcaption></figure>
 </div>
 </section>
-<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 166–179 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
-<div class="pages">
-<section class="page" aria-label="Page 166">
-<span class="page-tag">Page 166</span>
+<div class="sec-head"><div><h2>Contenu de la leçon</h2><p>Le cours en français, avec les termes techniques et les exemples.</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="lesson-body">
 <h3>COMMANDES DE BASE UNIX</h3>
 <p>Commande : grep &quot;motif&quot; nom_du_fichier</p>
 <p class="bullet">Permet de rechercher des motifs dans des fichiers ou dans la sortie d&#39;autres commandes. Son nom est dérivé de l&#39;expression &quot;global regular expression print&quot;.</p>
-</section>
-<section class="page" aria-label="Page 167">
-<span class="page-tag">Page 167</span>
 <h3>COMMANDES DE BASE UNIX</h3>
 <p>Commande : grep &quot;motif&quot; nom_du_fichier</p>
 <p class="bullet">Exemple avec le fichier file_adresse :</p>
@@ -107,9 +102,6 @@
 <p class="bullet">Permet d’obtenir toutes les lignes commençant par les caractères compris entre g et n.</p>
 <pre><code>$grep Brest file_adresse</code></pre>
 <p class="bullet">Permet d’obtenir les lignes contenant la chaîne Brest</p>
-</section>
-<section class="page" aria-label="Page 168">
-<span class="page-tag">Page 168</span>
 <p>Commande : grep &quot;motif&quot; nom_du_fichier</p>
 <h3>Remarque : Différence entre grep et find :</h3>
 <p>Find : sert à parcourir l’arborescence pour la recherche d’un nom de fichier.</p>
@@ -117,9 +109,6 @@
 <p>Exercice</p>
 <p>Vérification très sommaire de la validité d’une adresse IP, « 4 décimaux de 3 chiffres qui sont séparés par des . ».</p>
 <h3>COMMANDES DE BASE UNIX</h3>
-</section>
-<section class="page" aria-label="Page 169">
-<span class="page-tag">Page 169</span>
 <h3>SOLUTION :</h3>
 <p>”([0-9]{1,3}\.){3} [0-9]{1,3}”</p>
 <h3>Voici comment cette ligne est décomposée :</h3>
@@ -132,9 +121,6 @@
 <p>[0-9] : un caractère entre 0 et 9</p>
 <p>{1,3} : répété entre une et trois fois</p>
 <h3>COMMANDES DE BASE UNIX</h3>
-</section>
-<section class="page" aria-label="Page 170">
-<span class="page-tag">Page 170</span>
 <h3>Opérateurs logiques :</h3>
 <h3>COMMANDES DE BASE UNIX</h3>
 <p>!</p>
@@ -143,9 +129,6 @@
 <p>Liaison par et logique de deux critères</p>
 <p>-o</p>
 <p>Liaison par ou logique de deux critères</p>
-</section>
-<section class="page" aria-label="Page 171">
-<span class="page-tag">Page 171</span>
 <h3>Exemple avec find :</h3>
 <p class="bullet">Les fichiers n&#39;appartenant pas à l&#39;utilisateur u1:</p>
 <pre><code>find . ! -user u1 -print</code></pre>
@@ -156,15 +139,9 @@
 <p>1Mo.</p>
 <p>find .\ (-name core –a –size +1M \)</p>
 <h3>COMMANDES DE BASE UNIX</h3>
-</section>
-<section class="page" aria-label="Page 172">
-<span class="page-tag">Page 172</span>
 <h3>Remarque :</h3>
 <p>Les opérateurs and et or n’ont par la même priorité, donc, il faut positionner les parenthèses pour interpréter le ou logique avant le et logique. Les parenthèses étant à leur tour des caractères spéciaux, on doit les désactiver.</p>
 <h3>COMMANDES DE BASE UNIX</h3>
-</section>
-<section class="page" aria-label="Page 173">
-<span class="page-tag">Page 173</span>
 <h3>EXERCICES: FIND</h3>
 <p class="bullet">Afficher tous les fichiers qui commencent par ‘a’ majuscule ou minuscule.</p>
 <p class="bullet">Afficher tous les fichiers qui se composent de 3 caractères dont le dernier est ‘M’.</p>
@@ -176,9 +153,6 @@
 <p class="bullet">Afficher tous les fichiers répertoires ou les fichiers dont le nom se termine par le caractère ‘a’.</p>
 <p class="bullet">Afficher tous les fichiers qui n’appartiennent pas a l’utilisateur « userxg1 ».</p>
 <h3>COMMANDES DE BASE UNIX</h3>
-</section>
-<section class="page" aria-label="Page 174">
-<span class="page-tag">Page 174</span>
 <h3>SOLUTION: FIND</h3>
 <p class="bullet">. $find</p>
 <p>/</p>
@@ -210,9 +184,6 @@
 <p>.!</p>
 <p class="bullet">user &quot;userxg1&quot;</p>
 <h3>COMMANDES DE BASE UNIX</h3>
-</section>
-<section class="page" aria-label="Page 175">
-<span class="page-tag">Page 175</span>
 <h3>EXERCICE (GREP / CUT):</h3>
 <p>A partir du fichier etc/passwd</p>
 <p class="bullet">. Affichez uniquement la ligne concernant l’utilisateur root.</p>
@@ -221,9 +192,6 @@
 <p>(3), nom réel(5)</p>
 <p class="bullet">. Quels sont les fichiers de /etc/ contenant des nombres de plus de trois chiffres</p>
 <h3>COMMANDES DE BASE UNIX</h3>
-</section>
-<section class="page" aria-label="Page 176">
-<span class="page-tag">Page 176</span>
 <p class="bullet">.</p>
 <pre><code>grep &quot;^root&quot; /etc/passwd</code></pre>
 <p class="bullet">.</p>
@@ -233,9 +201,6 @@
 <p class="bullet">.</p>
 <pre><code>grep -r &#39;[0-9]\{4,\}&#39; /etc/*</code></pre>
 <h3>COMMANDES DE BASE UNIX</h3>
-</section>
-<section class="page" aria-label="Page 177">
-<span class="page-tag">Page 177</span>
 <h3>EXERCICE</h3>
 <p class="bullet">1). Lister le contenu du répertoire /dev.</p>
 <p class="bullet">2). Lister le contenu du fichier /etc/passwd.</p>
@@ -246,9 +211,6 @@
 <p class="bullet">7). Combien de lignes, de mots et de caractères comportent les fichiers</p>
 <p>&quot;montexte.unix&quot;, &quot;montexte.dos&quot; et &quot;montexte.mac&quot;?</p>
 <h3>COMMANDES DE BASE UNIX</h3>
-</section>
-<section class="page" aria-label="Page 178">
-<span class="page-tag">Page 178</span>
 <h3>CORRECTION :</h3>
 <p class="bullet">.</p>
 <pre><code>ls /dev</code></pre>
@@ -267,9 +229,6 @@
 <pre><code>wc montexte.dos;</code></pre>
 <pre><code>wc montexte.mac</code></pre>
 <h3>COMMANDES DE BASE UNIX</h3>
-</section>
-<section class="page" aria-label="Page 179">
-<span class="page-tag">Page 179</span>
 <p class="bullet">ALIAS : permet de donner un synonyme à une commande ou à un groupement de commandes.</p>
 <p class="bullet">Cela permet de gagner du temps et de simplifier les commandes.</p>
 <p>On peut mettre un certain nombre d&#39;alias dans le fichier .profile</p>
@@ -280,17 +239,16 @@
 <p class="bullet">Pour obtenir la liste des alias définis</p>
 <p>: $ alias</p>
 <h3>COMMANDES DE BASE UNIX : LES ALIAS</h3>
-</section>
 </div>
-<nav class="pager" aria-label="Sections précédente et suivante">
+<nav class="pager" aria-label="Leçons précédente et suivante">
 <a class="btn" href="s16.html">← Expressions régulières</a><a class="btn" href="s18.html">Séparateurs conditionnels &amp; redirections →</a>
 </nav>
 <aside class="cta">
-<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div><h2>Réviser cette leçon en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la leçon comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
 <div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s17">Ouvrir la plateforme</a><a class="btn btn-soft" href="../qcm.html">120 QCM corrigés</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
 </aside>
 <section class="related" aria-labelledby="related-title">
-<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<h2 id="related-title">Autres leçons du chapitre 2 — Les commandes de base Unix</h2>
 <ul>
 <li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
 <li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
@@ -316,8 +274,8 @@
 </main>
 </div>
 <footer class="site-foot">
-<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
-<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Programme</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
 <div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
 </footer>
 </body>

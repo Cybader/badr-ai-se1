@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shell, terminal &amp; format des commandes — SE1 | Badr AI</title>
-<meta name="description" content="Cours SE1 : Shell, terminal &amp; format des commandes (pages 74–91). الشيل والطرفية وصيغة الأوامر — explications en arabe, révision en français, QCM et examen…">
+<meta name="description" content="Cours SE1 : Shell, terminal &amp; format des commandes. الشيل والطرفية وصيغة الأوامر — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Shell, terminal &amp; format des commandes, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Shell, Prompt, Option, Argument, Builtin, Commande externe">
 <meta name="author" content="Badr AI">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-<meta name="theme-color" content="#f6edda">
+<meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s9.html">
 <meta property="og:type" content="article">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="ar_MA">
 <meta property="og:title" content="Shell, terminal &amp; format des commandes — SE1 | Badr AI">
-<meta property="og:description" content="Cours SE1 : Shell, terminal &amp; format des commandes (pages 74–91). الشيل والطرفية وصيغة الأوامر — explications en arabe, révision en français, QCM et examen…">
+<meta property="og:description" content="Cours SE1 : Shell, terminal &amp; format des commandes. الشيل والطرفية وصيغة الأوامر — explications en arabe, révision en français, QCM et examen blanc.">
 <meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s9.html">
 <meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -24,24 +24,24 @@
 <meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Shell, terminal &amp; format des commandes — SE1 | Badr AI">
-<meta name="twitter:description" content="Cours SE1 : Shell, terminal &amp; format des commandes (pages 74–91). الشيل والطرفية وصيغة الأوامر — explications en arabe, révision en français, QCM et examen…">
+<meta name="twitter:description" content="Cours SE1 : Shell, terminal &amp; format des commandes. الشيل والطرفية وصيغة الأوامر — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%230f5c52'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="../css/seo.css?v=20261103">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%231d1d1f'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css?v=20261111">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s9.html#resource","name":"Shell, terminal & format des commandes — SE1 | Badr AI","description":"Cours SE1 : Shell, terminal & format des commandes (pages 74–91). الشيل والطرفية وصيغة الأوامر — explications en arabe, révision en français, QCM et examen…","url":"https://cybader.github.io/badr-ai-se1/cours/s9.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Shell, terminal & format des commandes, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Shell, Prompt, Option, Argument, Builtin, Commande externe","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s9-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-10.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-11.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-12.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-13.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-14.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-15.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s9-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Shell, terminal & format des commandes","item":"https://cybader.github.io/badr-ai-se1/cours/s9.html"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s9.html#resource","name":"Shell, terminal & format des commandes — SE1 | Badr AI","description":"Cours SE1 : Shell, terminal & format des commandes. الشيل والطرفية وصيغة الأوامر — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s9.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Shell, terminal & format des commandes, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Shell, Prompt, Option, Argument, Builtin, Commande externe","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s9-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-10.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-11.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-12.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-13.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-14.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-15.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s9-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Programme","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Shell, terminal & format des commandes","item":"https://cybader.github.io/badr-ai-se1/cours/s9.html"}]}]}
 </script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="site-head">
 <div class="head-in">
-<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<a class="brand" href="../index.html">
 <span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
 </a>
 <nav class="head-nav" aria-label="Navigation">
-<a href="index.html">Plan du cours</a>
+<a href="index.html">Programme</a>
 <a href="../qcm.html">QCM corrigés</a>
 <a href="../flashcards.html">Flashcards</a>
 <a href="../index.html#terminal">Terminal</a>
@@ -51,15 +51,15 @@
 </header>
 <div class="wrap">
 <nav class="crumbs" aria-label="Fil d'Ariane">
-<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Shell, terminal &amp; format des commandes</span>
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Programme</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Shell, terminal &amp; format des commandes</span>
 </nav>
 <main id="contenu">
 <article>
 <header class="hero">
-<span class="badge">Chapitre 2 · Section 9/48</span>
+<span class="badge">Chapitre 2 · Leçon 9 sur 48</span>
 <h1>Shell, terminal &amp; format des commandes</h1>
 <p class="ar-title" lang="ar" dir="rtl">الشيل والطرفية وصيغة الأوامر</p>
-<div class="meta-row"><span class="chip">📄 Pages 74–91</span><span class="chip">18 pages</span><span class="chip">🖼️ 15 illustrations</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+<div class="meta-row"><span class="chip">15 illustrations</span><span class="chip">Cours en français</span><span class="chip">شرح بالعربية</span></div>
 </header>
 <section class="ar-panel" aria-labelledby="ar-title">
 <h2 id="ar-title"> الشرح بالعربية</h2>
@@ -93,10 +93,8 @@
 <figure class="lg-item"><a class="lg-thumb" href="../assets/lecons/s9-15.webp" target="_blank" rel="noopener" aria-label="Agrandir : ماذا تعني الرموز $ و # في موجّه الأوامر؟"><img src="../assets/lecons/thumbs/s9-15.webp" alt="ماذا تعني الرموز $ و # في موجّه الأوامر؟" loading="lazy" decoding="async" width="360" height="467"><span class="lg-zoom" aria-hidden="true">⤢</span></a><figcaption lang="ar" dir="rtl">ماذا تعني الرموز $ و # في موجّه الأوامر؟</figcaption></figure>
 </div>
 </section>
-<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 74–91 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
-<div class="pages">
-<section class="page" aria-label="Page 74">
-<span class="page-tag">Page 74</span>
+<div class="sec-head"><div><h2>Contenu de la leçon</h2><p>Le cours en français, avec les termes techniques et les exemples.</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="lesson-body">
 <p class="bullet">Un Shell est un interpréteur de commande en mode texte peut s&#39;utiliser en mode interactif ou pour exécuter des programmes écrits dans le langage de programmation du Shell (appelés scripts</p>
 <p>Shell).</p>
 <p class="bullet">En mode interactif, le Shell affiche une invite en début de ligne (prompt)</p>
@@ -105,9 +103,6 @@
 <p>OS</p>
 <p>Invite affiché par l&#39;interpréteur de commande</p>
 <h3>COMMANDES DE BASE DU SHELL</h3>
-</section>
-<section class="page" aria-label="Page 75">
-<span class="page-tag">Page 75</span>
 <p class="bullet">Le format des commandes suit une convention bien établie :</p>
 <p>Commande [-options] [paramètres]</p>
 <p class="bullet">Les options et les paramètres sont parfois facultatifs.</p>
@@ -118,9 +113,6 @@
 <p class="bullet">/home/profs/prof1/Hello.c : Il s&#39;agit de la source ou le fichier que vous souhaitez copier</p>
 <p class="bullet">/home/etudiants/etudiant1 : Il s&#39;agit de la destination ou l&#39;emplacement de la copie</p>
 <h3>FORMAT DES COMMANDES</h3>
-</section>
-<section class="page" aria-label="Page 76">
-<span class="page-tag">Page 76</span>
 <p class="bullet">sont interprétés spécialement par le Shell avant de lancer la commande entrée par l&#39;utilisateur.</p>
 <p class="bullet">permettent de spécifier des ensembles de fichiers, sans avoir à rentrer tous leurs noms.</p>
 <h3>Voici les plus utilisés :</h3>
@@ -129,16 +121,10 @@
 <p class="bullet">[ ] : remplacé par l&#39;un des caractères mentionnés entre les crochets. On peut spécifier un intervalle avec</p>
 <p class="bullet">- : [a-z] spécifie donc l&#39;ensemble des lettres minuscules</p>
 <h3>MÉTA-CARACTÈRES DU SHELL</h3>
-</section>
-<section class="page" aria-label="Page 77">
-<span class="page-tag">Page 77</span>
 <p class="bullet">La couche physique : Périphériques et BIOS</p>
 <p class="bullet">La couche système : Gérée par le noyau</p>
 <p class="bullet">La couche interface : le Shell et/ou le système X-Window</p>
 <h3>ARCHITECTURE DE LINUX</h3>
-</section>
-<section class="page" aria-label="Page 78">
-<span class="page-tag">Page 78</span>
 <p class="bullet">Pour utiliser un système Linux sur une machine, il faut avoir un compte</p>
 <h3>sur cette machine et rentrer au clavier:</h3>
 <p class="bullet">Son nom d’utilisateur : login</p>
@@ -149,9 +135,6 @@
 <p class="bullet">L’utilisateur est alors placé dans son répertoire d’accueil : c-à-d</p>
 <p>/home/user1</p>
 <h3>SE LOGGER SUR LINUX</h3>
-</section>
-<section class="page" aria-label="Page 79">
-<span class="page-tag">Page 79</span>
 <p class="bullet">Si vous souhaitez changer votre mot de passe, la commande pour réaliser cette opération est : passwd ou yppasswd</p>
 <h3>CHANGER LE MOT DE PASSE</h3>
 <pre><code>% yppasswd</code></pre>
@@ -160,19 +143,10 @@
 <p>New password: --entrez votre nouveau mot de passe</p>
 <p>Retype new password: --rentrez votre mot de passe</p>
 <p>NIS entry has changed on filemon</p>
-</section>
-<section class="page" aria-label="Page 80">
-<span class="page-tag">Page 80</span>
 <h3>LES SHELLS</h3>
-</section>
-<section class="page" aria-label="Page 81">
-<span class="page-tag">Page 81</span>
 <p class="bullet">Un shell est la liaison la plus élémentaire entre l&#39;utilisateur et le système d&#39;exploitation, c&#39;est-à-dire le programme de gestion de la ligne de commande.</p>
 <p class="bullet">Les commandes saisies sont interprétées par le shell et transmises au système d&#39;exploitation.</p>
 <h3>QU’APPELLE T’ON UN SHELL</h3>
-</section>
-<section class="page" aria-label="Page 82">
-<span class="page-tag">Page 82</span>
 <h3>QUEL SHELL ?</h3>
 <p class="bullet">Le shell affiche un «prompt» et attend les commandes de l’utilisateur</p>
 <p class="bullet">Il en existe plusieurs avec des fonctionnalités et des interfaces différentes les uns des autres</p>
@@ -182,9 +156,6 @@
 <p class="bullet">bash : GNU (Bourne Again Shell)</p>
 <p class="bullet">Pour savoir quel shell est utilisé, tapez :</p>
 <p class="bullet">Le liste des shells autorisés : /etc/shells</p>
-</section>
-<section class="page" aria-label="Page 83">
-<span class="page-tag">Page 83</span>
 <p class="bullet">Ouverture du shell (sous X Window) :</p>
 <p class="bullet">Cliquer sur l&#39;icône représentant le shell, ou sélectionner « ouvrir un terminal » dans le menu droit de la souris.</p>
 <p class="bullet">A ce point le shell peut recevoir des commandes:</p>
@@ -194,35 +165,23 @@
 <p>Commande exit</p>
 <p>Ctrl-D</p>
 <h3>SHELL</h3>
-</section>
-<section class="page" aria-label="Page 84">
-<span class="page-tag">Page 84</span>
 <h3>Il contient généralement des informations utiles comme :</h3>
 <p class="bullet">Nom d&#39;utilisateur : Qui montre quel utilisateur est connecté.</p>
 <p class="bullet">Nom de l&#39;hôte : Le nom de l&#39;ordinateur ou du serveur.</p>
 <p class="bullet">Répertoire courant : Le dossier dans lequel tu te trouves actuellement.</p>
 <p class="bullet">Caractère spécial : Comme $ pour les utilisateurs normaux</p>
 <h3>PROMPT</h3>
-</section>
-<section class="page" aria-label="Page 85">
-<span class="page-tag">Page 85</span>
 <p class="bullet">Terminal : C&#39;est l&#39;interface qui te permet d&#39;interagir avec le système d&#39;exploitation via des lignes de commande. C&#39;est l&#39;application où tu tapes tes commandes.</p>
 <p class="bullet">Prompt : C&#39;est l&#39;affichage dans le terminal qui indique que le système est prêt à recevoir une commande. Il apparaît généralement à la fin d&#39;une ligne, avant que tu commences à taper ta commande.</p>
 <p class="bullet">Il est possible sous Linux d’activer simultanément plusieurs consoles de connexion.</p>
 <p class="bullet">Le basculement entre les consoles est obtenu par la combinaison de touches</p>
 <p>&lt;ctrl–alt–Fx&gt;; où Fx représente les touches de function F1 à F8.</p>
 <h3>TERMINAL VS PROMPT</h3>
-</section>
-<section class="page" aria-label="Page 86">
-<span class="page-tag">Page 86</span>
 <p class="bullet">Pour Linux, l’identité d’un utilisateur est celle sous laquelle il se logge</p>
 <p class="bullet">La commande whoami vous donne votre identité</p>
 <p class="bullet">L’utilisateur appartient également à un ou plusieurs groupes</p>
 <p class="bullet">La commande id vous donne votre identité et votre groupe</p>
 <h3>QUELLE EST MON IDENTITÉ</h3>
-</section>
-<section class="page" aria-label="Page 87">
-<span class="page-tag">Page 87</span>
 <p class="bullet">Une commande est l&#39;exécution d&#39;un programme dans l&#39;interpréteur.</p>
 <p>Elle prend en entrée des options et/ou des paramètres.</p>
 <p class="bullet">Elle peut renvoyer des informations à l&#39;écran ou dans un fichier, modifier un fichier, ou produire un message d&#39;erreur.</p>
@@ -231,9 +190,6 @@
 <pre><code>$ cmd option argument</code></pre>
 <p>Pour obtenir toutes les options d&#39;une commande, il suffit d&#39;appeler l&#39;option --help.</p>
 <h3>COMMANDES LINUX</h3>
-</section>
-<section class="page" aria-label="Page 88">
-<span class="page-tag">Page 88</span>
 <pre><code>$ commande</code></pre>
 <p>options arguments</p>
 <p class="bullet">Les options (souvent très nombreuses) permettent de modifier le comportement de la commande.</p>
@@ -241,18 +197,12 @@
 <p class="bullet">Certaines commandes utilisent des arguments (e.g.</p>
 <p>nom de fichier) Il y a un manuel en ligne: man ls</p>
 <h3>COMMANDES LINUX</h3>
-</section>
-<section class="page" aria-label="Page 89">
-<span class="page-tag">Page 89</span>
 <p class="bullet">Unix est sensible à la casse a != A</p>
 <pre><code>ls != LS ou de Ls</code></pre>
 <p class="bullet">Unix utilise l&#39;espace comme séparateur de commandes</p>
 <p class="bullet">Exemple :</p>
 <p>man date et non mandate</p>
 <h3>COMMANDES LINUX</h3>
-</section>
-<section class="page" aria-label="Page 90">
-<span class="page-tag">Page 90</span>
 <pre><code>$ date; pwd; cal</code></pre>
 <p>lun fév 25 22:29:09 CET 2013</p>
 <p>/usr/share/man/man9 février 2024 di lu ma me je ve sa</p>
@@ -261,9 +211,6 @@
 <p>10 11 12 13 14 15 16</p>
 <h3>COMMANDES LINUX : CHAÎNER LES</h3>
 <h3>COMMANDES</h3>
-</section>
-<section class="page" aria-label="Page 91">
-<span class="page-tag">Page 91</span>
 <p class="bullet">Quelques séquences de raccourcis à connaître :</p>
 <h3>COMMANDES LINUX</h3>
 <p>Raccourci</p>
@@ -278,17 +225,16 @@
 <p>[Ctrl] + D</p>
 <p>Fin de saisie sur un prompt</p>
 <p>Utilisé pour quitter un shell ou arrêter la saisie dans des commandes interactives.</p>
-</section>
 </div>
-<nav class="pager" aria-label="Sections précédente et suivante">
+<nav class="pager" aria-label="Leçons précédente et suivante">
 <a class="btn" href="s8.html">← GNU/Linux, distributions &amp; Ubuntu</a><a class="btn" href="s10.html">Gestion des fichiers &amp; arborescence →</a>
 </nav>
 <aside class="cta">
-<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div><h2>Réviser cette leçon en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la leçon comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
 <div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s9">Ouvrir la plateforme</a><a class="btn btn-soft" href="../qcm.html">120 QCM corrigés</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
 </aside>
 <section class="related" aria-labelledby="related-title">
-<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<h2 id="related-title">Autres leçons du chapitre 2 — Les commandes de base Unix</h2>
 <ul>
 <li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
 <li><a href="s11.html">Inodes, types &amp; données des fichiers <span lang="ar" dir="rtl">— عقد الفهرس وأنواع الملفات وبياناتها</span></a></li>
@@ -314,8 +260,8 @@
 </main>
 </div>
 <footer class="site-foot">
-<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
-<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Programme</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
 <div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
 </footer>
 </body>

@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Composants &amp; structure externe du SE — SE1 | Badr AI</title>
-<meta name="description" content="Cours SE1 : Composants &amp; structure externe du SE (pages 29–36). مكونات نظام التشغيل وبنيته الخارجية — explications en arabe, révision en français, QCM et…">
+<meta name="description" content="Cours SE1 : Composants &amp; structure externe du SE. مكونات نظام التشغيل وبنيته الخارجية — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Composants &amp; structure externe du SE, Introduction aux systèmes d&#39;exploitation, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Noyau (kernel), Ordonnanceur, Gestionnaire de mémoire, Chargeur, Pilote (driver), Swapping">
 <meta name="author" content="Badr AI">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-<meta name="theme-color" content="#f6edda">
+<meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s4.html">
 <meta property="og:type" content="article">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="ar_MA">
 <meta property="og:title" content="Composants &amp; structure externe du SE — SE1 | Badr AI">
-<meta property="og:description" content="Cours SE1 : Composants &amp; structure externe du SE (pages 29–36). مكونات نظام التشغيل وبنيته الخارجية — explications en arabe, révision en français, QCM et…">
+<meta property="og:description" content="Cours SE1 : Composants &amp; structure externe du SE. مكونات نظام التشغيل وبنيته الخارجية — explications en arabe, révision en français, QCM et examen blanc.">
 <meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s4.html">
 <meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -24,24 +24,24 @@
 <meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Composants &amp; structure externe du SE — SE1 | Badr AI">
-<meta name="twitter:description" content="Cours SE1 : Composants &amp; structure externe du SE (pages 29–36). مكونات نظام التشغيل وبنيته الخارجية — explications en arabe, révision en français, QCM et…">
+<meta name="twitter:description" content="Cours SE1 : Composants &amp; structure externe du SE. مكونات نظام التشغيل وبنيته الخارجية — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%230f5c52'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="../css/seo.css?v=20261103">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%231d1d1f'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css?v=20261111">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s4.html#resource","name":"Composants & structure externe du SE — SE1 | Badr AI","description":"Cours SE1 : Composants & structure externe du SE (pages 29–36). مكونات نظام التشغيل وبنيته الخارجية — explications en arabe, révision en français, QCM et…","url":"https://cybader.github.io/badr-ai-se1/cours/s4.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Introduction aux systèmes d'exploitation"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Composants & structure externe du SE, Introduction aux systèmes d'exploitation, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Noyau (kernel), Ordonnanceur, Gestionnaire de mémoire, Chargeur, Pilote (driver), Swapping"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 1 — Introduction aux systèmes d'exploitation","item":"https://cybader.github.io/badr-ai-se1/cours/#ch1"},{"@type":"ListItem","position":4,"name":"Composants & structure externe du SE","item":"https://cybader.github.io/badr-ai-se1/cours/s4.html"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s4.html#resource","name":"Composants & structure externe du SE — SE1 | Badr AI","description":"Cours SE1 : Composants & structure externe du SE. مكونات نظام التشغيل وبنيته الخارجية — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s4.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Introduction aux systèmes d'exploitation"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Composants & structure externe du SE, Introduction aux systèmes d'exploitation, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Noyau (kernel), Ordonnanceur, Gestionnaire de mémoire, Chargeur, Pilote (driver), Swapping"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Programme","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 1 — Introduction aux systèmes d'exploitation","item":"https://cybader.github.io/badr-ai-se1/cours/#ch1"},{"@type":"ListItem","position":4,"name":"Composants & structure externe du SE","item":"https://cybader.github.io/badr-ai-se1/cours/s4.html"}]}]}
 </script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="site-head">
 <div class="head-in">
-<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<a class="brand" href="../index.html">
 <span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
 </a>
 <nav class="head-nav" aria-label="Navigation">
-<a href="index.html">Plan du cours</a>
+<a href="index.html">Programme</a>
 <a href="../qcm.html">QCM corrigés</a>
 <a href="../flashcards.html">Flashcards</a>
 <a href="../index.html#terminal">Terminal</a>
@@ -51,15 +51,15 @@
 </header>
 <div class="wrap">
 <nav class="crumbs" aria-label="Fil d'Ariane">
-<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch1">Chapitre 1</a><span>›</span><span aria-current="page">Composants &amp; structure externe du SE</span>
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Programme</a><span>›</span><a href="index.html#ch1">Chapitre 1</a><span>›</span><span aria-current="page">Composants &amp; structure externe du SE</span>
 </nav>
 <main id="contenu">
 <article>
 <header class="hero">
-<span class="badge">Chapitre 1 · Section 4/48</span>
+<span class="badge">Chapitre 1 · Leçon 4 sur 48</span>
 <h1>Composants &amp; structure externe du SE</h1>
 <p class="ar-title" lang="ar" dir="rtl">مكونات نظام التشغيل وبنيته الخارجية</p>
-<div class="meta-row"><span class="chip">📄 Pages 29–36</span><span class="chip">8 pages</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+<div class="meta-row"><span class="chip">Cours en français</span><span class="chip">شرح بالعربية</span></div>
 </header>
 <section class="ar-panel" aria-labelledby="ar-title">
 <h2 id="ar-title"> الشرح بالعربية</h2>
@@ -73,10 +73,8 @@
 <div class="term"><b>Swapping</b><span lang="ar" dir="rtl">التبديل بين الذاكرة والقرص</span></div>
 </div>
 </section>
-<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 29–36 · texte intégral du support</p></div><span class="chip">Chapitre 1 — Introduction aux systèmes d&#39;exploitation</span></div>
-<div class="pages">
-<section class="page" aria-label="Page 29">
-<span class="page-tag">Page 29</span>
+<div class="sec-head"><div><h2>Contenu de la leçon</h2><p>Le cours en français, avec les termes techniques et les exemples.</p></div><span class="chip">Chapitre 1 — Introduction aux systèmes d&#39;exploitation</span></div>
+<div class="lesson-body">
 <h3>Systèmes Multi-tâches :</h3>
 <h3>Permettent l’execution de plusieurs taches à la fois, telque:</h3>
 <p class="bullet">Executer le programme d’un utilisateur, lire les données d’un disque ou afficher des résultats sur une imprimante.</p>
@@ -85,17 +83,11 @@
 <p>Remarque : Un système multi-utilisateurs est nécessairement multi-tâches, mais l&#39;inverse n&#39;est pas vrai.</p>
 <h3>LES CARACTÉRISTIQUES D’UN SYSTÈME</h3>
 <h3>D’EXPLOITATION</h3>
-</section>
-<section class="page" aria-label="Page 30">
-<span class="page-tag">Page 30</span>
 <p class="bullet">Le noyau (en anglais kernel) : représentant les fonctions fondamentales du système d&#39;exploitation telles que la gestion de la mémoire, des processus, des fichiers, des entrées-sorties principales, et des fonctionnalités de communication.</p>
 <p class="bullet">L&#39;interpréteur de commande (en anglais shell) permettant la communication avec le système d&#39;exploitation par l&#39;intermédiaire d&#39;un langage de commandes.</p>
 <p class="bullet">Le système de fichiers (en anglais «file system», noté FS), permettant d&#39;enregistrer les fichiers dans le disque sous forme d’une arborescence.</p>
 <p class="bullet">Les pilotes : Les pilotes sont fournis par l&#39;auteur du système d&#39;exploitation ou le fabricant du périphérique.</p>
 <h3>LES COMPOSANTS DU OS</h3>
-</section>
-<section class="page" aria-label="Page 31">
-<span class="page-tag">Page 31</span>
 <p class="bullet">Le système d&#39;exploitation comporte un certain nombre de routines</p>
 <p>(ou sous-programmes). Les plus importantes constituent le noyau</p>
 <p>(kernel en anglais).</p>
@@ -103,40 +95,25 @@
 <p class="bullet">Il possède également deux parties auxiliaires : le chargeur du système d&#39;exploitation et l&#39;interpréteur de commandes.</p>
 <h3>STRUCTURE EXTERNE D’UN SE :</h3>
 <h3>LE NOYAU</h3>
-</section>
-<section class="page" aria-label="Page 32">
-<span class="page-tag">Page 32</span>
 <p class="bullet">Sur un système à temps partagé, l&#39;une des parties les plus importantes du système d&#39;exploitation est le gestionnaire de tâches ou ordonnanceur.</p>
 <p class="bullet">Périodiquement, le gestionnaire de tâches décide d&#39;interrompre le processus en cours et de démarrer (ou de reprendre) l&#39;exécution d&#39;un autre processus. Cette décision peut être prise soit parce que le premier processus a épuisé son temps d&#39;allocation, soit parce qu&#39;il est bloqué en attendant une donnée d&#39;un périphérique.</p>
 <h3>STRUCTURE EXTERNE D’UN SE :</h3>
 <h3>LE GESTIONNAIRE DE TÂCHES</h3>
-</section>
-<section class="page" aria-label="Page 33">
-<span class="page-tag">Page 33</span>
 <p class="bullet">Une des tâches fondamentales du système d&#39;exploitation est de masquer les spécificités des disques et des autres périphériques d&#39;entrée-sortie et d&#39;offrir au programmeur un modèle simple et facile à utiliser. Ceci se fait à travers la notion de fichier.</p>
 <h3>STRUCTURE EXTERNE D’UN SE :</h3>
 <h3>LE GESTIONNAIRE DES FICHIERS</h3>
-</section>
-<section class="page" aria-label="Page 34">
-<span class="page-tag">Page 34</span>
 <h3>STRUCTURE EXTERNE D’UN SE :</h3>
 <h3>LE GESTIONNAIRE DES PÉRIPHÉRIQUES</h3>
 <p>Le contrôle des périphériques d&#39;entrée-sortie (E/S) de l&#39;ordinateur est l&#39;une des fonctions primordiales d&#39;un</p>
 <h3>système d&#39;exploitation. Celui-ci doit :</h3>
 <p class="bullet">Envoyer les commandes aux périphériques, intercepter les interruptions et traiter les erreurs.</p>
 <p class="bullet">Fournir une interface simple et facile à utiliser entre les périphériques et le reste du système, qui doit être, dans la mesure du possible, uniforme pour tous les périphériques, c&#39;està-dire indépendante du périphérique utilisé.</p>
-</section>
-<section class="page" aria-label="Page 35">
-<span class="page-tag">Page 35</span>
 <p class="bullet">En général, de nos jours, lorsque l&#39;ordinateur (compatible PC ou Mac) est mis sous tension, il exécute un logiciel appelé BIOS (pour Basic Input/Output System) placé à une adresse bien déterminée et contenu dans la mémoire ROM. Ce logiciel initialise les périphériques, charge un secteur d&#39;un disque, et exécute ce qui s&#39;y trouve.</p>
 <p class="bullet">Le chargeur du système d&#39;exploitation est un programme crucial qui permet le démarrage complet du système d’exploitation après l&#39;initialisation par le BIOS.</p>
 <p class="bullet">Après le BIOS, le chargeur lit les informations du disque de démarrage et charge le noyau du système d’exploitation en mémoire.</p>
 <p class="bullet">Il prépare la machine pour que le noyau du système d’exploitation puisse prendre le contrôle du système.</p>
 <h3>STRUCTURE EXTERNE D’UN SE :</h3>
 <h3>LE CHARGEUR DU SE</h3>
-</section>
-<section class="page" aria-label="Page 36">
-<span class="page-tag">Page 36</span>
 <p>La mémoire est une ressource importante qui doit être gérée avec prudence.</p>
 <h3>Sa gestion est la tâche du gestionnaire de mémoire. Celui-ci doit:</h3>
 <p class="bullet">Connaître les parties libres et les parties occupées de la mémoire,</p>
@@ -144,17 +121,16 @@
 <p class="bullet">Récupérer la mémoire utilisée par un processus lorsque celui-ci se termine et traiter le va-et-vient (swapping en anglais) entre le disque et la mémoire principale lorsque cette dernière ne peut pas contenir tous les processus.</p>
 <h3>STRUCTURE EXTERNE D’UN SE :</h3>
 <h3>LE GESTIONNAIRE DE MÉMOIRE</h3>
-</section>
 </div>
-<nav class="pager" aria-label="Sections précédente et suivante">
+<nav class="pager" aria-label="Leçons précédente et suivante">
 <a class="btn" href="s3.html">← Le système d&#39;exploitation : rôle et…</a><a class="btn" href="s5.html">Les principaux systèmes d&#39;exploitation →</a>
 </nav>
 <aside class="cta">
-<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div><h2>Réviser cette leçon en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la leçon comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
 <div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s4">Ouvrir la plateforme</a><a class="btn btn-soft" href="../qcm.html">120 QCM corrigés</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
 </aside>
 <section class="related" aria-labelledby="related-title">
-<h2 id="related-title">Autres sections du chapitre 1 — Introduction aux systèmes d&#39;exploitation</h2>
+<h2 id="related-title">Autres leçons du chapitre 1 — Introduction aux systèmes d&#39;exploitation</h2>
 <ul>
 <li><a href="s1.html">Présentation du module &amp; objectifs <span lang="ar" dir="rtl">— تقديم المادة والأهداف</span></a></li>
 <li><a href="s2.html">Le système informatique &amp; l&#39;architecture matérielle <span lang="ar" dir="rtl">— النظام المعلوماتي والمعمارية المادية</span></a></li>
@@ -169,8 +145,8 @@
 </main>
 </div>
 <footer class="site-foot">
-<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
-<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Programme</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
 <div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
 </footer>
 </body>

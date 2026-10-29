@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paramètres spéciaux, shift &amp; substitution de commande — SE1 | Badr AI</title>
-<meta name="description" content="Cours SE1 : Paramètres spéciaux, shift &amp; substitution de commande (pages 330–345). المعاملات الخاصة وshift واستبدال الأوامر — explications en arabe,…">
+<meta name="description" content="Cours SE1 : Paramètres spéciaux, shift &amp; substitution de commande. المعاملات الخاصة وshift واستبدال الأوامر — explications en arabe, révision en français,…">
 <meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Paramètres spéciaux, shift &amp; substitution de commande, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Substitution de commande, PID, Code retour">
 <meta name="author" content="Badr AI">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-<meta name="theme-color" content="#f6edda">
+<meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s35.html">
 <meta property="og:type" content="article">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="ar_MA">
 <meta property="og:title" content="Paramètres spéciaux, shift &amp; substitution de commande — SE1 | Badr AI">
-<meta property="og:description" content="Cours SE1 : Paramètres spéciaux, shift &amp; substitution de commande (pages 330–345). المعاملات الخاصة وshift واستبدال الأوامر — explications en arabe,…">
+<meta property="og:description" content="Cours SE1 : Paramètres spéciaux, shift &amp; substitution de commande. المعاملات الخاصة وshift واستبدال الأوامر — explications en arabe, révision en français,…">
 <meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s35.html">
 <meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -24,24 +24,24 @@
 <meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Paramètres spéciaux, shift &amp; substitution de commande — SE1 | Badr AI">
-<meta name="twitter:description" content="Cours SE1 : Paramètres spéciaux, shift &amp; substitution de commande (pages 330–345). المعاملات الخاصة وshift واستبدال الأوامر — explications en arabe,…">
+<meta name="twitter:description" content="Cours SE1 : Paramètres spéciaux, shift &amp; substitution de commande. المعاملات الخاصة وshift واستبدال الأوامر — explications en arabe, révision en français,…">
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%230f5c52'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="../css/seo.css?v=20261103">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%231d1d1f'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css?v=20261111">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s35.html#resource","name":"Paramètres spéciaux, shift & substitution de commande — SE1 | Badr AI","description":"Cours SE1 : Paramètres spéciaux, shift & substitution de commande (pages 330–345). المعاملات الخاصة وshift واستبدال الأوامر — explications en arabe,…","url":"https://cybader.github.io/badr-ai-se1/cours/s35.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Programmation Shell"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Paramètres spéciaux, shift & substitution de commande, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Substitution de commande, PID, Code retour","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s35-01.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s35-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 3 — Programmation Shell","item":"https://cybader.github.io/badr-ai-se1/cours/#ch3"},{"@type":"ListItem","position":4,"name":"Paramètres spéciaux, shift & substitution de commande","item":"https://cybader.github.io/badr-ai-se1/cours/s35.html"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s35.html#resource","name":"Paramètres spéciaux, shift & substitution de commande — SE1 | Badr AI","description":"Cours SE1 : Paramètres spéciaux, shift & substitution de commande. المعاملات الخاصة وshift واستبدال الأوامر — explications en arabe, révision en français,…","url":"https://cybader.github.io/badr-ai-se1/cours/s35.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Programmation Shell"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Paramètres spéciaux, shift & substitution de commande, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Substitution de commande, PID, Code retour","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s35-01.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s35-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Programme","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 3 — Programmation Shell","item":"https://cybader.github.io/badr-ai-se1/cours/#ch3"},{"@type":"ListItem","position":4,"name":"Paramètres spéciaux, shift & substitution de commande","item":"https://cybader.github.io/badr-ai-se1/cours/s35.html"}]}]}
 </script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="site-head">
 <div class="head-in">
-<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<a class="brand" href="../index.html">
 <span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
 </a>
 <nav class="head-nav" aria-label="Navigation">
-<a href="index.html">Plan du cours</a>
+<a href="index.html">Programme</a>
 <a href="../qcm.html">QCM corrigés</a>
 <a href="../flashcards.html">Flashcards</a>
 <a href="../index.html#terminal">Terminal</a>
@@ -51,15 +51,15 @@
 </header>
 <div class="wrap">
 <nav class="crumbs" aria-label="Fil d'Ariane">
-<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch3">Chapitre 3</a><span>›</span><span aria-current="page">Paramètres spéciaux, shift &amp; substitution de commande</span>
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Programme</a><span>›</span><a href="index.html#ch3">Chapitre 3</a><span>›</span><span aria-current="page">Paramètres spéciaux, shift &amp; substitution de commande</span>
 </nav>
 <main id="contenu">
 <article>
 <header class="hero">
-<span class="badge">Chapitre 3 · Section 35/48</span>
+<span class="badge">Chapitre 3 · Leçon 35 sur 48</span>
 <h1>Paramètres spéciaux, shift &amp; substitution de commande</h1>
 <p class="ar-title" lang="ar" dir="rtl">المعاملات الخاصة وshift واستبدال الأوامر</p>
-<div class="meta-row"><span class="chip">📄 Pages 330–345</span><span class="chip">16 pages</span><span class="chip">🖼️ 1 illustrations</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+<div class="meta-row"><span class="chip">1 illustrations</span><span class="chip">Cours en français</span><span class="chip">شرح بالعربية</span></div>
 </header>
 <section class="ar-panel" aria-labelledby="ar-title">
 <h2 id="ar-title"> الشرح بالعربية</h2>
@@ -76,10 +76,8 @@
 <figure class="lg-item"><a class="lg-thumb" href="../assets/lecons/s35-01.webp" target="_blank" rel="noopener" aria-label="Agrandir : المعاملات الخاصة و shift"><img src="../assets/lecons/thumbs/s35-01.webp" alt="المعاملات الخاصة و shift" loading="lazy" decoding="async" width="360" height="467"><span class="lg-zoom" aria-hidden="true">⤢</span></a><figcaption lang="ar" dir="rtl">المعاملات الخاصة و shift</figcaption></figure>
 </div>
 </section>
-<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 330–345 · texte intégral du support</p></div><span class="chip">Chapitre 3 — Programmation Shell</span></div>
-<div class="pages">
-<section class="page" aria-label="Page 330">
-<span class="page-tag">Page 330</span>
+<div class="sec-head"><div><h2>Contenu de la leçon</h2><p>Le cours en français, avec les termes techniques et les exemples.</p></div><span class="chip">Chapitre 3 — Programmation Shell</span></div>
+<div class="lesson-body">
 <p>Ecrire un programme shell nbmots qui demande à l&#39;utilisateur de saisir une suite quelconque non vide de mots puis affiche le nombre de mots saisis.</p>
 <h3>Ex :</h3>
 <pre><code>$ nbmots</code></pre>
@@ -87,9 +85,6 @@
 <p>=&gt; 5 mots ont été saisis</p>
 <p>$</p>
 <h3>EXERCICE</h3>
-</section>
-<section class="page" aria-label="Page 331">
-<span class="page-tag">Page 331</span>
 <p>Solution 1</p>
 <pre><code>#!/bin/bash</code></pre>
 <pre><code>read -p &quot;Entrez une suite de mots:&quot; a set $a</code></pre>
@@ -100,9 +95,6 @@
 <pre><code>set $a</code></pre>
 <pre><code>echo $#</code></pre>
 <h3>SOLUTIONS</h3>
-</section>
-<section class="page" aria-label="Page 332">
-<span class="page-tag">Page 332</span>
 <p class="bullet">La commande interne shift décale la numérotation des paramètres de position ayant une valeur.</p>
 <p>Syntaxe : shift [n]</p>
 <pre><code>$ set a b c d e</code></pre>
@@ -120,9 +112,6 @@
 <p class="bullet">La commande shift sans argument est équivalente à shift 1</p>
 <p class="bullet">shift ne modifie pas la valeur du paramètrede position 0 qui possède une signification particulière.</p>
 <h3>COMMANDE INTERNE SHIFT</h3>
-</section>
-<section class="page" aria-label="Page 333">
-<span class="page-tag">Page 333</span>
 <p class="bullet">Lorsque la commande interne set est utilisée dans un script shell, la syntaxe $1 a deux significations distinctes :</p>
 <p class="bullet">Avant set : $1 représente le premier argument passé au script.</p>
 <p class="bullet">Après set : $1 devient le premier paramètre de position réinitialisé par set.</p>
@@ -139,9 +128,6 @@
 <pre><code>$1 est bonjour</code></pre>
 <pre><code>$1 est hello</code></pre>
 <h3>COMMANDE INTERNE SET : CAS PARTICULIER</h3>
-</section>
-<section class="page" aria-label="Page 334">
-<span class="page-tag">Page 334</span>
 <p>Les paramètres spéciaux @ et * contiennent tous les deux la liste des valeurs des paramètres de position initialisés.</p>
 <h3>Ex :</h3>
 <pre><code>$ set un deux trois quatre</code></pre>
@@ -155,9 +141,6 @@
 <p>&quot;$*&quot; est remplacée par &quot;$1 $2 ... &quot;</p>
 <p>&quot;$@&quot; est remplacée par &quot;$1&quot; &quot;$2&quot; ...</p>
 <h3>PARAMÈTRES SPÉCIAUX * ET @</h3>
-</section>
-<section class="page" aria-label="Page 335">
-<span class="page-tag">Page 335</span>
 <h3>Ex :</h3>
 <pre><code>$ set bonjour &quot;deux coucou&quot; salut =&gt; trois paramètres de position sont initialisés</code></pre>
 <p>$</p>
@@ -170,9 +153,6 @@
 <p>bonjour deux coucou salut</p>
 <p>$</p>
 <h3>PARAMÈTRES SPÉCIAUX * ET @</h3>
-</section>
-<section class="page" aria-label="Page 336">
-<span class="page-tag">Page 336</span>
 <p class="bullet">&quot;$@&quot; produit autant de chaînes que de paramètres de positions initialisés.</p>
 <p class="bullet">&quot;$*&quot; traite l’ensemble des paramètres de position initialisés comme une unique chaîne de caractères.</p>
 <p>Inversement,</p>
@@ -188,9 +168,6 @@
 <p>=&gt; l’intégrité de la chaîne a été préservée</p>
 <p>$</p>
 <h3>PARAMÈTRES SPÉCIAUX * ET @</h3>
-</section>
-<section class="page" aria-label="Page 337">
-<span class="page-tag">Page 337</span>
 <p>Syntaxe : $( cmd )</p>
 <p class="bullet">Une commande cmd entourée par une paire de parenthèses ( ) précédées d&#39;un caractère $ est exécutée par le shell puis la chaîne $( cmd ) est remplacée par les résultats de la commande cmd écrits sur la sortie standard, c’est à dire l’écran.</p>
 <p class="bullet">Ces résultats peuvent alors être affectés à une variable ou bien servir à initialiser des paramètres de position.</p>
@@ -204,18 +181,12 @@
 <pre><code>$ echo mon repertoire est $repert mon</code></pre>
 <p># repertoire est /home/ubuntu</p>
 <h3>SUBSTITUTION DE COMMANDES</h3>
-</section>
-<section class="page" aria-label="Page 338">
-<span class="page-tag">Page 338</span>
 <p class="bullet">rep=`pwd`</p>
 <p class="bullet">echo $rep</p>
 <p class="bullet">var=$(echo `pwd`)</p>
 <p class="bullet">Var=$(echo `ls –l|wc -l`)</p>
 <p class="bullet">Var =$(` echo $mavariable | grep [a-z] | wc -l` )</p>
 <h3>METTRE UNE COMMANDEDANS UNE VAR</h3>
-</section>
-<section class="page" aria-label="Page 339">
-<span class="page-tag">Page 339</span>
 <p>En utilisant la substitution de commande, écrire un fichier shell mach</p>
 <h3>affichant :</h3>
 <p>&quot;Ma machine courante est nomdelamachine&quot;</p>
@@ -224,16 +195,10 @@
 <p>Ma machine courante est ubuntu</p>
 <p>$</p>
 <h3>EXERCICE</h3>
-</section>
-<section class="page" aria-label="Page 340">
-<span class="page-tag">Page 340</span>
 <pre><code>#!/bin/bash</code></pre>
 <p>mamachine=$(hostname)</p>
 <p>Echo ’’Ma machine courante est $mamachine’’</p>
 <h3>SOLUTION</h3>
-</section>
-<section class="page" aria-label="Page 341">
-<span class="page-tag">Page 341</span>
 <p>Pour l’utiliser avec la commande set il faut utiliser le double « - »</p>
 <pre><code>Set - - $(cmd)</code></pre>
 <pre><code>$ set $( ls -l .bashrc)</code></pre>
@@ -247,9 +212,6 @@
 <p>-rw-r--r—</p>
 <p>$</p>
 <h3>SUBSITITUTION DE COMMANDES</h3>
-</section>
-<section class="page" aria-label="Page 342">
-<span class="page-tag">Page 342</span>
 <p>Ecrire un programme shell taille qui prend un nom de fichier en argument et affiche sa taille. On ne considère aucun cas d&#39;erreur.</p>
 <h3>Ex :</h3>
 <pre><code>$ ls -l .bashrc</code></pre>
@@ -262,9 +224,6 @@
 <p>var=$(ls -l $1)</p>
 <pre><code>set -- $var</code></pre>
 <pre><code>echo $5</code></pre>
-</section>
-<section class="page" aria-label="Page 343">
-<span class="page-tag">Page 343</span>
 <p>Le shell fournit deux mécanismes pour grouper l’exécution d’un ensemble de commandes sans pour cela affecter un nom à ce</p>
 <h3>groupement :</h3>
 <p class="bullet">l’insertion de la suite de commandes entre une paire d’accolades { suite_cmds ; }</p>
@@ -287,9 +246,6 @@
 <p>/home/sanchis lundi 31 mars 2014, 10:55:31 (UTC+0200)</p>
 <h3>FIN</h3>
 <h3>GROUPEMENT DE COMMANDES</h3>
-</section>
-<section class="page" aria-label="Page 344">
-<span class="page-tag">Page 344</span>
 <p>Exercice : A l&#39;aide de la commande date, écrire un programme shell jour qui affiche le jour courant du mois.</p>
 <p>Ex : $ date lundi 24 mars 2014, 09:08:02 (UTC+0100)</p>
 <p>$</p>
@@ -305,26 +261,22 @@
 <p>09:11</p>
 <p>IFS = ‘’:’’; Set $4; echo ‘’$1:$2’’</p>
 <h3>GROUPEMENT DE COMMANDES</h3>
-</section>
-<section class="page" aria-label="Page 345">
-<span class="page-tag">Page 345</span>
 <h3>Exercice :</h3>
 <p>Ecrire un programme shell uid qui affiche l&#39;uid de l&#39;utilisateur. On utilisera la commande unix id, la commande interne set et la variable prédéfinie IFS.</p>
 <pre><code>$id</code></pre>
 <p>uid=1016(toto) gid=100(users) groups=100(users)</p>
 <pre><code>echo &quot;$1&quot; | cut -d&#39;=&#39; -f2 | cut -d&#39;(&#39; -f1</code></pre>
 <h3>GROUPEMENT DE COMMANDES</h3>
-</section>
 </div>
-<nav class="pager" aria-label="Sections précédente et suivante">
+<nav class="pager" aria-label="Leçons précédente et suivante">
 <a class="btn" href="s34.html">← Substitutions &amp; paramètres positionnels</a><a class="btn" href="s36.html">Paramètres non définis &amp; unset →</a>
 </nav>
 <aside class="cta">
-<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div><h2>Réviser cette leçon en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la leçon comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
 <div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s35">Ouvrir la plateforme</a><a class="btn btn-soft" href="../qcm.html">120 QCM corrigés</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
 </aside>
 <section class="related" aria-labelledby="related-title">
-<h2 id="related-title">Autres sections du chapitre 3 — Programmation Shell</h2>
+<h2 id="related-title">Autres leçons du chapitre 3 — Programmation Shell</h2>
 <ul>
 <li><a href="s28.html">Le shell interpréteur &amp; les types de commandes <span lang="ar" dir="rtl">— الشيل كمفسّر وأنواع الأوامر</span></a></li>
 <li><a href="s29.html">Les scripts shell <span lang="ar" dir="rtl">— سكربتات الشيل</span></a></li>
@@ -352,8 +304,8 @@
 </main>
 </div>
 <footer class="site-foot">
-<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
-<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Programme</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
 <div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
 </footer>
 </body>

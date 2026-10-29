@@ -8,73 +8,51 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{width:1200px;height:630px;overflow:hidden}
   body{
-    font-family:"Segoe UI","SF Pro Display",system-ui,Arial,sans-serif;
-    color:#1b3a32;
-    background:
-      radial-gradient(760px 520px at 8% -12%,rgba(15,92,82,.20),transparent 62%),
-      radial-gradient(700px 480px at 96% 6%,rgba(169,71,47,.16),transparent 58%),
-      radial-gradient(700px 560px at 60% 118%,rgba(199,154,59,.16),transparent 62%),
-      linear-gradient(150deg,#f8f0df 0%,#f3e7d0 58%,#efe1c8 100%);
-    position:relative;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:#1d1d1f;
+    background:#ffffff;
   }
-  .grid{
-    position:absolute;inset:0;
-    background-image:linear-gradient(rgba(27,58,50,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(27,58,50,.055) 1px,transparent 1px);
-    background-size:48px 48px;
-    mask-image:radial-gradient(circle at 30% 20%,#000 0%,transparent 72%);
-    -webkit-mask-image:radial-gradient(circle at 30% 20%,#000 0%,transparent 72%);
+  .wrap{height:100%;padding:72px 80px;display:flex;flex-direction:column}
+  .brand{display:flex;align-items:center;gap:14px}
+  .mark{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    background:#1d1d1f;color:#fff;font-size:26px;font-weight:700;line-height:1;
   }
-  .glow{position:absolute;width:520px;height:520px;border-radius:50%;right:-150px;bottom:-220px;background:radial-gradient(circle,rgba(169,71,47,.20),transparent 68%)}
-  .ring{position:absolute;width:300px;height:300px;border-radius:50%;border:1px solid rgba(15,92,82,.22);right:70px;top:70px}
-  .ring::after{content:"";position:absolute;inset:42px;border-radius:50%;border:1px dashed rgba(199,154,59,.45)}
-  .wrap{position:relative;z-index:2;height:100%;padding:64px 72px;display:flex;flex-direction:column}
-  .brand{display:flex;align-items:center;gap:16px}
-  .logo{
-    width:66px;height:66px;border-radius:19px;display:grid;place-items:center;
-    font-size:34px;font-weight:800;color:#fff8ec;
-    background:linear-gradient(140deg,#0f5c52,#a9472f);
-    box-shadow:0 16px 42px rgba(15,92,82,.35),inset 0 1px 0 rgba(255,255,255,.45);
-  }
-  .brand b{display:block;font-size:27px;letter-spacing:.2px;line-height:1.1;color:#123a32}
-  .brand small{display:block;font-size:13px;letter-spacing:2.6px;text-transform:uppercase;color:#6d7f72;margin-top:4px;font-weight:600}
+  .brand b{display:block;font-size:22px;font-weight:650;letter-spacing:-.01em;line-height:1.2;color:#1d1d1f}
+  .brand small{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#86868b;margin-top:2px;font-weight:600}
   .badge{
-    align-self:flex-start;margin-top:52px;display:inline-flex;align-items:center;gap:9px;
-    font-size:13px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#0f5c52;
-    border:1px solid rgba(15,92,82,.38);background:rgba(15,92,82,.10);
-    padding:8px 16px;border-radius:999px;
+    align-self:flex-start;margin-top:56px;display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:#6e6e73;
+    background:#f5f5f7;padding:6px 12px;border-radius:999px;
   }
-  h1{margin:20px 0 0;font-size:62px;line-height:1.04;letter-spacing:-1.6px;max-width:880px;color:#123a32}
-  h1 em{font-style:normal;background:linear-gradient(95deg,#0f5c52,#2a7f70 55%,#a9472f);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .ar{margin-top:16px;direction:rtl;text-align:right;font-size:25px;line-height:1.65;color:#4a5c52;max-width:840px}
-  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-bottom:6px}
+  h1{margin:24px 0 0;font-size:64px;line-height:1.05;letter-spacing:-.035em;font-weight:700;color:#1d1d1f;max-width:980px;text-wrap:balance}
+  h1 span{color:#0071e3}
+  .ar{margin-top:18px;direction:rtl;text-align:right;font-size:22px;line-height:1.7;color:#6e6e73;max-width:900px}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-bottom:8px}
   .chip{
-    display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#1b3a32;
-    border:1px solid rgba(27,58,50,.18);background:rgba(255,250,240,.72);
-    padding:9px 15px;border-radius:12px;box-shadow:0 4px 12px rgba(60,42,20,.06);
+    display:inline-flex;align-items:center;font-size:13px;font-weight:500;color:#6e6e73;
+    border:1px solid #e8e8ed;background:#fafafa;
+    padding:8px 14px;border-radius:999px;
   }
-  .dot{width:7px;height:7px;border-radius:50%;background:#2f7d5a;box-shadow:0 0 12px rgba(47,125,90,.8)}
-  .foot{margin-top:16px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#85907f;letter-spacing:.4px}
-  .foot b{color:#5d6f63;font-weight:600}
-  .url{font-family:"Cascadia Code",Consolas,monospace;font-size:12.5px;color:#6d7f72}
+  .foot{margin-top:18px;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#86868b}
+  .foot b{color:#1d1d1f;font-weight:600}
+  .url{font-family:"SFMono-Regular",Consolas,monospace;font-size:12px;color:#86868b}
 </style>
 </head>
 <body>
-  <div class="grid"></div>
-  <div class="glow"></div>
-  <div class="ring"></div>
   <div class="wrap">
     <div class="brand">
-      <div class="logo">B</div>
-      <div><b>Badr AI</b><small>Plateforme de révision</small></div>
+      <div class="mark">B</div>
+      <div><b>Badr AI</b><small>Système d'Exploitation 1</small></div>
     </div>
-    <span class="badge">Cours complet · 436 pages</span>
-    <h1>Système d'Exploitation 1<br><em>Unix &amp; Programmation Shell</em></h1>
-    <p class="ar" lang="ar" dir="rtl">أنظمة التشغيل 1 — شرح عربي مبسّط ومراجعة بالفرنسية</p>
+    <span class="badge">Cours · QCM · Flashcards · Terminal</span>
+    <h1>Comprendre en arabe.<br><span>Réussir en français.</span></h1>
+    <p class="ar" lang="ar" dir="rtl">افهم بالعربية، راجع بالفرنسية، واستعد للامتحان بثقة.</p>
     <div class="chips">
-      <span class="chip"><span class="dot"></span>436 pages de cours</span>
+      <span class="chip">3 chapitres</span>
+      <span class="chip">48 leçons</span>
       <span class="chip">120 QCM corrigés</span>
       <span class="chip">90 flashcards</span>
-      <span class="chip">Terminal Unix</span>
       <span class="chip">Examen blanc</span>
     </div>
     <div class="foot">

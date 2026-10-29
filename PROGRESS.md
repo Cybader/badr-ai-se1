@@ -5,7 +5,7 @@
 ## الحالة العامة
 - **الوضع:** ✅ المنصة مكتملة، تعمل **دون إنترنت** ومنشورة **عبر الإنترنت** على GitHub Pages.
 - **الرابط:** <https://cybader.github.io/badr-ai-se1/>
-- **خطة الدرس (SEO):** <https://cybader.github.io/badr-ai-se1/cours/>
+- **البرنامج (SEO):** <https://cybader.github.io/badr-ai-se1/cours/>
 - **المستودع:** <https://github.com/Cybader/badr-ai-se1>
 - **آخر تحديث:** 2026-10-29
 - **المصدر:** `../Cours/Cours SE.pdf` — 436 صفحة، 3 فصول، 48 قسمًا.
@@ -130,3 +130,20 @@
 - عبر الإنترنت: <https://cybader.github.io/badr-ai-se1/>
 - محليًا: نقر مزدوج على `Lancer Badr AI.vbs` أو `index.html`.
 - بديل عند حجب السكربتات المحلية: `python -m http.server 8765` ثم `http://127.0.0.1:8765/`.
+
+
+## إعادة تصميم Apple-like — 2026-10-29
+
+**ما تغيّر:**
+
+- `index.html`: شريط علوي بسيط، قائمة هاتف، تذييل، بلا جزيئات/توهج/زجاج/تدرجات، بدون ترقيم صفحات.
+- `css/style.css`: نظام تصميم minimal (أبيض/رمادي/أزرق)، خط النظام، بطاقات مسطّحة، مسافات واسعة.
+- `js/app.js`: `renderHome()` جديد، قارئ درس بتدفق مستمر (بدون chips صفحات/نطاقات)، لوحات عربية RTL، بطاقات فورية، أيقونات SVG أحادية، خطوات إقلاع مرقّمة، إزالة الإيموجي.
+- `css/seo.css` + `tools/build-seo.js`: إزالة «436 صفحة»، termes obsolètes، termes obsolètes؛ مصطلح «leçons» و«Programme»؛ محتوى الدرس تدفقًا مستمرًا؛ إعادة توليد 52 URL.
+- `tools/og-card.html` + `assets/og-image.png`: بطاقة مشاركة minimal.
+
+**التحقق:**
+
+- `node --check` لجميع ملفات JS والبناء.
+- `node tools/build-seo.js` → 1 hub + 48 lessons + QCM + flashcards + sitemap + robots + 404 (52 URLs).
+- QA متصفح: الرئيسية، قائمة الدروس، قارئ الدرس، إعداد/إجابة QCM، بطاقات، إعداد/بدء الامتحان، الأدوات — بلا أخطاء console، بلا `.page-chip`.

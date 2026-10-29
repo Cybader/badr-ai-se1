@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Commandes d&#39;accès &amp; manipulation — SE1 | Badr AI</title>
-<meta name="description" content="Cours SE1 : Commandes d&#39;accès &amp; manipulation (pages 120–135). أوامر الوصول والتعامل مع الملفات — explications en arabe, révision en français, QCM et examen…">
+<meta name="description" content="Cours SE1 : Commandes d&#39;accès &amp; manipulation. أوامر الوصول والتعامل مع الملفات — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Commandes d&#39;accès &amp; manipulation, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Copier, Déplacer, Supprimer, Rechercher, Récursif">
 <meta name="author" content="Badr AI">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-<meta name="theme-color" content="#f6edda">
+<meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s12.html">
 <meta property="og:type" content="article">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="ar_MA">
 <meta property="og:title" content="Commandes d&#39;accès &amp; manipulation — SE1 | Badr AI">
-<meta property="og:description" content="Cours SE1 : Commandes d&#39;accès &amp; manipulation (pages 120–135). أوامر الوصول والتعامل مع الملفات — explications en arabe, révision en français, QCM et examen…">
+<meta property="og:description" content="Cours SE1 : Commandes d&#39;accès &amp; manipulation. أوامر الوصول والتعامل مع الملفات — explications en arabe, révision en français, QCM et examen blanc.">
 <meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s12.html">
 <meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -24,24 +24,24 @@
 <meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Commandes d&#39;accès &amp; manipulation — SE1 | Badr AI">
-<meta name="twitter:description" content="Cours SE1 : Commandes d&#39;accès &amp; manipulation (pages 120–135). أوامر الوصول والتعامل مع الملفات — explications en arabe, révision en français, QCM et examen…">
+<meta name="twitter:description" content="Cours SE1 : Commandes d&#39;accès &amp; manipulation. أوامر الوصول والتعامل مع الملفات — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%230f5c52'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="../css/seo.css?v=20261103">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%231d1d1f'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css?v=20261111">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s12.html#resource","name":"Commandes d'accès & manipulation — SE1 | Badr AI","description":"Cours SE1 : Commandes d'accès & manipulation (pages 120–135). أوامر الوصول والتعامل مع الملفات — explications en arabe, révision en français, QCM et examen…","url":"https://cybader.github.io/badr-ai-se1/cours/s12.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Commandes d'accès & manipulation, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Copier, Déplacer, Supprimer, Rechercher, Récursif","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s12-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-10.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s12-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Commandes d'accès & manipulation","item":"https://cybader.github.io/badr-ai-se1/cours/s12.html"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s12.html#resource","name":"Commandes d'accès & manipulation — SE1 | Badr AI","description":"Cours SE1 : Commandes d'accès & manipulation. أوامر الوصول والتعامل مع الملفات — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s12.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Commandes d'accès & manipulation, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Copier, Déplacer, Supprimer, Rechercher, Récursif","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s12-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s12-10.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s12-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Programme","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Commandes d'accès & manipulation","item":"https://cybader.github.io/badr-ai-se1/cours/s12.html"}]}]}
 </script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="site-head">
 <div class="head-in">
-<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<a class="brand" href="../index.html">
 <span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
 </a>
 <nav class="head-nav" aria-label="Navigation">
-<a href="index.html">Plan du cours</a>
+<a href="index.html">Programme</a>
 <a href="../qcm.html">QCM corrigés</a>
 <a href="../flashcards.html">Flashcards</a>
 <a href="../index.html#terminal">Terminal</a>
@@ -51,15 +51,15 @@
 </header>
 <div class="wrap">
 <nav class="crumbs" aria-label="Fil d'Ariane">
-<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Commandes d&#39;accès &amp; manipulation</span>
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Programme</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Commandes d&#39;accès &amp; manipulation</span>
 </nav>
 <main id="contenu">
 <article>
 <header class="hero">
-<span class="badge">Chapitre 2 · Section 12/48</span>
+<span class="badge">Chapitre 2 · Leçon 12 sur 48</span>
 <h1>Commandes d&#39;accès &amp; manipulation</h1>
 <p class="ar-title" lang="ar" dir="rtl">أوامر الوصول والتعامل مع الملفات</p>
-<div class="meta-row"><span class="chip">📄 Pages 120–135</span><span class="chip">16 pages</span><span class="chip">🖼️ 10 illustrations</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+<div class="meta-row"><span class="chip">10 illustrations</span><span class="chip">Cours en français</span><span class="chip">شرح بالعربية</span></div>
 </header>
 <section class="ar-panel" aria-labelledby="ar-title">
 <h2 id="ar-title"> الشرح بالعربية</h2>
@@ -87,10 +87,8 @@
 <figure class="lg-item"><a class="lg-thumb" href="../assets/lecons/s12-10.webp" target="_blank" rel="noopener" aria-label="Agrandir : الأمر du كم تحتل هذه الشجرة؟"><img src="../assets/lecons/thumbs/s12-10.webp" alt="الأمر du كم تحتل هذه الشجرة؟" loading="lazy" decoding="async" width="360" height="467"><span class="lg-zoom" aria-hidden="true">⤢</span></a><figcaption lang="ar" dir="rtl">الأمر du كم تحتل هذه الشجرة؟</figcaption></figure>
 </div>
 </section>
-<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 120–135 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
-<div class="pages">
-<section class="page" aria-label="Page 120">
-<span class="page-tag">Page 120</span>
+<div class="sec-head"><div><h2>Contenu de la leçon</h2><p>Le cours en français, avec les termes techniques et les exemples.</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="lesson-body">
 <h3>QUELQUES COMMANDES D&#39;ACCÈS AUX</h3>
 <h3>RÉPERTOIRES</h3>
 <p>Commande</p>
@@ -109,9 +107,6 @@
 <p>Donne le chemin absolu du répertoire courant.</p>
 <pre><code>rmdir</code></pre>
 <p>Supprime un répertoire vide.</p>
-</section>
-<section class="page" aria-label="Page 121">
-<span class="page-tag">Page 121</span>
 <h3>QUELQUES COMMANDES D&#39;ACCÈS AUX</h3>
 <h3>FICHIERS</h3>
 <p>Commande</p>
@@ -128,9 +123,6 @@
 <pre><code>touch</code></pre>
 <p>Modifie les caractéristiques de date d&#39;un fichier</p>
 <p>(permet également de créer un fichier vide).</p>
-</section>
-<section class="page" aria-label="Page 122">
-<span class="page-tag">Page 122</span>
 <h3>COMMANDES DE MANIPULATION DU</h3>
 <h3>SYSTÈME DE FICHIERS</h3>
 <p>Commande</p>
@@ -144,9 +136,6 @@
 <p>mv &lt;source&gt; &lt;destination&gt;</p>
 <p>Suppression d&#39;une entrée dans un répertoire et création d&#39;une nouvelle entrée dans un répertoire.</p>
 <p>Si on copie (déplace/renomme) un fichier dans un fichier qui existe déjà, ce second fichier est modifié (contenu écrasé et caractéristiques modifiées)</p>
-</section>
-<section class="page" aria-label="Page 123">
-<span class="page-tag">Page 123</span>
 <h3>COMMANDE DE MANIPULATION DES</h3>
 <h3>FICHIERS</h3>
 <p>Commande : cp</p>
@@ -155,16 +144,10 @@
 <p class="bullet">La copie d’un fichier source dans un fichier destination.</p>
 <h3>Exemple :</h3>
 <p>Dans le répertoire p2, copie du fichier text1.txt dans text2.txt</p>
-</section>
-<section class="page" aria-label="Page 124">
-<span class="page-tag">Page 124</span>
 <h3>COMMANDE DE MANIPULATION DES</h3>
 <h3>FICHIERS</h3>
 <p class="bullet">La copie d’un fichier dans un répertoire.</p>
 <h3>Exemple :</h3>
-</section>
-<section class="page" aria-label="Page 125">
-<span class="page-tag">Page 125</span>
 <p class="bullet">La copie d’un répertoire dans un autre (seuls les fichiers sont copiés :</p>
 <p>on obtient un message d’erreur pour la copie des répertoires).</p>
 <h3>Exemple :</h3>
@@ -175,9 +158,6 @@
 <pre><code>$ cp * /home/user/Desktop/projet2</code></pre>
 <h3>COMMANDE DE MANIPULATION DES</h3>
 <h3>FICHIERS</h3>
-</section>
-<section class="page" aria-label="Page 126">
-<span class="page-tag">Page 126</span>
 <p class="bullet">La copie récursive permet de copier une arborescence.</p>
 <h3>Exemple :</h3>
 <p>Copie de l’arborescence du projet1 dans le répertoire projet2.</p>
@@ -186,9 +166,6 @@
 <pre><code>$ cp –r * /home/user/Desktop/projet2</code></pre>
 <h3>COMMANDE DE MANIPULATION DES</h3>
 <h3>FICHIERS</h3>
-</section>
-<section class="page" aria-label="Page 127">
-<span class="page-tag">Page 127</span>
 <p>Commande : mv</p>
 <p>Cette commande est équivalente à une copie, suivie d’une suppression.</p>
 <h3>Elle s’utilise sous deux formes :</h3>
@@ -197,18 +174,12 @@
 <p>user@pc :~$ mv text1 text2</p>
 <h3>COMMANDE DE MANIPULATION DES</h3>
 <h3>FICHIERS</h3>
-</section>
-<section class="page" aria-label="Page 128">
-<span class="page-tag">Page 128</span>
 <p class="bullet">Transfert de(s) fichier(s) cité(s) dans le répertoire avec</p>
 <h3>le(s) même(s) nom(s) :</h3>
 <p>mv fichier(s) répertoire</p>
 <h3>Exemple :</h3>
 <h3>COMMANDE DE MANIPULATION DES</h3>
 <h3>FICHIERS</h3>
-</section>
-<section class="page" aria-label="Page 129">
-<span class="page-tag">Page 129</span>
 <p>Commande : rm</p>
 <p>Supprime un (ou plusieurs) fichier(s) d’un répertoire.</p>
 <h3>Exemple :</h3>
@@ -217,27 +188,18 @@
 <pre><code>$ rm text1.txt</code></pre>
 <h3>COMMANDE DE MANIPULATION DES</h3>
 <h3>FICHIERS</h3>
-</section>
-<section class="page" aria-label="Page 130">
-<span class="page-tag">Page 130</span>
 <p>Commande : TOUCH</p>
 <p>Cette commande permet (entre autres) de créer un fichier vide.</p>
 <h3>Exemple :</h3>
 <pre><code>$ touch demo.txt</code></pre>
 <h3>COMMANDE DE MANIPULATION DES</h3>
 <h3>FICHIERS</h3>
-</section>
-<section class="page" aria-label="Page 131">
-<span class="page-tag">Page 131</span>
 <pre><code>$ : ce symbole indique le niveau d&#39;autorisation sur la machine.</code></pre>
 <h3>Il peut prendre 2 formes différentes :</h3>
 <p class="bullet">$ : signifie que vous êtes en train d&#39;utiliser un compte utilisateur</p>
 <p>&quot;normal&quot;, avec des droits limités (il ne peut pas modifier les fichiers système les plus importants).</p>
 <p class="bullet"># : signifie que vous êtes en mode super-utilisateur, c&#39;est-à-dire que vous êtes connecté sous le pseudonyme &quot;root&quot;. Le root est l&#39;utilisateur maître qui a le droit de tout faire sur sa machine (même de la détruire ).</p>
 <h3>NIVEAU D’AUTORISATION</h3>
-</section>
-<section class="page" aria-label="Page 132">
-<span class="page-tag">Page 132</span>
 <h3>COMMANDE DE MANIPULATION DES</h3>
 <h3>FICHIERS</h3>
 <p>Commande : find find [chemin] [options] [expression]</p>
@@ -259,9 +221,6 @@
 <p>Recherche de fichiers appartenant à l&#39;utilisateur donné</p>
 <h3>-group :</h3>
 <p>Recherche de fichiers appartenant au groupe donné</p>
-</section>
-<section class="page" aria-label="Page 133">
-<span class="page-tag">Page 133</span>
 <h3>COMMANDE DE MANIPULATION DES</h3>
 <h3>FICHIERS</h3>
 <pre><code>$ find /home/ -name monfichier</code></pre>
@@ -272,29 +231,22 @@
 <p>Recherche les fichiers du répertoire courant qui ont été modifiés entre maintenant et il y a 5 jours.</p>
 <pre><code>$ find . ! -user root</code></pre>
 <p>Affiche tous les fichiers n&#39;appartenant pas à l&#39;utilisateur root</p>
-</section>
-<section class="page" aria-label="Page 134">
-<span class="page-tag">Page 134</span>
 <p>Commande : locate Nom_du_fichier</p>
 <p class="bullet">Permet de chercher un fichier donnée à travers son nom des fichiers.</p>
 <h3>LA RECHERCHE DE FICHIERS</h3>
-</section>
-<section class="page" aria-label="Page 135">
-<span class="page-tag">Page 135</span>
 <p>Commande : locate Nom_du_fichier</p>
 <p class="bullet">Recherche dans tous les répertoires du disque dur</p>
 <h3>LA RECHERCHE DE FICHIERS</h3>
-</section>
 </div>
-<nav class="pager" aria-label="Sections précédente et suivante">
+<nav class="pager" aria-label="Leçons précédente et suivante">
 <a class="btn" href="s11.html">← Inodes, types &amp; données des fichiers</a><a class="btn" href="s13.html">Liens physiques &amp; symboliques →</a>
 </nav>
 <aside class="cta">
-<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div><h2>Réviser cette leçon en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la leçon comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
 <div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s12">Ouvrir la plateforme</a><a class="btn btn-soft" href="../qcm.html">120 QCM corrigés</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
 </aside>
 <section class="related" aria-labelledby="related-title">
-<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<h2 id="related-title">Autres leçons du chapitre 2 — Les commandes de base Unix</h2>
 <ul>
 <li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
 <li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
@@ -320,8 +272,8 @@
 </main>
 </div>
 <footer class="site-foot">
-<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
-<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Programme</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
 <div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
 </footer>
 </body>

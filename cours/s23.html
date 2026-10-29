@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Archives avec tar — SE1 | Badr AI</title>
-<meta name="description" content="Cours SE1 : Archives avec tar (pages 235–244). الأرشيفات باستخدام tar — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="description" content="Cours SE1 : Archives avec tar. الأرشيفات باستخدام tar — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Archives avec tar, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Archive, Compression, Extraction, gzip">
 <meta name="author" content="Badr AI">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-<meta name="theme-color" content="#f6edda">
+<meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s23.html">
 <meta property="og:type" content="article">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="ar_MA">
 <meta property="og:title" content="Archives avec tar — SE1 | Badr AI">
-<meta property="og:description" content="Cours SE1 : Archives avec tar (pages 235–244). الأرشيفات باستخدام tar — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:description" content="Cours SE1 : Archives avec tar. الأرشيفات باستخدام tar — explications en arabe, révision en français, QCM et examen blanc.">
 <meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s23.html">
 <meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -24,24 +24,24 @@
 <meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Archives avec tar — SE1 | Badr AI">
-<meta name="twitter:description" content="Cours SE1 : Archives avec tar (pages 235–244). الأرشيفات باستخدام tar — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:description" content="Cours SE1 : Archives avec tar. الأرشيفات باستخدام tar — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%230f5c52'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="../css/seo.css?v=20261103">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%231d1d1f'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css?v=20261111">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s23.html#resource","name":"Archives avec tar — SE1 | Badr AI","description":"Cours SE1 : Archives avec tar (pages 235–244). الأرشيفات باستخدام tar — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s23.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Archives avec tar, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Archive, Compression, Extraction, gzip","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s23-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-10.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-11.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-12.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-13.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-14.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-15.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-16.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s23-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Archives avec tar","item":"https://cybader.github.io/badr-ai-se1/cours/s23.html"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s23.html#resource","name":"Archives avec tar — SE1 | Badr AI","description":"Cours SE1 : Archives avec tar. الأرشيفات باستخدام tar — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s23.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Archives avec tar, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Archive, Compression, Extraction, gzip","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s23-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-10.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-11.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-12.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-13.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-14.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-15.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s23-16.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s23-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Programme","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Archives avec tar","item":"https://cybader.github.io/badr-ai-se1/cours/s23.html"}]}]}
 </script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="site-head">
 <div class="head-in">
-<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<a class="brand" href="../index.html">
 <span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
 </a>
 <nav class="head-nav" aria-label="Navigation">
-<a href="index.html">Plan du cours</a>
+<a href="index.html">Programme</a>
 <a href="../qcm.html">QCM corrigés</a>
 <a href="../flashcards.html">Flashcards</a>
 <a href="../index.html#terminal">Terminal</a>
@@ -51,15 +51,15 @@
 </header>
 <div class="wrap">
 <nav class="crumbs" aria-label="Fil d'Ariane">
-<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Archives avec tar</span>
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Programme</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Archives avec tar</span>
 </nav>
 <main id="contenu">
 <article>
 <header class="hero">
-<span class="badge">Chapitre 2 · Section 23/48</span>
+<span class="badge">Chapitre 2 · Leçon 23 sur 48</span>
 <h1>Archives avec tar</h1>
 <p class="ar-title" lang="ar" dir="rtl">الأرشيفات باستخدام tar</p>
-<div class="meta-row"><span class="chip">📄 Pages 235–244</span><span class="chip">10 pages</span><span class="chip">🖼️ 16 illustrations</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+<div class="meta-row"><span class="chip">16 illustrations</span><span class="chip">Cours en français</span><span class="chip">شرح بالعربية</span></div>
 </header>
 <section class="ar-panel" aria-labelledby="ar-title">
 <h2 id="ar-title"> الشرح بالعربية</h2>
@@ -92,10 +92,8 @@
 <figure class="lg-item"><a class="lg-thumb" href="../assets/lecons/s23-16.webp" target="_blank" rel="noopener" aria-label="Agrandir : خلاصة سريعة للحفظ"><img src="../assets/lecons/thumbs/s23-16.webp" alt="خلاصة سريعة للحفظ" loading="lazy" decoding="async" width="360" height="467"><span class="lg-zoom" aria-hidden="true">⤢</span></a><figcaption lang="ar" dir="rtl">خلاصة سريعة للحفظ</figcaption></figure>
 </div>
 </section>
-<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 235–244 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
-<div class="pages">
-<section class="page" aria-label="Page 235">
-<span class="page-tag">Page 235</span>
+<div class="sec-head"><div><h2>Contenu de la leçon</h2><p>Le cours en français, avec les termes techniques et les exemples.</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="lesson-body">
 <h3>La commande tar (Tape ARchive) :</h3>
 <p>Un outil de compression et décompression pour la gestion des archives. Il permet de regrouper plusieurs fichiers et répertoires en un seul fichier tar. Ce fichier peut ensuite être compressé à l’aide d’autres outils tels que gzip ou zip.</p>
 <h3>COMMANDE TAR : COMPRESSION ET</h3>
@@ -114,9 +112,6 @@
 <p>Afficher le contenu d’une archive tar sans l’extraire</p>
 <p>-z</p>
 <p>Compresser une archive tar avec gzip</p>
-</section>
-<section class="page" aria-label="Page 236">
-<span class="page-tag">Page 236</span>
 <h3>Pour créer une archive tar, on utilise :</h3>
 <p>l’option -c (create) suivie de l’option -f (file) et du nom de l’archive à créer.</p>
 <h3>Exemple :</h3>
@@ -125,9 +120,6 @@
 <pre><code>tar -cf exemple.tar fichier1 fichier2</code></pre>
 <h3>COMMANDE TAR : CRÉATION D’UNE</h3>
 <h3>ARCHIVE TAR</h3>
-</section>
-<section class="page" aria-label="Page 237">
-<span class="page-tag">Page 237</span>
 <h3>Pour extraire les fichiers d’une archive tar, on utilise :</h3>
 <p>l’option -x (extract) suivie de l’option -f et du nom de l’archive à extraire.</p>
 <h3>Exemple:</h3>
@@ -136,9 +128,6 @@
 <pre><code>tar -xf archive.tar</code></pre>
 <h3>COMMANDE TAR : EXTRACTION D’UNE</h3>
 <h3>ARCHIVE</h3>
-</section>
-<section class="page" aria-label="Page 238">
-<span class="page-tag">Page 238</span>
 <p>Pour afficher le contenu d’une archive tar sans l’extraire, on</p>
 <h3>utilise:</h3>
 <p>l’option -t (list) suivie de l’option -f et du nom de l’archive.</p>
@@ -148,9 +137,6 @@
 <pre><code>tar -tf archive.tar</code></pre>
 <h3>COMMANDE TAR : LISTER LE CONTENU</h3>
 <h3>D’UNE ARCHIVE</h3>
-</section>
-<section class="page" aria-label="Page 239">
-<span class="page-tag">Page 239</span>
 <p>La commande tar peut également être utilisée pour compresser et décompresser des fichiers à l’aide de l’algorithme gzip.</p>
 <p class="bullet">Pour compresser une archive tar avec gzip :</p>
 <p>On ajoute l’option -z (gzip) lors de la création de l’archive.</p>
@@ -161,9 +147,6 @@
 <pre><code>tar -czf archive.tar.gz fichier1 fichier2</code></pre>
 <h3>COMMANDE TAR : COMPRESSION ET</h3>
 <h3>DÉCOMPRESSION</h3>
-</section>
-<section class="page" aria-label="Page 240">
-<span class="page-tag">Page 240</span>
 <p class="bullet">Pour décompresser une archive tar compressée avec gzip :</p>
 <p>On ajoute également l’option -z lors de l’extraction de l’archive.</p>
 <h3>Exemple :</h3>
@@ -172,9 +155,6 @@
 <pre><code>tar -xzf archive.tar.gz</code></pre>
 <h3>COMMANDE TAR : COMPRESSION ET</h3>
 <h3>DÉCOMPRESSION</h3>
-</section>
-<section class="page" aria-label="Page 241">
-<span class="page-tag">Page 241</span>
 <p>La commande tar permet de gérer les fichiers et répertoires inclus dans une archive, en ajoutant ou en supprimant des éléments.</p>
 <p class="bullet">Pour ajouter des fichiers ou répertoires à une archive existante, on</p>
 <h3>utilise :</h3>
@@ -185,9 +165,6 @@
 <pre><code>tar -rf archive.tar fichier3</code></pre>
 <h3>COMMANDE TAR : GÉRER LES FICHIERS ET</h3>
 <h3>RÉPERTOIRES</h3>
-</section>
-<section class="page" aria-label="Page 242">
-<span class="page-tag">Page 242</span>
 <p class="bullet">Pour supprimer un fichier d’une archive, on utilise :</p>
 <p>l’option --delete suivie de l’option -f et du nom de l’archive, ainsi que du nom du fichier à supprimer.</p>
 <h3>Exemple:</h3>
@@ -196,9 +173,6 @@
 <pre><code>tar --delete -f archive.tar fichier2</code></pre>
 <h3>COMMANDE TAR : GÉRER LES FICHIERS ET</h3>
 <h3>RÉPERTOIRES</h3>
-</section>
-<section class="page" aria-label="Page 243">
-<span class="page-tag">Page 243</span>
 <p>La commande tar permet également de filtrer les fichiers inclus dans une archive en fonction de critères spécifiques.</p>
 <p>Pour cela, on utilise l’option --exclude suivie du motif à exclure.</p>
 <h3>Exemple:</h3>
@@ -206,9 +180,6 @@
 <h3>termine par &quot;.txt&quot;, on utilise la commande suivante :</h3>
 <pre><code>tar -cf archive.tar --exclude=&#39;*.txt&#39; fichier1 fichier2 fichier3</code></pre>
 <h3>COMMANDE TAR : FILTRAGE DES FICHIERS</h3>
-</section>
-<section class="page" aria-label="Page 244">
-<span class="page-tag">Page 244</span>
 <p>Lors de l’extraction d’une archive tar, vous pouvez souhaiter changer le répertoire de destination des fichiers extraits.</p>
 <p>Pour cela, on utilise l’option -C (change-directory) suivie du répertoire de destination.</p>
 <h3>Exemple :</h3>
@@ -217,17 +188,16 @@
 <pre><code>tar -xf archive.tar -C /home/user/documents</code></pre>
 <h3>COMMANDE TAR : CHANGER LE</h3>
 <h3>RÉPERTOIRE DE DESTINATION</h3>
-</section>
 </div>
-<nav class="pager" aria-label="Sections précédente et suivante">
+<nav class="pager" aria-label="Leçons précédente et suivante">
 <a class="btn" href="s22.html">← Gestion des comptes utilisateurs</a><a class="btn" href="s24.html">Composition des commandes (; &amp; () {}) →</a>
 </nav>
 <aside class="cta">
-<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div><h2>Réviser cette leçon en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la leçon comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
 <div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s23">Ouvrir la plateforme</a><a class="btn btn-soft" href="../qcm.html">120 QCM corrigés</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
 </aside>
 <section class="related" aria-labelledby="related-title">
-<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<h2 id="related-title">Autres leçons du chapitre 2 — Les commandes de base Unix</h2>
 <ul>
 <li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
 <li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
@@ -253,8 +223,8 @@
 </main>
 </div>
 <footer class="site-foot">
-<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
-<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Programme</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
 <div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
 </footer>
 </body>

@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Séparateurs conditionnels &amp; redirections — SE1 | Badr AI</title>
-<meta name="description" content="Cours SE1 : Séparateurs conditionnels &amp; redirections (pages 180–196). الفواصل الشرطية وإعادة التوجيه — explications en arabe, révision en français, QCM et…">
+<meta name="description" content="Cours SE1 : Séparateurs conditionnels &amp; redirections. الفواصل الشرطية وإعادة التوجيه — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Séparateurs conditionnels &amp; redirections, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Entrée standard (stdin), Sortie standard (stdout), Erreur standard (stderr), Pipe, Redirection, Here-document">
 <meta name="author" content="Badr AI">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-<meta name="theme-color" content="#f6edda">
+<meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s18.html">
 <meta property="og:type" content="article">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="ar_MA">
 <meta property="og:title" content="Séparateurs conditionnels &amp; redirections — SE1 | Badr AI">
-<meta property="og:description" content="Cours SE1 : Séparateurs conditionnels &amp; redirections (pages 180–196). الفواصل الشرطية وإعادة التوجيه — explications en arabe, révision en français, QCM et…">
+<meta property="og:description" content="Cours SE1 : Séparateurs conditionnels &amp; redirections. الفواصل الشرطية وإعادة التوجيه — explications en arabe, révision en français, QCM et examen blanc.">
 <meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s18.html">
 <meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -24,24 +24,24 @@
 <meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Séparateurs conditionnels &amp; redirections — SE1 | Badr AI">
-<meta name="twitter:description" content="Cours SE1 : Séparateurs conditionnels &amp; redirections (pages 180–196). الفواصل الشرطية وإعادة التوجيه — explications en arabe, révision en français, QCM et…">
+<meta name="twitter:description" content="Cours SE1 : Séparateurs conditionnels &amp; redirections. الفواصل الشرطية وإعادة التوجيه — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%230f5c52'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="../css/seo.css?v=20261103">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%231d1d1f'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css?v=20261111">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s18.html#resource","name":"Séparateurs conditionnels & redirections — SE1 | Badr AI","description":"Cours SE1 : Séparateurs conditionnels & redirections (pages 180–196). الفواصل الشرطية وإعادة التوجيه — explications en arabe, révision en français, QCM et…","url":"https://cybader.github.io/badr-ai-se1/cours/s18.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Séparateurs conditionnels & redirections, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Entrée standard (stdin), Sortie standard (stdout), Erreur standard (stderr), Pipe, Redirection, Here-document","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s18-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-10.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-11.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-12.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-13.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-14.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-15.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-16.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-17.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-18.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s18-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Séparateurs conditionnels & redirections","item":"https://cybader.github.io/badr-ai-se1/cours/s18.html"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s18.html#resource","name":"Séparateurs conditionnels & redirections — SE1 | Badr AI","description":"Cours SE1 : Séparateurs conditionnels & redirections. الفواصل الشرطية وإعادة التوجيه — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s18.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Séparateurs conditionnels & redirections, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Entrée standard (stdin), Sortie standard (stdout), Erreur standard (stderr), Pipe, Redirection, Here-document","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s18-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-10.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-11.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-12.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-13.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-14.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-15.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-16.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-17.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s18-18.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s18-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Programme","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Séparateurs conditionnels & redirections","item":"https://cybader.github.io/badr-ai-se1/cours/s18.html"}]}]}
 </script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="site-head">
 <div class="head-in">
-<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<a class="brand" href="../index.html">
 <span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
 </a>
 <nav class="head-nav" aria-label="Navigation">
-<a href="index.html">Plan du cours</a>
+<a href="index.html">Programme</a>
 <a href="../qcm.html">QCM corrigés</a>
 <a href="../flashcards.html">Flashcards</a>
 <a href="../index.html#terminal">Terminal</a>
@@ -51,15 +51,15 @@
 </header>
 <div class="wrap">
 <nav class="crumbs" aria-label="Fil d'Ariane">
-<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Séparateurs conditionnels &amp; redirections</span>
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Programme</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Séparateurs conditionnels &amp; redirections</span>
 </nav>
 <main id="contenu">
 <article>
 <header class="hero">
-<span class="badge">Chapitre 2 · Section 18/48</span>
+<span class="badge">Chapitre 2 · Leçon 18 sur 48</span>
 <h1>Séparateurs conditionnels &amp; redirections</h1>
 <p class="ar-title" lang="ar" dir="rtl">الفواصل الشرطية وإعادة التوجيه</p>
-<div class="meta-row"><span class="chip">📄 Pages 180–196</span><span class="chip">17 pages</span><span class="chip">🖼️ 18 illustrations</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+<div class="meta-row"><span class="chip">18 illustrations</span><span class="chip">Cours en français</span><span class="chip">شرح بالعربية</span></div>
 </header>
 <section class="ar-panel" aria-labelledby="ar-title">
 <h2 id="ar-title"> الشرح بالعربية</h2>
@@ -96,23 +96,15 @@
 <figure class="lg-item"><a class="lg-thumb" href="../assets/lecons/s18-18.webp" target="_blank" rel="noopener" aria-label="Agrandir : الخلاصة"><img src="../assets/lecons/thumbs/s18-18.webp" alt="الخلاصة" loading="lazy" decoding="async" width="360" height="467"><span class="lg-zoom" aria-hidden="true">⤢</span></a><figcaption lang="ar" dir="rtl">الخلاصة</figcaption></figure>
 </div>
 </section>
-<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 180–196 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
-<div class="pages">
-<section class="page" aria-label="Page 180">
-<span class="page-tag">Page 180</span>
+<div class="sec-head"><div><h2>Contenu de la leçon</h2><p>Le cours en français, avec les termes techniques et les exemples.</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="lesson-body">
 <h3>REDIRECTION DES</h3>
 <h3>ENTRÉES/SORTIES</h3>
-</section>
-<section class="page" aria-label="Page 181">
-<span class="page-tag">Page 181</span>
 <p>Il est possible de contrôler la séquence d’exécution de commandes en utilisant des séparateurs conditionnels.</p>
 <p class="bullet">Le séparateur &amp;&amp; permet d’exécuter la commande qui le suit, si et seulement si la commande qui le précède a été exécutée sans erreur.</p>
 <p class="bullet">Le séparateur || permet d’exécuter la commande qui le suit si et seulement si la commande qui le précède a été exécutée avec erreur.</p>
 <h3>LES SÉPARATEURS CONDITIONNELS DE</h3>
 <h3>COMMANDES</h3>
-</section>
-<section class="page" aria-label="Page 182">
-<span class="page-tag">Page 182</span>
 <h3>Exemple :</h3>
 <p>Suppression des fichiers si la commande cd projet1 a été correctement exécutée.</p>
 <pre><code>$ cd projet1 &amp;&amp; rm *</code></pre>
@@ -121,26 +113,17 @@
 <pre><code>$ cd projet1 || mkdir projet1</code></pre>
 <h3>LES SÉPARATEURS CONDITIONNELS DE</h3>
 <h3>COMMANDES</h3>
-</section>
-<section class="page" aria-label="Page 183">
-<span class="page-tag">Page 183</span>
 <h3>LES ENTRÉES SORTIES D’UN PROCESSUS</h3>
 <p>Lors de l’exécution d’une commande, un processus est créé.</p>
 <h3>Par défaut le processus:</h3>
 <p class="bullet">Lit ses données d&#39;entrée à partir de l’entrée standard (par défaut le clavier).</p>
 <p class="bullet">Écrit sa sortie (les résultats et les erreurs) dans la sortie standard (par défaut l’écran).</p>
-</section>
-<section class="page" aria-label="Page 184">
-<span class="page-tag">Page 184</span>
 <h3>LES ENTRÉES SORTIES D’UN PROCESSUS</h3>
 <p class="bullet">Ces canaux de communications sont désignés par les fichiers :</p>
 <p class="bullet">« stdin » : pour l’entrée standard, identifiée par l’entier 0.</p>
 <p class="bullet">« stdout » : pour la sortie standard, identifiée par l’entier 1.</p>
 <p class="bullet">« stderr » : pour la sortie d’erreur standard, identifiée par l’entier 2.</p>
 <p class="bullet">Il est possible de rediriger les entrées/soties standards des commandes afin que la lecture se fasse à partir d’un fichier et que l’écriture se fasse dans un fichier.</p>
-</section>
-<section class="page" aria-label="Page 185">
-<span class="page-tag">Page 185</span>
 <p>On peut rediriger l’entrée standard d’une commande afin que la lecture se fasse à partir d’un fichier grâce au symbole « &lt; »</p>
 <p>commande &lt; fichier_entree</p>
 <p>La commande effectue ses entrées à partir du fichier «fichier_entree »</p>
@@ -148,9 +131,6 @@
 <pre><code>% cat &lt; donnees_entree</code></pre>
 <p>La commande lit le fichier «donnees_entree» et l’affiche sur la sortie standard, au lieu de lire les données au clavier.</p>
 <h3>REDIRECTION DE L’ENTRÉE STANDARD</h3>
-</section>
-<section class="page" aria-label="Page 186">
-<span class="page-tag">Page 186</span>
 <p>On peut rediriger la sortie standard d’une commande afin que l’écriture se fasse dans un fichier grâce aux symboles « &gt; » ou « &gt;&gt; ».</p>
 <p>commande &gt; fichier_sortie commande &gt;&gt; fichier_sortie</p>
 <p class="bullet">Si le fichier « fichier_sortie» n’existe pas, alors il sera créé.</p>
@@ -158,15 +138,9 @@
 <p class="bullet">Si le symbole « &gt; » est utilisé dans ce cas le fichier «fichier_sortie» sera écrasé et remplacé par la nouvelle sortie standard de la commande.</p>
 <p class="bullet">Si le symbole « &gt;&gt; » est utilisé, dans ce cas la nouvelle sortie standard sera rajoutée à la fin du fichier « fichier_sortie ».</p>
 <h3>REDIRECTION DE LA SORTIE STANDARD</h3>
-</section>
-<section class="page" aria-label="Page 187">
-<span class="page-tag">Page 187</span>
 <h3>REDIRECTION DE LA SORTIE STANDARD</h3>
 <p>Commande</p>
 <p>La touche « &gt;&gt; » redirige la sortie standard à la fin d&#39;un fichier et le crée s&#39;il n&#39;existe pas.</p>
-</section>
-<section class="page" aria-label="Page 188">
-<span class="page-tag">Page 188</span>
 <h3>Exemple:</h3>
 <p class="bullet">On trie le fichier « fiche1 » et on écrit le résultat dans le fichier « fiche_trie » au lieu d’afficher le résultat sur l’écran.</p>
 <pre><code>% sort fiche1 &gt; fiche_trie</code></pre>
@@ -178,15 +152,9 @@
 <p>Trier le fichier « fiche » et écrire le résultat dans le fichier « fichier_trie »</p>
 <pre><code>% sort &lt; fiche &gt; fichier_trie</code></pre>
 <h3>REDIRECTION DE LA SORTIE STANDARD</h3>
-</section>
-<section class="page" aria-label="Page 189">
-<span class="page-tag">Page 189</span>
 <p class="bullet">La touche « &lt;&lt; » passe la console en mode saisie au clavier, ligne par ligne.</p>
 <p class="bullet">Toutes ces lignes seront envoyées à la commande lorsque le motclé de FIN aura été écrit.</p>
 <h3>REDIRECTION DE LA SORTIE STANDARD</h3>
-</section>
-<section class="page" aria-label="Page 190">
-<span class="page-tag">Page 190</span>
 <h3>Remarque :</h3>
 <p>La commande « cat » permet de faire la concaténation des fichiers en redirigeant la sortie standard à l’aide des opérateurs de redirections « &gt; »</p>
 <p>ou « &gt;&gt; ».</p>
@@ -194,17 +162,11 @@
 <p>Concaténer les fichiers « fiche1 » et « fiche2 » dans « fiche 3 »</p>
 <pre><code>% cat fiche1 fiche2 &gt; fiche3</code></pre>
 <h3>REDIRECTION DE LA SORTIE STANDARD</h3>
-</section>
-<section class="page" aria-label="Page 191">
-<span class="page-tag">Page 191</span>
 <p>Lors de l’exécution d’une commande, des messages d’erreurs peuvent être affichés à l’écran si un problème survient en cours d’exécution.</p>
 <p>On peut rediriger la sortie des messages d’erreurs dans un fichier. Ceci permet d’éviter d’avoir un mélange entre les résultats normaux et les messages d’erreurs dans une même sortie (standard ou fichier).</p>
 <p>Ceci peut se faire grâce aux chaines « 2&gt; » ou « 2&gt;&gt; »</p>
 <h3>REDIRECTION DE LA SORTIE D’ERREURS STANDARD</h3>
 <h3>(STDERR)</h3>
-</section>
-<section class="page" aria-label="Page 192">
-<span class="page-tag">Page 192</span>
 <h3>Syntaxe :</h3>
 <p>commande 2&gt; fichier_sortie commande 2&gt;&gt; fichier_sortie</p>
 <p>Comme pour la redirection de la sortie standard,</p>
@@ -214,9 +176,6 @@
 <p class="bullet">Si on utilise la chaine « 2&gt;&gt; » , alors la sortie standard se rajoute à la fin du fichier sortie.</p>
 <h3>REDIRECTION DE LA SORTIE D’ERREURS STANDARD</h3>
 <h3>(STDERR)</h3>
-</section>
-<section class="page" aria-label="Page 193">
-<span class="page-tag">Page 193</span>
 <h3>Exemple:</h3>
 <p>On exécute la commande « find » sans arguments. Les résultats de la recherche sont redirigés vers le fichier «res_find»</p>
 <p>alors que les messages d’erreurs (par exemple on ne peut pas explorer un répertoire protégé en lecture) seront redirigés vers le fichier «erreur_find ».</p>
@@ -230,9 +189,6 @@
 <pre><code>% find . &amp;&gt;&gt;res</code></pre>
 <h3>REDIRECTION DE LA SORTIE D’ERREURS STANDARD</h3>
 <h3>(STDERR)</h3>
-</section>
-<section class="page" aria-label="Page 194">
-<span class="page-tag">Page 194</span>
 <p>Les pipes (tubes) permettent de rediriger la sortie d’un processus vers l’entrée d’un autre. Les processus s’exécutent en parallèles.</p>
 <h3>Syntaxe :</h3>
 <p>cmdA | cmdB</p>
@@ -240,9 +196,6 @@
 <p class="bullet">Le symbole « | » est appelé « pipe ». Il permet de relier deux commandes entre elles.</p>
 <p class="bullet">La sortie standard de la commande « cmdA » est utilisée comme entrée standard de la commande « cmdB ».</p>
 <h3>LES TUBES (PIPES)</h3>
-</section>
-<section class="page" aria-label="Page 195">
-<span class="page-tag">Page 195</span>
 <h3>Exemple :</h3>
 <p>Exécuter la commande « ls -l » et rediriger la sortie de la commande vers le fichiers « resultat.txt »</p>
 <pre><code>% ls -l &gt; resultat.txt</code></pre>
@@ -253,9 +206,6 @@
 <h3>Les deux commandes peuvent être combinées pour élaborer une seule:</h3>
 <pre><code>% ls -l | wc &gt; cp.txt</code></pre>
 <h3>LES TUBES (PIPES)</h3>
-</section>
-<section class="page" aria-label="Page 196">
-<span class="page-tag">Page 196</span>
 <pre><code>% ls -l | wc</code></pre>
 <p>16 124 921</p>
 <p class="bullet">Compte le nombre de lignes, de mots et de caractères de la sortie de la commande « ls-l » ( résultat: 16 lignes, 124 mots et 921 caractères).</p>
@@ -264,17 +214,16 @@
 <pre><code>% ls -l | wc | wc</code></pre>
 <p>1 3 24</p>
 <h3>LES TUBES (PIPES)</h3>
-</section>
 </div>
-<nav class="pager" aria-label="Sections précédente et suivante">
+<nav class="pager" aria-label="Leçons précédente et suivante">
 <a class="btn" href="s17.html">← grep, find &amp; alias (exercices)</a><a class="btn" href="s19.html">Utilisateurs &amp; groupes →</a>
 </nav>
 <aside class="cta">
-<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div><h2>Réviser cette leçon en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la leçon comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
 <div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s18">Ouvrir la plateforme</a><a class="btn btn-soft" href="../qcm.html">120 QCM corrigés</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
 </aside>
 <section class="related" aria-labelledby="related-title">
-<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<h2 id="related-title">Autres leçons du chapitre 2 — Les commandes de base Unix</h2>
 <ul>
 <li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
 <li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
@@ -300,8 +249,8 @@
 </main>
 </div>
 <footer class="site-foot">
-<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
-<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Programme</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
 <div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
 </footer>
 </body>

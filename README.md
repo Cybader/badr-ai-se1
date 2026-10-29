@@ -1,7 +1,7 @@
 # Badr AI — Système d'Exploitation 1
 
 Plateforme d'apprentissage **hors-ligne** pour le module *Système d'Exploitation 1* :
-tout le cours (436 pages), des explications en arabe, et la révision/les examens en français.
+tout le cours SE1, des explications en arabe, et la révision/les examens en français.
 
 > **Comprendre en arabe. Réussir en français.**
 > **افهم بالعربية. راجع بالفرنسية. استعد للامتحان بثقة.**
@@ -11,7 +11,7 @@ tout le cours (436 pages), des explications en arabe, et la révision/les examen
 La plateforme est publiée sur **GitHub Pages** :
 
 - **Plateforme interactive :** <https://cybader.github.io/badr-ai-se1/>
-- **Plan du cours indexable (48 sections) :** <https://cybader.github.io/badr-ai-se1/cours/>
+- **Programme indexable (48 leçons) :** <https://cybader.github.io/badr-ai-se1/cours/>
 - **120 QCM corrigés :** <https://cybader.github.io/badr-ai-se1/qcm.html>
 - **90 flashcards :** <https://cybader.github.io/badr-ai-se1/flashcards.html>
 - **Dépôt GitHub :** <https://github.com/Cybader/badr-ai-se1>
@@ -39,10 +39,10 @@ Aucune installation, aucun compte, aucune connexion Internet requise.
 
 | Élément | Détail |
 |---|---|
-| Cours | **436 pages** réparties en **48 sections** et **3 chapitres** |
-| Chapitre 1 | Introduction aux systèmes d'exploitation — pages 1–73 |
-| Chapitre 2 | Les commandes de base Unix — pages 74–282 |
-| Chapitre 3 | Programmation Shell — pages 283–436 |
+| Cours | **48 leçons** réparties en **3 chapitres** |
+| Chapitre 1 | Introduction aux systèmes d'exploitation |
+| Chapitre 2 | Les commandes de base Unix |
+| Chapitre 3 | Programmation Shell |
 | Quiz | **120 QCM** corrigés, avec explication en arabe |
 | Flashcards | **90 cartes** : terminologie, commandes, concepts |
 | Terminal | simulateur Unix interactif + **16 missions** guidées |
@@ -52,7 +52,7 @@ Aucune installation, aucun compte, aucune connexion Internet requise.
 
 Chaque section propose :
 
-- le **texte du cours en français** (fidèle au support, page par page) ;
+- le **texte du cours en français** ;
 - un **résumé explicatif en arabe** (RTL), avec les termes techniques traduits ;
 - une **galerie d'illustrations** (210 planches WebP) avec agrandissement plein écran ;
 - un bouton **« Marquer comme lu »** qui alimente la progression et les XP.
@@ -112,7 +112,7 @@ d'examen, mission terminée et bouton **« حفّزني »** (motive-moi).
 ```
 Plateforme Badr AI/
 ├── index.html              interface (SPA) + métadonnées SEO
-├── cours/                  49 pages HTML statiques indexables (hub + 48 sections)
+├── cours/                  49 fichiers HTML statiques indexables (hub + 48 leçons)
 ├── qcm.html                120 QCM corrigés en HTML indexable
 ├── flashcards.html         90 flashcards en HTML indexable
 ├── assets/og-image.png     carte de partage 1200×630 (Open Graph / Twitter)
@@ -151,7 +151,7 @@ un fonctionnement direct en `file://` sans serveur ni build.
 
 ## SEO et publication GitHub Pages
 
-La SPA reste la version interactive ; en parallèle, **51 pages HTML statiques** reprennent le texte du
+La SPA reste la version interactive ; en parallèle, **51 fichiers HTML statiques** reprennent le texte du
 cours, le résumé arabe, les termes techniques, les **120 QCM corrigés** et les **90 flashcards** pour
 être lus par les moteurs de recherche et les étudiants qui n'ont pas JavaScript.
 
@@ -206,13 +206,13 @@ cd "Plateforme Badr AI"
 python tools/pipeline.py
 ```
 
-Le script lit `../Cours/Cours SE.pdf`, vérifie que les **436 pages** sont présentes, retire les
+Le script lit `../Cours/Cours SE.pdf`, vérifie que le cours complet est présent, retire les
 en-têtes/pieds répétés et les mentions nominatives, puis réécrit `js/data-cours.js`.
 Il échoue volontairement si une page manque ou si un nom interdit subsiste.
 
 > Les images des diapositives ne sont pas intégrées : elles contiennent des logos et des noms
-> institutionnels. Le contenu utile (texte, formules, commandes, schémas décrits) est conservé page par page.
-> La page 282, purement visuelle dans le PDF, affiche un repère explicite.
+> institutionnels. Le contenu utile (texte, formules, commandes, schémas décrits) est conservé.
+> Les contenus purement visuels sont traités séparément.
 
 ---
 
@@ -228,7 +228,7 @@ Il échoue volontairement si une page manque ou si un nom interdit subsiste.
 
 ## بالعربية
 
-هذه المنصة تجمع **كامل مقرر أنظمة التشغيل 1 (436 صفحة)** في فضاء واحد يعمل **بدون إنترنت**:
+هذه المنصة تجمع **كامل مقرر أنظمة التشغيل 1** في فضاء واحد يعمل **بدون إنترنت**:
 
 - شرح مبسّط لكل قسم **بالعربية**، مع المصطلحات التقنية مترجمة؛
 - نص المقرر والأسئلة والامتحان **بالفرنسية**، لأن الامتحان بالفرنسية؛

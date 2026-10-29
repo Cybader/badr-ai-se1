@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contrôle des processus — SE1 | Badr AI</title>
-<meta name="description" content="Cours SE1 : Contrôle des processus (pages 250–271). التحكم في العمليات — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="description" content="Cours SE1 : Contrôle des processus. التحكم في العمليات — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="keywords" content="Système d&#39;Exploitation 1, SE1, cours SE1, Contrôle des processus, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Processus, PID, PPID, Signal, Zombie, Foreground / Background">
 <meta name="author" content="Badr AI">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-<meta name="theme-color" content="#f6edda">
+<meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <link rel="canonical" href="https://cybader.github.io/badr-ai-se1/cours/s25.html">
 <meta property="og:type" content="article">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="ar_MA">
 <meta property="og:title" content="Contrôle des processus — SE1 | Badr AI">
-<meta property="og:description" content="Cours SE1 : Contrôle des processus (pages 250–271). التحكم في العمليات — explications en arabe, révision en français, QCM et examen blanc.">
+<meta property="og:description" content="Cours SE1 : Contrôle des processus. التحكم في العمليات — explications en arabe, révision en français, QCM et examen blanc.">
 <meta property="og:url" content="https://cybader.github.io/badr-ai-se1/cours/s25.html">
 <meta property="og:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -24,24 +24,24 @@
 <meta property="og:image:alt" content="Badr AI — Système d'Exploitation 1">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contrôle des processus — SE1 | Badr AI">
-<meta name="twitter:description" content="Cours SE1 : Contrôle des processus (pages 250–271). التحكم في العمليات — explications en arabe, révision en français, QCM et examen blanc.">
+<meta name="twitter:description" content="Cours SE1 : Contrôle des processus. التحكم في العمليات — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%230f5c52'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="../css/seo.css?v=20261103">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%231d1d1f'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
+<link rel="stylesheet" href="../css/seo.css?v=20261111">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s25.html#resource","name":"Contrôle des processus — SE1 | Badr AI","description":"Cours SE1 : Contrôle des processus (pages 250–271). التحكم في العمليات — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s25.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Contrôle des processus, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Processus, PID, PPID, Signal, Zombie, Foreground / Background","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s25-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-10.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-11.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-12.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-13.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-14.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-15.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-16.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s25-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Plan du cours","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Contrôle des processus","item":"https://cybader.github.io/badr-ai-se1/cours/s25.html"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s25.html#resource","name":"Contrôle des processus — SE1 | Badr AI","description":"Cours SE1 : Contrôle des processus. التحكم في العمليات — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s25.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Contrôle des processus, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Processus, PID, PPID, Signal, Zombie, Foreground / Background","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s25-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-10.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-11.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-12.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-13.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-14.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-15.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s25-16.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s25-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Programme","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Contrôle des processus","item":"https://cybader.github.io/badr-ai-se1/cours/s25.html"}]}]}
 </script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header class="site-head">
 <div class="head-in">
-<a class="brand" href="../index.html" aria-label="Badr AI — accueil">
+<a class="brand" href="../index.html">
 <span class="b">B</span><span><b>Badr AI</b><small>Système d'Exploitation 1</small></span>
 </a>
 <nav class="head-nav" aria-label="Navigation">
-<a href="index.html">Plan du cours</a>
+<a href="index.html">Programme</a>
 <a href="../qcm.html">QCM corrigés</a>
 <a href="../flashcards.html">Flashcards</a>
 <a href="../index.html#terminal">Terminal</a>
@@ -51,15 +51,15 @@
 </header>
 <div class="wrap">
 <nav class="crumbs" aria-label="Fil d'Ariane">
-<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Cours SE1</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Contrôle des processus</span>
+<a href="../index.html">Accueil</a><span>›</span><a href="index.html">Programme</a><span>›</span><a href="index.html#ch2">Chapitre 2</a><span>›</span><span aria-current="page">Contrôle des processus</span>
 </nav>
 <main id="contenu">
 <article>
 <header class="hero">
-<span class="badge">Chapitre 2 · Section 25/48</span>
+<span class="badge">Chapitre 2 · Leçon 25 sur 48</span>
 <h1>Contrôle des processus</h1>
 <p class="ar-title" lang="ar" dir="rtl">التحكم في العمليات</p>
-<div class="meta-row"><span class="chip">📄 Pages 250–271</span><span class="chip">22 pages</span><span class="chip">🖼️ 16 illustrations</span><span class="chip">🇫🇷 Cours en français</span><span class="chip">📘 شرح بالعربية</span></div>
+<div class="meta-row"><span class="chip">16 illustrations</span><span class="chip">Cours en français</span><span class="chip">شرح بالعربية</span></div>
 </header>
 <section class="ar-panel" aria-labelledby="ar-title">
 <h2 id="ar-title"> الشرح بالعربية</h2>
@@ -94,15 +94,10 @@
 <figure class="lg-item"><a class="lg-thumb" href="../assets/lecons/s25-16.webp" target="_blank" rel="noopener" aria-label="Agrandir : Signals التي يجب حفظها"><img src="../assets/lecons/thumbs/s25-16.webp" alt="Signals التي يجب حفظها" loading="lazy" decoding="async" width="360" height="467"><span class="lg-zoom" aria-hidden="true">⤢</span></a><figcaption lang="ar" dir="rtl">Signals التي يجب حفظها</figcaption></figure>
 </div>
 </section>
-<div class="sec-head"><div><h2>Contenu du cours</h2><p>Pages 250–271 · texte intégral du support</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
-<div class="pages">
-<section class="page" aria-label="Page 250">
-<span class="page-tag">Page 250</span>
+<div class="sec-head"><div><h2>Contenu de la leçon</h2><p>Le cours en français, avec les termes techniques et les exemples.</p></div><span class="chip">Chapitre 2 — Les commandes de base Unix</span></div>
+<div class="lesson-body">
 <h3>CONTRÔLE DES</h3>
 <h3>PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 251">
-<span class="page-tag">Page 251</span>
 <p>Le shell permet de contrôler les processus qui s’exécutent. Un processus s’exécute soit en foreground (avant plan), soit en background (arrière plan ou en tâche de fond).</p>
 <p class="bullet">Foreground (Avant-plan) : Exécution par défaut.</p>
 <p class="bullet">Lorsqu&#39;une commande est lancée, elle s&#39;exécute automatiquement en avant-plan.</p>
@@ -112,9 +107,6 @@
 <p>Pour lancer une nouvelle commande en parallèle, l’ouverture d’un nouveau terminal est nécessaire.</p>
 <p>Remarque : Ouvrir un nouveau terminal revient à créer un nouveau processus shell, permettant d&#39;exécuter des commandes séparément.</p>
 <h3>CONTRÔLE DES PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 252">
-<span class="page-tag">Page 252</span>
 <p class="bullet">Suspension d’un processus en avant-plan :</p>
 <p class="bullet">Utiliser Ctrl-Z pour suspendre un processus en cours.</p>
 <p>Attention : Le processus est en pause, mais reste actif en arrière-plan.</p>
@@ -125,9 +117,6 @@
 <p class="bullet">Utiliser Ctrl-C pour arrêter définitivement un processus en cours.</p>
 <h3>CONTRÔLE DES PROCESSUS : EXÉCUTION</h3>
 <h3>EN AVANT-PLAN</h3>
-</section>
-<section class="page" aria-label="Page 253">
-<span class="page-tag">Page 253</span>
 <p class="bullet">Exécution en arrière-plan</p>
 <p class="bullet">Pour permettre au shell de lancer plusieurs commandes en parallèle, il est nécessaire d&#39;exécuter une commande en arrière-plan.</p>
 <p>Cela se fait en ajoutant le symbole &amp; à la fin de la commande.</p>
@@ -135,9 +124,6 @@
 <p class="bullet">Le processus shell (processus père) peut alors continuer à exécuter d&#39;autres commandes sans attendre la fin de l&#39;exécution de la commande précédente.</p>
 <h3>CONTRÔLE DES PROCESSUS : EXÉCUTION</h3>
 <h3>EN ARRIÈRE-PLAN</h3>
-</section>
-<section class="page" aria-label="Page 254">
-<span class="page-tag">Page 254</span>
 <p class="bullet">Lorsque la commande est lancée en arrière plan, le shell:</p>
 <p>Affiche entre crochets, « [ num_processus] », le numéro du processus lancé en arrière plan, par le même processus shell.</p>
 <p>Affiche le PID (Process IDentifier), le numéro identifiant le processus lancé en arrière plan.</p>
@@ -148,9 +134,6 @@
 <p>Cette commande démarre une recherche en arrière-plan, permettant à l&#39;utilisateur de continuer à travailler sur le terminal pendant que la recherche s&#39;effectue.</p>
 <h3>CONTRÔLE DES PROCESSUS : EXÉCUTION</h3>
 <h3>EN ARRIÈRE-PLAN</h3>
-</section>
-<section class="page" aria-label="Page 255">
-<span class="page-tag">Page 255</span>
 <h3>Exemple :</h3>
 <pre><code>find / -name &quot;*.c&quot; -type f -print &amp; &gt; resultat</code></pre>
 <p>&amp; : find doit être exécutée en arrière-plan. &gt; : Redirige la sortie standard d&#39;une commande vers un fichier.</p>
@@ -160,9 +143,6 @@
 <p>(find / -name &quot;*.c&quot; -type f -print &gt; resultat) &amp;</p>
 <p>Conclusion : les parenthèses permet de s&#39;assurer que la redirection est correctement appliquée à la commande find avant qu&#39;elle ne soit exécutée en arrière-plan.</p>
 <h3>CONTRÔLE DES PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 256">
-<span class="page-tag">Page 256</span>
 <p class="bullet">La commande fg permet de relancer le processus en avant plan.</p>
 <p class="bullet">On ne peut pas arrêter (interrompre) un processus en arrière plan avec « CTRL-C » .</p>
 <p class="bullet">La commande jobs permet de lister les processus lancés en arrière plan, par le même processus shell.</p>
@@ -171,9 +151,6 @@
 <p>[1]+ Running gedit &amp;</p>
 <p class="bullet">Veut dire que le processus « gedit » est lancé en arrière plan.</p>
 <h3>CONTRÔLE DES PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 257">
-<span class="page-tag">Page 257</span>
 <p class="bullet">Si l’exécution en arrière plan, s’est bien passée, une ligne « Done » apparait indiquant que le processus est terminé.</p>
 <h3>Exemple:</h3>
 <p>[1] + Done find / -name &quot;*.c&quot; -type f &gt; resultat</p>
@@ -182,34 +159,22 @@
 <h3>Exemple:</h3>
 <p>[1] + Exit find / -name &quot;*.c&quot; -type f &gt; resultat</p>
 <h3>CONTRÔLE DES PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 258">
-<span class="page-tag">Page 258</span>
 <h3>Précaution:</h3>
 <p class="bullet">Si le processus lancé en arrière plan fait des saisies interactives alors le shell peut interpréter ces saisis comme de nouvelles commandes.</p>
 <p class="bullet">éviter les saisies interactives dans les processus lancés en arrière plan.</p>
 <p class="bullet">Si le processus lancé en arrière plan fait des affichages sur écran alors ces affichages peuvent se chevaucher avec les sorties standard des nouvelles commandes lancées avec le shell.</p>
 <p class="bullet">éviter les sorties standards dans les processus lancés en arrière plan.</p>
 <h3>CONTRÔLE DES PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 259">
-<span class="page-tag">Page 259</span>
 <h3>Attention:</h3>
 <p class="bullet">Un processus ne peut exister que si son père existe.</p>
 <p>Quand on quitte le processus père alors on quitte automatiquement tous ses processus fils.</p>
 <p class="bullet">Ne pas quitter le shell alors que ses processus fils s’exécutent en arrière plan.</p>
 <h3>CONTRÔLE DES PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 260">
-<span class="page-tag">Page 260</span>
 <p>La commande « bg » permet de réactiver un processus bloqué par « CTRL-Z ». L’exécution du processus réactivé s’effectue en arrière plan.</p>
 <pre><code>bg %num_process</code></pre>
 <p class="bullet">« num_process » désigne le numéro du processus lancé en arrière plan.</p>
 <p class="bullet">pas d’espace entre % et « num_process ».</p>
 <h3>CONTRÔLE DES PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 261">
-<span class="page-tag">Page 261</span>
 <h3>Exemple :</h3>
 <p class="bullet">On lance en avant-plan la commande « find ». Pendant l’exécution, on tape la commande «Ctrl-Z»</p>
 <p>pour suspendre l’exécution du processus.</p>
@@ -220,9 +185,6 @@
 <pre><code>% bg %1</code></pre>
 <p>[1] 1234 find / &gt; resultat &amp;</p>
 <h3>CONTRÔLE DES PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 262">
-<span class="page-tag">Page 262</span>
 <h3>La commande « fg » permet :</h3>
 <p class="bullet">de réactiver un processus suspendu par « CTRL-Z » . L’exécution du processus réactivé s’effectue en avant plan.</p>
 <p class="bullet">de refaire passer en avant plan une commande qui s’exécute en arrière plan (commande lancée avec le symbole « &amp; »).</p>
@@ -230,9 +192,6 @@
 <p class="bullet">« num_process » désigne le numéro du processus lancé en arrière plan ou suspendu par « Ctrl-Z ».</p>
 <p class="bullet">Pas d’espace entre % et « num_process »</p>
 <h3>CONTRÔLE DES PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 263">
-<span class="page-tag">Page 263</span>
 <h3>Exemple :</h3>
 <p class="bullet">On lance en avant plan la commande « find ». Pendant l’exécution, on tape la commande</p>
 <p>«Ctrl-Z» pour suspendre l’exécution du processus.</p>
@@ -244,9 +203,6 @@
 <pre><code>% fg %1</code></pre>
 <pre><code>find / &gt; resultat</code></pre>
 <h3>CONTRÔLE DES PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 264">
-<span class="page-tag">Page 264</span>
 <p class="bullet">La commande « wait » permet de faire attendre que tous les processus lancés en arrière plan soient terminés.</p>
 <h3>Exemple:</h3>
 <pre><code>% cat ./Dossier/* &gt; res1.txt 2&gt; erreur1.txt &amp;</code></pre>
@@ -256,9 +212,6 @@
 <p class="bullet">La commande « wait » est lancée en avant plan. On ne peut plus lancer de nouvelles commandes, tant que les commandes lancées en arrière plan n’ont pas terminé.</p>
 <h3>CONTRÔLE DES PROCESSUS : COMMANDE</h3>
 <h3>WAIT</h3>
-</section>
-<section class="page" aria-label="Page 265">
-<span class="page-tag">Page 265</span>
 <p>La commande ps (Process Status) permet de lister les processus qui sont en cours sur la machine.</p>
 <pre><code>ps [options]</code></pre>
 <p>La commande « ps » sans options, n’affiche que les processus en cours qui sont lancés par l’utilisateur sur le terminal actuel (par le processus shell).</p>
@@ -277,17 +230,11 @@
 <pre><code>ps</code></pre>
 <h3>CONTRÔLE DES PROCESSUS :</h3>
 <h3>COMMANDE PS</h3>
-</section>
-<section class="page" aria-label="Page 266">
-<span class="page-tag">Page 266</span>
 <pre><code>% ps –f</code></pre>
 <p>(format complet) affiche une vue détaillée des processus</p>
 <pre><code>% ps –u</code></pre>
 <p>permet de filtrer les processus par utilisateur</p>
 <h3>CONTRÔLE DES PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 267">
-<span class="page-tag">Page 267</span>
 <p class="bullet">UID (User ID): identifiant de l’utilisateur qui a lancé le processus.</p>
 <p class="bullet">PID (Process ID): correspond au numéro du processus</p>
 <p class="bullet">PPID (Parent Process ID): correspond au PID du processus parent.</p>
@@ -300,9 +247,6 @@
 <p class="bullet">C: idem %CPU</p>
 <h3>CONTRÔLE DES PROCESSUS : SIGNIFICATION</h3>
 <h3>DES DIFFÉRENTES COLONNES</h3>
-</section>
-<section class="page" aria-label="Page 268">
-<span class="page-tag">Page 268</span>
 <p class="bullet">%MEM : rapport d’utilisation de la mémoire</p>
 <p class="bullet">RSS: mémoire physique (non virtuelle) utilisée par la processus, exprimée en kilo-octets .</p>
 <p class="bullet">VSZ : mémoire virtuelle.</p>
@@ -312,9 +256,6 @@
 <p class="bullet">S (Sleeping): bloqué en attente d’une action externe (par exemple le processus attend une lecture sur la clavier).</p>
 <p class="bullet">T : processus arrêté, par exemple par Ctrl-Z.</p>
 <h3>CONTRÔLE DES PROCESSUS</h3>
-</section>
-<section class="page" aria-label="Page 269">
-<span class="page-tag">Page 269</span>
 <p class="bullet">Pour arrêter un processus qui s’exécute en arrière plan, on utilise la commande « kill » qui consiste à envoyer des signaux au processus.</p>
 <p class="bullet">Le signal est un moyen de communication entre les processus.</p>
 <p>kill [-num_signal] PID [PID ...]</p>
@@ -322,9 +263,6 @@
 <p>Ce dernier intercepte le message et réagit en fonction du signal envoyé.</p>
 <h3>CONTRÔLE DES PROCESSUS : ARRÊT D&#39;UN</h3>
 <h3>PROCESSUS / SIGNAL</h3>
-</section>
-<section class="page" aria-label="Page 270">
-<span class="page-tag">Page 270</span>
 <h3>Remarque:</h3>
 <p>Seul le propriétaire du processus qui peut lancer la commande «kill » ou le super-user (utilisateur &quot;root&quot;) .</p>
 <p>Chaque signal a un nom et un numéro qui dépendent du système utilisé. La commande</p>
@@ -337,9 +275,6 @@
 <p>[1] + Terminated gedit test.c</p>
 <h3>CONTRÔLE DES PROCESSUS : ARRÊT D&#39;UN</h3>
 <h3>PROCESSUS / SIGNAL</h3>
-</section>
-<section class="page" aria-label="Page 271">
-<span class="page-tag">Page 271</span>
 <p class="bullet">Le signale numéro 1 (SIGHUP): Ce signal est envoyé par le père à tous ses fils lorsqu&#39;il se termine.</p>
 <p class="bullet">Le signal numéro 2 (SIGINT): ce signal permet l’interruption du processus demandé (Ctrl+C).</p>
 <p class="bullet">Le signal 9 (SIGKILL): ce signal permet de forcer l’arrêt du processus.</p>
@@ -350,17 +285,16 @@
 <p>[1] + Processus arrêté gedit test.c</p>
 <h3>CONTRÔLE DES PROCESSUS : ARRÊT D&#39;UN</h3>
 <h3>PROCESSUS / SIGNAL</h3>
-</section>
 </div>
-<nav class="pager" aria-label="Sections précédente et suivante">
+<nav class="pager" aria-label="Leçons précédente et suivante">
 <a class="btn" href="s24.html">← Composition des commandes (; &amp; () {})</a><a class="btn" href="s26.html">Éditeurs de texte sous Unix →</a>
 </nav>
 <aside class="cta">
-<div><h2>Réviser cette section en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la section comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
+<div><h2>Réviser cette leçon en interactif</h2><p>Ouvrez la plateforme Badr AI pour marquer la leçon comme lue, gagner des XP et tester vos connaissances avec les QCM et l'examen blanc.</p></div>
 <div class="cta-actions"><a class="btn btn-primary" href="../index.html#cours/s25">Ouvrir la plateforme</a><a class="btn btn-soft" href="../qcm.html">120 QCM corrigés</a><a class="btn" href="../index.html#exam">Examen blanc</a></div>
 </aside>
 <section class="related" aria-labelledby="related-title">
-<h2 id="related-title">Autres sections du chapitre 2 — Les commandes de base Unix</h2>
+<h2 id="related-title">Autres leçons du chapitre 2 — Les commandes de base Unix</h2>
 <ul>
 <li><a href="s9.html">Shell, terminal &amp; format des commandes <span lang="ar" dir="rtl">— الشيل والطرفية وصيغة الأوامر</span></a></li>
 <li><a href="s10.html">Gestion des fichiers &amp; arborescence <span lang="ar" dir="rtl">— إدارة الملفات وشجرة المجلدات</span></a></li>
@@ -386,8 +320,8 @@
 </main>
 </div>
 <footer class="site-foot">
-<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · 436 pages · explications en arabe, révision en français.</div>
-<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Plan du cours</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
+<div><b>Badr AI</b> · Système d'Exploitation 1 (SE1) · explications en arabe, révision en français.</div>
+<div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Programme</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
 <div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
 </footer>
 </body>
