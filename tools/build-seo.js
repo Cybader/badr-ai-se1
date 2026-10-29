@@ -123,7 +123,7 @@ function head(opts) {
 '<meta name="twitter:description" content="' + esc(opts.ogDescription || desc) + '">\n' +
 '<meta name="twitter:image" content="' + image + '">\n' +
 '<link rel="icon" href="data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect rx=\'24\' width=\'100\' height=\'100\' fill=\'%230f5c52\'/><text x=\'50\' y=\'68\' font-size=\'58\' font-family=\'Segoe UI\' font-weight=\'700\' text-anchor=\'middle\' fill=\'white\'>B</text></svg>">\n' +
-'<link rel="stylesheet" href="' + prefix + 'css/seo.css?v=20261030">\n' +
+'<link rel="stylesheet" href="' + prefix + 'css/seo.css?v=20261103">\n' +
 ld + '\n' +
 '</head>\n' +
 '<body>\n' +

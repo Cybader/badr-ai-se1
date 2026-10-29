@@ -29,7 +29,7 @@
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <meta name="twitter:image:alt" content="Badr AI — Système d'Exploitation 1">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%230f5c52'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="css/style.css?v=20261030">
+<link rel="stylesheet" href="css/style.css?v=20261103">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -170,6 +170,10 @@
   </nav>
 
   <div class="sidebar-foot">
+    <button id="voice-toggle" class="icon-btn voice-toggle" title="تشغيل المرافق الصوتي" aria-label="المرافق الصوتي" aria-pressed="false">
+      <svg class="ic-voice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M9 21h6"/></svg>
+      <svg class="ic-voice-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M9 21h6M4 4l16 16"/></svg>
+    </button>
     <button id="sound-toggle" class="icon-btn" title="Activer / couper le son" aria-label="Son">
       <svg class="ic-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
       <svg class="ic-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="m16 9 5 6M21 9l-5 6"/></svg>
@@ -195,6 +199,10 @@
   </div>
   <div class="topbar-right">
     <span class="chip chip-soft" id="course-chip">436 pages · 3 chapitres</span>
+    <button id="voice-toggle-top" class="icon-btn voice-toggle" title="تشغيل المرافق الصوتي" aria-label="المرافق الصوتي" aria-pressed="false">
+      <svg class="ic-voice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M9 21h6"/></svg>
+      <svg class="ic-voice-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M9 21h6M4 4l16 16"/></svg>
+    </button>
     <button id="sound-toggle-top" class="icon-btn" title="Son" aria-label="Son">
       <svg class="ic-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
       <svg class="ic-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="m16 9 5 6M21 9l-5 6"/></svg>
@@ -255,12 +263,13 @@
   <a href="flashcards.html">90 flashcards</a>
 </footer>
 
-<script src="js/data-cours.js?v=20261030"></script>
-<script src="js/data-quiz.js?v=20261030"></script>
-<script src="js/data-flash.js?v=20261030"></script>
-<script src="js/data-images.js?v=20261030"></script>
-<script src="js/audio.js?v=20261030"></script>
-<script src="js/terminal.js?v=20261030"></script>
-<script src="js/app.js?v=20261030"></script>
+<script src="js/data-cours.js?v=20261103"></script>
+<script src="js/data-quiz.js?v=20261103"></script>
+<script src="js/data-flash.js?v=20261103"></script>
+<script src="js/data-images.js?v=20261103"></script>
+<script src="js/audio.js?v=20261103"></script>
+<script src="js/voice.js?v=20261103"></script>
+<script src="js/terminal.js?v=20261103"></script>
+<script src="js/app.js?v=20261103"></script>
 </body>
 </html>

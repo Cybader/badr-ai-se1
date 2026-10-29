@@ -88,6 +88,7 @@ window.APP = (function () {
     if (state.missions.indexOf(id) === -1) state.missions.push(id);
     addXP(xp || 15);
     save();
+    if (window.VOICE) VOICE.say("mission_done");
     if (view === "home") renderHome();
   }
   function renderXP() {
@@ -294,6 +295,193 @@ window.APP = (function () {
     });
   }
 
+  /* ============================ Voice coach ============================ */
+  let voiceCardSync = null;
+  let voiceCardStatus = null;
+  let voiceCardBound = false;
+
+  function syncVoice() {
+    if (!window.VOICE) return;
+    const on = !!VOICE.getSettings().enabled;
+    document.documentElement.classList.toggle("voice-on", on);
+    document.documentElement.classList.toggle("voice-off", !on);
+    $$("#voice-toggle, #voice-toggle-top").forEach(function (b) {
+      b.setAttribute("title", on ? "إيقاف المرافق الصوتي" : "تشغيل المرافق الصوتي");
+      b.setAttribute("aria-label", on ? "إيقاف المرافق الصوتي" : "تشغيل المرافق الصوتي");
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.classList.toggle("voice-active", on);
+    });
+  }
+
+  function initVoice() {
+    if (!window.VOICE) return;
+    VOICE.init();
+    syncVoice();
+    $$("#voice-toggle, #voice-toggle-top").forEach(function (b) {
+      b.addEventListener("click", function () {
+        if (!VOICE.isSupported()) {
+          toast("هذا المتصفح لا يدعم النطق. جرّب Chrome أو Edge.", "bad");
+          return;
+        }
+        const on = VOICE.toggle();
+        syncVoice();
+        if (on && !VOICE.hasArabicVoice()) {
+          toast("لا يوجد صوت عربي مثبّت. سيحاول المتصفح استخدام الصوت الافتراضي.", "bad");
+        } else {
+          toast(on ? "المرافق الصوتي مفعّل" : "المرافق الصوتي متوقف", on ? "good" : "");
+        }
+      });
+    });
+    document.addEventListener("badrai:voice-settings", syncVoice);
+    document.addEventListener("badrai:voice", function (e) {
+      const d = e.detail || {};
+      const btn = $("#listen-ar");
+      if (!btn) return;
+      if (d.type === "start" && d.tag === "section") {
+        btn.textContent = "⏹ إيقاف الشرح";
+        btn.setAttribute("aria-pressed", "true");
+      } else if (d.type === "start" || d.type === "end" || d.type === "stop" || d.type === "error") {
+        btn.textContent = "🔊 استمع للشرح";
+        btn.setAttribute("aria-pressed", "false");
+      }
+    });
+  }
+
+  function initVoiceCard() {
+    const card = $("#voice-card");
+    if (!card) return;
+    const supported = !!(window.VOICE && VOICE.isSupported());
+    const enable = $("#voice-enable", card);
+    const select = $("#voice-select", card);
+    const rate = $("#voice-rate", card);
+    const volume = $("#voice-volume", card);
+    const feedback = $("#voice-feedback", card);
+    const rateVal = $("#voice-rate-val", card);
+    const volumeVal = $("#voice-volume-val", card);
+    const status = $("#voice-status", card);
+    const badge = $("#voice-badge", card);
+    const testBtn = $("#voice-test", card);
+    const motivateBtn = $("#voice-motivate", card);
+    const stopBtn = $("#voice-stop", card);
+
+    function fillVoices() {
+      if (!select) return;
+      if (!window.VOICE) return;
+      const list = VOICE.getVoices();
+      const current = VOICE.getSettings().voiceURI;
+      if (!list.length) {
+        select.innerHTML = '<option value="">لا يوجد صوت عربي مثبّت</option>';
+        select.value = "";
+        select.disabled = true;
+        return;
+      }
+      select.disabled = !supported;
+      select.innerHTML = '<option value="">تلقائي — أفضل صوت عربي متاح</option>' +
+        list.map(function (v) {
+          return '<option value="' + esc(v.voiceURI) + '">' + esc(v.name) + " · " + esc(v.lang) +
+            (v.local ? " · محلي" : "") + (v.isDefault ? " · افتراضي" : "") + "</option>";
+        }).join("");
+      select.value = current;
+      if (select.value !== current) select.value = "";
+    }
+
+    function updateStatus() {
+      if (!status || !window.VOICE || !document.body.contains(card)) return;
+      if (!supported) {
+        status.textContent = "⚠️ هذا المتصفح لا يدعم النطق. جرّب Chrome أو Edge على الحاسوب، أو Safari على iPhone.";
+        status.className = "voice-status warn";
+        if (badge) { badge.textContent = "غير مدعوم"; badge.className = "voice-badge off"; }
+        return;
+      }
+      const info = VOICE.voiceInfo();
+      const s = VOICE.getSettings();
+      if (VOICE.isSpeaking()) {
+        status.textContent = "🔊 يتحدث الآن… اضغط «إيقاف» لإنهاء الصوت.";
+        status.className = "voice-status live";
+        if (badge) { badge.textContent = "يتحدث"; badge.className = "voice-badge live"; }
+        return;
+      }
+      if (!info.total) {
+        status.textContent = "⚠️ لا يوجد صوت عربي مثبّت على هذا الجهاز. أضف صوتًا عربيًا من إعدادات النظام ثم أعد تحميل الصفحة. يمكنك تجربة الصوت الافتراضي.";
+        status.className = "voice-status warn";
+        if (badge) { badge.textContent = "بلا صوت عربي"; badge.className = "voice-badge off"; }
+        return;
+      }
+      status.textContent = s.enabled
+        ? "✅ المرافق مفعّل — " + info.total + " صوت عربي متاح (" + info.local + " محلي)."
+        : "المرافق متوقف. لن يتحدث تلقائيًا حتى تشغّله.";
+      status.className = "voice-status" + (s.enabled ? " on" : "");
+      if (badge) {
+        badge.textContent = s.enabled ? "مفعّل" : "متوقف";
+        badge.className = "voice-badge " + (s.enabled ? "on" : "off");
+      }
+    }
+
+    function sync() {
+      if (!window.VOICE || !document.body.contains(card)) return;
+      const s = VOICE.getSettings();
+      if (enable) { enable.checked = !!s.enabled; enable.disabled = !supported; }
+      if (rate) { rate.value = s.rate; rate.disabled = !supported; }
+      if (volume) { volume.value = s.volume; volume.disabled = !supported; }
+      if (feedback) { feedback.checked = !!s.feedbackEach; feedback.disabled = !supported; }
+      if (rateVal) rateVal.textContent = Number(s.rate).toFixed(2).replace(/0$/, "") + "×";
+      if (volumeVal) volumeVal.textContent = Math.round(s.volume * 100) + "%";
+      fillVoices();
+      updateStatus();
+    }
+
+    if (enable) enable.addEventListener("change", function () {
+      const ok = VOICE.setEnabled(enable.checked);
+      if (!ok) {
+        enable.checked = false;
+        toast("تعذّر تشغيل الصوت على هذا المتصفح.", "bad");
+      }
+    });
+    if (select) select.addEventListener("change", function () {
+      VOICE.setSetting("voiceURI", select.value);
+    });
+    if (rate) {
+      rate.addEventListener("input", function () {
+        if (rateVal) rateVal.textContent = Number(rate.value).toFixed(2).replace(/0$/, "") + "×";
+      });
+      rate.addEventListener("change", function () { VOICE.setSetting("rate", rate.value); });
+    }
+    if (volume) {
+      volume.addEventListener("input", function () {
+        if (volumeVal) volumeVal.textContent = Math.round(Number(volume.value) * 100) + "%";
+      });
+      volume.addEventListener("change", function () { VOICE.setSetting("volume", volume.value); });
+    }
+    if (feedback) feedback.addEventListener("change", function () {
+      VOICE.setSetting("feedbackEach", feedback.checked);
+    });
+    if (testBtn) testBtn.addEventListener("click", function () {
+      if (!VOICE.test()) toast("المتصفح لا يدعم النطق.", "bad");
+    });
+    if (motivateBtn) motivateBtn.addEventListener("click", function () {
+      if (!VOICE.motivate()) toast("المتصفح لا يدعم النطق.", "bad");
+    });
+    if (stopBtn) stopBtn.addEventListener("click", function () { VOICE.stop(); });
+
+    voiceCardSync = sync;
+    voiceCardStatus = updateStatus;
+    if (!voiceCardBound) {
+      voiceCardBound = true;
+      document.addEventListener("badrai:voice-settings", function () {
+        if (voiceCardSync) voiceCardSync();
+      });
+      document.addEventListener("badrai:voice", function (e) {
+        const type = e.detail && e.detail.type;
+        if (type === "voices") {
+          if (voiceCardSync) voiceCardSync();
+        } else if (voiceCardStatus) {
+          voiceCardStatus();
+        }
+      });
+    }
+    sync();
+  }
+
   /* ============================ Router ============================ */
   const TITLES = {
     home: ["Badr AI", "Accueil"],
@@ -315,6 +503,7 @@ window.APP = (function () {
 
   function navigate(name) {
     if (!TITLES[name]) name = "home";
+    if (window.VOICE) VOICE.stop();
     view = name;
     $$(".view").forEach(function (v) { v.classList.toggle("active", v.id === "view-" + name); });
     $$(".nav-btn").forEach(function (b) { b.classList.toggle("active", b.getAttribute("data-view") === name); });
@@ -518,6 +707,7 @@ window.APP = (function () {
           '<button class="btn btn-primary btn-lg" id="hero-continue">▶ Reprendre le cours</button>' +
           '<button class="btn btn-lg" data-go="terminal">⌨ Terminal</button>' +
           '<button class="btn btn-lg" data-go="exam">🎓 Examen blanc</button>' +
+          '<button class="btn btn-lg btn-ghost" id="hero-motivate" type="button">🎙️ حفّزني</button>' +
         "</div>" +
         '<div class="hero-strip">' +
           '<div class="hero-stat"><b>' + ALL_PAGES + "</b><span>PAGES DE COURS</span></div>" +
@@ -562,6 +752,14 @@ window.APP = (function () {
 
     const cont = $("#hero-continue");
     if (cont) cont.addEventListener("click", function () { openSection(nextSec.sec.id); });
+    const motivate = $("#hero-motivate");
+    if (motivate) motivate.addEventListener("click", function () {
+      if (!window.VOICE || !VOICE.isSupported()) {
+        toast("هذا المتصفح لا يدعم النطق. جرّب Chrome أو Edge.", "bad");
+      } else if (!VOICE.motivate()) {
+        toast("تعذّر تشغيل الصوت الآن.", "bad");
+      }
+    });
     $$("[data-go]", host).forEach(function (b) {
       b.addEventListener("click", function () { navigate(b.getAttribute("data-go")); });
     });
@@ -718,6 +916,7 @@ window.APP = (function () {
           '<div class="sec-ar ar">' + esc(sec.ar) + "</div>" +
         "</div>" +
         '<div class="rh-actions">' +
+          '<button class="btn btn-sm btn-ghost" id="listen-ar" type="button" aria-pressed="false">🔊 استمع للشرح</button>' +
           '<button class="btn btn-sm btn-ghost" id="toggle-ar" type="button">📘 Masquer l\'arabe</button>' +
           '<button class="btn btn-sm ' + (isRead ? "btn-soft" : "btn-primary") + '" id="mark-read" type="button">' +
             (isRead ? "✓ Section lue" : "Marquer comme lu") + "</button>" +
@@ -746,6 +945,20 @@ window.APP = (function () {
       p.classList.toggle("open");
       toggle.textContent = p.classList.contains("open") ? "📘 Masquer l'arabe" : "📘 الشرح بالعربية";
     });
+    const listen = $("#listen-ar");
+    if (listen) {
+      if (!window.VOICE || !VOICE.isSupported()) {
+        listen.hidden = true;
+      } else {
+        listen.addEventListener("click", function () {
+          if (listen.getAttribute("aria-pressed") === "true") {
+            VOICE.stop();
+          } else if (!VOICE.speakArabic(sec.arText, { tag: "section" })) {
+            toast("تعذّر تشغيل الصوت الآن.", "bad");
+          }
+        });
+      }
+    }
     const mark = $("#mark-read");
     if (mark) mark.addEventListener("click", function () {
       if (!state.read[id]) {
@@ -754,6 +967,7 @@ window.APP = (function () {
         save();
         confetti(40);
         if (window.SFX) window.SFX.play("success");
+        if (window.VOICE) VOICE.say("section_done");
       }
       mark.textContent = "✓ Section lue";
       mark.className = "btn btn-sm btn-soft";
@@ -838,6 +1052,7 @@ window.APP = (function () {
   function startQuiz(scope) {
     const pool = shuffle(quizPool(scope)).slice(0, scope === "all" ? 20 : 10).map(prepQuestion);
     quizSession = { scope: scope, items: pool, idx: 0, answers: pool.map(function () { return null; }), correct: 0 };
+    if (window.VOICE) VOICE.say("quiz_start");
     renderQuizQuestion();
     window.scrollTo({ top: 0 });
   }
@@ -901,6 +1116,7 @@ window.APP = (function () {
         const next = $("#next-question");
         next.disabled = false;
         if (window.SFX) window.SFX.play(good ? "success" : "error");
+        if (window.VOICE) VOICE.feedback(good);
         if (good) confetti(16);
       });
     });
@@ -926,6 +1142,7 @@ window.APP = (function () {
     save();
     const good = pct >= 80 ? "Excellent !" : pct >= 60 ? "Bien joué !" : pct >= 40 ? "À consolider" : "À retravailler";
     const sub = pct >= 60 ? "Vous êtes sur la bonne voie pour l'examen." : "Relisez les sections concernées puis retentez le quiz.";
+    if (window.VOICE) VOICE.say(pct >= 80 ? "quiz_result_high" : pct >= 60 ? "quiz_result_mid" : "quiz_result_low");
     const wrong = s.items.filter(function (q, i) { return s.answers[i] != null && s.answers[i] !== q.a; });
     const host = $("#quiz-root");
     host.innerHTML =
@@ -1041,12 +1258,17 @@ window.APP = (function () {
     $("#prev-card").addEventListener("click", function () { go(-1); });
     $("#next-card").addEventListener("click", function () { go(1); });
     $("#known-card").addEventListener("click", function () {
+      const before = state.flash.known.length;
       if (state.flash.known.indexOf(card.id) === -1) {
         state.flash.known.push(card.id);
         save();
         addXP(5, "Carte maîtrisée");
         if (window.SFX) window.SFX.play("success");
         confetti(14);
+      }
+      const after = state.flash.known.length;
+      if (after > before && (after === 10 || after === 30 || after === 60 || after === 90) && window.VOICE) {
+        VOICE.say("flash_milestone");
       }
       go(1);
     });
@@ -1091,6 +1313,10 @@ window.APP = (function () {
     const left = examRemaining();
     el.textContent = "⏱ " + fmtTime(left);
     el.classList.toggle("danger", left < 5 * 60 * 1000);
+    if (left > 0 && left <= 5 * 60 * 1000 && !examSession.warned5) {
+      examSession.warned5 = true;
+      if (window.VOICE) VOICE.say("exam_five_min");
+    }
     if (left <= 0 && !examSession.submitted) {
       examSession.submitted = true;
       toast("Temps écoulé — remise automatique de la copie.", "bad");
@@ -1146,6 +1372,7 @@ window.APP = (function () {
     renderExamQuestion();
     startExamTimer();
     if (window.SFX) window.SFX.play("whoosh");
+    if (window.VOICE) VOICE.say("exam_start");
     window.scrollTo({ top: 0 });
   }
 
@@ -1252,6 +1479,7 @@ window.APP = (function () {
       addXP((correct - prevBest) * 3, "Examen amélioré");
     }
     save();
+    if (window.VOICE) VOICE.say(correct >= 16 ? "exam_high" : correct >= 10 ? "exam_mid" : "exam_low");
     const note = correct >= 16 ? "Très bien — niveau examen validé." :
       correct >= 12 ? "Bien — encore quelques pièges à sécuriser." :
       correct >= 8 ? "Passable — relisez les chapitres faibles." :
@@ -1299,7 +1527,7 @@ window.APP = (function () {
     host.innerHTML =
       '<div class="section-head"><div><h2>Outils interactifs</h2>' +
         "<p>Manipulez les notions qui tombent le plus à l'examen : droits, démarrage, arborescence.</p></div>" +
-        '<span class="chip chip-soft">3 outils</span></div>' +
+        '<span class="chip chip-soft">4 outils</span></div>' +
       '<div class="tools-grid">' +
 
         '<section class="card tool-card">' +
@@ -1341,11 +1569,41 @@ window.APP = (function () {
           "</div>" +
         "</section>" +
 
+        '<section class="card tool-card wide voice-card" id="voice-card">' +
+          '<div class="tool-head"><div class="card-ico">🎙️</div><div><h3>المرافق الصوتي — Coach vocal</h3><p>تحفيز وتوجيه بالعربية، اختياري ويعمل محليًا.</p></div>' +
+            '<span class="voice-badge off" id="voice-badge">متوقف</span></div>' +
+          '<div class="voice-grid">' +
+            '<div class="voice-col">' +
+              '<label class="voice-switch"><input type="checkbox" id="voice-enable">' +
+                '<span class="vs-track" aria-hidden="true"><span class="vs-dot"></span></span>' +
+                '<span class="vs-label">تشغيل المرافق الصوتي</span></label>' +
+              '<p class="voice-help">يتحدث عند إكمال قسم، إجابة في الاختبار، مهمة طرفية، نتيجة امتحان، أو عند الضغط على «حفّزني».</p>' +
+              '<label class="voice-field" for="voice-select"><span>الصوت العربي</span>' +
+                '<select id="voice-select" class="input voice-select"><option value="">تلقائي — أفضل صوت عربي متاح</option></select></label>' +
+            "</div>" +
+            '<div class="voice-col">' +
+              '<label class="voice-field" for="voice-rate"><span>السرعة <b id="voice-rate-val">0.95×</b></span>' +
+                '<input type="range" id="voice-rate" min="0.7" max="1.2" step="0.05" value="0.95"></label>' +
+              '<label class="voice-field" for="voice-volume"><span>مستوى الصوت <b id="voice-volume-val">90%</b></span>' +
+                '<input type="range" id="voice-volume" min="0" max="1" step="0.05" value="0.9"></label>' +
+              '<label class="voice-check"><input type="checkbox" id="voice-feedback" checked> <span>تغذية راجعة بعد كل إجابة</span></label>' +
+            "</div>" +
+          "</div>" +
+          '<div class="voice-actions">' +
+            '<button class="btn btn-primary btn-sm" id="voice-test" type="button">🔊 اختبار الصوت</button>' +
+            '<button class="btn btn-sm" id="voice-motivate" type="button">✨ حفّزني</button>' +
+            '<button class="btn btn-sm btn-ghost" id="voice-stop" type="button">⏹ إيقاف</button>' +
+          "</div>" +
+          '<div class="voice-status" id="voice-status" role="status" aria-live="polite">جارٍ فحص الأصوات المتاحة…</div>' +
+          '<p class="voice-note" id="voice-note">🔒 لا يرسل Badr AI أي صوت أو نص إلى خوادم خارجية. قد يستخدم المتصفح أصواتًا محلية أو سحابية حسب نظامك؛ اختر صوتًا «محليًا» للعمل دون اتصال. إن كنت تستخدم قارئ الشاشة، اترك المرافق متوقفًا لتجنب تعارض الصوت.</p>' +
+        "</section>" +
+
       "</div>";
 
     initChmod();
     initBoot();
     initTree();
+    initVoiceCard();
   }
 
   /* ---------- chmod ---------- */
@@ -1512,6 +1770,7 @@ window.APP = (function () {
   function init() {
     renderXP();
     initSound();
+    initVoice();
     initParticles();
     resizeConfetti();
     initEffects();
@@ -1575,6 +1834,7 @@ window.APP = (function () {
   /* ============================ Public API ============================ */
   return {
     state: state,
+    voice: window.VOICE,
     navigate: navigate,
     openSection: openSection,
     addXP: addXP,

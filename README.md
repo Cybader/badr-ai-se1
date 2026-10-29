@@ -48,6 +48,7 @@ Aucune installation, aucun compte, aucune connexion Internet requise.
 | Terminal | simulateur Unix interactif + **16 missions** guidées |
 | Examen blanc | **20 questions**, chronomètre de **30 minutes**, note sur **20** |
 | Outils | calculateur `chmod`, arborescence Unix, séquence de démarrage |
+| Coach vocal | **voix arabe optionnelle** : encouragement, retour de quiz, rappels d'examen (Web Speech API) |
 
 Chaque section propose :
 
@@ -82,6 +83,30 @@ Tape `help` pour la liste, `man <commande>` pour le mode d'emploi, et ouvre le p
 
 ---
 
+## Coach vocal arabe
+
+Un **coach vocal optionnel en arabe** accompagne la révision : message de bienvenue, encouragement après une
+section lue, retour immédiat après une réponse de quiz, rappel à 5 minutes de la fin de l'examen, résultat
+d'examen, mission terminée et bouton **« حفّزني »** (motive-moi).
+
+- **Désactivé par défaut** : aucun son n'est émis sans action explicite. C'est volontaire pour ne pas
+  entrer en conflit avec un lecteur d'écran.
+- **Deux interrupteurs** : barre latérale et barre supérieure ; le bouton **⏹ إيقاف** coupe la parole
+  immédiatement.
+- **Réglages** dans *Outils* → carte « المرافق الصوتي » : activation, choix de la voix arabe, vitesse,
+  volume, retour après chaque réponse, test et arrêt.
+- **Aucune requête réseau** émise par `js/voice.js` : le module utilise uniquement `speechSynthesis` du
+  navigateur. Selon le système, la voix peut être locale (hors-ligne) ou fournie par le système
+  d'exploitation ; l'interface indique si une voix est locale.
+- **Persistance** : les réglages sont stockés sous `badrai.se1.voice` ; la progression reste sous
+  `badrai.se1.progress`, `badrai.se1.term` et `badrai.se1.sound`.
+- **Si aucune voix arabe n'est installée**, l'interface affiche un avertissement et propose la voix par
+  défaut du navigateur ; ajouter une voix arabe dans les réglages du système puis recharger la page.
+- **Lecture d'une section** : le bouton **🔊 استمع للشرح** lit le résumé arabe par blocs, avec arrêt
+  immédiat et sans bloquer la navigation.
+
+---
+
 ## Structure du dossier
 
 ```
@@ -101,8 +126,9 @@ Plateforme Badr AI/
 │   ├── data-flash.js       90 flashcards (window.FLASH)
 │   ├── data-images.js      illustrations par section (window.LESSON_IMAGES)
 │   ├── audio.js            moteur sonore Web Audio
+│   ├── voice.js            coach vocal arabe (Web Speech API, opt-in, sans réseau)
 │   ├── terminal.js         terminal virtuel + 16 missions illustrées
-│   └── app.js              navigation, vues, galerie/lightbox, quiz, examen, progression
+│   └── app.js              navigation, vues, galerie/lightbox, quiz, examen, progression, réglages voix
 ├── tools/
 │   ├── pipeline.py         régénération des données depuis le PDF source
 │   ├── prepare-images.py   détourage, redimensionnement WebP et manifeste des illustrations
@@ -196,6 +222,7 @@ Il échoue volontairement si une page manque ou si un nom interdit subsiste.
 - Dans le terminal : ↑ / ↓ pour l'historique, `Ctrl+L` pour effacer, `Tab` pour compléter les chemins.
 - Dans les flashcards : clic sur la carte pour retourner, boutons ← / → pour naviguer.
 - L'examen blanc se corrige automatiquement ; la meilleure note est conservée.
+- Le bouton 🎙️ active le coach vocal ; ⏹ arrête la lecture ; les réglages fins sont dans *Outils*.
 
 ---
 
@@ -207,7 +234,8 @@ Il échoue volontairement si une page manque ou si un nom interdit subsiste.
 - نص المقرر والأسئلة والامتحان **بالفرنسية**، لأن الامتحان بالفرنسية؛
 - **120 سؤال QCM** مع التصحيح والتعليل؛
 - **90 بطاقة مراجعة** و**محاكي طرفية Unix** مع **16 مهمة موجهة**؛
-- **امتحان تجريبي** من 20 سؤالًا في 30 دقيقة، بتنقيط على 20.
+- **امتحان تجريبي** من 20 سؤالًا في 30 دقيقة، بتنقيط على 20؛
+- **مرافق صوتي عربي اختياري** للتحفيز والتغذية الراجعة وتلاوة شرح القسم، متوقف افتراضيًا ولا يرسل أي بيانات.
 
 **للتشغيل:** انقر نقرًا مزدوجًا على `Lancer Badr AI.vbs` أو على `index.html`.
 تُحفظ نتائجك تلقائيًا في المتصفح، ويمكن حذفها من زر إعادة التعيين ↺.
