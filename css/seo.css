@@ -81,7 +81,6 @@ a.chip:hover{background:#e8e8ed;color:var(--txt);text-decoration:none}
 .term:hover{border-color:var(--accent)}
 .term:hover svg{color:var(--accent)}
 .term:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,113,227,.14)}
-.term-play{margin:16px 0 6px}
 
 /* ============================ Sections & titres ============================ */
 .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:38px 0 16px;flex-wrap:wrap}

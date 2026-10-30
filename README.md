@@ -55,8 +55,8 @@ Chaque section propose :
 
 - le **texte du cours en français** ;
 - un **résumé explicatif en arabe** (RTL), avec les termes techniques traduits ;
-- des **cartes de termes cliquables** : clic (ou « استمع للمصطلحات » pour tout écouter) prononce le
-  terme en français puis sa signification en arabe — fonctionne même quand le coach vocal est coupé ;
+- des **cartes de termes cliquables** : un clic prononce le terme en français puis sa signification en
+  arabe — fonctionne même quand le coach vocal est coupé ;
 - une **galerie d'illustrations** (210 planches WebP) avec agrandissement plein écran ;
 - le bouton **« استمع للشرح »** : lecture du résumé arabe par la **voix neuronale intégrée**
   (MP3 embarqués, disponibles hors-ligne), avec repli automatique sur la synthèse du navigateur ;
@@ -108,7 +108,7 @@ d'examen, mission terminée et bouton **« حفّزني »** (motive-moi).
 - **Si aucune voix arabe n'est installée**, l'interface affiche un avertissement et propose la voix par
   défaut du navigateur ; ajouter une voix arabe dans les réglages du système puis recharger la page.
 - **Lecture d'une section** : le bouton **« استمع للشرح »** lit le résumé arabe en priorité par la
-  **voix neuronale pré-générée** (`assets/audio/s*.mp3`, voix IA `ar-SA-HamedNeural`,-rate lente pour
+  **voix neuronale pré-générée** (`assets/audio/s*.mp3`, voix IA `ar-DZ-AminaNeural`,-rate lente pour
   l'apprentissage) ; si le MP3 d'une leçon est absent, repli automatique sur la lecture par blocs du
   `speechSynthesis`. Arrêt immédiat et navigation jamais bloquée ; une seule source sonore à la fois
   (terme, leçon ou coach).
@@ -128,7 +128,7 @@ Plateforme Badr AI/
 ├── css/
 │   ├── style.css           design blanc minimal, accents bleus + responsive (SPA)
 │   └── seo.css             design des pages statiques + styles d'impression
-├── assets/audio            voix neuronale arabe des leçons (MP3 hors-ligne) + échantillons
+├── assets/audio            voix neuronale arabe des leçons (MP3 hors-ligne)
 ├── js/
 │   ├── data-cours.js       cours complet (window.COURS)
 │   ├── data-quiz.js        120 QCM (window.QUIZ)

@@ -2,7 +2,7 @@
 """
 Badr AI — توليد الصوت العصبي للدروس (offline MP3 + manifest).
 Works offline once generated: the .mp3 files ship with the site, no API at runtime.
-Voice: ar-SA-HamedNeural (فصحى واضحة). لتغييره: عدّل VOICE ثم احذف الملفات وأعد التوليد.
+Voice: ar-DZ-AminaNeural (جزائرية، اختيار المالك 2026-10-30). لتغييره: عدّل VOICE ثم احذف الملفات وأعد التوليد.
 """
 import asyncio
 import json
@@ -14,7 +14,7 @@ BASE = Path(__file__).resolve().parents[1]
 SECTIONS = Path(__file__).resolve().parent / "sections-ar.json"
 OUT = BASE / "assets" / "audio"
 MANIFEST = BASE / "js" / "audio-map.js"
-VOICE = "ar-SA-HamedNeural"
+VOICE = "ar-DZ-AminaNeural"
 RATE = "-4%"
 
 
@@ -44,7 +44,7 @@ async def main():
     for it in items:
         f = OUT / (it["id"] + ".mp3")
         if f.exists() and f.stat().st_size > 10000:
-            entries.append('"%s":"assets/audio/%s.mp3"' % (it["id"], it["id"]))
+            entries.append('"%s":"assets/audio/%s.mp3?v=2"' % (it["id"], it["id"]))
     MANIFEST.write_text(
         "/* Généré par tools/gen-audio.py — leçons disposant d'une voix neuronale arabe. */\n"
         "window.AUDIO_FILES = {" + ",".join(entries) + "};\n",

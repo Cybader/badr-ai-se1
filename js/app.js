@@ -82,25 +82,12 @@ window.APP = (function () {
       { text: t.ar, lang: "ar-SA" }
     ]);
   }
-  function sayTermsAll(sec, done) {
-    const items = [];
-    (sec.terms || []).forEach(function (t) {
-      items.push({ text: t.fr, lang: "fr-FR" });
-      items.push({ text: t.ar, lang: "ar-SA" });
-    });
-    return speakSeq(items, done);
-  }
   function speakStop() {
     termToken++;
     if (synthOK()) {
       try { window.speechSynthesis.cancel(); } catch (e) { /* ignore */ }
     }
     stopLessonAudio();
-  }
-  function resetTermsBtn(btn) {
-    if (!btn) return;
-    btn.textContent = "استمع للمصطلحات";
-    btn.setAttribute("aria-pressed", "false");
   }
 
   /* ============================ Lesson audio (voix neuronale AR pré-générée, offline) ============================ */
@@ -325,7 +312,6 @@ window.APP = (function () {
           btn.setAttribute("aria-pressed", "false");
         }
       }
-      if (d.type === "start") resetTermsBtn($("#listen-terms"));
     });
   }
 
@@ -904,7 +890,6 @@ window.APP = (function () {
         "</div>" +
         '<div class="rh-actions">' +
           '<button class="btn btn-sm btn-ghost" id="listen-ar" type="button" aria-pressed="false" title="Écouter l\'explication en arabe">استمع للشرح</button>' +
-          (hasTerms ? '<button class="btn btn-sm btn-ghost" id="listen-terms" type="button" aria-pressed="false" title="Écouter les termes techniques">استمع للمصطلحات</button>' : "") +
           '<button class="btn btn-sm btn-ghost" id="toggle-ar" type="button" title="Afficher ou masquer l\'arabe">إخفاء العربية</button>' +
           '<button class="btn btn-sm ' + (isRead ? "btn-soft" : "btn-primary") + '" id="mark-read" type="button">' +
             (isRead ? "Leçon lue" : "Marquer comme lu") + "</button>" +
@@ -948,7 +933,6 @@ window.APP = (function () {
             VOICE.stop();
           } else {
             speakStop();
-            resetTermsBtn($("#listen-terms"));
             if (playLessonAudio(sec, function () { resetListenBtn(listen); })) {
               listen.textContent = "إيقاف الشرح";
               listen.setAttribute("aria-pressed", "true");
@@ -959,31 +943,12 @@ window.APP = (function () {
         });
       }
     }
-    const listenTerms = $("#listen-terms");
-    if (listenTerms) {
-      if (!synthOK()) {
-        listenTerms.hidden = true;
-      } else {
-        listenTerms.addEventListener("click", function () {
-          if (listenTerms.getAttribute("aria-pressed") === "true") {
-            speakStop();
-            resetTermsBtn(listenTerms);
-          } else if (!sayTermsAll(sec, function () { resetTermsBtn(listenTerms); })) {
-            toast("تعذّر تشغيل الصوت الآن.", "bad");
-          } else {
-            listenTerms.textContent = "إيقاف المصطلحات";
-            listenTerms.setAttribute("aria-pressed", "true");
-          }
-        });
-      }
-    }
     if (hasTerms && synthOK()) {
       $$(".term", reader).forEach(function (b) {
         b.addEventListener("click", function () {
           const t = sec.terms[parseInt(b.getAttribute("data-ti"), 10) || 0];
           if (!t) return;
           speakStop();
-          resetTermsBtn(listenTerms);
           if (!sayTerm(t)) toast("تعذّر تشغيل الصوت الآن.", "bad");
         });
       });

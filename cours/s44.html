@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="Cours SE1 : select, options du shell &amp; exec. select وخيارات الشيل وexec — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%231d1d1f'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="../css/seo.css?v=20261112">
+<link rel="stylesheet" href="../css/seo.css?v=20261113">
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s44.html#resource","name":"select, options du shell & exec — SE1 | Badr AI","description":"Cours SE1 : select, options du shell & exec. select وخيارات الشيل وexec — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s44.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Programmation Shell"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, select, options du shell & exec, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Menu, Options du shell, exec","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s44-01.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s44-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Programme","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 3 — Programmation Shell","item":"https://cybader.github.io/badr-ai-se1/cours/#ch3"},{"@type":"ListItem","position":4,"name":"select, options du shell & exec","item":"https://cybader.github.io/badr-ai-se1/cours/s44.html"}]}]}
@@ -184,7 +184,7 @@
     }
     return null;
   }
-  function play(items, done) {
+  function play(items) {
     synth.cancel();
     for (var i = 0; i < items.length; i++) {
       var u = new SpeechSynthesisUtterance(items[i][0]);
@@ -192,7 +192,6 @@
       var v = pick(items[i][1].slice(0, 2));
       if (v) { try { u.voice = v; } catch (e) {} }
       u.rate = 0.92;
-      if (i === items.length - 1 && done) { u.onend = done; u.onerror = done; }
       synth.speak(u);
     }
   }
@@ -205,28 +204,6 @@
       });
     })(chips[i]);
   }
-  var list = document.querySelector(".terms");
-  if (!list || !list.parentNode) return;
-  var btn = document.createElement("button");
-  btn.type = "button";
-  btn.className = "btn term-play";
-  btn.setAttribute("aria-pressed", "false");
-  function set(on) {
-    btn.textContent = on ? "\u0625\u064a\u0642\u0627\u0641 \u0627\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a" : "\u0627\u0633\u062a\u0645\u0639 \u0644\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a";
-    btn.setAttribute("aria-pressed", on ? "true" : "false");
-  }
-  btn.addEventListener("click", function() {
-    if (btn.getAttribute("aria-pressed") === "true") { synth.cancel(); set(false); return; }
-    var items = [];
-    for (var i = 0; i < chips.length; i++) {
-      items.push([chips[i].getAttribute("data-fr"), "fr-FR"]);
-      items.push([chips[i].getAttribute("data-ar"), "ar-SA"]);
-    }
-    play(items, function() { set(false); });
-    set(true);
-  });
-  list.parentNode.insertBefore(btn, list);
-  set(false);
 })();
 </script>
 </body>
