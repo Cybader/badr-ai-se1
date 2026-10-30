@@ -119,7 +119,7 @@ function head(opts) {
 '<meta name="twitter:description" content="' + esc(opts.ogDescription || desc) + '">\n' +
 '<meta name="twitter:image" content="' + image + '">\n' +
 '<link rel="icon" href="data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect rx=\'24\' width=\'100\' height=\'100\' fill=\'%231d1d1f\'/><text x=\'50\' y=\'68\' font-size=\'58\' font-family=\'Segoe UI\' font-weight=\'700\' text-anchor=\'middle\' fill=\'white\'>B</text></svg>">\n' +
-'<link rel="stylesheet" href="' + prefix + 'css/seo.css?v=20261111">\n' +
+'<link rel="stylesheet" href="' + prefix + 'css/seo.css?v=20261113">\n' +
 ld + '\n' +
 '</head>\n' +
 '<body>\n' +
@@ -173,9 +173,73 @@ function contentHTML(sec) {
 
 function termsHTML(sec) {
   if (!sec.terms || !sec.terms.length) return "";
-  return '<div class="terms">\n' + sec.terms.map(function (t) {
-    return '<div class="term"><b>' + esc(t.fr) + '</b><span lang="ar" dir="rtl">' + esc(t.ar) + '</span></div>';
+  return '<div class="terms">\n' + sec.terms.map(function (t, i) {
+    return '<button class="term" type="button" data-ti="' + i + '" data-fr="' + esc(t.fr) + '" data-ar="' + esc(t.ar) + '" aria-label="Écouter le terme : ' + esc(t.fr) + '">' +
+      '<b>' + esc(t.fr) + '</b><span lang="ar" dir="rtl">' + esc(t.ar) + '</span>' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>' +
+      '</button>';
   }).join("\n") + '\n</div>';
+}
+
+/* Petit lecteur de termes pour les pages statiques : SettlementFR puis sens AR, fonctionne sans la plateforme. */
+function termSpeechScript() {
+  return '<script>\n' +
+'(function() {\n' +
+'  "use strict";\n' +
+'  var synth = window.speechSynthesis;\n' +
+'  if (!synth) return;\n' +
+'  function pick(p) {\n' +
+'    var v = synth.getVoices() || [];\n' +
+'    for (var i = 0; i < v.length; i++) {\n' +
+'      if (String(v[i].lang || "").toLowerCase().indexOf(p) === 0) return v[i];\n' +
+'    }\n' +
+'    return null;\n' +
+'  }\n' +
+'  function play(items, done) {\n' +
+'    synth.cancel();\n' +
+'    for (var i = 0; i < items.length; i++) {\n' +
+'      var u = new SpeechSynthesisUtterance(items[i][0]);\n' +
+'      u.lang = items[i][1];\n' +
+'      var v = pick(items[i][1].slice(0, 2));\n' +
+'      if (v) { try { u.voice = v; } catch (e) {} }\n' +
+'      u.rate = 0.92;\n' +
+'      if (i === items.length - 1 && done) { u.onend = done; u.onerror = done; }\n' +
+'      synth.speak(u);\n' +
+'    }\n' +
+'  }\n' +
+'  var chips = document.querySelectorAll("button.term[data-fr]");\n' +
+'  if (!chips.length) return;\n' +
+'  for (var i = 0; i < chips.length; i++) {\n' +
+'    (function(chip) {\n' +
+'      chip.addEventListener("click", function() {\n' +
+'        play([[chip.getAttribute("data-fr"), "fr-FR"], [chip.getAttribute("data-ar"), "ar-SA"]]);\n' +
+'      });\n' +
+'    })(chips[i]);\n' +
+'  }\n' +
+'  var list = document.querySelector(".terms");\n' +
+'  if (!list || !list.parentNode) return;\n' +
+'  var btn = document.createElement("button");\n' +
+'  btn.type = "button";\n' +
+'  btn.className = "btn term-play";\n' +
+'  btn.setAttribute("aria-pressed", "false");\n' +
+'  function set(on) {\n' +
+'    btn.textContent = on ? "\\u0625\\u064a\\u0642\\u0627\\u0641 \\u0627\\u0644\\u0645\\u0635\\u0637\\u0644\\u062d\\u0627\\u062a" : "\\u0627\\u0633\\u062a\\u0645\\u0639 \\u0644\\u0644\\u0645\\u0635\\u0637\\u0644\\u062d\\u0627\\u062a";\n' +
+'    btn.setAttribute("aria-pressed", on ? "true" : "false");\n' +
+'  }\n' +
+'  btn.addEventListener("click", function() {\n' +
+'    if (btn.getAttribute("aria-pressed") === "true") { synth.cancel(); set(false); return; }\n' +
+'    var items = [];\n' +
+'    for (var i = 0; i < chips.length; i++) {\n' +
+'      items.push([chips[i].getAttribute("data-fr"), "fr-FR"]);\n' +
+'      items.push([chips[i].getAttribute("data-ar"), "ar-SA"]);\n' +
+'    }\n' +
+'    play(items, function() { set(false); });\n' +
+'    set(true);\n' +
+'  });\n' +
+'  list.parentNode.insertBefore(btn, list);\n' +
+'  set(false);\n' +
+'})();\n' +
+'</script>\n';
 }
 
 function sectionImages(secId) {
@@ -313,6 +377,9 @@ function sectionPage(item) {
 
   html += '</article>\n</main>\n';
   html += foot();
+  if (sec.terms && sec.terms.length) {
+    html = html.replace("</body>", termSpeechScript() + "</body>");
+  }
   return html;
 }
 
@@ -648,7 +715,6 @@ function flashPage() {
       '</div>\n<div class="flash-grid">\n';
     html += cards.map(function (c) {
       return '<article class="flashcard">\n' +
-        '' +
         '<h3>' + esc(c.front) + '</h3>\n' +
         '<p class="flash-back" lang="ar" dir="rtl">' + esc(c.back) + '</p>\n' +
         (c.hint ? '<p class="flash-hint">Indice : ' + esc(c.hint) + '</p>' : '') +

@@ -48,13 +48,18 @@ Aucune installation, aucun compte, aucune connexion Internet requise.
 | Terminal | simulateur Unix interactif + **16 missions** guidées |
 | Examen blanc | **20 questions**, chronomètre de **30 minutes**, note sur **20** |
 | Outils | calculateur `chmod`, arborescence Unix, séquence de démarrage |
+| Voix neuronale | **48 leçons en MP3 arabe** (voix IA pré-générée, hors-ligne) + repli Web Speech |
 | Coach vocal | **voix arabe optionnelle** : encouragement, retour de quiz, rappels d'examen (Web Speech API) |
 
 Chaque section propose :
 
 - le **texte du cours en français** ;
 - un **résumé explicatif en arabe** (RTL), avec les termes techniques traduits ;
+- des **cartes de termes cliquables** : clic (ou « استمع للمصطلحات » pour tout écouter) prononce le
+  terme en français puis sa signification en arabe — fonctionne même quand le coach vocal est coupé ;
 - une **galerie d'illustrations** (210 planches WebP) avec agrandissement plein écran ;
+- le bouton **« استمع للشرح »** : lecture du résumé arabe par la **voix neuronale intégrée**
+  (MP3 embarqués, disponibles hors-ligne), avec repli automatique sur la synthèse du navigateur ;
 - un bouton **« Marquer comme lu »** qui alimente la progression et les XP.
 
 ---
@@ -102,8 +107,11 @@ d'examen, mission terminée et bouton **« حفّزني »** (motive-moi).
   `badrai.se1.progress`, `badrai.se1.term` et `badrai.se1.sound`.
 - **Si aucune voix arabe n'est installée**, l'interface affiche un avertissement et propose la voix par
   défaut du navigateur ; ajouter une voix arabe dans les réglages du système puis recharger la page.
-- **Lecture d'une section** : le bouton **🔊 استمع للشرح** lit le résumé arabe par blocs, avec arrêt
-  immédiat et sans bloquer la navigation.
+- **Lecture d'une section** : le bouton **« استمع للشرح »** lit le résumé arabe en priorité par la
+  **voix neuronale pré-générée** (`assets/audio/s*.mp3`, voix IA `ar-SA-HamedNeural`,-rate lente pour
+  l'apprentissage) ; si le MP3 d'une leçon est absent, repli automatique sur la lecture par blocs du
+  `speechSynthesis`. Arrêt immédiat et navigation jamais bloquée ; une seule source sonore à la fois
+  (terme, leçon ou coach).
 
 ---
 
@@ -118,13 +126,15 @@ Plateforme Badr AI/
 ├── assets/og-image.png     carte de partage 1200×630 (Open Graph / Twitter)
 ├── assets/lecons/          210 illustrations de cours en WebP (900 px) + vignettes 360 px
 ├── css/
-│   ├── style.css           design crème & sarcelle + responsive (SPA)
+│   ├── style.css           design blanc minimal, accents bleus + responsive (SPA)
 │   └── seo.css             design des pages statiques + styles d'impression
+├── assets/audio            voix neuronale arabe des leçons (MP3 hors-ligne) + échantillons
 ├── js/
 │   ├── data-cours.js       cours complet (window.COURS)
 │   ├── data-quiz.js        120 QCM (window.QUIZ)
 │   ├── data-flash.js       90 flashcards (window.FLASH)
 │   ├── data-images.js      illustrations par section (window.LESSON_IMAGES)
+│   ├── audio-map.js        mapping leçon → fichier MP3 (généré)
 │   ├── audio.js            moteur sonore Web Audio
 │   ├── voice.js            coach vocal arabe (Web Speech API, opt-in, sans réseau)
 │   ├── terminal.js         terminal virtuel + 16 missions illustrées
@@ -132,6 +142,7 @@ Plateforme Badr AI/
 ├── tools/
 │   ├── pipeline.py         régénération des données depuis le PDF source
 │   ├── prepare-images.py   détourage, redimensionnement WebP et manifeste des illustrations
+│   ├── gen-audio.py        génération des MP3 de voix neuronale + audio-map.js
 │   ├── build-seo.js        génération de /cours/, sitemap.xml, robots.txt, 404.html
 │   └── og-card.html        source de la carte de partage (capture 1200×630)
 ├── sitemap.xml             52 URL canoniques
@@ -230,7 +241,8 @@ Il échoue volontairement si une page manque ou si un nom interdit subsiste.
 
 هذه المنصة تجمع **كامل مقرر أنظمة التشغيل 1** في فضاء واحد يعمل **بدون إنترنت**:
 
-- شرح مبسّط لكل قسم **بالعربية**، مع المصطلحات التقنية مترجمة؛
+- شرح مبسّط لكل درس **بالعربية**، مع المصطلحات التقنية مترجمة **ونطقها مسموع بالفرنسية ثم بالعربية**؛
+- **صوت درس عصبي ذكي** (ملفات MP3 جاهزة تعمل هاتفًا وحاسوبًا بدون إنترنت) لقراءة الشرح العربي؛
 - نص المقرر والأسئلة والامتحان **بالفرنسية**، لأن الامتحان بالفرنسية؛
 - **120 سؤال QCM** مع التصحيح والتعليل؛
 - **90 بطاقة مراجعة** و**محاكي طرفية Unix** مع **16 مهمة موجهة**؛
@@ -241,7 +253,7 @@ Il échoue volontairement si une page manque ou si un nom interdit subsiste.
 تُحفظ نتائجك تلقائيًا في المتصفح، ويمكن حذفها من زر إعادة التعيين ↺.
 
 **عبر الإنترنت:** <https://cybader.github.io/badr-ai-se1/>
-**خطة الدرس (48 قسمًا بصفحات HTML قابلة للفهرسة):** <https://cybader.github.io/badr-ai-se1/cours/>
+**خطة الدروس (48 درسًا بصفحات HTML قابلة للفهرسة):** <https://cybader.github.io/badr-ai-se1/cours/>
 **120 سؤال QCM مع التصحيح:** <https://cybader.github.io/badr-ai-se1/qcm.html>
 **90 بطاقة مراجعة:** <https://cybader.github.io/badr-ai-se1/flashcards.html>
 **المستودع:** <https://github.com/Cybader/badr-ai-se1>

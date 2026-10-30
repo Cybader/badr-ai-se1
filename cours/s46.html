@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="Cours SE1 : Fonctions. الدوال — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%231d1d1f'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="../css/seo.css?v=20261111">
+<link rel="stylesheet" href="../css/seo.css?v=20261112">
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s46.html#resource","name":"Fonctions — SE1 | Badr AI","description":"Cours SE1 : Fonctions. الدوال — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s46.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Programmation Shell"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Fonctions, Programmation Shell, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Fonction, Argument, Valeur de retour, local","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s46-01.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s46-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Programme","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 3 — Programmation Shell","item":"https://cybader.github.io/badr-ai-se1/cours/#ch3"},{"@type":"ListItem","position":4,"name":"Fonctions","item":"https://cybader.github.io/badr-ai-se1/cours/s46.html"}]}]}
@@ -65,10 +65,10 @@
 <h2 id="ar-title"> الشرح بالعربية</h2>
 <p class="ar-text" lang="ar" dir="rtl">التعريف: function nom { ... } أو nom() { ... }. تُستدعى كأمر بدون (). تعمل في نفس الشيل فتتشارك المتغيرات. الوسائط $1.. و$#. return يرجع كودًا من 0 إلى 255 فقط؛ لإرجاع قيمة استخدم echo ثم $(). local لمتغير محلي. declare -F يعرض الدوال، unset -f يحذفها، export -f يورّثها، وsource يحمّلها من ملف.</p>
 <div class="terms">
-<div class="term"><b>Fonction</b><span lang="ar" dir="rtl">دالة</span></div>
-<div class="term"><b>Argument</b><span lang="ar" dir="rtl">وسيط</span></div>
-<div class="term"><b>Valeur de retour</b><span lang="ar" dir="rtl">قيمة الإرجاع</span></div>
-<div class="term"><b>local</b><span lang="ar" dir="rtl">متغير محلي</span></div>
+<button class="term" type="button" data-ti="0" data-fr="Fonction" data-ar="دالة" aria-label="Écouter le terme : Fonction"><b>Fonction</b><span lang="ar" dir="rtl">دالة</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="1" data-fr="Argument" data-ar="وسيط" aria-label="Écouter le terme : Argument"><b>Argument</b><span lang="ar" dir="rtl">وسيط</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="2" data-fr="Valeur de retour" data-ar="قيمة الإرجاع" aria-label="Écouter le terme : Valeur de retour"><b>Valeur de retour</b><span lang="ar" dir="rtl">قيمة الإرجاع</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="3" data-fr="local" data-ar="متغير محلي" aria-label="Écouter le terme : local"><b>local</b><span lang="ar" dir="rtl">متغير محلي</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
 </div>
 </section>
 <section class="lesson-gallery" aria-labelledby="lg-title">
@@ -289,5 +289,62 @@
 <div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Programme</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
 <div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
 </footer>
+<script>
+(function() {
+  "use strict";
+  var synth = window.speechSynthesis;
+  if (!synth) return;
+  function pick(p) {
+    var v = synth.getVoices() || [];
+    for (var i = 0; i < v.length; i++) {
+      if (String(v[i].lang || "").toLowerCase().indexOf(p) === 0) return v[i];
+    }
+    return null;
+  }
+  function play(items, done) {
+    synth.cancel();
+    for (var i = 0; i < items.length; i++) {
+      var u = new SpeechSynthesisUtterance(items[i][0]);
+      u.lang = items[i][1];
+      var v = pick(items[i][1].slice(0, 2));
+      if (v) { try { u.voice = v; } catch (e) {} }
+      u.rate = 0.92;
+      if (i === items.length - 1 && done) { u.onend = done; u.onerror = done; }
+      synth.speak(u);
+    }
+  }
+  var chips = document.querySelectorAll("button.term[data-fr]");
+  if (!chips.length) return;
+  for (var i = 0; i < chips.length; i++) {
+    (function(chip) {
+      chip.addEventListener("click", function() {
+        play([[chip.getAttribute("data-fr"), "fr-FR"], [chip.getAttribute("data-ar"), "ar-SA"]]);
+      });
+    })(chips[i]);
+  }
+  var list = document.querySelector(".terms");
+  if (!list || !list.parentNode) return;
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "btn term-play";
+  btn.setAttribute("aria-pressed", "false");
+  function set(on) {
+    btn.textContent = on ? "\u0625\u064a\u0642\u0627\u0641 \u0627\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a" : "\u0627\u0633\u062a\u0645\u0639 \u0644\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a";
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+  }
+  btn.addEventListener("click", function() {
+    if (btn.getAttribute("aria-pressed") === "true") { synth.cancel(); set(false); return; }
+    var items = [];
+    for (var i = 0; i < chips.length; i++) {
+      items.push([chips[i].getAttribute("data-fr"), "fr-FR"]);
+      items.push([chips[i].getAttribute("data-ar"), "ar-SA"]);
+    }
+    play(items, function() { set(false); });
+    set(true);
+  });
+  list.parentNode.insertBefore(btn, list);
+  set(false);
+})();
+</script>
 </body>
 </html>

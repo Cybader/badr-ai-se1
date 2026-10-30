@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="Cours SE1 : Shell, terminal &amp; format des commandes. الشيل والطرفية وصيغة الأوامر — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%231d1d1f'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="../css/seo.css?v=20261111">
+<link rel="stylesheet" href="../css/seo.css?v=20261112">
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s9.html#resource","name":"Shell, terminal & format des commandes — SE1 | Badr AI","description":"Cours SE1 : Shell, terminal & format des commandes. الشيل والطرفية وصيغة الأوامر — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s9.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Les commandes de base Unix"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Shell, terminal & format des commandes, Les commandes de base Unix, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Shell, Prompt, Option, Argument, Builtin, Commande externe","image":["https://cybader.github.io/badr-ai-se1/assets/lecons/s9-01.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-02.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-03.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-04.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-05.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-06.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-07.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-08.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-09.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-10.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-11.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-12.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-13.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-14.webp","https://cybader.github.io/badr-ai-se1/assets/lecons/s9-15.webp"],"thumbnailUrl":"https://cybader.github.io/badr-ai-se1/assets/lecons/thumbs/s9-01.webp"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Programme","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 2 — Les commandes de base Unix","item":"https://cybader.github.io/badr-ai-se1/cours/#ch2"},{"@type":"ListItem","position":4,"name":"Shell, terminal & format des commandes","item":"https://cybader.github.io/badr-ai-se1/cours/s9.html"}]}]}
@@ -65,12 +65,12 @@
 <h2 id="ar-title"> الشرح بالعربية</h2>
 <p class="ar-text" lang="ar" dir="rtl">الـ Shell مفسّر أوامر: إما تفاعلي (prompt ثم أوامر) أو عبر سكربتات. الصيغة العامة: commande [-options] [arguments]. قواعد مهمة: Unix حساس لحالة الأحرف (ls ≠ LS)، المسافة تفصل الكلمات، الخيارات تسبق الوسائط ويمكن تجميعها (-la)، و-- ينهي الخيارات. الأوامر الداخلية builtin مثل cd وecho وpwd، والخارجية ملفات تنفيذية مثل ls وcat — تحددها type -t. للمساعدة: man، --help، help. الدليل $ لمستخدم عادي و# لـ root. اختصارات: Tab للإكمال، ↑ للتاريخ، Ctrl+C للإيقاف، Ctrl+Z للتعليق، Ctrl+L للمسح.</p>
 <div class="terms">
-<div class="term"><b>Shell</b><span lang="ar" dir="rtl">مفسر الأوامر</span></div>
-<div class="term"><b>Prompt</b><span lang="ar" dir="rtl">دعوة الأوامر</span></div>
-<div class="term"><b>Option</b><span lang="ar" dir="rtl">خيار</span></div>
-<div class="term"><b>Argument</b><span lang="ar" dir="rtl">وسيط</span></div>
-<div class="term"><b>Builtin</b><span lang="ar" dir="rtl">أمر داخلي</span></div>
-<div class="term"><b>Commande externe</b><span lang="ar" dir="rtl">أمر خارجي</span></div>
+<button class="term" type="button" data-ti="0" data-fr="Shell" data-ar="مفسر الأوامر" aria-label="Écouter le terme : Shell"><b>Shell</b><span lang="ar" dir="rtl">مفسر الأوامر</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="1" data-fr="Prompt" data-ar="دعوة الأوامر" aria-label="Écouter le terme : Prompt"><b>Prompt</b><span lang="ar" dir="rtl">دعوة الأوامر</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="2" data-fr="Option" data-ar="خيار" aria-label="Écouter le terme : Option"><b>Option</b><span lang="ar" dir="rtl">خيار</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="3" data-fr="Argument" data-ar="وسيط" aria-label="Écouter le terme : Argument"><b>Argument</b><span lang="ar" dir="rtl">وسيط</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="4" data-fr="Builtin" data-ar="أمر داخلي" aria-label="Écouter le terme : Builtin"><b>Builtin</b><span lang="ar" dir="rtl">أمر داخلي</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="5" data-fr="Commande externe" data-ar="أمر خارجي" aria-label="Écouter le terme : Commande externe"><b>Commande externe</b><span lang="ar" dir="rtl">أمر خارجي</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
 </div>
 </section>
 <section class="lesson-gallery" aria-labelledby="lg-title">
@@ -264,5 +264,62 @@
 <div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Programme</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
 <div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
 </footer>
+<script>
+(function() {
+  "use strict";
+  var synth = window.speechSynthesis;
+  if (!synth) return;
+  function pick(p) {
+    var v = synth.getVoices() || [];
+    for (var i = 0; i < v.length; i++) {
+      if (String(v[i].lang || "").toLowerCase().indexOf(p) === 0) return v[i];
+    }
+    return null;
+  }
+  function play(items, done) {
+    synth.cancel();
+    for (var i = 0; i < items.length; i++) {
+      var u = new SpeechSynthesisUtterance(items[i][0]);
+      u.lang = items[i][1];
+      var v = pick(items[i][1].slice(0, 2));
+      if (v) { try { u.voice = v; } catch (e) {} }
+      u.rate = 0.92;
+      if (i === items.length - 1 && done) { u.onend = done; u.onerror = done; }
+      synth.speak(u);
+    }
+  }
+  var chips = document.querySelectorAll("button.term[data-fr]");
+  if (!chips.length) return;
+  for (var i = 0; i < chips.length; i++) {
+    (function(chip) {
+      chip.addEventListener("click", function() {
+        play([[chip.getAttribute("data-fr"), "fr-FR"], [chip.getAttribute("data-ar"), "ar-SA"]]);
+      });
+    })(chips[i]);
+  }
+  var list = document.querySelector(".terms");
+  if (!list || !list.parentNode) return;
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "btn term-play";
+  btn.setAttribute("aria-pressed", "false");
+  function set(on) {
+    btn.textContent = on ? "\u0625\u064a\u0642\u0627\u0641 \u0627\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a" : "\u0627\u0633\u062a\u0645\u0639 \u0644\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a";
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+  }
+  btn.addEventListener("click", function() {
+    if (btn.getAttribute("aria-pressed") === "true") { synth.cancel(); set(false); return; }
+    var items = [];
+    for (var i = 0; i < chips.length; i++) {
+      items.push([chips[i].getAttribute("data-fr"), "fr-FR"]);
+      items.push([chips[i].getAttribute("data-ar"), "ar-SA"]);
+    }
+    play(items, function() { set(false); });
+    set(true);
+  });
+  list.parentNode.insertBefore(btn, list);
+  set(false);
+})();
+</script>
 </body>
 </html>

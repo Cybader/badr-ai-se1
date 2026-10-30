@@ -23,6 +23,117 @@ window.APP = (function () {
     return a;
   }
 
+  /* ============================ Term audio (terme FR + sens AR, sans coach) ============================ */
+  let termToken = 0;
+  let termVoices = null;
+  let termVoicesReady = false;
+  function termLoadVoices() {
+    if (!synthOK()) return;
+    termVoices = window.speechSynthesis.getVoices() || [];
+    termVoicesReady = termVoices.length > 0;
+  }
+  if (typeof window.speechSynthesis !== "undefined" && window.speechSynthesis.addEventListener) {
+    termLoadVoices();
+    window.speechSynthesis.addEventListener("voiceschanged", termLoadVoices);
+  }
+  function synthOK() {
+    return typeof window.speechSynthesis !== "undefined" && typeof window.SpeechSynthesisUtterance !== "undefined";
+  }
+  function vPick(prefix) {
+    if (!synthOK()) return null;
+    if (!termVoicesReady) termLoadVoices();
+    const vs = termVoices || [];
+    for (let i = 0; i < vs.length; i++) {
+      if (String(vs[i].lang || "").toLowerCase().indexOf(prefix) === 0) return vs[i];
+    }
+    return null;
+  }
+  function speakSeq(items, done) {
+    if (!synthOK() || !items.length) return false;
+    if (window.VOICE) { try { VOICE.stop(); } catch (e) { /* ignore */ } }
+    const token = ++termToken;
+    const synth = window.speechSynthesis;
+    synth.cancel();
+    const seq = [];
+    for (let i = 0; i < items.length; i++) {
+      const text = String(items[i].text == null ? "" : items[i].text).replace(/\s+/g, " ").trim();
+      if (text) seq.push({ text: text, lang: items[i].lang });
+    }
+    if (!seq.length) return false;
+    for (let i = 0; i < seq.length; i++) {
+      const last = i === seq.length - 1;
+      const u = new SpeechSynthesisUtterance(seq[i].text);
+      u.lang = seq[i].lang;
+      const v = vPick(String(seq[i].lang).slice(0, 2).toLowerCase());
+      if (v) { try { u.voice = v; } catch (e) { /* ignore */ } }
+      u.rate = 0.92;
+      u.onend = function () {
+        if (token !== termToken) return;
+        if (last && typeof done === "function") done();
+      };
+      u.onerror = u.onend;
+      synth.speak(u);
+    }
+    return true;
+  }
+  function sayTerm(t) {
+    return speakSeq([
+      { text: t.fr, lang: "fr-FR" },
+      { text: t.ar, lang: "ar-SA" }
+    ]);
+  }
+  function sayTermsAll(sec, done) {
+    const items = [];
+    (sec.terms || []).forEach(function (t) {
+      items.push({ text: t.fr, lang: "fr-FR" });
+      items.push({ text: t.ar, lang: "ar-SA" });
+    });
+    return speakSeq(items, done);
+  }
+  function speakStop() {
+    termToken++;
+    if (synthOK()) {
+      try { window.speechSynthesis.cancel(); } catch (e) { /* ignore */ }
+    }
+    stopLessonAudio();
+  }
+  function resetTermsBtn(btn) {
+    if (!btn) return;
+    btn.textContent = "استمع للمصطلحات";
+    btn.setAttribute("aria-pressed", "false");
+  }
+
+  /* ============================ Lesson audio (voix neuronale AR pré-générée, offline) ============================ */
+  let lessonAudio = null;
+  function stopLessonAudio() {
+    if (!lessonAudio) return;
+    try { lessonAudio.pause(); } catch (e) { /* ignore */ }
+    lessonAudio = null;
+  }
+  function resetListenBtn(btn) {
+    if (!btn) return;
+    btn.textContent = "استمع للشرح";
+    btn.setAttribute("aria-pressed", "false");
+  }
+  function playLessonAudio(sec, onEnd) {
+    const src = (window.AUDIO_FILES || {})[sec.id];
+    if (!src) return false;
+    stopLessonAudio();
+    let a;
+    try { a = new Audio(src); } catch (e) { return false; }
+    lessonAudio = a;
+    const finish = function () {
+      if (lessonAudio !== a) return;
+      lessonAudio = null;
+      if (typeof onEnd === "function") onEnd();
+    };
+    a.addEventListener("ended", finish);
+    a.addEventListener("error", finish);
+    const p = a.play();
+    if (p && p.catch) p.catch(finish);
+    return true;
+  }
+
   /* ============================ State ============================ */
   const DEFAULT = {
     read: {}, xp: 0,
@@ -205,14 +316,16 @@ window.APP = (function () {
     document.addEventListener("badrai:voice", function (e) {
       const d = e.detail || {};
       const btn = $("#listen-ar");
-      if (!btn) return;
-      if (d.type === "start" && d.tag === "section") {
-        btn.textContent = "إيقاف الشرح";
-        btn.setAttribute("aria-pressed", "true");
-      } else if (d.type === "start" || d.type === "end" || d.type === "stop" || d.type === "error") {
-        btn.textContent = "استمع للشرح";
-        btn.setAttribute("aria-pressed", "false");
+      if (btn) {
+        if (d.type === "start" && d.tag === "section") {
+          btn.textContent = "إيقاف الشرح";
+          btn.setAttribute("aria-pressed", "true");
+        } else if (d.type === "start" || d.type === "end" || d.type === "stop" || d.type === "error") {
+          btn.textContent = "استمع للشرح";
+          btn.setAttribute("aria-pressed", "false");
+        }
       }
+      if (d.type === "start") resetTermsBtn($("#listen-terms"));
     });
   }
 
@@ -773,12 +886,14 @@ window.APP = (function () {
     const reader = $("#reader");
     if (!item || !reader) return;
     currentSection = id;
+    stopLessonAudio();
     const ch = item.ch, sec = item.sec;
     const idx = SECTIONS.findIndex(function (s) { return s.sec.id === id; });
     const prev = SECTIONS[idx - 1], next = SECTIONS[idx + 1];
     const isRead = !!state.read[id];
     const pagesHtml = sec.pages.map(pageBlocksHTML).join("");
     const gallery = galleryHTML(id);
+    const hasTerms = !!(sec.terms && sec.terms.length);
 
     reader.innerHTML =
       '<div class="reader-head">' +
@@ -789,6 +904,7 @@ window.APP = (function () {
         "</div>" +
         '<div class="rh-actions">' +
           '<button class="btn btn-sm btn-ghost" id="listen-ar" type="button" aria-pressed="false" title="Écouter l\'explication en arabe">استمع للشرح</button>' +
+          (hasTerms ? '<button class="btn btn-sm btn-ghost" id="listen-terms" type="button" aria-pressed="false" title="Écouter les termes techniques">استمع للمصطلحات</button>' : "") +
           '<button class="btn btn-sm btn-ghost" id="toggle-ar" type="button" title="Afficher ou masquer l\'arabe">إخفاء العربية</button>' +
           '<button class="btn btn-sm ' + (isRead ? "btn-soft" : "btn-primary") + '" id="mark-read" type="button">' +
             (isRead ? "Leçon lue" : "Marquer comme lu") + "</button>" +
@@ -798,8 +914,11 @@ window.APP = (function () {
         '<div class="ar-panel open" id="ar-panel" lang="ar" dir="rtl">' +
           "<h3>الشرح بالعربية</h3>" +
           '<p class="ar">' + esc(sec.arText) + "</p>" +
-          (sec.terms && sec.terms.length ? '<div class="terms">' + sec.terms.map(function (t) {
-            return '<span class="term"><b>' + esc(t.fr) + "</b><span>" + esc(t.ar) + "</span></span>";
+          (hasTerms ? '<div class="terms">' + sec.terms.map(function (t, i) {
+            return '<button class="term" type="button" data-ti="' + i + '" aria-label="Écouter le terme : ' + esc(t.fr) + '">' +
+              "<b>" + esc(t.fr) + "</b><span>" + esc(t.ar) + "</span>" +
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>' +
+              "</button>";
           }).join("") + "</div>" : "") +
         "</div>" +
         gallery +
@@ -824,12 +943,50 @@ window.APP = (function () {
       } else {
         listen.addEventListener("click", function () {
           if (listen.getAttribute("aria-pressed") === "true") {
+            stopLessonAudio();
+            resetListenBtn(listen);
             VOICE.stop();
-          } else if (!VOICE.speakArabic(sec.arText, { tag: "section" })) {
-            toast("تعذّر تشغيل الصوت الآن.", "bad");
+          } else {
+            speakStop();
+            resetTermsBtn($("#listen-terms"));
+            if (playLessonAudio(sec, function () { resetListenBtn(listen); })) {
+              listen.textContent = "إيقاف الشرح";
+              listen.setAttribute("aria-pressed", "true");
+            } else if (!VOICE.speakArabic(sec.arText, { tag: "section" })) {
+              toast("تعذّر تشغيل الصوت الآن.", "bad");
+            }
           }
         });
       }
+    }
+    const listenTerms = $("#listen-terms");
+    if (listenTerms) {
+      if (!synthOK()) {
+        listenTerms.hidden = true;
+      } else {
+        listenTerms.addEventListener("click", function () {
+          if (listenTerms.getAttribute("aria-pressed") === "true") {
+            speakStop();
+            resetTermsBtn(listenTerms);
+          } else if (!sayTermsAll(sec, function () { resetTermsBtn(listenTerms); })) {
+            toast("تعذّر تشغيل الصوت الآن.", "bad");
+          } else {
+            listenTerms.textContent = "إيقاف المصطلحات";
+            listenTerms.setAttribute("aria-pressed", "true");
+          }
+        });
+      }
+    }
+    if (hasTerms && synthOK()) {
+      $$(".term", reader).forEach(function (b) {
+        b.addEventListener("click", function () {
+          const t = sec.terms[parseInt(b.getAttribute("data-ti"), 10) || 0];
+          if (!t) return;
+          speakStop();
+          resetTermsBtn(listenTerms);
+          if (!sayTerm(t)) toast("تعذّر تشغيل الصوت الآن.", "bad");
+        });
+      });
     }
     const mark = $("#mark-read");
     if (mark) mark.addEventListener("click", function () {
@@ -1462,7 +1619,7 @@ window.APP = (function () {
               '<label class="voice-switch"><input type="checkbox" id="voice-enable">' +
                 '<span class="vs-track" aria-hidden="true"><span class="vs-dot"></span></span>' +
                 '<span class="vs-label">تشغيل المرافق الصوتي</span></label>' +
-              '<p class="voice-help">يتحدث عند إكمال قسم، إجابة في الاختبار، مهمة طرفية، نتيجة امتحان، أو عند الضغط على «حفّزني».</p>' +
+              '<p class="voice-help">يتحدث عند إكمال درس، إجابة في الاختبار، مهمة طرفية، نتيجة امتحان، أو عند الضغط على «حفّزني».</p>' +
               '<label class="voice-field" for="voice-select"><span>الصوت العربي</span>' +
                 '<select id="voice-select" class="input voice-select"><option value="">تلقائي — أفضل صوت عربي متاح</option></select></label>' +
             "</div>" +

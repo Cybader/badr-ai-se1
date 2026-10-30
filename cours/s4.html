@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="Cours SE1 : Composants &amp; structure externe du SE. مكونات نظام التشغيل وبنيته الخارجية — explications en arabe, révision en français, QCM et examen blanc.">
 <meta name="twitter:image" content="https://cybader.github.io/badr-ai-se1/assets/og-image.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='24' width='100' height='100' fill='%231d1d1f'/><text x='50' y='68' font-size='58' font-family='Segoe UI' font-weight='700' text-anchor='middle' fill='white'>B</text></svg>">
-<link rel="stylesheet" href="../css/seo.css?v=20261111">
+<link rel="stylesheet" href="../css/seo.css?v=20261112">
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"LearningResource","@id":"https://cybader.github.io/badr-ai-se1/cours/s4.html#resource","name":"Composants & structure externe du SE — SE1 | Badr AI","description":"Cours SE1 : Composants & structure externe du SE. مكونات نظام التشغيل وبنيته الخارجية — explications en arabe, révision en français, QCM et examen blanc.","url":"https://cybader.github.io/badr-ai-se1/cours/s4.html","inLanguage":["fr","ar"],"learningResourceType":"Cours","educationalLevel":"Enseignement supérieur — Licence","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Badr AI","url":"https://cybader.github.io/badr-ai-se1/"},"isPartOf":{"@type":"Course","name":"Système d'Exploitation 1 (SE1)","url":"https://cybader.github.io/badr-ai-se1/","description":"Cours complet de Système d'Exploitation 1 : Unix et programmation Shell."},"about":["Système d'exploitation","Unix","Programmation Shell","Introduction aux systèmes d'exploitation"],"keywords":"Système d'Exploitation 1, SE1, cours SE1, Composants & structure externe du SE, Introduction aux systèmes d'exploitation, Unix, Shell, QCM, examen, شرح عربي, أنظمة التشغيل, Noyau (kernel), Ordonnanceur, Gestionnaire de mémoire, Chargeur, Pilote (driver), Swapping"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://cybader.github.io/badr-ai-se1/"},{"@type":"ListItem","position":2,"name":"Programme","item":"https://cybader.github.io/badr-ai-se1/cours/"},{"@type":"ListItem","position":3,"name":"Chapitre 1 — Introduction aux systèmes d'exploitation","item":"https://cybader.github.io/badr-ai-se1/cours/#ch1"},{"@type":"ListItem","position":4,"name":"Composants & structure externe du SE","item":"https://cybader.github.io/badr-ai-se1/cours/s4.html"}]}]}
@@ -65,12 +65,12 @@
 <h2 id="ar-title"> الشرح بالعربية</h2>
 <p class="ar-text" lang="ar" dir="rtl">مكونات النظام: النواة kernel (إدارة المهام، الذاكرة، الملفات، الأجهزة)، الـ Shell، نظام الملفات FS، والتعريفات drivers. البنية الخارجية: المجدول ordonnanceur (يقطع العملية بعد انتهاء وقتها أو عند انتظار E/S)، مدير الملفات (يخفي خصائص الأقراص عبر مفهوم الملف)، مدير الأجهزة (أوامر، مقاطعات، أخطاء)، مدير الذاكرة (تتبع الحر/المحجوز، التخصيص، الـ swapping)، ومحمّل SE الذي يشتغل بعد BIOS لتحميل النواة.</p>
 <div class="terms">
-<div class="term"><b>Noyau (kernel)</b><span lang="ar" dir="rtl">النواة</span></div>
-<div class="term"><b>Ordonnanceur</b><span lang="ar" dir="rtl">المجدول</span></div>
-<div class="term"><b>Gestionnaire de mémoire</b><span lang="ar" dir="rtl">مدير الذاكرة</span></div>
-<div class="term"><b>Chargeur</b><span lang="ar" dir="rtl">المحمّل</span></div>
-<div class="term"><b>Pilote (driver)</b><span lang="ar" dir="rtl">تعريف الجهاز</span></div>
-<div class="term"><b>Swapping</b><span lang="ar" dir="rtl">التبديل بين الذاكرة والقرص</span></div>
+<button class="term" type="button" data-ti="0" data-fr="Noyau (kernel)" data-ar="النواة" aria-label="Écouter le terme : Noyau (kernel)"><b>Noyau (kernel)</b><span lang="ar" dir="rtl">النواة</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="1" data-fr="Ordonnanceur" data-ar="المجدول" aria-label="Écouter le terme : Ordonnanceur"><b>Ordonnanceur</b><span lang="ar" dir="rtl">المجدول</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="2" data-fr="Gestionnaire de mémoire" data-ar="مدير الذاكرة" aria-label="Écouter le terme : Gestionnaire de mémoire"><b>Gestionnaire de mémoire</b><span lang="ar" dir="rtl">مدير الذاكرة</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="3" data-fr="Chargeur" data-ar="المحمّل" aria-label="Écouter le terme : Chargeur"><b>Chargeur</b><span lang="ar" dir="rtl">المحمّل</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="4" data-fr="Pilote (driver)" data-ar="تعريف الجهاز" aria-label="Écouter le terme : Pilote (driver)"><b>Pilote (driver)</b><span lang="ar" dir="rtl">تعريف الجهاز</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+<button class="term" type="button" data-ti="5" data-fr="Swapping" data-ar="التبديل بين الذاكرة والقرص" aria-label="Écouter le terme : Swapping"><b>Swapping</b><span lang="ar" dir="rtl">التبديل بين الذاكرة والقرص</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
 </div>
 </section>
 <div class="sec-head"><div><h2>Contenu de la leçon</h2><p>Le cours en français, avec les termes techniques et les exemples.</p></div><span class="chip">Chapitre 1 — Introduction aux systèmes d&#39;exploitation</span></div>
@@ -149,5 +149,62 @@
 <div><a href="../index.html">Plateforme interactive</a> · <a href="index.html">Programme</a> · <a href="../qcm.html">120 QCM corrigés</a> · <a href="../flashcards.html">90 flashcards</a> · <a href="../index.html#exam">Examen blanc</a></div>
 <div class="note">شرح بالعربية · Étude et examens en français · Site hors-ligne, sans compte.</div>
 </footer>
+<script>
+(function() {
+  "use strict";
+  var synth = window.speechSynthesis;
+  if (!synth) return;
+  function pick(p) {
+    var v = synth.getVoices() || [];
+    for (var i = 0; i < v.length; i++) {
+      if (String(v[i].lang || "").toLowerCase().indexOf(p) === 0) return v[i];
+    }
+    return null;
+  }
+  function play(items, done) {
+    synth.cancel();
+    for (var i = 0; i < items.length; i++) {
+      var u = new SpeechSynthesisUtterance(items[i][0]);
+      u.lang = items[i][1];
+      var v = pick(items[i][1].slice(0, 2));
+      if (v) { try { u.voice = v; } catch (e) {} }
+      u.rate = 0.92;
+      if (i === items.length - 1 && done) { u.onend = done; u.onerror = done; }
+      synth.speak(u);
+    }
+  }
+  var chips = document.querySelectorAll("button.term[data-fr]");
+  if (!chips.length) return;
+  for (var i = 0; i < chips.length; i++) {
+    (function(chip) {
+      chip.addEventListener("click", function() {
+        play([[chip.getAttribute("data-fr"), "fr-FR"], [chip.getAttribute("data-ar"), "ar-SA"]]);
+      });
+    })(chips[i]);
+  }
+  var list = document.querySelector(".terms");
+  if (!list || !list.parentNode) return;
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "btn term-play";
+  btn.setAttribute("aria-pressed", "false");
+  function set(on) {
+    btn.textContent = on ? "\u0625\u064a\u0642\u0627\u0641 \u0627\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a" : "\u0627\u0633\u062a\u0645\u0639 \u0644\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a";
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+  }
+  btn.addEventListener("click", function() {
+    if (btn.getAttribute("aria-pressed") === "true") { synth.cancel(); set(false); return; }
+    var items = [];
+    for (var i = 0; i < chips.length; i++) {
+      items.push([chips[i].getAttribute("data-fr"), "fr-FR"]);
+      items.push([chips[i].getAttribute("data-ar"), "ar-SA"]);
+    }
+    play(items, function() { set(false); });
+    set(true);
+  });
+  list.parentNode.insertBefore(btn, list);
+  set(false);
+})();
+</script>
 </body>
 </html>
